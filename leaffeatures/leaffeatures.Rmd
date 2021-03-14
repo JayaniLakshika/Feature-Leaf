@@ -1,0 +1,58 @@
+---
+title: Computationally Efficient Featires for Leaf Image Classification
+authors:
+  - name: Jayani Lakshika
+    thanks: Use footnote for providing further information about author (webpage, alternative address)---*not* for acknowledging funding agencies. Optional.
+    department: Department of Computer Science
+    affiliation: Cranberry-Lemon University
+    location: Pittsburgh, PA 15213
+    email: hippo@cs.cranberry-lemon.edu
+  - name: Thiyanga S. Talagala
+    department: Department of Electrical Engineering
+    affiliation: Mount-Sheikh University
+    location: Santa Narimana, Levand
+    email: stariate@ee.mount-sheikh.edu
+abstract: |
+  Enter the text of your abstract here.
+keywords:
+  - scagnostics
+  - image processing
+  - bloo
+  - these are optional and can be removed
+bibliography: references.bib
+biblio-style: unsrt
+output: 
+  rticles::arxiv_article:
+    keep_tex: true
+---
+
+# Introduction
+
+# Literature Review
+
+
+
+
+#  Data
+
+# Image Processing
+
+# Features
+
+Intro for features. Hierarchical diagram.
+
+## Shape Features
+
+## Text Features
+
+## Color Features
+
+## Scagnostic features
+
+# Software
+
+# Visualization of Leaf Images in the Feature Space
+
+
+
+# Discussion and Conclusions
