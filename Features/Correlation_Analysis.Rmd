@@ -1,0 +1,80 @@
+---
+title: "Correlation_of_Cartesian"
+author: "Jayani Lakshika"
+date: "August 28, 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(packrat)
+library(tidyverse)
+library(here)
+library(binostics)
+library(ggplot2)
+```
+
+```{r}
+here::here()
+```
+
+```{r}
+data_scagnostics <- data.frame()
+
+path1 <- "C:/Users/j/Desktop/Final Research/Coding/Python_codes/Flavia_Analysis/New_approach/df_contour" 
+
+file_list1 <- list.files(path1)
+
+for (i in 1:length(file_list1)){
+  df_polar_max_im <- read.csv(paste(path1,file_list1[i], sep = "/"), header = TRUE)
+  tem_data <- cbind(i,cor(df_polar_max_im$x,df_polar_max_im$y))
+  data_scagnostics <- rbind(data_scagnostics,tem_data)
+}
+colnames(data_scagnostics) <- c("id","correlation")
+
+head(data_scagnostics,10)
+
+
+ggplot(data_scagnostics, aes(x = correlation)) + geom_density()
+```
+
+```{r}
+data_scagnostics11 <- data.frame()
+
+for (i in 1:length(file_list1)){
+  df_polar_max_im <- read.csv(paste(path1,file_list1[i], sep = "/"), header = TRUE)
+  tem_data <- cbind(i,cor(df_polar_max_im$x,df_polar_max_im$y)/nrow(df_polar_max_im))
+  data_scagnostics11 <- rbind(data_scagnostics11,tem_data)
+}
+colnames(data_scagnostics11) <- c("id","correlation_divide_by_sample_size")
+
+head(data_scagnostics11,10)
+
+ggplot(data_scagnostics11, aes(x = correlation_divide_by_sample_size)) + geom_density()
+```
+
+```{r}
+data_scagnostics_1 <- read.csv("C:/Users/j/Desktop/Final Research/Coding/Python_codes/Flavia_Analysis/New_approach/New_dataset_Images_with_all_features_new.csv")
+
+path1 <- "C:/Users/j/Desktop/Final Research/Coding/Python_codes/Flavia_Analysis/New_approach/df_contour" 
+
+file_list1 <- list.files(path1)
+
+correlation <- c()
+
+for (i in 1:length(file_list1)){
+  df_polar_max_im <- read.csv(paste(path1,file_list1[i], sep = "/"), header = TRUE)
+  correlation[i] <- cor(df_polar_max_im$x,df_polar_max_im$y)
+}
+data_scagnostics_1 <- cbind(data_scagnostics_1, correlation)
+head(data_scagnostics_1,5)
+
+ncol(data_scagnostics_1)
+nrow(data_scagnostics_1)
+
+write.csv(data_scagnostics_1,"C:/Users/j/Desktop/Final Research/Coding/Python_codes/Flavia_Analysis/New_approach/data_all_with_correlation.csv", row.names = FALSE)
+```
+
