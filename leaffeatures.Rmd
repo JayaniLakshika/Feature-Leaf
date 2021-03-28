@@ -42,111 +42,56 @@ library(patchwork)
 
 # Introduction
 
-|       Leaf identification is becoming very popular in classifying plant species. Leaf contains significant features that can help people to identify and classify the plant species by looking at it. In medical perspective, medicinal plants are usually identified by practitioners based on years of experience through sensory or olfactory senses. The other method of recognizing these plants involves laboratory-based testing, which requires trained skills, data interpretation which is costly and time-intensive. Automatic ways to identify medicinal plants are useful especially those that are lacking experience in medicinal plant recognition. In this process, image processing, and feature extraction have more weight, because they are the initial step in identification. 
+|       Leaf identification is becoming very popular in classifying plant species. Leaf contains significant features that can help people to identify and classify the plant species in developing. In medical perspective, medicinal plants are usually identified by practitioners based on years of experience through sensory or olfactory senses. The other method of recognizing these plants involves laboratory-based testing, which requires trained skills, data interpretation which is costly and time-intensive. Automatic ways to identify medicinal plants are useful especially those that are lacking experience in medicinal plant recognition. Statistical machine learning techniques play a crucial role in the development of automatic system to identify medicinal plants. In this process, image processing, and feature extraction have an important influence, because they are the initial step in identification. 
 
-|       Image processing is a crucial step in plant classification. The main aim of image processing is to improve the leaf image by removing undesired distortion [@articlee]. Therefore processed leaf image can be used to extract features. Image segmentation [@DBLP], image orientation, cropping, grey scaling, binary thresholding, noise removal, contrast stretching, threshold inversion, image normalization [@article10], and edge recognition [@articlepl;@8675114;@article5] are some of image processing techniques applied in recent research. Image processing steps can be applied parallel or individually or several times until the quality of leaf image reaches satisfactory level. 
+|       The main aim of image processing is to extract important features by removing undesired noise and distortion [@articlee]. Image preprocessing plays a vital role, because features have to be clearly found after preprocessing. Image processing steps include image segmentation [@DBLP], image orientation, cropping, grey scaling, binary thresholding, noise removal, contrast stretching, threshold inversion, image normalization, and edge recognition are some of image processing techniques applied in recent research. These steps can be applied parallely or individually, on several times until the quality of leaf image reaches a specific threshold. 
 
-|       Most challenging part is to extract distinctive leaf features. Therefore most of the time research more focused on neural network models like CNN [@4458016;@articlepl;@inproceedings] which are complicated and hard to understand what happening inside the algorithm. Feature extraction refers to taking measurements, geometric or otherwise, of possibly segmented, meaningful regions in the image [@articlee]. A digital image is merely a collection of pixels represented as large matrices of integers corresponding to intensities of colors at different positions of the image [@book1]. The main aim of feature extraction is to reduce dimensionality of this information by obtaining patterns of leaf images. In generally shape, colors, and texture contain these patterns. In this paper other than existing features, we are introducing scagnostic features, correlation of cartesian coordinate, and number of minimum and maximum points as new features.  
+|       One of the most challenging part is to extract distinctive leaf features from the images. Therefore most of the time research more focused on neural network models like CNN [@4458016;@articlepl;@inproceedings] which are complicated and hard to understand what happening inside the algorithm. Feature extraction refers to taking measurements, geometric or otherwise, of possibly segmented, meaningful regions in the image [@articlee]. 
 
-|       The paper is organized as follows. In section 2, we briefly review the works on features of leaves that use in leaf classification, and image processing techniques that have to follow before extract the features. The next section, 3, discuss the datasets that we use to do the experiment. Steps of image processing of leaf images describes in section 4. In section 4, discuss about feature extraction in in-detail because features are highly influenced by the plant species to be classified. The next section, 5, show the experimental results for two existing datasets. The details about software and packages that use to extract the features are discussed in section 6. In section 7, discuss about visualization of leaf images in the feature space. Some discussion about the outputs and concluding remarks are given in last section.       
+|       A digital image is merely a collection of pixels represented as large matrix of integers corresponding to intensities of colors at different positions of the image [@book1]. The main aim of feature extraction is to reduce dimensionality of this information by obtaining patterns of leaf images. In general shape, colors, and texture contain these patterns. In this paper other than existing features, we are introducing scagnostic features, correlation of cartesian coordinate, and number of minimum and maximum points as new features.  
 
-# Literature Review
-
-
-
-
-#  Data
-
-|       There are two leaf datasets of two different countries are used for the experiment, because to generalize the features we have to have leaf images collected by different countries in different methods like scans, pseudo-scans and photography.
-
-## Flavia Leaf Image Dataset
-    
-|       The Flavia dataset contains 1907 leaf images. There are 32 different species and each have 50-77 images. Scanners and digital cameras are used to acquire the leaf images on plain background. The isolated leaf images contain blades only, without petiole. These leaf images are collected from the most common plants in Yangtze, Delta, China [@articlee]. Those leaves were sampled on the campus of the Nanjing University and the Sun Yat-Sen arboretum, Nanking, China [@articlee]. (\url{https://sourceforge.net/projects/flavia/files/Leaf%2520Image%2520Dataset/})
-
-
-
-```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{slp1}Sample of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png"))
-```
-
-
-
-## Swedish Leaf Image Dataset
-    
-|       The Swedish dataset contains 1125 images. The images of isolated leaf scans on a plain background of 15 Swedish tree species, with 75 leaves per species. This dataset has been captured as part of a joined leaf classification project between the Linkoping University and the Swedish  Museum of Natural History [@articlee]. (\url{https://www.cvl.isy.liu.se/en/research/datasets/swedish-leaf/})
-
-
-
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{slp2}Sample of Swedish leaf dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
-```
-
+|       The paper is organized as follows. The next section, 2, discuss the datasets that we use to do the experiment. Preprocessing is necessary before extracting features from the images. Steps of image processing of leaf images describes in section 3. In section 4, discuss about feature extraction in in-detail because features are highly influenced by the plant species to be classified. The next section, 5, show the experimental results for two existing datasets. The details about software and packages that use to extract the features are discussed in section 6. In section 7, discuss about visualization of leaf images in the feature space. Some discussion about the outputs and concluding remarks are given in last section.       
 
 
 # Image Processing
 
 ## Introduction
 
-|       The image processing receives an image as input and generates a modified image as an output which is suitable for better morphological analysis [@8675114], feature extraction. Image processing is an essential step to reduce noise, background subtraction and content enhancement in the identification process [@8675114].
+|       Image processing is an essential step to reduce noise, background subtraction and content enhancement in the identification process [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes four main steps. They are converting BGR image to RGB, gray scaling, Gaussian filtering, binary thresholding, remove stalk, close holes, and image resizing. Some of these steps can be applied for the necessary cases like applying remove stalk to the leaf images which only have a stalk.
 
 
-## Image Processing Workflow
-
-|       In identifying a plant species, leaves are considered as a dominant feature. Image preprocessing plays a vital role, because features have to be clearly found after preprocessing. The main idea of preprocessing is to remove any kind of external noises present in an image.
-|       To improve the leaf image, a series of operations are followed. This research includes operations like converting BGR image to RGB, gray scaling, Gaussian filtering, binary thresholding, remove stalk, close holes, and image resizing. Some of these steps can be applied for the necessary cases like applying remove stalk to the leaf images which only have a stalk.
-
-
-\begin{figure}[!ht]
-\centering
-		\includegraphics[scale=0.65]{./Figures/fl5.png}
-		\caption{\label{fig:test2}Image processing}
-	    \end{figure}
-
-
-|       For the development of the system proposed the focus was on the leaf which has a simple arrangement.
-
-\begin{figure}[!ht]
-\centering
-		\includegraphics[scale=0.5]{./Figures/simple_leaf_parts.png}
-		\caption{\label{simplearra}Leaf with simple arrangement}
-	    \end{figure}
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:test2}Image processing"}
+knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
+``` 
 
 
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{l c c }
+|       In classifying plant species the focus was on the leaf which has a simple arrangement as shown in Figure \ref{simplearra}. A single leaf that is never divided into smaller leaflet units is know as a leaf with simple arrangement. That leaf is always attached to a twing by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed. 
 
-\hline
-Dataset                   & \multicolumn{1}{l}{Original Image Step} & \multicolumn{1}{l}{Number of leaf images}  \\ \hline
-
-Flavia dataset            & Step 1 & 1907                                                                      \\ %\hline
-
-Swedish Leaf Image Dataset      & Step 1 & 975                                                                       \\                                                                    \hline
-
-\end{tabular}
-\caption{Number of leaf images used in the algorithm}
-\label{tab:num}
-\end{table}
-
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{simplearra}Leaf with simple arrangement"}
+knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
+``` 
 
 ### Step 1: Converting BGR Image to RGB
 
 |       BGR (Blue-Green-Red) and RGB(Red-Green-Blue) are conventions for the order of the different colour channels. They are not colour spaces. When converting BGR image to RGB, there is no any computations, just switches around the order. There is a difference in OpenCV and Matplotlib in pixel ordering. OpenCV follows BGR order while Matplotlib follows RGB order. Therefore when we want to display an image which loaded from OpenCV using Matplotlib functions, have to convert it to RGB mode.
 
+
+
+
 ### Step 2: Grayscaling
 
-|       Grayscaling is the process of converting an image to shades of gray from other colour spaces like RGB. Gray conversion of the image is implemented to optimize the contrast and intensity of images [@8675114]. There are some importance of grayscaling:
+|       Grayscaling is the process of converting an image to shades of gray from other colour spaces like RGB. Gray conversion of the image is implemented to optimize the contrast and intensity of images [@8675114]. Grayscaled images have several advantages over RGB images. 
 
-* Dimension reduction
+(i) Dimension reduction
 
 |       As an example, there are three colour channels in RGB images and has three dimensions. But in gray scaled images only have one dimension.
     
-* For other algorithms to work
+(ii) For other algorithms to work
 
-|       There are many algorithm customized to work only on gray scaled images. Eg:  Haralick texture features calculation works only on gray scaled images.
+|       There are many algorithm customized to work only on gray scaled images. Eg:  Haralick [@articletx] texture features calculation works only on gray scaled images.
     
-* Reduced model complexity
+(iii) Reduced model complexity
 
 |       Consider an example of training neural article on RGB images of 10x10x3 pixel. The input layer will have 300 input nodes. Whereas for gray scaled images the same neural network will need only 100 input node.
 
@@ -155,14 +100,16 @@ Swedish Leaf Image Dataset      & Step 1 & 975                                  
 
 |       Image smoothing is also known as image blurring in OpenCV. Image smoothing refers to making the image less clear or distinct. Image smoothing is done with the help of various low pass filter kernels. 
 
-\textbf{Advantages of Smoothing}
+Advantages of Smoothing include
 
-\begin{itemize}
-    \item Smoothing techniques help in noise removal. Noise of an image is considered as high pass signal which can be occurred because of the source (camera sensor). Therefore restrict noise by using the low pass kernel.
-    \item Helps in smoothing image.
-    \item To remove low intensity edges.
-    \item Helps in hiding the details when necessary. E:g:- To hide the face of the victim in police cases.
-\end{itemize}
+(i) Smoothing techniques help in noise removal. Noise of an image is considered as high pass signal which can be occurred because of the source (camera sensor). Therefore restrict noise by using the low pass kernel.
+
+(ii) Helps in smoothing image.
+
+(iii) To remove low intensity edges.
+
+(iv) Helps in hiding the details when necessary. E:g:- To hide the face of the victim in police cases.
+
 
 |       There are many image smoothing techniques that are available in OpenCV. For our research we used Gaussian filtering as the image smoothing technique.
 
@@ -263,7 +210,8 @@ knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 ```
 
-# Features
+
+# Leaf Features
 
 |       In identification of plant species by using leaf images, features of the leaves play a main role, because each leaf posses unique feature that it make different from other. In previous research [@articlepl;@article7], let the algorithm like CNN to extract features by itself and do the classification. Therefore it is so hard to interpret and generalize the features. We introduced pre-calculate features which can be easy to interpret and generalize. They are also computational efficient. Mainly we focused on four types of features of leaf images as Shape features, Texture features, Color features and Scagnostics features. We identified altogether 52 features.
 
@@ -377,7 +325,7 @@ This bounding rectangle is drawn with minimum area. Therefore the rotation of th
 ## Area
 
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape1}Area"}
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areshape1}Area"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
 ```  
 
@@ -935,6 +883,35 @@ knitr::include_graphics(here::here("leaffeatures","Figures","pc.png"))
 ```	
 
 
+# Application of features to classify images
+
+
+##  Data sets
+
+|       We use two publicly available datasets for demonstrate the applications of features.
+
+### Flavia Leaf Image Dataset
+    
+|       The Flavia dataset contains 1907 leaf images. There are 32 different species and each have 50-77 images. Scanners and digital cameras are used to acquire the leaf images on plain background. The isolated leaf images contain blades only, without petiole. These leaf images are collected from the most common plants in Yangtze, Delta, China [@articlee]. Those leaves were sampled on the campus of the Nanjing University and the Sun Yat-Sen arboretum, Nanking, China [@articlee]. (\url{https://sourceforge.net/projects/flavia/files/Leaf%2520Image%2520Dataset/})
+
+
+
+```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{slp1}Sample of Flavia dataset"}
+knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png"))
+```
+
+
+
+### Swedish Leaf Image Dataset
+    
+|       The Swedish dataset contains 1125 images. The images of isolated leaf scans on a plain background of 15 Swedish tree species, with 75 leaves per species. This dataset has been captured as part of a joined leaf classification project between the Linkoping University and the Swedish  Museum of Natural History [@articlee]. (\url{https://www.cvl.isy.liu.se/en/research/datasets/swedish-leaf/})
+
+
+
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{slp2}Sample of Swedish leaf dataset"}
+knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
+```
+
 
 # Example
 
@@ -962,21 +939,29 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
 
 # Software
 
+| Feature extraction algorithms are developed using R and python software. The following table \ref{swfe} shows the package in software that used to extract each feature. 
 
 \begin{table}[!ht]
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{ccc}
+\begin{tabular}{lcc}
 \hline
-Feature name & Software & Package \\ \hline
-             &          &         \\
-             &          &         \\
-             &          &         \\
-             &          &         \\ \hline
+Feature name                                                                                                                                                                               & Software & Package             \\ \hline
+Scagnostic features for polar and cartesian coordinates                                                                                                                                    & R        & binostics           \\
+\begin{tabular}[l]{@{}l@{}}Number of minimum and maximum points,\\ Correlation of cartesian coordinate\end{tabular}                                                                        & R        & -                   \\
+Diameter                                                                                                                                                                                   & Python   & combinations, numpy \\
+\begin{tabular}[l]{@{}l@{}}Physiological length and width, Eccentricity, \\ Area, Perimeter, Number of convex points, \\ Perimeter of convex hull, Area of convex hull\end{tabular}       & Python   & OpenCV (cv2)        \\
+\begin{tabular}[l]{@{}l@{}}Aspect ratio, Rectangularity, Compactness, \\ Narrow factor, Perimeter ratio diameter,\\ Perimeter ration length, Perimeter ratio length and width\end{tabular} & Python   & -                   \\
+x and y coordinates of center                                                                                                                                                              & Python   & scipy.ndimage       \\
+Circularity, Equivalent diameter                                                                                                                                                           & Python   & numpy               \\
+Texture features                                                                                                                                                                           & Python   & mahotas             \\
+Color features                                                                                                                                                                             &          & numpy               \\ \hline
 \end{tabular}%
 }
 \caption{Software in feature extraction}
 \label{swfe}
 \end{table}
+
+
 
 # Visualization of Leaf Images in the Feature Space
 
@@ -1095,6 +1080,57 @@ p19 <- ggplot(data_new,aes(x=PC3,y=PC5, col=Shape_label)) +
 p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + plot_layout(ncol = 3, widths = c(3,3))
 ```
 
+# Applications
+
+
+```{r, echo=FALSE, out.width="90%", fig.align='center',fig.cap="\\label{flvhie}Hierarchy of Flavia leaf image dataset"}
+knitr::include_graphics(here::here("leaffeatures","Figures","hie.png"))
+```  
+
+
+\begin{table}[!ht]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\hline
+\multicolumn{1}{c}{Species} & Label & SVM  & PNN-PCNN & Fourier Moment & PFT+ & Proposed Method \\ \hline
+Pubscent Bamboo             & 1     & 1.00 & 1.00     & 0.32           & 0.90 & 1.00            \\
+Chinese Horse Chestnut      & 2     & 1.00 & 0.90     & 0.00           & 1.00 & 1.00            \\
+Chinese Redbud              & 3     & 1.00 & 1.00     & 0.79           & 0.80 & 1.00            \\
+True Indigo                 & 4     & 1.00 & 0.85     & 0.63           & 1.00 & 1.00            \\
+Japanese Maple              & 5     & 1.00 & 1.00     & 0.30           & 1.00 & 1.00            \\
+Nanmu                       & 6     & 0.80 & 0.85     & 0.53           & 1.00 & 0.92            \\
+Castor Aralia               & 7     & 1.00 & 1.00     & 0.92           & 1.00 & 1.00            \\
+Goldenrain Tree             & 8     & 0.90 & 0.90     & 0.34           & 1.00 & 1.00            \\
+Chinese Cinnamon            & 9     & 0.80 & 0.95     & 0.00           & 0.90 & 0.83            \\
+Anhui Barberry              & 10    & 0.80 & 0.90     & 0.29           & 1.00 & 1.00            \\
+Big-fruited Holly           & 11    & 0.90 & 0.95     & 0.28           & 1.00 & 0.93            \\
+Japanese Cheesewood         & 12    & 0.00 & 0.90     & 0.70           & 1.00 & 1.00            \\
+Wintersweet                 & 13    & 0.90 & 0.90     & 0.25           & 1.00 & 0.83            \\
+Camphortree                 & 14    & 1.00 & 0.85     & 0.02           & 1.00 & 0.87            \\
+Japanese Vaburnum           & 15    & 0.00 & 0.90     & 0.68           & 1.00 & 0.92            \\
+Sweet Osmanthus             & 16    & 0.80 & 0.75     & 0.48           & 1.00 & 1.00            \\
+Deodar                      & 17    & 1.00 & 1.00     & 0.97           & 1.00 & 1.00            \\
+Ginkgo Maidenhair Tree      & 18    & 1.00 & 0.95     & 0.85           & 1.00 & 1.00            \\
+Crape Myrtle                & 19    & 0.80 & 0.90     & 0.82           & 0.70 & 1.00            \\
+Oleander                    & 20    & 1.00 & 0.85     & 0.94           & 1.00 & 1.00            \\
+Yew Plum Pine               & 21    & 0.90 & 0.80     & 0.90           & 1.00 & 1.00            \\
+Japanese Flowering Cherry   & 22    & 0.90 & 0.85     & 0.27           & 0.10 & 1.00            \\
+Glossy Privet               & 23    & 0.80 & 0.90     & 0.00           & 1.00 & 0.92            \\
+Chinese Toon                & 24    & 0.80 & 0.95     & 0.57           & 0.90 & 1.00            \\
+Peach                       & 25    & 0.40 & 0.85     & 0.02           & 1.00 & 1.00            \\
+Ford Woodlotus              & 26    & 0.90 & 0.85     & 0.75           & 0.80 & 1.00            \\
+Trident Maple               & 27    & 1.00 & 1.00     & 0.95           & 0.90 & 1.00            \\
+Beale's Baberry             & 28    & 1.00 & 1.00     & 0.05           & 0.90 & 1.00            \\
+Southern Magnolia           & 29    & 0.90 & 0.80     & 0.16           & 1.00 & 1.00            \\
+Canadian Poplar             & 30    & 0.00 & 1.00     & 0.00           & 1.00 & 1.00            \\
+Chinese Tulip Tree          & 31    & 0.80 & 1.00     & 0.21           & 1.00 & 1.00            \\
+Tangerine                   & 32    & 1.00 & 0.90     & 0.80           & 0.90 & 1.00            \\ \hline
+\multicolumn{2}{c}{Average}         & 0.82 & 0.91     & 0.46           & 0.93 & 0.98            \\ \hline
+\end{tabular}%
+}
+\caption{Comparison accuracy of several methods using Flavia dataset}
+\label{flvacc}
+\end{table}
 
 # Discussion and Conclusions
 
