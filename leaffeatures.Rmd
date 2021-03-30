@@ -61,7 +61,7 @@ library(patchwork)
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:test2}Image processing"}
-knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
+knitr::include_graphics(here::here("Figures","fl5.png"))
 ``` 
 
 
@@ -69,7 +69,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 |       In classifying plant species the focus was on the leaf which has a simple arrangement as shown in Figure \ref{simplearra}. A single leaf that is never divided into smaller leaflet units is know as a leaf with simple arrangement. That leaf is always attached to a twing by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed. 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{simplearra}Leaf with simple arrangement"}
-knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
+knitr::include_graphics(here::here("Figures","simple_leaf_parts.png"))
 ``` 
 
 ### Step 1: Converting BGR Image to RGB
@@ -186,7 +186,7 @@ where $n$ = n-space
 $q_i,p_i$ = Euclidean vectors, starting from the origin of the space
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:rst}Remove stalk"}
-knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
+knitr::include_graphics(here::here("Figures","remove_stalk.png"))
 ```
 
 
@@ -207,7 +207,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:chl}Closing holes"}
-knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
+knitr::include_graphics(here::here("Figures","close_holes.png"))
 ```
 
 
@@ -217,7 +217,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img33}Example of geometric transformation"}
-knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
+knitr::include_graphics(here::here("Figures","feature_hie.png"))
 ```
 
 
@@ -231,19 +231,19 @@ knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 	
 	
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img3}Example of geometric transformation"}
-knitr::include_graphics(here::here("leaffeatures","Figures","geomatric_transformation.png"))
+knitr::include_graphics(here::here("Figures","geomatric_transformation.png"))
 ```
 	
 	
 |       The finding contour function doesn’t work when the center of the leaf image is not in the contour. Therefore if the translation is applied away from the contour \ref{trans}, then function can’t identify the contour. Inappropriate scaling (see figure \ref{scal}) also arises problems in the calculation. If the leaf image is really small, the function also hard to recognize the contour. Therefore taking the closest photo of the leaf images by keeping them in the center of the white paper is more suitable.
 
 ```{r, echo=FALSE, out.width="10%", fig.align='center',fig.cap="\\label{trans}Inappropriate translation"}
-knitr::include_graphics(here::here("leaffeatures","Figures","trans.jpg"))
+knitr::include_graphics(here::here("Figures","trans.jpg"))
 ``` 
 
 
 ```{r, echo=FALSE, out.width="10%", fig.align='center',fig.cap="\\label{scal}Inappropriate scaling"}
-knitr::include_graphics(here::here("leaffeatures","Figures","scaling.jpg"))
+knitr::include_graphics(here::here("Figures","scaling.jpg"))
 ``` 
 
 ## Contours
@@ -251,7 +251,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","scaling.jpg"))
 Simply contour (see figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same colour or intensity.
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{cnt}Extract contour of the leaf image"}
-knitr::include_graphics(here::here("leaffeatures","Figures","cnt.png"))
+knitr::include_graphics(here::here("Figures","cnt.png"))
 ```  
 
 
@@ -259,7 +259,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","cnt.png"))
 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{scalimg4}Categorization of shape features"}
-knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
+knitr::include_graphics(here::here("Figures","shape_chart.png"))
 ```  
 
 
@@ -278,7 +278,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
 \end{equation}
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape1}Logic behind calculation of diameter"}
-knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
+knitr::include_graphics(here::here("Figures","d_cal.png"))
 ```  
 
 
@@ -288,14 +288,14 @@ knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
 |       There are horizontal, vertical and rotated leaf images in the datasets (Flavia, Swedish, Actual and Kaggle). Kaggle leaf image dataset is only consist of horizontal and vertical leaf images. Therefore straight bounding rectangle is enough to extract Physiological length and Physiological width of leaf images.
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight(Horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","act3.png"))
+knitr::include_graphics(here::here("Figures","act3.png"))
 ```  
 
 
 |       But straight bounding rectangle of rotated image doesn't give the correct values for Physiological length and Physiological width of leaf images.
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act1}Bounded rectangle of rotated leaf image in Actual leaf image dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","act1.png"))
+knitr::include_graphics(here::here("Figures","act1.png"))
 ```  
 
 
@@ -303,7 +303,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","act1.png"))
 |       To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images.
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{act2}Rotated rectangle of angled leaf image in Actual leaf image dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","act2.png"))
+knitr::include_graphics(here::here("Figures","act2.png"))
 ```  
 
 
@@ -326,30 +326,30 @@ This bounding rectangle is drawn with minimum area. Therefore the rotation of th
 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areshape1}Area"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
+knitr::include_graphics(here::here("Figures","c8.png"))
 ```  
 
 
 ## Roundness/ Circularity
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape3}Circularity"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
+knitr::include_graphics(here::here("Figures","c6.png"))
 ```  
 
 ## Compactness
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape4}Compactness"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c10.png"))
+knitr::include_graphics(here::here("Figures","c10.png"))
 ```  
 
 ## Eccentricity
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape5}Eccentricity"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c9.png"))
+knitr::include_graphics(here::here("Figures","c9.png"))
 ```  
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape6}Ellipse"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
+knitr::include_graphics(here::here("Figures","c11.png"))
 ```  
 
 \begin{equation}
@@ -359,7 +359,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
 ## Convexity
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape7}Convexity"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c7.png"))
+knitr::include_graphics(here::here("Figures","c7.png"))
 ```  
 
 
@@ -371,7 +371,7 @@ The more details about convex hull can be found in the convex hull under scagnos
 ## Number of Minimum and Maximum Points
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{mn}Minimum and Maximum Points"}
-knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
+knitr::include_graphics(here::here("Figures","mn.png"))
 ```  
 
 
@@ -445,7 +445,7 @@ p(N_{g},1) & p(N_{g},2) & \cdot &\cdot &\cdot & p(N_{g},N_{g})
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{direction}Four directions of adjacency as defined for calculation of the Haralick texture features"}
-knitr::include_graphics(here::here("leaffeatures","Figures","GLMC_direction.png"))
+knitr::include_graphics(here::here("Figures","GLMC_direction.png"))
 ```    
     
 	    
@@ -481,11 +481,11 @@ $$\sigma_{y} = \sum_{j}^{}(j-\mu_{y})^2\sum_{i}^{}p(i,j)$$
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{img1}Computing the Haralick texture features from a 4 × 4 example image step by step"}
-knitr::include_graphics(here::here("leaffeatures","Figures","GLMC1.png"))
+knitr::include_graphics(here::here("Figures","GLMC1.png"))
 ```  
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{img2}Computing the Haralick texture features from a 4 × 4 example image with all direction"}
-knitr::include_graphics(here::here("leaffeatures","Figures","GLMC2.png"))
+knitr::include_graphics(here::here("Figures","GLMC2.png"))
 ```  
 	
 	
@@ -499,7 +499,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","GLMC2.png"))
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{leafimg}"}
-knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
+knitr::include_graphics(here::here("Figures","leaf_img.png"))
 ```
 
 
@@ -548,7 +548,7 @@ where M and N are dimensions of a leaf image and $p_{xy}$ is the intensity value
 
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{scagimg}Hierarchy of Scagnostics"}
-knitr::include_graphics(here::here("leaffeatures","Figures","scag.png"))
+knitr::include_graphics(here::here("Figures","scag.png"))
 ```
 
 
@@ -583,7 +583,7 @@ Scagnostic measures are based on following definitions.
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg5}Graph with 5 vertices and 5 edges"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c4.png"))
+knitr::include_graphics(here::here("Figures","c4.png"))
 ```
 
 ### Minimum Spanning Tree (MST)
@@ -647,7 +647,7 @@ The graph can have more than one spanning tree.
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg4}Convex hull and alpha hull"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
+knitr::include_graphics(here::here("Figures","c5.png"))
 ```
 
 
@@ -701,7 +701,7 @@ where $q_{75}$ is the 75th percentile of the MST edge lengths and $(q_{75} - q_{
 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{scagimg6}Vertices of degree 2"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c3.png"))
+knitr::include_graphics(here::here("Figures","c3.png"))
 ```
 
 \begin{table}[h!]
@@ -814,7 +814,7 @@ where $\omega$ is the weight function (\ref{w2}).
 
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{scagimg21}"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c1.png"))
+knitr::include_graphics(here::here("Figures","c1.png"))
 ```
 
 
@@ -830,7 +830,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c1.png"))
 |       Roughly, the skinny is measured by using the corrected and normalized ratio of perimeter to area of a polygon measures.
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg31}"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c2.png"))
+knitr::include_graphics(here::here("Figures","c2.png"))
 ```
 
 \begin{itemize}
@@ -866,11 +866,11 @@ number of single-degree vertices, skinny measure is calculated.
 |        In calculating monotonicity, squared the coefficient because to consider the large values and to remove the distinction between positive and negative coefficients (Because assume that the investigators are more interested in strong relationships rather than negative or positive).
 	
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagnostics}Exploring scatter plots by their scagnostics"}
-knitr::include_graphics(here::here("leaffeatures","Figures","sca.png"))
+knitr::include_graphics(here::here("Figures","sca.png"))
 ```	
 	
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scp}Preprocessing for Scagnostics"}
-knitr::include_graphics(here::here("leaffeatures","Figures","scp.png"))
+knitr::include_graphics(here::here("Figures","scp.png"))
 ```	
 
 
@@ -879,7 +879,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","scp.png"))
 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{pc}Polar coordinate"}
-knitr::include_graphics(here::here("leaffeatures","Figures","pc.png"))
+knitr::include_graphics(here::here("Figures","pc.png"))
 ```	
 
 
@@ -897,7 +897,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","pc.png"))
 
 
 ```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{slp1}Sample of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png"))
+knitr::include_graphics(here::here("Figures","flavia_images.png"))
 ```
 
 
@@ -909,7 +909,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png")
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{slp2}Sample of Swedish leaf dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
+knitr::include_graphics(here::here("Figures","swedish_data.png"))
 ```
 
 
@@ -919,7 +919,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
+knitr::include_graphics(here::here("Figures","fl5.png"))
 ```	
 
 
@@ -927,7 +927,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{flexe}Example feature extraction of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
+knitr::include_graphics(here::here("Figures","fl_example.png"))
 ```	
 
 
@@ -1084,7 +1084,7 @@ p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + plot_layout(ncol = 3, widt
 
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center',fig.cap="\\label{flvhie}Hierarchy of Flavia leaf image dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","hie.png"))
+knitr::include_graphics(here::here("Figures","hie.png"))
 ```  
 
 
