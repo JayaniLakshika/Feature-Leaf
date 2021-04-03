@@ -13,7 +13,7 @@ authors:
     location: Nugegoda, Sri Lanka
     email: ttalagala@sjp.ac.lk
 abstract: |
-  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. In the field of medicinal plants identification, most of the research are done recently based on leaf images. The reason is that leaf images are considered as they contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in idetifying medicinal plants. Image processing, and feature extraction are the most important, challenging, and crucial steps in classifying leaf images. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps are i)Convert original image to RGB image, ii)Gray scaling, iii)Gaussian smoothing, iv)Binary thresholding, v)Remove stalk, vi)Closing holes, and vii)Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified in to four groups as shape, color, texture, and scagnostics. Length, width, area, texture correlation, and monotonocity are some of them. The image processing algorithms are developed based on Python. The algorithms regard to shape, color, and texture features are based on Python, and the scagnostic features are extracted using R. In addition, supervised dimensionality reduction techique as Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to visualize the images in feature space. All the applications are based on flavia, and swedish which are the open source repositories. It is observed that LDA , and PCA perform well for leaf image classification using introduced features.     
+  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. In the field of medicinal plants identification, most of the research are done recently based on leaf images. The reason is that leaf images are considered as they contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in idetifying medicinal plants. Image processing, and feature extraction are the most important, challenging, and crucial steps in classifying leaf images. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps are i)Convert original image to RGB image, ii)Gray scaling, iii)Gaussian smoothing, iv)Binary thresholding, v)Remove stalk, vi)Closing holes, and vii)Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified in to four groups as shape, color, texture, and scagnostics. Length, width, area, texture correlation, and monotonocity are some of them. The image processing algorithms are developed based on Python. The algorithms regard to shape, color, and texture features are based on Python, and the scagnostic features are extracted using R. In addition, supervised dimensionality reduction techique as Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to visualize the images in feature space. All the applications are based on flavia, and swedish which are the open source repositories. It is observed that LDA perform better than PCA for shapes of leaf image classification using introduced features.     
 keywords:
   - Identification
   - Medicinal
@@ -954,11 +954,13 @@ knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 ## Visualization of Leaf Images in the Feature Space
 
 
-|       We used LDA, and PCA to visualize leaf images in feature space. LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on flavia and swedish datasets. To visualize LDA projection shape label is taken as the response variable. There are mainly 5 shape categories. More details about the shape categories are discussed in our next paper.
+|       We used LDA, and PCA to visualize leaf images in feature space. LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on flavia and swedish datasets. To visualize LDA projection shape label is taken as the response variable. There are mainly 5 shape categories as diamond, simple round, round, needle, and heart shape. More details about the shape categories are discussed in our next paper.
 
 ### Swedish Dataset
 
 \textbf{PCA Projection} 
+
+|       The results of the PCA1 and PCA2, and PCA1 and PCA3 projection on swedish dataset shows clear separation among the shapes.
 
 ```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 calculate_pca <- function(feature_dataset){
@@ -1032,6 +1034,8 @@ p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
 
 \textbf{LDA Projection}
 
+|       When consider the LDA results on swedish dataset, LDA1, LDA2, and LDA3 shows the separation of shapes of leaf images.
+
 ```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 LDA <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new)
 
@@ -1079,8 +1083,10 @@ p1h + p2h + p3h + plot_annotation(
 
 ### Flavia Dataset
 
-
 \textbf{PCA projection} 
+
+|        
+
 ```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 
 data_new1 <- read.csv("data_all_with_label_flavia.csv", header = TRUE)
@@ -1137,6 +1143,8 @@ p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
 
 \textbf{LDA Projection}
 
+
+
 ```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 
 LDA1 <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new1)
@@ -1180,7 +1188,7 @@ p1h + p2h + p3h + plot_annotation(
 ) & theme(plot.tag = element_text(size = 8))
 ```
 
-
+|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.
 
 # Software
 
@@ -1208,5 +1216,7 @@ Color features                                                                  
 
 
 # Discussion and Conclusions
+
+|       There are mainly four categories of features that are used to classify leaf images. Many research were based on shape, color, and texture features. In this research paper, we introduced new feature category called scagnostics. Other than that correlation of cartesian coordinate, number of convex points, number of minimum and maximum points are introduced as new shape features. To visualize the leaf images on feature space LDA, and PCA are used. The results are obtained based on flavia and swedish datasets. LDA is performed better than PCA when classifying leaf shapes. More details about the classification of leaf images are described in our next paper. 
 
 # Reference
