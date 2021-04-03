@@ -13,15 +13,20 @@ authors:
     location: Nugegoda, Sri Lanka
     email: ttalagala@sjp.ac.lk
 abstract: |
-  Enter the text of your abstract here.
+  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. In the field of medicinal plants identification, most of the research are done recently based on leaf images. The reason is that leaf images are considered as they contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in idetifying medicinal plants. Image processing, and feature extraction are the most important, challenging, and crucial steps in classifying leaf images. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps are i)Convert original image to RGB image, ii)Gray scaling, iii)Gaussian smoothing, iv)Binary thresholding, v)Remove stalk, vi)Closing holes, and vii)Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified in to four groups as shape, color, texture, and scagnostics. Length, width, area, texture correlation, and monotonocity are some of them. The image processing algorithms are developed based on Python. The algorithms regard to shape, color, and texture features are based on Python, and the scagnostic features are extracted using R. In addition, supervised dimensionality reduction techique as Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to visualize the images in feature space. All the applications are based on flavia, and swedish which are the open source repositories. It is observed that LDA , and PCA perform well for leaf image classification using introduced features.     
 keywords:
-  - scagnostics
-  - image processing
-  - bloo
-  - these are optional and can be removed
+  - Identification
+  - Medicinal
+  - Leaf images
+  - Image processing
+  - Feature extraction
+  - LDA
+  - PCA
 bibliography: references.bib
 biblio-style: unsrt
 output: 
+  pdf_document:
+    extra_dependencies: "subfig"
   rticles::arxiv_article:
     keep_tex: true
 longtable: true
@@ -38,6 +43,7 @@ library(here)
 library(knitr)
 library(tidyverse)
 library(patchwork)
+library(MASS)
 ```
 
 # Introduction
@@ -48,10 +54,9 @@ library(patchwork)
 
 |       One of the most challenging part is to extract distinctive leaf features from the images. Therefore most of the time research more focused on neural network models like CNN [@4458016;@articlepl;@inproceedings] which are complicated and hard to understand what happening inside the algorithm. Feature extraction refers to taking measurements, geometric or otherwise, of possibly segmented, meaningful regions in the image [@articlee]. 
 
-|       A digital image is merely a collection of pixels represented as large matrix of integers corresponding to intensities of colors at different positions of the image [@book1]. The main aim of feature extraction is to reduce dimensionality of this information by obtaining patterns of leaf images. In general shape, colors, and texture contain these patterns. In this paper other than existing features, we are introducing scagnostic features, correlation of cartesian coordinate, and number of minimum and maximum points as new features.  
+|       A digital image is merely a collection of pixels represented as large matrix of integers corresponding to intensities of colors at different positions of the image [@book1]. The main aim of feature extraction is to reduce dimensionality of this information by obtaining patterns of leaf images. In general shape, colors, and texture contain these patterns. In this paper other than existing features, we are introducing scagnostic features, correlation of cartesian coordinate, number of convex points, and number of minimum and maximum points as new features.  
 
-|       The paper is organized as follows. The next section, 2, discuss the datasets that we use to do the experiment. Preprocessing is necessary before extracting features from the images. Steps of image processing of leaf images describes in section 3. In section 4, discuss about feature extraction in in-detail because features are highly influenced by the plant species to be classified. The next section, 5, show the experimental results for two existing datasets. The details about software and packages that use to extract the features are discussed in section 6. In section 7, discuss about visualization of leaf images in the feature space. Some discussion about the outputs and concluding remarks are given in last section.       
-
+|       The paper is organized as follows. In the first section, describes about the steps of image processing. Preprocessing is necessary before extracting features from the images. In section 2, discusses about feature extraction in in-detail because features are highly influenced by the plant species to be classified. Under this section, we discuss about mainly four types of features as shape, color, texture, and scagnostics and how to extract them. The next section 3, discuss about applications of leaf features. This section consists of details about the datasets that are used to explain the applications, and visualization of leaf images in the feature space using supervised, and unsupervised dimensionality reduction techniques. In section 4, consist of summary of the software and packages that use to extract the features. Some discussion about the outputs and concluding remarks are given in last section.
 
 # Image Processing
 
@@ -61,7 +66,7 @@ library(patchwork)
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:test2}Image processing"}
-knitr::include_graphics(here::here("Figures","fl5.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 ``` 
 
 
@@ -69,7 +74,7 @@ knitr::include_graphics(here::here("Figures","fl5.png"))
 |       In classifying plant species the focus was on the leaf which has a simple arrangement as shown in Figure \ref{simplearra}. A single leaf that is never divided into smaller leaflet units is know as a leaf with simple arrangement. That leaf is always attached to a twing by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed. 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{simplearra}Leaf with simple arrangement"}
-knitr::include_graphics(here::here("Figures","simple_leaf_parts.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
 ``` 
 
 ### Step 1: Converting BGR Image to RGB
@@ -172,7 +177,7 @@ Set $u = u+1$                                             \\ \hline
 |       Other than the main image processing techniques, the following two techniques are applied in some or all cases as an image processing techniques after image thresholding.
 
 
-*) \textbf{Remove Stalk}
+\textbf{Remove Stalk}
 
 |       Remove the petiole (stalk) of leaf image is another version of thresholding process. Thresholding is applied after finding the sure foreground area. To find the sure foreground area, distance transform technique is used.  Binary image is used as the input of distance transform technique. In distance transform technique, image is created by assigning a number for each object pixel that corresponds to the distance to the nearest background pixel. The distance is calculated using the euclidean distance (\ref{eu}). After finding the sure foreground area, Otsu's binarization is applied again as the thresholding technique.
 
@@ -186,11 +191,11 @@ where $n$ = n-space
 $q_i,p_i$ = Euclidean vectors, starting from the origin of the space
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:rst}Remove stalk"}
-knitr::include_graphics(here::here("Figures","remove_stalk.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
 ```
 
 
-*) \textbf{Closing Holes}
+\textbf{Closing Holes}
 
 |       Closing holes is followed by noise removal technique which demonstrates the closing effect. Closing effect is used to remove small holes inside the foreground objects. Closing holes is a result of morphological transformation. morphological transformation are the operations based on image shape. Binary image is used as one input in morphological transformation. Kernel or structuring element which decides the nature of the operation is used as the second input. There are two morphological operators as Erosion and Dilation. Closing is a variant form of morphological operators which is used in closing holes process. Closing is also know as Dilation followed by Erosion.
 
@@ -207,7 +212,7 @@ knitr::include_graphics(here::here("Figures","remove_stalk.png"))
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:chl}Closing holes"}
-knitr::include_graphics(here::here("Figures","close_holes.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 ```
 
 
@@ -217,7 +222,7 @@ knitr::include_graphics(here::here("Figures","close_holes.png"))
 
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img33}Example of geometric transformation"}
-knitr::include_graphics(here::here("Figures","feature_hie.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 ```
 
 
@@ -231,19 +236,15 @@ knitr::include_graphics(here::here("Figures","feature_hie.png"))
 	
 	
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img3}Example of geometric transformation"}
-knitr::include_graphics(here::here("Figures","geomatric_transformation.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","geomatric_transformation.png"))
 ```
 	
 	
 |       The finding contour function doesn’t work when the center of the leaf image is not in the contour. Therefore if the translation is applied away from the contour \ref{trans}, then function can’t identify the contour. Inappropriate scaling (see figure \ref{scal}) also arises problems in the calculation. If the leaf image is really small, the function also hard to recognize the contour. Therefore taking the closest photo of the leaf images by keeping them in the center of the white paper is more suitable.
 
-```{r, echo=FALSE, out.width="10%", fig.align='center',fig.cap="\\label{trans}Inappropriate translation"}
-knitr::include_graphics(here::here("Figures","trans.jpg"))
-``` 
-
-
-```{r, echo=FALSE, out.width="10%", fig.align='center',fig.cap="\\label{scal}Inappropriate scaling"}
-knitr::include_graphics(here::here("Figures","scaling.jpg"))
+```{r , echo=FALSE, fig.cap="", out.width='20%', fig.align = "center", fig.ncol = 2, fig.subcap=c('Inappropriate translation','Inappropriate scaling')}
+knitr::include_graphics(here::here("leaffeatures","Figures","trans.jpg"))
+knitr::include_graphics(here::here("leaffeatures","Figures","scaling.jpg"))
 ``` 
 
 ## Contours
@@ -251,7 +252,7 @@ knitr::include_graphics(here::here("Figures","scaling.jpg"))
 Simply contour (see figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same colour or intensity.
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{cnt}Extract contour of the leaf image"}
-knitr::include_graphics(here::here("Figures","cnt.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","cnt.png"))
 ```  
 
 
@@ -259,7 +260,7 @@ knitr::include_graphics(here::here("Figures","cnt.png"))
 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{scalimg4}Categorization of shape features"}
-knitr::include_graphics(here::here("Figures","shape_chart.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
 ```  
 
 
@@ -270,42 +271,35 @@ knitr::include_graphics(here::here("Figures","shape_chart.png"))
 
 |       Diameter is defined as the longest distance between any two points on the margin of the leaf [@articlee].
 
-|       To calculate the diameter of the leaf image, firstly we have to find the contour of the leaf image. Then we have to select all pair of contour points and measure the Euclidean distance (\ref{equa_shape}) between the two points separately. Finally have to find the maximum distance among the calculated distances. (see figure \ref{shape1}) 
+|       To calculate the diameter of the leaf image, firstly we have to find the contour of the leaf image. Then we have to select all pair of contour points and measure the Euclidean distance (equation \ref{equa_shape}) between the two points separately. Finally have to find the maximum distance among the calculated distances. (see figure \ref{shape1}) 
 
 \begin{equation}
-    d\left( A,B\right)   = \sqrt {\sum _{i=1}^{n}  \left( q_{i}-p_{i}\right)^2 }
+    d\left( A,B\right)   = \sqrt {\sum _{i=1}^{n}  \left( q_{i}-p_{i}\right)^2}
 \label{equa_shape}
 \end{equation}
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape1}Logic behind calculation of diameter"}
-knitr::include_graphics(here::here("Figures","d_cal.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
 ```  
-
 
 
 ## Physiological length and Physiological width
 
-|       There are horizontal, vertical and rotated leaf images in the datasets (Flavia, Swedish, Actual and Kaggle). Kaggle leaf image dataset is only consist of horizontal and vertical leaf images. Therefore straight bounding rectangle is enough to extract Physiological length and Physiological width of leaf images.
+|       There are horizontal, vertical and angled leaf images in the datasets (Flavia, Swedish). The straight bounding rectangle is enough to extract physiological length and physiological width of horizontal, and vertical leaf images.
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight(Horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
-knitr::include_graphics(here::here("Figures","act3.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","act3.png"))
 ```  
 
 
-|       But straight bounding rectangle of rotated image doesn't give the correct values for Physiological length and Physiological width of leaf images.
+|       But straight bounding rectangle of angled image doesn't give the correct values for Physiological length and Physiological width of leaf images.
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act1}Bounded rectangle of rotated leaf image in Actual leaf image dataset"}
-knitr::include_graphics(here::here("Figures","act1.png"))
-```  
-
-
+```{r , echo=FALSE, fig.cap="", out.width='30%', fig.align = "center", fig.ncol = 2, fig.subcap=c('Bounded rectangle of rotated leaf image in Actual leaf image dataset','Rotated rectangle of angled leaf image in Actual leaf image dataset')}
+knitr::include_graphics(here::here("leaffeatures","Figures","act1.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","act2.png"))
+``` 
 
 |       To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images.
-
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{act2}Rotated rectangle of angled leaf image in Actual leaf image dataset"}
-knitr::include_graphics(here::here("Figures","act2.png"))
-```  
-
 
 |       There are two types of bounding rectangles.
 
@@ -326,30 +320,30 @@ This bounding rectangle is drawn with minimum area. Therefore the rotation of th
 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areshape1}Area"}
-knitr::include_graphics(here::here("Figures","c8.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
 ```  
 
 
 ## Roundness/ Circularity
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape3}Circularity"}
-knitr::include_graphics(here::here("Figures","c6.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
 ```  
 
 ## Compactness
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape4}Compactness"}
-knitr::include_graphics(here::here("Figures","c10.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c10.png"))
 ```  
 
 ## Eccentricity
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape5}Eccentricity"}
-knitr::include_graphics(here::here("Figures","c9.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c9.png"))
 ```  
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape6}Ellipse"}
-knitr::include_graphics(here::here("Figures","c11.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
 ```  
 
 \begin{equation}
@@ -359,7 +353,7 @@ knitr::include_graphics(here::here("Figures","c11.png"))
 ## Convexity
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape7}Convexity"}
-knitr::include_graphics(here::here("Figures","c7.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c7.png"))
 ```  
 
 
@@ -371,7 +365,7 @@ The more details about convex hull can be found in the convex hull under scagnos
 ## Number of Minimum and Maximum Points
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{mn}Minimum and Maximum Points"}
-knitr::include_graphics(here::here("Figures","mn.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 ```  
 
 
@@ -419,10 +413,6 @@ Equivalent diameter ($D_{E}$)                                                   
 \end{longtable}
 \end{center}
 
-
-
-
-
 ## Texture Features
 
 |       Texture is the term used to describe the surface of a given object or appearance and is undoubtedly a main feature used in computer vision and pattern recognition [@articlee]. Texture can only be assessed for a group of pixels whereas colour is usually a property of a pixel. Generally, texture is associated with the feel of various materials to human touch and texture image analysis is based on visual interpretation [@articlee] of this feeling. Leaf surface is a natural texture which has random persistent patterns and do not show detectable quasi-periodic structure [@articlee]. Therefore, several authors claim fractal theory to be better suited than statistical, spectral, and structural approaches for describing these natural textures [@articlee].
@@ -444,8 +434,8 @@ p(N_{g},1) & p(N_{g},2) & \cdot &\cdot &\cdot & p(N_{g},N_{g})
 
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{direction}Four directions of adjacency as defined for calculation of the Haralick texture features"}
-knitr::include_graphics(here::here("Figures","GLMC_direction.png"))
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{direction}Four directions of adjacency as defined for calculation of the Haralick texture features"}
+knitr::include_graphics(here::here("leaffeatures","Figures","GLMC_direction.png"))
 ```    
     
 	    
@@ -481,11 +471,11 @@ $$\sigma_{y} = \sum_{j}^{}(j-\mu_{y})^2\sum_{i}^{}p(i,j)$$
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{img1}Computing the Haralick texture features from a 4 × 4 example image step by step"}
-knitr::include_graphics(here::here("Figures","GLMC1.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","GLMC1.png"))
 ```  
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{img2}Computing the Haralick texture features from a 4 × 4 example image with all direction"}
-knitr::include_graphics(here::here("Figures","GLMC2.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","GLMC2.png"))
 ```  
 	
 	
@@ -498,8 +488,8 @@ knitr::include_graphics(here::here("Figures","GLMC2.png"))
 
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{leafimg}"}
-knitr::include_graphics(here::here("Figures","leaf_img.png"))
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{leafimg}"}
+knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 ```
 
 
@@ -548,7 +538,7 @@ where M and N are dimensions of a leaf image and $p_{xy}$ is the intensity value
 
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{scagimg}Hierarchy of Scagnostics"}
-knitr::include_graphics(here::here("Figures","scag.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","scag.png"))
 ```
 
 
@@ -583,7 +573,7 @@ Scagnostic measures are based on following definitions.
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg5}Graph with 5 vertices and 5 edges"}
-knitr::include_graphics(here::here("Figures","c4.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c4.png"))
 ```
 
 ### Minimum Spanning Tree (MST)
@@ -647,7 +637,7 @@ The graph can have more than one spanning tree.
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg4}Convex hull and alpha hull"}
-knitr::include_graphics(here::here("Figures","c5.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
 ```
 
 
@@ -701,7 +691,7 @@ where $q_{75}$ is the 75th percentile of the MST edge lengths and $(q_{75} - q_{
 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{scagimg6}Vertices of degree 2"}
-knitr::include_graphics(here::here("Figures","c3.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c3.png"))
 ```
 
 \begin{table}[h!]
@@ -813,9 +803,9 @@ where $\omega$ is the weight function (\ref{w2}).
 |       The ratio of the area of the alpha hall(A) and the area of the convex hull(H) is the base of measuring convexity. 
 
 
-```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{scagimg21}"}
-knitr::include_graphics(here::here("Figures","c1.png"))
-```
+$$Ratio = \frac{area(A)}{area(H)}\Bigg\{^{(=1); \text{ if the nonconvex hull and convex hull have identical areas}}_{(\neq1) ; \text{ otherwise}}$$
+
+`
 
 
 \begin{itemize}
@@ -829,9 +819,8 @@ knitr::include_graphics(here::here("Figures","c1.png"))
 
 |       Roughly, the skinny is measured by using the corrected and normalized ratio of perimeter to area of a polygon measures.
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg31}"}
-knitr::include_graphics(here::here("Figures","c2.png"))
-```
+$$C_{Skinny} = \Bigg\{^{0; \text{ if circle}}_{\text{Near } 1 ; \text{ if skinny}}$$
+
 
 \begin{itemize}
     \item Stringy
@@ -865,12 +854,10 @@ number of single-degree vertices, skinny measure is calculated.
 
 |        In calculating monotonicity, squared the coefficient because to consider the large values and to remove the distinction between positive and negative coefficients (Because assume that the investigators are more interested in strong relationships rather than negative or positive).
 	
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagnostics}Exploring scatter plots by their scagnostics"}
-knitr::include_graphics(here::here("Figures","sca.png"))
-```	
+
 	
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scp}Preprocessing for Scagnostics"}
-knitr::include_graphics(here::here("Figures","scp.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","scp.png"))
 ```	
 
 
@@ -879,8 +866,27 @@ knitr::include_graphics(here::here("Figures","scp.png"))
 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{pc}Polar coordinate"}
-knitr::include_graphics(here::here("Figures","pc.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","pc.png"))
 ```	
+
+
+# Example
+
+|       There are two color image leaf datasets (Flavia ,Swedish) are used. After passing through the required image processing steps, binary image is extracted which has a white foreground and black background.
+
+
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
+knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
+```	
+
+
+|       The leaf images are taken as the closest ones. Therefore to find the best contour among several contours, can use the contour which contains the center of leaf image. Identify the best contour is really important when extracting shape features.
+
+
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{flexe}Example feature extraction of Flavia dataset"}
+knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
+```	
+
 
 
 # Application of features to classify images
@@ -897,7 +903,7 @@ knitr::include_graphics(here::here("Figures","pc.png"))
 
 
 ```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{slp1}Sample of Flavia dataset"}
-knitr::include_graphics(here::here("Figures","flavia_images.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png"))
 ```
 
 
@@ -909,31 +915,229 @@ knitr::include_graphics(here::here("Figures","flavia_images.png"))
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{slp2}Sample of Swedish leaf dataset"}
-knitr::include_graphics(here::here("Figures","swedish_data.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 ```
 
 
-# Example
-
-|       There are two color image leaf datasets (Flavia ,Swedish) are used. After passing through the required image processing steps, binary image is extracted which has a white foreground and black background.
+## Visualization of Leaf Images in the Feature Space
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
-knitr::include_graphics(here::here("Figures","fl5.png"))
-```	
+|       We used LDA, and PCA to visualize leaf images in feature space. LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on flavia and swedish datasets. 
+
+### Swedish Dataset
+
+\textbf{PCA projection} 
+```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
+calculate_pca <- function(feature_dataset){
+  pcaY_cal <- prcomp(feature_dataset, center = TRUE, scale = TRUE)
+  PCAresults <- data.frame(PC1 = pcaY_cal$x[, 1], 
+                           PC2 = pcaY_cal$x[, 2], 
+                           PC3 = pcaY_cal$x[, 3],
+                           PC4 = pcaY_cal$x[, 4],
+                           PC5 = pcaY_cal$x[, 5])
+  return(list(prcomp_out =pcaY_cal,pca_components = PCAresults))
+}
+pca_projection <- function(prcomp_out, data_to_project){
+  
+  PCA <- scale(data_to_project, prcomp_out$center, prcomp_out$scale) %*% prcomp_out$rotation
+  pca_projected <- data.frame(PC1=PCA[,1], PC2=PCA[,2], PC3=PCA[,3]) 
+  return(pca_projected)
+  
+}
+data_new <- read.csv("data_all_with_label.csv", header = TRUE)
+features <- data_new[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
+pca_ref_calc <- calculate_pca(features)
+# combine features and PCs' into a one dataframe
+data_new$PC1 <- pca_ref_calc$pca_components$PC1
+data_new$PC2 <- pca_ref_calc$pca_components$PC2
+data_new$PC3 <- pca_ref_calc$pca_components$PC3
+data_new$PC4 <- pca_ref_calc$pca_components$PC4
+data_new$PC5 <- pca_ref_calc$pca_components$PC5
+
+p11 <- ggplot(data_new, aes(x=PC1, y=PC2, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA2 by Actual Shape Label") + xlab("PCA1") + ylab("PCA2") + theme(aspect.ratio = 1) 
+
+p12 <- ggplot(data_new, aes(x=PC1, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA3 by Actual Shape Label") + xlab("PCA1") + ylab("PCA3") + theme(aspect.ratio = 1) 
+
+p13 <- ggplot(data_new, aes(x=PC1, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA4 by Actual Shape Label") + xlab("PCA1") + ylab("PCA4") + theme(aspect.ratio = 1) 
+
+p14 <- ggplot(data_new, aes(x=PC1, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA5 by Actual Shape Label") + xlab("PCA1") + ylab("PCA5") + theme(aspect.ratio = 1) 
+
+p15 <- ggplot(data_new, aes(x=PC2, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA3 by Actual Shape Label") + xlab("PCA2") + ylab("PCA3") + theme(aspect.ratio = 1) 
+
+p16 <- ggplot(data_new, aes(x=PC2, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA4 by Actual Shape Label") + xlab("PCA2") + ylab("PCA4") + theme(aspect.ratio = 1) 
+
+p17 <- ggplot(data_new, aes(x=PC2, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA5 by Actual Shape Label") + xlab("PCA2") + ylab("PCA5") + theme(aspect.ratio = 1) 
+
+p18 <- ggplot(data_new, aes(x=PC3, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA4 by Actual Shape Label") + xlab("PCA3") + ylab("PCA4") + theme(aspect.ratio = 1) 
+
+p19 <- ggplot(data_new, aes(x=PC3, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA5 by Actual Shape Label") + xlab("PCA3") + ylab("PCA5") + theme(aspect.ratio = 1) 
+
+p1h1 <- p11 + theme(legend.position = "none") + theme(plot.title = element_blank())
+
+p2h1 <- p12 + theme(legend.position = "none") + theme(plot.title = element_blank())
+
+p3h1 <- p13 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p4h1 <- p14 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p5h1 <- p15 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p6h1 <- p16 + theme(legend.position = "none") + theme(plot.title = element_blank())
+
+p7h1 <- p17 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p8h1 <- p18 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p9h1 <- p19 + theme(plot.title = element_blank())
+
+p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
+  title = 'PCA with Actual shape label',
+  tag_levels = 'A'
+) & theme(plot.tag = element_text(size = 5))
 
 
-|       The leaf images are taken as the closest ones. Therefore to find the best contour among several contours, can use the contour which contains the center of leaf image. Identify the best contour is really important when extracting shape features.
+
+LDA <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new)
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{flexe}Example feature extraction of Flavia dataset"}
-knitr::include_graphics(here::here("Figures","fl_example.png"))
-```	
+LDA.values <- predict(LDA)
+
+lda_data_new <- data.frame(LDA1 = LDA.values$x[,1], LDA2 = LDA.values$x[,2], LDA3 = LDA.values$x[,3], Shape_label = data_new$Shape_label)
+
+
+
+lda_data <- data.frame(x = LDA.values$x[,1], y = LDA.values$x[,2], col = data_new$Shape_label)
+scagnostic_lda <- bind_cols(data_new, lda_data)
+
+p1 <- ggplot(scagnostic_lda, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA2 by Actual Shape Label") + xlab("LDA1") + ylab("LDA2") + theme(aspect.ratio = 1) 
+
+p1b <- p1 + theme(legend.position = "none")
+
+lda_data_1 <- data.frame(x = LDA.values$x[,1], y = LDA.values$x[,3], col = data_new$Shape_label)
+scagnostic_lda_1 <- bind_cols(data_new, lda_data_1)
+
+p1_1 <- ggplot(scagnostic_lda_1, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA3 by Actual shape label") + xlab("LDA1") + ylab("LDA3") + theme(aspect.ratio = 1) 
+p2b <- p1_1 + theme(legend.position = "none")
+
+lda_data_2 <- data.frame(x = LDA.values$x[,2], y = LDA.values$x[,3], col = data_new$Shape_label)
+scagnostic_lda_2 <- bind_cols(data_new, lda_data_2)
+
+p1_2 <- ggplot(scagnostic_lda_2, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA2 Vs LDA3 by Actual shape label") + xlab("LDA2") + ylab("LDA3") + theme(aspect.ratio = 1) 
+
+p3b <- p1_2 + theme(legend.position = "none")
+
+p1h <- p1b + theme(plot.title = element_blank())
+
+p2h <- p2b + theme(plot.title = element_blank())
+
+p3h <- p1_2 + theme(plot.title = element_blank())
+
+p1h + p2h + p3h + plot_annotation(
+  title = 'LDA with Actual shape label',
+  tag_levels = 'A'
+) & theme(plot.tag = element_text(size = 8))
+```
 
 
 
 
+### Flavia Dataset
 
+
+\textbf{PCA projection} 
+```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
+
+data_new1 <- read.csv("data_all_with_label_flavia.csv", header = TRUE)
+features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
+pca_ref_calc1 <- calculate_pca(features1)
+# combine features and PCs' into a one dataframe
+data_new1$PC1 <- pca_ref_calc1$pca_components$PC1
+data_new1$PC2 <- pca_ref_calc1$pca_components$PC2
+data_new1$PC3 <- pca_ref_calc1$pca_components$PC3
+data_new1$PC4 <- pca_ref_calc1$pca_components$PC4
+data_new1$PC5 <- pca_ref_calc1$pca_components$PC5
+
+p111 <- ggplot(data_new1, aes(x=PC1, y=PC2, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA2 by Actual Shape Label") + xlab("PCA1") + ylab("PCA2") + theme(aspect.ratio = 1) 
+
+p121 <- ggplot(data_new1, aes(x=PC1, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA3 by Actual Shape Label") + xlab("PCA1") + ylab("PCA3") + theme(aspect.ratio = 1) 
+
+p131 <- ggplot(data_new1, aes(x=PC1, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA4 by Actual Shape Label") + xlab("PCA1") + ylab("PCA4") + theme(aspect.ratio = 1) 
+
+p141 <- ggplot(data_new1, aes(x=PC1, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA5 by Actual Shape Label") + xlab("PCA1") + ylab("PCA5") + theme(aspect.ratio = 1) 
+
+p151 <- ggplot(data_new1, aes(x=PC2, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA3 by Actual Shape Label") + xlab("PCA2") + ylab("PCA3") + theme(aspect.ratio = 1) 
+
+p161 <- ggplot(data_new1, aes(x=PC2, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA4 by Actual Shape Label") + xlab("PCA2") + ylab("PCA4") + theme(aspect.ratio = 1) 
+
+p171 <- ggplot(data_new1, aes(x=PC2, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA5 by Actual Shape Label") + xlab("PCA2") + ylab("PCA5") + theme(aspect.ratio = 1) 
+
+p181 <- ggplot(data_new1, aes(x=PC3, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA4 by Actual Shape Label") + xlab("PCA3") + ylab("PCA4") + theme(aspect.ratio = 1) 
+
+p191 <- ggplot(data_new1, aes(x=PC3, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA5 by Actual Shape Label") + xlab("PCA3") + ylab("PCA5") + theme(aspect.ratio = 1) 
+
+p1h2 <- p111 + theme(legend.position = "none") + theme(plot.title = element_blank())
+
+p2h2 <- p121 + theme(legend.position = "none") + theme(plot.title = element_blank())
+
+p3h2 <- p131 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p4h2 <- p141 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p5h2 <- p151 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p6h2 <- p161 + theme(legend.position = "none") + theme(plot.title = element_blank())
+
+p7h2 <- p171 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p8h2 <- p181 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+
+p9h2 <- p191 + theme(plot.title = element_blank())
+
+p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
+  title = 'PCA with Actual shape label',
+  tag_levels = 'A'
+) & theme(plot.tag = element_text(size = 5))
+
+LDA1 <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new1)
+
+
+LDA.values1 <- predict(LDA1)
+
+lda_data_new1 <- data.frame(LDA1 = LDA.values1$x[,1], LDA2 = LDA.values1$x[,2], LDA3 = LDA.values1$x[,3], Shape_label = data_new1$Shape_label)
+
+
+
+lda_data1 <- data.frame(x = LDA.values1$x[,1], y = LDA.values1$x[,2], col = data_new1$Shape_label)
+scagnostic_lda1 <- bind_cols(data_new1, lda_data1)
+
+p1 <- ggplot(scagnostic_lda1, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA2 by Actual Shape Label") + xlab("LDA1") + ylab("LDA2") + theme(aspect.ratio = 1) 
+
+p1b <- p1 + theme(legend.position = "none")
+
+lda_data_11 <- data.frame(x = LDA.values1$x[,1], y = LDA.values1$x[,3], col = data_new1$Shape_label)
+scagnostic_lda_11 <- bind_cols(data_new1, lda_data_11)
+
+p1_11 <- ggplot(scagnostic_lda_11, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA3 by Actual shape label") + xlab("LDA1") + ylab("LDA3") + theme(aspect.ratio = 1) 
+
+p2b1 <- p1_11 + theme(legend.position = "none")
+
+lda_data_21 <- data.frame(x = LDA.values1$x[,2], y = LDA.values1$x[,3], col = data_new1$Shape_label)
+scagnostic_lda_21 <- bind_cols(data_new1, lda_data_21)
+
+p1_21 <- ggplot(scagnostic_lda_21, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA2 Vs LDA3 by Actual shape label") + xlab("LDA2") + ylab("LDA3") + theme(aspect.ratio = 1) 
+p3b1 <- p1_21 + theme(legend.position = "none")
+
+p1h <- p1b + theme(plot.title = element_blank())
+
+p2h <- p2b + theme(plot.title = element_blank())
+
+p3h <- p1_2 + theme(plot.title = element_blank())
+
+p1h + p2h + p3h + plot_annotation(
+  title = 'LDA with Actual shape label',
+  tag_levels = 'A'
+) & theme(plot.tag = element_text(size = 8))
+```
 
 
 
@@ -963,122 +1167,6 @@ Color features                                                                  
 
 
 
-# Visualization of Leaf Images in the Feature Space
-
-## Swedish Dataset
-
-### PCA projection 
-```{r, comment=NA, message=FALSE, warning=FALSE, echo=FALSE, fig.align='center'}
-calculate_pca <- function(feature_dataset){
-  pcaY_cal <- prcomp(feature_dataset, center = TRUE, scale = TRUE)
-  PCAresults <- data.frame(PC1 = pcaY_cal$x[, 1], 
-                           PC2 = pcaY_cal$x[, 2], 
-                           PC3 = pcaY_cal$x[, 3],
-                           PC4 = pcaY_cal$x[, 4],
-                           PC5 = pcaY_cal$x[, 5])
-  return(list(prcomp_out =pcaY_cal,pca_components = PCAresults))
-}
-
-pca_projection <- function(prcomp_out, data_to_project){
-  
-  PCA <- scale(data_to_project, prcomp_out$center, prcomp_out$scale) %*% prcomp_out$rotation
-  pca_projected <- data.frame(PC1=PCA[,1], PC2=PCA[,2], PC3=PCA[,3]) 
-  return(pca_projected)
-  
-}
-
-data_new <- read.csv("data_all_with_label.csv", header = TRUE)
-
-features <- data_new[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
-
-pca_ref_calc <- calculate_pca(features)
-# combine features and PCs' into a one dataframe
-data_new$PC1 <- pca_ref_calc$pca_components$PC1
-data_new$PC2 <- pca_ref_calc$pca_components$PC2
-data_new$PC3 <- pca_ref_calc$pca_components$PC3
-data_new$PC4 <- pca_ref_calc$pca_components$PC4
-data_new$PC5 <- pca_ref_calc$pca_components$PC5
-
-
-p1 <- ggplot(data_new,aes(x=PC1,y=PC2, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p2 <- ggplot(data_new,aes(x=PC1,y=PC3, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p3 <- ggplot(data_new,aes(x=PC2,y=PC3, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p4 <- ggplot(data_new,aes(x=PC1,y=PC4, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p5 <- ggplot(data_new,aes(x=PC1,y=PC5, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p6 <- ggplot(data_new,aes(x=PC2,y=PC4, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p7 <- ggplot(data_new,aes(x=PC2,y=PC5, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p8 <- ggplot(data_new,aes(x=PC3,y=PC4, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = "none")
-
-p9 <- ggplot(data_new,aes(x=PC3,y=PC5, col=Shape_label)) + 
-  geom_point() +coord_equal() + theme(legend.position = c(-0.9,-0.62) ,legend.direction = "horizontal")
-
-p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8 + p9 + plot_layout(ncol = 3, widths = c(3,3))
-```
-
-
-## Flavia Dataset
-
-### PCA projection 
-```{r, comment=NA, message=FALSE, warning=FALSE, echo=FALSE, fig.align='center'}
-
-data_new <- read.csv("data_all_with_label_flavia.csv", header = TRUE)
-
-features <- data_new[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
-
-pca_ref_calc <- calculate_pca(features)
-# combine features and PCs' into a one dataframe
-data_new$PC1 <- pca_ref_calc$pca_components$PC1
-data_new$PC2 <- pca_ref_calc$pca_components$PC2
-data_new$PC3 <- pca_ref_calc$pca_components$PC3
-data_new$PC4 <- pca_ref_calc$pca_components$PC4
-data_new$PC5 <- pca_ref_calc$pca_components$PC5
-
-
-p11 <- ggplot(data_new,aes(x=PC1,y=PC2, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p12 <- ggplot(data_new,aes(x=PC1,y=PC3, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p13 <- ggplot(data_new,aes(x=PC2,y=PC3, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p14 <- ggplot(data_new,aes(x=PC1,y=PC4, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p15 <- ggplot(data_new,aes(x=PC1,y=PC5, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p16 <- ggplot(data_new,aes(x=PC2,y=PC4, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p17 <- ggplot(data_new,aes(x=PC2,y=PC5, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p18 <- ggplot(data_new,aes(x=PC3,y=PC4, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = "none")
-
-p19 <- ggplot(data_new,aes(x=PC3,y=PC5, col=Shape_label)) + 
-  geom_point() +coord_equal()+ theme(legend.position = c(-0.9,-0.62) ,legend.direction = "horizontal")
-
-
-p11 + p12 + p13 + p14 + p15 + p16 + p17 + p18 + p19 + plot_layout(ncol = 3, widths = c(3,3))
-```
 
 # Discussion and Conclusions
 
