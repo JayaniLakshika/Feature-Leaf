@@ -285,21 +285,22 @@ knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
 
 ## Physiological length and Physiological width
 
+|       According to the authors in @articlepl, the physiological length is measured based on the main vein of leaf, as it stretches from the main vein to the end tip. The physiological width is the span of leaf viewed from one side to the other, from the leftmost point to the rightmost point of leaf [@articlepl].
+
 |       There are horizontal, vertical and angled leaf images in the datasets (Flavia, Swedish). The straight bounding rectangle is enough to extract physiological length and physiological width of horizontal, and vertical leaf images.
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight(Horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
 knitr::include_graphics(here::here("leaffeatures","Figures","act3.png"))
 ```  
 
-
-|       But straight bounding rectangle of angled image doesn't give the correct values for Physiological length and Physiological width of leaf images.
+|       But straight bounding rectangle of angled image doesn't give the correct values for physiological length and physiological width of leaf images.
 
 ```{r , echo=FALSE, fig.cap="", out.width='30%', fig.align = "center", fig.ncol = 2, fig.subcap=c('Bounded rectangle of rotated leaf image in Actual leaf image dataset','Rotated rectangle of angled leaf image in Actual leaf image dataset')}
 knitr::include_graphics(here::here("leaffeatures","Figures","act1.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","act2.png"))
 ``` 
 
-|       To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images.
+|       To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. The physiological length of the leaf image is the length of the rectangle. The physiological width of the leaf image is the width of the rectangle.
 
 |       There are two types of bounding rectangles.
 
@@ -318,6 +319,11 @@ This bounding rectangle is drawn with minimum area. Therefore the rotation of th
 
 ## Area
 
+|       Area is defined as the product of thresholding process [@articlepl]. Pixel [@articlepl] which is represented by the number 0 defines the leaf area.
+
+|       OpenCV package in python is used to measure the area of the leaf. Firstly have to extract the best contour and based on the contour area is measured. Number of pixels covered by the contour is the measure of area of leaf image. 
+
+|       Figure \ref{areshape1} shows that the changes of the shape when the area is increasing.
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areshape1}Area"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
@@ -326,11 +332,29 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
 
 ## Roundness/ Circularity
 
+|       According to @articlee, roundness is named as aka form factor, circularity, or isoperimetric factor. Roundness of leaf image illustrates the difference between organ and a circle [@articlee]. Equation \ref{calround} is used to calculate roundness.
+
+\begin{equation}
+    R = \frac{4 \pi A}{P^2}
+\label{calround}
+\end{equation}
+
+|       Figure \ref{shape3} shows what happen to the shape when the roundness measure is changed.
+
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape3}Circularity"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
 ```  
 
 ## Compactness
+
+|       Compactness is closely related to roundness. Authors in @articlee defined as compactness as the ratio of the perimeter over the leaf image's area (see equation \ref{calcompact}).      
+
+\begin{equation}
+    C = \frac{P^2}{A}
+\label{calcompact}
+\end{equation}
+
+|       Compactness measure is increasing (see figure \ref{shape4}), means that the leaf image is fitted to a circle and compact within the circle area. 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape4}Compactness"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c10.png"))
@@ -338,9 +362,13 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c10.png"))
 
 ## Eccentricity
 
+|       Eccentricity is definitive characteristic of any conic section of a leaf [@articlep]. Eccentricity is calculated using equation \ref{eqecc}.
+
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape5}Eccentricity"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c9.png"))
 ```  
+
+|       OpenCV package in Python is used to extract the ellipse of the leaf image. 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape6}Ellipse"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
@@ -348,14 +376,16 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
 
 \begin{equation}
     Eccentricity = \sqrt{1-\frac{b^2}{a^2}}
+    \label{eqecc}
 \end{equation}
 
 ## Convexity
 
+|       Convexity measures of leaf images are based on the convex hull that is extracted from the OpenCV package in python.
+
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape7}Convexity"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c7.png"))
 ```  
-
 
 
 ## Convex hull
@@ -363,6 +393,8 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c7.png"))
 The more details about convex hull can be found in the convex hull under scagnostics features.
 
 ## Number of Minimum and Maximum Points
+
+|       Number of minimum, and maximum points is a new measure which is obtained from the polar coordinate of leaf contour. Number of global maximum points are defined as number of maximum points. Number of global minimum points are defined as number of minimum points. 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{mn}Minimum and Maximum Points"}
 knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
@@ -922,11 +954,12 @@ knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 ## Visualization of Leaf Images in the Feature Space
 
 
-|       We used LDA, and PCA to visualize leaf images in feature space. LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on flavia and swedish datasets. 
+|       We used LDA, and PCA to visualize leaf images in feature space. LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on flavia and swedish datasets. To visualize LDA projection shape label is taken as the response variable. There are mainly 5 shape categories. More details about the shape categories are discussed in our next paper.
 
 ### Swedish Dataset
 
-\textbf{PCA projection} 
+\textbf{PCA Projection} 
+
 ```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 calculate_pca <- function(feature_dataset){
   pcaY_cal <- prcomp(feature_dataset, center = TRUE, scale = TRUE)
@@ -995,8 +1028,11 @@ p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
   tag_levels = 'A'
 ) & theme(plot.tag = element_text(size = 5))
 
+```
 
+\textbf{LDA Projection}
 
+```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 LDA <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new)
 
 
@@ -1097,6 +1133,11 @@ p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
   title = 'PCA with Actual shape label',
   tag_levels = 'A'
 ) & theme(plot.tag = element_text(size = 5))
+```
+
+\textbf{LDA Projection}
+
+```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 
 LDA1 <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new1)
 
@@ -1164,8 +1205,6 @@ Color features                                                                  
 \caption{Software in feature extraction}
 \label{swfe}
 \end{table}
-
-
 
 
 # Discussion and Conclusions
