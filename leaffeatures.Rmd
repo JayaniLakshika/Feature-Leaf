@@ -1044,7 +1044,7 @@ pca_projection <- function(prcomp_out, data_to_project){
   return(pca_projected)
   
 }
-data_new <- read.csv("data_all_with_label.csv", header = TRUE)
+data_new <- read.csv("data/Swedish_dataset/data_all_with_label.csv", header = TRUE)
 features <- data_new[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
 pca_ref_calc <- calculate_pca(features)
 # combine features and PCs' into a one dataframe
@@ -1154,7 +1154,7 @@ p1h + p2h + p3h + plot_annotation(
 
 ```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
 
-data_new1 <- read.csv("data_all_with_label_flavia.csv", header = TRUE)
+data_new1 <- read.csv("data/Flavia_dataset/data_all_with_label_flavia.csv", header = TRUE)
 features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
 pca_ref_calc1 <- calculate_pca(features1)
 # combine features and PCs' into a one dataframe
