@@ -1026,7 +1026,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 
 |       The results of the PCA1 and PCA2, and PCA1 and PCA3 projection on swedish dataset shows clear separation among the shapes.
 
-```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE}
+```{r, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=10, fig.width=10, fig.cap="\\label{pcaswedish}Vertices of degree 2"}
 calculate_pca <- function(feature_dataset){
   pcaY_cal <- prcomp(feature_dataset, center = TRUE, scale = TRUE)
   PCAresults <- data.frame(PC1 = pcaY_cal$x[, 1], 
@@ -1052,6 +1052,7 @@ data_new$PC2 <- pca_ref_calc$pca_components$PC2
 data_new$PC3 <- pca_ref_calc$pca_components$PC3
 data_new$PC4 <- pca_ref_calc$pca_components$PC4
 data_new$PC5 <- pca_ref_calc$pca_components$PC5
+
 
 p11 <- ggplot(data_new, aes(x=PC1, y=PC2, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA2 by Actual Shape Label") + xlab("PCA1") + ylab("PCA2") + theme(aspect.ratio = 1) 
 
@@ -1085,14 +1086,13 @@ p6h1 <- p16 + theme(legend.position = "none") + theme(plot.title = element_blank
 
 p7h1 <- p17 + theme(plot.title = element_blank()) + theme(legend.position = "none")
 
-p8h1 <- p18 + theme(plot.title = element_blank()) + theme(legend.position = "none")
+p8h1 <- p18 + theme(plot.title = element_blank()) + theme(legend.position = "bottom")
 
-p9h1 <- p19 + theme(plot.title = element_blank())
+p9h1 <- p19 + theme(plot.title = element_blank()) +   theme(legend.position = "none")
 
 p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
-  title = 'PCA with Actual shape label',
   tag_levels = 'A'
-) & theme(plot.tag = element_text(size = 5))
+) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom')
 
 ```
 
@@ -1139,7 +1139,7 @@ p3h <- p1_2 + theme(plot.title = element_blank())
 p1h + p2h + p3h + plot_annotation(
   title = 'LDA with Actual shape label',
   tag_levels = 'A'
-) & theme(plot.tag = element_text(size = 8))
+)  + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom')
 ```
 
 
@@ -1191,18 +1191,18 @@ p4h2 <- p141 + theme(plot.title = element_blank()) + theme(legend.position = "no
 
 p5h2 <- p151 + theme(plot.title = element_blank()) + theme(legend.position = "none")
 
-p6h2 <- p161 + theme(legend.position = "none") + theme(plot.title = element_blank())
+p6h2 <- p161 +   theme(plot.title = element_blank())
 
 p7h2 <- p171 + theme(plot.title = element_blank()) + theme(legend.position = "none")
 
 p8h2 <- p181 + theme(plot.title = element_blank()) + theme(legend.position = "none")
 
-p9h2 <- p191 + theme(plot.title = element_blank())
+p9h2 <- p191 + theme(plot.title = element_blank()) + theme(legend.position = "none")
 
 p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
   title = 'PCA with Actual shape label',
   tag_levels = 'A'
-) & theme(plot.tag = element_text(size = 5))
+) & theme(plot.tag = element_text(size = 3)) 
 ```
 
 \textbf{LDA Projection}

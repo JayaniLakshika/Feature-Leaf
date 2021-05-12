@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.11)  12 MAY 2021 06:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.11)  12 MAY 2021 07:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1254,42 +1254,42 @@ igures/swedish_data.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
 -Leaf/leaffeatures/Figures/swedish_data.png  used on input line 1669.
 (pdftex.def)             Requested size: 234.87665pt x 118.41156pt.
-<leaffeatures_files/figure-latex/unnamed-chunk-41-1.pdf, id=577, 469.755pt x 32
-5.215pt>
+<leaffeatures_files/figure-latex/unnamed-chunk-41-1.pdf, id=577, 722.7pt x 722.
+7pt>
 File: leaffeatures_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type
  pdf)
 <use leaffeatures_files/figure-latex/unnamed-chunk-41-1.pdf>
 Package pdftex.def Info: leaffeatures_files/figure-latex/unnamed-chunk-41-1.pdf
-  used on input line 1697.
-(pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
+  used on input line 1699.
+(pdftex.def)             Requested size: 469.76045pt x 469.76045pt.
 [28 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/flavia_images.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Featu
-re-Leaf/leaffeatures/Figures/swedish_data.png>]
-<leaffeatures_files/figure-latex/unnamed-chunk-42-1.pdf, id=589, 469.755pt x 32
+re-Leaf/leaffeatures/Figures/swedish_data.png>] [29 <./leaffeatures_files/figur
+e-latex/unnamed-chunk-41-1.pdf>]
+<leaffeatures_files/figure-latex/unnamed-chunk-42-1.pdf, id=603, 469.755pt x 32
 5.215pt>
 File: leaffeatures_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (type
  pdf)
 <use leaffeatures_files/figure-latex/unnamed-chunk-42-1.pdf>
 Package pdftex.def Info: leaffeatures_files/figure-latex/unnamed-chunk-42-1.pdf
-  used on input line 1704.
+  used on input line 1708.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
-[29 <./leaffeatures_files/figure-latex/unnamed-chunk-41-1.pdf>]
-<leaffeatures_files/figure-latex/unnamed-chunk-43-1.pdf, id=603, 469.755pt x 32
+<leaffeatures_files/figure-latex/unnamed-chunk-43-1.pdf, id=604, 469.755pt x 32
 5.215pt>
 File: leaffeatures_files/figure-latex/unnamed-chunk-43-1.pdf Graphic file (type
  pdf)
 <use leaffeatures_files/figure-latex/unnamed-chunk-43-1.pdf>
 Package pdftex.def Info: leaffeatures_files/figure-latex/unnamed-chunk-43-1.pdf
-  used on input line 1711.
+  used on input line 1715.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [30 <./leaffeatures_files/figure-latex/unnamed-chunk-42-1.pdf>]
-<leaffeatures_files/figure-latex/unnamed-chunk-44-1.pdf, id=618, 469.755pt x 32
+<leaffeatures_files/figure-latex/unnamed-chunk-44-1.pdf, id=619, 469.755pt x 32
 5.215pt>
 File: leaffeatures_files/figure-latex/unnamed-chunk-44-1.pdf Graphic file (type
  pdf)
 <use leaffeatures_files/figure-latex/unnamed-chunk-44-1.pdf>
 Package pdftex.def Info: leaffeatures_files/figure-latex/unnamed-chunk-44-1.pdf
-  used on input line 1715.
+  used on input line 1719.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 [31 <./leaffeatures_files/figure-latex/unnamed-chunk-43-1.pdf>] [32 <./leaffeat
 ures_files/figure-latex/unnamed-chunk-44-1.pdf>] [33] (./leaffeatures.aux)
@@ -1297,13 +1297,13 @@ ures_files/figure-latex/unnamed-chunk-44-1.pdf>] [33] (./leaffeatures.aux)
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `leaffeatures.out' has not changed.
-(rerunfilecheck)             Checksum: 59E7BFC312ACB07C28FEA905AB1E8738;7545.
+(rerunfilecheck)             Checksum: DD886F7EC04AA45BAA88C974D016A2F1;7545.
  ) 
 Here is how much of TeX's memory you used:
- 13892 strings out of 480781
- 256311 string characters out of 5901503
- 553341 words of memory out of 5000000
- 30597 multiletter control sequences out of 15000+600000
+ 13894 strings out of 480781
+ 256340 string characters out of 5901503
+ 553395 words of memory out of 5000000
+ 30598 multiletter control sequences out of 15000+600000
  476393 words of font info for 164 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  69i,14n,79p,604b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1334,10 +1334,10 @@ iyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 lm/lmri10.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy10.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texm
 f-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on leaffeatures.pdf (33 pages, 4202692 bytes).
+Output written on leaffeatures.pdf (33 pages, 4218130 bytes).
 PDF statistics:
- 792 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
- 213 named destinations out of 1000 (max. 500000)
+ 793 PDF objects out of 1000 (max. 8388607)
+ 612 compressed objects within 7 object streams
+ 214 named destinations out of 1000 (max. 500000)
  41615 words of extra memory for PDF output out of 42996 (max. 10000000)
 
