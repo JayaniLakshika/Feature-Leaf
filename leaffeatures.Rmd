@@ -1254,4 +1254,6 @@ p1h + p2h + p3h + plot_annotation(
 
 |       There are mainly four categories of features that are used to classify leaf images. Many research were based on shape, color, and texture features. In this research paper, we introduced new feature category called scagnostics. Other than that correlation of cartesian coordinate, number of convex points, number of minimum and maximum points are introduced as new shape features. To visualize the leaf images on feature space LDA, and PCA are used. The results are obtained based on flavia and swedish datasets. LDA is performed better than PCA when classifying leaf shapes. More details about the classification of leaf images are described in our next paper. 
 
+\newpage
+
 # Reference
