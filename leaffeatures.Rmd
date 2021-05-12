@@ -1,5 +1,5 @@
 ---
-title: Computationally Efficient Features for Leaf Image Classification
+title: Computer-aided Interpretable Features for Leaf Image Classification
 authors:
   - name: Jayani P.G. Lakshika
     thanks: Use footnote for providing further information about author (webpage, alternative address)---*not* for acknowledging funding agencies. Optional.
@@ -13,7 +13,7 @@ authors:
     location: Nugegoda, Sri Lanka
     email: ttalagala@sjp.ac.lk
 abstract: |
-  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. In the field of medicinal plants identification, most of the research are done recently based on leaf images. The reason is that leaf images are considered as they contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in idetifying medicinal plants. Image processing, and feature extraction are the most important, challenging, and crucial steps in classifying leaf images. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps are i)Convert original image to RGB(Red-Green-Blue) image, ii)Gray scaling, iii)Gaussian smoothing, iv)Binary thresholding, v)Remove stalk, vi)Closing holes, and vii)Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified in to four groups as shape, color, texture, and scagnostics. Length, width, area, texture correlation, and monotonocity are some of them. The image processing algorithms are developed based on Python. The algorithms regard to shape, color, and texture features are based on Python, and the scagnostic features are extracted using R. In addition, supervised dimensionality reduction techique as Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to visualize the images in feature space. All the applications are based on flavia, and swedish which are the open source repositories. It is observed that LDA(Linear Discriminant Analysis) perform better than PCA(Principal Component Analysis) for shapes of leaf image classification using introduced features.     
+  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. The studies on medicinal plant identification are often performed  based on medinal plant leaf images. The is because plant leaves contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in identifying different medicinal plants. In recent, many researchers use deep learning methods to classify plants directly using plant images. While deep learning models have achieved a great sucess, the lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images.   Image processing is one of the most challenging, and crucial steps in feature-extaction. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps of our algorithm involves: i) Convert original image to RGB (Red-Green-Blue) image, ii) Gray scaling, iii) Gaussian smoothing, iv) Binary thresholding, v) Remove stalk, vi) Closing holes, and vii) Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified in to four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) image-space statistics-based features. Length, width, area, texture correlation, monotonocity and scagnostics are to name few of them. We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings.  For that, supervised dimensionality reduction techique Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to convert and visualize the images from digital-image space to feature space. All the applications are performed on Flavia and Swedish open source benchmark leaf datasets. The results show that the features are sufficient to discriminate the classes of interest under both supervised and unsupervised learning settings. The results of this study are beneficial for the researchers working in the field of developing automated plant identification and classification systems.   
 keywords:
   - Identification
   - Medicinal
@@ -26,6 +26,7 @@ bibliography: references.bib
 biblio-style: unsrt
 output: 
   pdf_document:
+    number_sections: true
     extra_dependencies: "subfig"
   rticles::arxiv_article:
     keep_tex: true
@@ -60,8 +61,6 @@ library(MASS)
 
 # Image Processing
 
-## Introduction
-
 |       Image processing is an essential step to reduce noise, background subtraction and content enhancement in the identification process [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are converting BGR (Blue-Green-Red) image to RGB, gray scaling, Gaussian filtering, binary thresholding, remove stalk, close holes, and image resizing. Some of these steps can be applied for the necessary cases like applying remove stalk to the leaf images which only have a stalk.
 
 
@@ -77,20 +76,20 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
 ``` 
 
-### Step 1: Converting BGR Image to RGB
+## Step 1: Converting BGR Image to RGB
 
 |       BGR and RGB are conventions for the order of the different colour channels. They are not colour spaces. When converting BGR image to RGB, there is no any computations, just switches around the order. Several image processing libraries have different pixel ordering. Therefore to compatible with other libraries we convert the BGR image in to RGB format.
 
 |       As an example when read an image using OpenCV by default it interprets BGR format, but when plot the image it takes the RGB format in matplotlib. 
 
-### Step 2: Grayscaling
+## Step 2: Grayscaling
 
 |       Grayscaling is the process of converting an image to shades of gray from other colour spaces like RGB. Gray conversion of the image is implemented to optimize the contrast and intensity of images [@8675114]. 
 
 |       Grayscale image requires only one single byte for each pixel where as colored (RGB) image requires 3 bytes for each pixel. Therefore reduces the dimension in using grayscaled image. In extracting Haralick [@articletx] texture features, grayscale images are used. Another advantage of using grayscaled image is to reduce model complexity. Consider an example of training neural article on RGB images of 20x20x3 pixel. The input layer will have 1200 input nodes. Whereas for gray scaled images the same neural network will need only 400 input node.  
 
 
-### Step 3: Gaussian Filtering (Gaussian Blurring/Gaussian Smoothing)
+## Step 3: Gaussian Filtering (Gaussian Blurring/Gaussian Smoothing)
 
 
 |       Gaussian smoothing is an image smoothing technique. Image smoothing techniques use to remove the noise that can be occurred because of the source (camera sensor). Image smoothing techniques help in smoothing images and to remove low intensity edges.
@@ -104,7 +103,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","gau.png"))
 
 
 
-### Step 4: Binary Thresholding
+## Step 4: Binary Thresholding
 
 |       Thresholding is a segmentation technique that is used to separate foreground from its background. In thresholding technique, the pixel values are assigned by using the threshold value. By comparing each pixel value with the threshold value, the thresholding technique is worked.If the pixel value is smaller than the threshold value, the pixel value is set as 0, and if not the pixel value is set to a maximum value which is generally 255. Thersholding technique is done on grayscale images in computer vision. 
 
@@ -171,7 +170,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","otsu.png"))
 
 
 
-### Step 5: Image Resizing
+## Step 5: Image Resizing
 
 |       There are two different leaf image datasets (Flavia, Swedish) which have different sizes. To compare the results on different datasets, to improve the memory storage capacity and to reduce computational complexity the leaf images are resized to a fixed resolution. In our study, the leaf images have been resized to [1600 x 1200px] which is the size of Flavia leaf images. 
 
