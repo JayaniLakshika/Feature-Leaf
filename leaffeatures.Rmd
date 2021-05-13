@@ -64,10 +64,11 @@ library(MASS)
 
 # Image Processing
 
-|       Image processing is an essential step to reduce noise, background subtraction and content enhancement in the identification process [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are converting BGR (Blue-Green-Red) image to RGB, gray scaling, Gaussian filtering, binary thresholding, remove stalk, close holes, and image resizing. Some of these steps can be applied for the necessary cases like applying remove stalk to the leaf images which only have a stalk.
+|       Image processing is an essential step to reduce  noise and content enhancement while keeping its features intact. [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are: i) converting BGR (Blue-Green-Red) image to RGB (Red-Green-Blue), ii) gray scaling, iii) Gaussian filtering, iv) binary thresholding, v) remove stalk, vi) close holes, and vii) image resizing. Some of these steps applicable only for sepecific images. For example,  apply remove stalk is applicable only to leaf images which has stalk.
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:test2}Image processing"}
+
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:test2}Image processing workflow."}
 knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 ``` 
 
