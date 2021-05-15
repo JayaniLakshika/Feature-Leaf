@@ -185,46 +185,57 @@ knitr::include_graphics(here::here("leaffeatures","Figures","otsu.png"))
 
 |       Other than the main image processing techniques discussed above, the following techniques are applied to some images where necessary after image thresholding.
 
-
-### Remove Stalk
-
-|       Remove the petiole (stalk) of leaf image is another version of thresholding process. Thresholding is applied after finding the sure foreground area. To find the sure foreground area, distance transform technique is used.  Binary image is used as the input of distance transform technique. In distance transform technique, image is created by assigning a number for each object pixel that corresponds to the distance to the nearest background pixel. The distance is calculated using the euclidean distance (\ref{eu}). After finding the sure foreground area, Otsu's binarization is applied again as the thresholding technique.
-
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:rstex}Example of distance transformation"}
-knitr::include_graphics(here::here("leaffeatures","Figures","rst.png"))
-```
-
-\begin{equation}
-    Euclidean distance = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
-    \label{eu}
-\end{equation}
-
-
-
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:rst}Remove stalk"}
 knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
 ```
 
 
+
+### Remove Stalk
+
+|       As shown in Figure \ref{fig:rst}, this is used to remove the stalk of the image. Remove the petiole (stalk) of leaf image is another version of thresholding process. Thresholding is applied after finding the sure foreground area. To find the sure foreground area, distance transform technique is used.  Binary image is used as the input of distance transform technique. In distance transform technique, image is created by assigning a number for each object pixel that corresponds to the distance to the nearest background pixel. The distance is calculated using the euclidean distance (see Figure \ref{fig:rstex}). After finding the sure foreground area, Otsu's binarization is applied again as the thresholding technique.
+
+
+
+
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:rstex}Example of distance transformation"}
+knitr::include_graphics(here::here("leaffeatures","Figures","rst.png"))
+```
+
+<!--Why?-->
+
+\begin{equation}
+    \text{Euclidean distance} = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}
+    \label{eu}
+\end{equation}
+
+
 ### Closing Holes
-
-|       Closing holes is followed by noise removal technique which demonstrates the closing effect. Closing effect is used to remove small holes inside the foreground objects. Closing holes is a result of morphological transformation. Morphological transformations are the operations based on image shape. Binary image is used as one input in morphological transformation. Kernel or structuring element which decides the nature of the operation is used as the second input. There are two morphological operators as Erosion and Dilation. Closing is a variant form of morphological operators which is used in closing holes process. Closing is also know as Dilation followed by Erosion.
-
-### Erosion
-
-|       The basic idea of Erosion is that erodes away the boundaries of foreground object. Since the input is binary image, a pixels in the original image is either 1 or 0. If all the pixels under the kernel is 1, a pixel of original image is considered as 1, otherwise made to zero (eroded). Which means that depending upon the size of the kernel all pixels near boundary will be discarded. Therefore the thickness or size of the foreground object decreases (White region of the image decreases). 
-
-
-### Dilation
-
-|       Opposite of erosion is defined as dilation. If at least one pixel under the kernel is 1, the pixel element is 1 in Dilation. It tends to increase the foreground of the image or the white region  of the object. 
-
-|       Noise removal is that a technique of erosion is followed by Dilation. In erosion white noise is removed and shrinks the object (dilate) which doesn't come back. But in closing holes approach the white area is increased. 
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:chl}Closing holes"}
 knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 ```
+
+<!--Morphological transformations-->
+
+|       Holes inside leaf areas occure due to plant disease, light reflection and noise. As shown in \ref{fig:chl} closing holes is used to remove small holes inside the foreground objects. This is achieved by pulling background pixels to foreground pixel. The closing holes is also known as dilation and while erosion does the opposite, which is open holes. This step is performed on a binary image.
+
+<!--Why-->
+
+<!--Closing holes is a result of morphological transformation. Morphological transformations are the operations based on image shape. Binary image is used as one input in morphological transformation. Kernel or structuring element which decides the nature of the operation is used as the second input. There are two morphological operators as Erosion and Dilation. Closing is a variant form of morphological operators which is used in closing holes process. Closing is also know as Dilation followed by Erosion.-->
+
+\textbf{Erosion}
+
+|       The basic idea of Erosion is that erodes away the boundaries of foreground object. Since the input is binary image, a pixels in the original image is either 1 or 0. If all the pixels under the kernel is 1, a pixel of original image is considered as 1, otherwise made to zero (eroded). Which means that depending upon the size of the kernel all pixels near boundary will be discarded. Therefore the thickness or size of the foreground object decreases (White region of the image decreases). 
+
+
+\textbf{Dilation}
+
+|       Opposite of erosion is defined as dilation. If at least one pixel under the kernel is 1, the pixel element is 1 in Dilation. It tends to increase the foreground of the image or the white region  of the object. 
+
+<!--   Noise removal is that a technique of erosion is followed by Dilation. In erosion white noise is removed and shrinks the object (dilate) which doesn't come back. But in closing holes approach the white area is increased.--> 
+
 
 
 # Leaf Image Features
