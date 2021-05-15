@@ -13,7 +13,7 @@ authors:
     location: Nugegoda, Sri Lanka
     email: ttalagala@sjp.ac.lk
 abstract: |
-  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. The studies on medicinal plant identification are often performed  based on medinal plant leaf images. The is because plant leaves contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in identifying different medicinal plants. In recent, many researchers use deep learning methods to classify plants directly using plant images. While deep learning models have achieved a great sucess, the lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images.   Image processing is one of the most challenging, and crucial steps in feature-extaction. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps of our algorithm involves: i) Convert original image to RGB (Red-Green-Blue) image, ii) Gray scaling, iii) Gaussian smoothing, iv) Binary thresholding, v) Remove stalk, vi) Closing holes, and vii) Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified in to four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) image-space statistics-based features. Length, width, area, texture correlation, monotonocity and scagnostics are to name few of them. We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings.  For that, supervised dimensionality reduction techique Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to convert and visualize the images from digital-image space to feature space. All the applications are performed on Flavia and Swedish open source benchmark leaf datasets. The results show that the features are sufficient to discriminate the classes of interest under both supervised and unsupervised learning settings. The results of this study are beneficial for the researchers working in the field of developing automated plant identification and classification systems.  
+  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. The studies on medicinal plant identification are often performed  based on medinal plant leaf images. The is because plant leaves contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in identifying different medicinal plants. In recent, many researchers use deep learning methods to classify plants directly using plant images. While deep learning models have achieved a great sucess, the lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images.   Image processing is one of the most challenging, and crucial steps in feature-extaction. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps of our algorithm involves: i) Convert original image to RGB (Red-Green-Blue) image, ii) Gray scaling, iii) Gaussian smoothing, iv) Binary thresholding, v) Remove stalk, vi) Closing holes, and vii) Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. Length, width, area, texture correlation, monotonocity and scagnostics are to name few of them. We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings.  For that, supervised dimensionality reduction techique Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to convert and visualize the images from digital-image space to feature space. All the applications are performed on Flavia and Swedish open source benchmark leaf datasets. The results show that the features are sufficient to discriminate the classes of interest under both supervised and unsupervised learning settings. The results of this study are beneficial for the researchers working in the field of developing automated plant identification and classification systems.  
 keywords:
   - Identification
   - Medicinal
@@ -240,7 +240,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 
 # Leaf Image Features
 
-|       In identification of plant species by using leaf images, features of the leaves play a main role, because each leaf posses unique feature that it make different from other. In previous research [@articlepl;@article7], let the algorithm like CNN to extract features by itself and do the classification. Therefore it is so hard to interpret and generalize the features. We introduced pre-calculate features which can be easy to interpret and generalize. They are also computational efficient. Mainly we focused on four types of features of leaf images as Shape features, Texture features, Color features and Scagnostics features. We identified altogether 52 features.
+|       In identification of plant species using leaf images, features of leaves play an important role, because each leaf posses unique feature that it make different from other. In previous studies [@articlepl; @article7; @sun2017deep], use deep learning neural networks to classify medicinal plants based on pixel-based images. Given the leaf images deep learning models automatically identify features based on pixel-space of the images. The lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images. We introduced pre-calculate and computationally efficient features which can be easy to interpret and generalize.  The features are classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. We identified altogether 52 features.
 
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img33}Example of geometric transformation"}
@@ -254,7 +254,9 @@ knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 
 |       When identifying real-world objects, the shape is known as an essential sign for humans. A shape measure is a quantity, which relates to a particular shape characteristic of an object in general [@articlee]. 
 	
-|       The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). In our research, the defined shape features are invariant to the rotation and reflection. But some limitations are applied in translation and scaling. 
+|       The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). In our research, the defined shape features are invariant to the rotation and reflection. 
+
+<!--But some limitations are applied in translation and scaling.--> 
 	
 	
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img3}Example of geometric transformation"}
@@ -271,7 +273,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","scaling.jpg"))
 
 |       All the shape features are extracted from the binary images.
 
-## Contours
+\textbf{Contours}
 
 Simply contour (see figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same color or intensity.
 
@@ -984,7 +986,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 
 where $(x_i,y_i)$ is the coordinate of cartesian contour and $m$ is the number of points in the cartesian contour 
 
-# Example
+# Application of features to classify images
 
 |       There are two color image leaf datasets (Flavia ,Swedish) are used. After passing through the required image processing steps, binary image is extracted which has a white foreground and black background.
 
@@ -1003,7 +1005,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
 
 
 
-# Application of features to classify images
+
 
 
 ##  Data sets
