@@ -64,7 +64,7 @@ library(MASS)
 
 # Image Processing
 
-|       Image processing is an essential step to reduce  noise and content enhancement while keeping its features intact. [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are: i) converting BGR (Blue-Green-Red) image to RGB (Red-Green-Blue), ii) gray scaling, iii) Gaussian filtering, iv) binary thresholding, v) remove stalk, vi) close holes, and vii) image resizing. Some of these steps applicable only for sepecific images. For example,  apply remove stalk is applicable only to leaf images which has stalk.
+|       Image processing is an essential step to reduce  noise and content enhancement while keeping its features intact. [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are: i) converting BGR (Blue-Green-Red) image to RGB (Red-Green-Blue), ii) gray scaling, iii) Gaussian filtering, iv) binary thresholding, v) remove stalk, vi) close holes, and vii) image resizing. Some of these steps are applicable only for sepecific images. For example,  apply remove stalk is applicable only to leaf images which has stalk.
 
 
 
@@ -74,30 +74,33 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 
 
 
-|       In classifying plant species the focus was on the leaf which has a simple arrangement as shown in Figure \ref{simplearra}. A single leaf that is never divided into smaller leaflet units is know as a leaf with simple arrangement. That leaf is always attached to a twing by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed. 
+|       In this study we focus on leaves with simple arrangement as shown in Figure \ref{simplearra}.  A single leaf that is never divided into smaller leaflet units is known as a leaf with simple arrangement. This type of leaf is attached to a twing by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed (see Figure \ref{alledge}). 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{simplearra}Leaf with simple arrangement"}
+```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{simplearra} A leaf with simple arrangement."}
 knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
 ``` 
 
-## Step 1: Converting BGR Image to RGB
+```{r, echo=FALSE, out.width="80%",fig.align='center',fig.cap="\\label{alledge} Edge types of leaves focus in the study."}
+knitr::include_graphics(here::here("leaffeatures","Figures","alledge.png"))
+``` 
 
-|       BGR and RGB are conventions for the order of the different colour channels. They are not colour spaces. When converting BGR image to RGB, there is no any computations, just switches around the order. Several image processing libraries have different pixel ordering. Therefore to compatible with other libraries we convert the BGR image in to RGB format.
 
-|       As an example when read an image using OpenCV by default it interprets BGR format, but when plot the image it takes the RGB format in matplotlib. 
+
+## Step 1: Converting BGR (Blue-Green-Red) Image to RGB (Red-Green-Blue)
+
+|       BGR and RGB are conventions for the order of the different colour channels. They are not colour spaces. When converting BGR image to RGB, there is no any computations, just switches around the order. Several image processing libraries have different pixel ordering. Therefore to compatible with other libraries we convert the BGR image in to RGB format. For an example when we read an image using OpenCV libray in Python by default it interprets BGR format, but when we plot the image it takes the RGB format in matplotlib package in Python. 
 
 ## Step 2: Grayscaling
 
-|       Grayscaling is the process of converting an image to shades of gray from other colour spaces like RGB. Gray conversion of the image is implemented to optimize the contrast and intensity of images [@8675114]. 
-
-|       Grayscale image requires only one single byte for each pixel where as colored (RGB) image requires 3 bytes for each pixel. Therefore reduces the dimension in using grayscaled image. In extracting Haralick [@articletx] texture features, grayscale images are used. Another advantage of using grayscaled image is to reduce model complexity. Consider an example of training neural article on RGB images of 20x20x3 pixel. The input layer will have 1200 input nodes. Whereas for gray scaled images the same neural network will need only 400 input node.  
+|       Grayscaling is the process of converting an image to shades of gray from other colour spaces like RGB. This helps to increase the contrast and intensity of images [@8675114]. Grayscale images require only one single byte for each pixel where as colour (RGB) image requires 3 bytes for each pixel. Hence, grayscaling reduces the dimension of a image.
+In extracting Haralick [@articletx] texture features, grayscale images are used. Another advantage of using grayscaled image is to reduce model complexity. Consider an example of training neural article on RGB images of $20 \times 20 \times 3$ pixel. The input layer will have 1200 input nodes. Whereas for gray scaled images the same neural network will need only 400 ($20 \times 20$) input node.  
 
 
 ## Step 3: Gaussian Filtering (Gaussian Blurring/Gaussian Smoothing)
 
 
 |       Gaussian smoothing is an image smoothing technique. Image smoothing techniques use to remove the noise that can be occurred because of the source (camera sensor). Image smoothing techniques help in smoothing images and to remove low intensity edges.
-|       Gaussian function is used to blur the image. It is a linear filter which is done by using the functions in OpenCV. By specifying the width and height of the Gaussian kernel that must be positive and odd, and specifying the kernel standard deviation along x and y-axis, Gaussian smoothing is established in OpenCV. When the kernel standard deviation along x-axis is specified, kernel standard deviation along y-axis is taken as equal to the the kernel standard deviation along x-axis. But if both kernel standard deviation are given as zeros, they are calculated by using the kernel size. In our research the width and height of the kernel is defined as 55 and the kernel standard deviation along x-axis is assigned as zero.
+|       Gaussian function is used to blur the image. It is a linear filter which is done by using the functions in OpenCV package in Python. By specifying the width and height of the Gaussian kernel that must be positive and odd, and specifying the kernel standard deviation along x and y-axis, Gaussian smoothing is established in OpenCV. When the kernel standard deviation along x-axis is specified, kernel standard deviation along y-axis is taken as equal to the the kernel standard deviation along x-axis. But if both kernel standard deviation are given as zeros, they are calculated by using the kernel size. In our research the width and height of the kernel is defined as 55 and the kernel standard deviation along x-axis is assigned as zero. An example of applying Gaussian smoothing to an image is shown in Figure \ref{gau}.
 
 
 
@@ -109,13 +112,14 @@ knitr::include_graphics(here::here("leaffeatures","Figures","gau.png"))
 
 ## Step 4: Binary Thresholding
 
-|       Thresholding is a segmentation technique that is used to separate foreground from its background. In thresholding technique, the pixel values are assigned by using the threshold value. By comparing each pixel value with the threshold value, the thresholding technique is worked.If the pixel value is smaller than the threshold value, the pixel value is set as 0, and if not the pixel value is set to a maximum value which is generally 255. Thersholding technique is done on grayscale images in computer vision. 
+|       Thresholding is a segmentation technique that is used to separate foreground from its background. Thresholding converts
+grayscale image into binary image according the threshold value. If the pixel value is smaller than the threshold value, the pixel value is set as 0, and if not the pixel value is set to a maximum value which is generally 255. Thersholding technique is done on grayscale images in computer vision. 
 
-|       We used Otsu's binarization which is an adaptive thresholding after Gaussian filtering to convert color images to the binary images. In Otsu's method, the threshold value is determined automatically. The algorithm of Otsu's method finds the optimal threshold value which is chosen arbitrary.
+|       We used Otsu's binarization (@bangare2015reviewing) which is an adaptive thresholding after Gaussian filtering to convert color images to the binary images. The reason for using Otsu's binarization method is, it automatically determines the optimal threshold value. 
 
 \textbf{Otsu's Thresholding}
 
-|       Nobuyuki Otsu was introduced Otsu's method which is defined for a gray scale histogram $ghist_I$ of an input image $Im$. To segment an image $Im$ into two subsets of pixels Otsu's method calculates an optimal threshold $\tau$. The number of pixel locations of the gray scale image is defined as $|\Omega|$. 
+|       Nobuyuki Otsu introduced Otsu's method which is defined for a histogram of grayscale values of a histogram ($ghist_I$) of an input image $Im$.  To segment an image $Im$ into two subsets of pixels Otsu's method calculates an optimal threshold $\tau$. The number of pixel locations of the gray scale image is defined as $|\Omega|$. 
 
 |       The algorithm maximizes the variance $\sigma^2$ between the two subsets (Within-class-variance) to find the threshold $\tau$.
 
@@ -129,7 +133,7 @@ $P_1$ and $P_2$ are the corresponding probabilities of the two clusters, defined
 
 \[P_2 = \frac{\sum_{i=u+1}^{255}ghist_I(i)}{|\Omega|}\]
 
-Where u is the candidate threshold and the maximum gray level ($G_{max}$) is assumed as 255. To find optimal threshold $\tau$ for segmenting image $Im$, all candidate thresholds are evaluated this way.
+Where $u$ is the candidate threshold and the maximum gray level ($G_{max}$) is assumed as 255. To find optimal threshold $\tau$ for segmenting image $Im$, all candidate thresholds are evaluated this way.
 
 The algorithm of Otsu's method is defined as follows,
 
@@ -153,7 +157,7 @@ Set $u = u+1$                                             \\ \hline
 \end{table}
 
 
-|       As an example, assume that candidate threshold value $u$ is 2. Therefore the image is separated into two classes, which are class 1 (pixel value <=2) and class 2 (pixel value >2). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to figure \ref{fig:otsu}, there are 9 pixel locations. 
+|       For an example, assume that candidate threshold value $u$ is 2. Therefore the image is separated into two classes, which are class 1 ($\text{pixel value} <= 2$ ) and class 2 ($\text{pixel value} > 2$). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to figure \ref{fig:otsu}, there are 9 pixel locations. 
 
 
 $$P_1 = \frac{5}{9}$$
@@ -182,7 +186,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","otsu.png"))
 |       Other than the main image processing techniques, the following two techniques are applied in some or all cases as an image processing techniques after image thresholding.
 
 
-\textbf{Remove Stalk}
+### Remove Stalk
 
 |       Remove the petiole (stalk) of leaf image is another version of thresholding process. Thresholding is applied after finding the sure foreground area. To find the sure foreground area, distance transform technique is used.  Binary image is used as the input of distance transform technique. In distance transform technique, image is created by assigning a number for each object pixel that corresponds to the distance to the nearest background pixel. The distance is calculated using the euclidean distance (\ref{eu}). After finding the sure foreground area, Otsu's binarization is applied again as the thresholding technique.
 
@@ -202,7 +206,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
 ```
 
 
-\textbf{Closing Holes}
+### Closing Holes
 
 |       Closing holes is followed by noise removal technique which demonstrates the closing effect. Closing effect is used to remove small holes inside the foreground objects. Closing holes is a result of morphological transformation. Morphological transformations are the operations based on image shape. Binary image is used as one input in morphological transformation. Kernel or structuring element which decides the nature of the operation is used as the second input. There are two morphological operators as Erosion and Dilation. Closing is a variant form of morphological operators which is used in closing holes process. Closing is also know as Dilation followed by Erosion.
 
