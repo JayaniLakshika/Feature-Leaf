@@ -180,10 +180,10 @@ knitr::include_graphics(here::here("leaffeatures","Figures","otsu.png"))
 
 ## Step 5: Image Resizing
 
-|       There are two different leaf image datasets (Flavia, Swedish) which have different sizes. To compare the results on different datasets, to improve the memory storage capacity and to reduce computational complexity the leaf images are resized to a fixed resolution. In our study, the leaf images have been resized to [1600 x 1200px] which is the size of Flavia leaf images. 
+|       In this study we use two different benchmark leaf image datasets:  i) Flavia: 1907 fully color images of 32 classes of leaves (@wu2007leaf)  and ii) Swedish: 1125 images from 15 different plant species (@soderkvist2001computer).  Flavia and Swedish images have two different image sizes. To compare the results on different datasets, to improve the memory storage capacity and to reduce computational complexity the leaf images are resized to a fixed resolution. In our study, the leaf images have been resized to [1600 x 1200px] which is the size of Flavia leaf images. 
 
 
-|       Other than the main image processing techniques, the following two techniques are applied in some or all cases as an image processing techniques after image thresholding.
+|       Other than the main image processing techniques discussed above, the following techniques are applied to some images where necessary after image thresholding.
 
 
 ### Remove Stalk
@@ -210,14 +210,14 @@ knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
 
 |       Closing holes is followed by noise removal technique which demonstrates the closing effect. Closing effect is used to remove small holes inside the foreground objects. Closing holes is a result of morphological transformation. Morphological transformations are the operations based on image shape. Binary image is used as one input in morphological transformation. Kernel or structuring element which decides the nature of the operation is used as the second input. There are two morphological operators as Erosion and Dilation. Closing is a variant form of morphological operators which is used in closing holes process. Closing is also know as Dilation followed by Erosion.
 
-\textbf{Erosion}
+### Erosion
 
 |       The basic idea of Erosion is that erodes away the boundaries of foreground object. Since the input is binary image, a pixels in the original image is either 1 or 0. If all the pixels under the kernel is 1, a pixel of original image is considered as 1, otherwise made to zero (eroded). Which means that depending upon the size of the kernel all pixels near boundary will be discarded. Therefore the thickness or size of the foreground object decreases (White region of the image decreases). 
 
 
-\textbf{Dilation}
+### Dilation
 
-|       Opposite of erosion is defined as Dilation. If at least one pixel under the kernel is 1, the pixel element is 1 in Dilation. It tends to increase the foreground of the image or the white region  of the object. 
+|       Opposite of erosion is defined as dilation. If at least one pixel under the kernel is 1, the pixel element is 1 in Dilation. It tends to increase the foreground of the image or the white region  of the object. 
 
 |       Noise removal is that a technique of erosion is followed by Dilation. In erosion white noise is removed and shrinks the object (dilate) which doesn't come back. But in closing holes approach the white area is increased. 
 
@@ -227,7 +227,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 ```
 
 
-# Leaf Features
+# Leaf Image Features
 
 |       In identification of plant species by using leaf images, features of the leaves play a main role, because each leaf posses unique feature that it make different from other. In previous research [@articlepl;@article7], let the algorithm like CNN to extract features by itself and do the classification. Therefore it is so hard to interpret and generalize the features. We introduced pre-calculate features which can be easy to interpret and generalize. They are also computational efficient. Mainly we focused on four types of features of leaf images as Shape features, Texture features, Color features and Scagnostics features. We identified altogether 52 features.
 
@@ -505,7 +505,6 @@ $F_{20}$  & Equivalent diameter                                                 
 \label{tab:table1}\\
 \end{longtable}
 
-\newpage
 
 ## Texture Features
 
