@@ -1195,4 +1195,4 @@ According to both PCA and LDA visualizations on Swedish and Flavia data sets we 
 
 
 
-# Reference
+# References
