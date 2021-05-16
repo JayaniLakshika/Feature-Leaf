@@ -580,19 +580,14 @@ knitr::include_graphics(here::here("leaffeatures","Figures","GLMC2.png"))
 
 ## Color Features
 
-|       Color is an important feature of images [@articlee;@inproceedings1]. Color properties are defined within a particular color space like red-green-blue (RGB) [@colarticle1;@articlee]. Color properties can be extracted from images after a colour space is specified. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are used for characterizing planar color patterns, irrespective of viewpoint or illumination conditions and without the need for object contour detection [@articlee]. Color moments are convenient for real-time applications because of its low dimension and low computational complexity. 
-	
-|       Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extracte color based features of leaf images as well.
-
-
-
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{leafimg}"}
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{leafimg} Images of plant species Hathawariya and Iramusu."}
 knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 ```
 
 
+|       Color is an important characteristic of images [@articlee;@inproceedings1]. Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extracte features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color chaneel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
 
-|       We used mean($M$) and standard deviation($SD$) of intensity values of red, green and blue channels as color features.
+|       We used mean($M$) and standard deviation($SD$) of intensity values of red, green and blue channels as color features. Let $h$ be the number of pixels of the image and $r$ is the channel type which can be red, green, or blue. The corresponding colour features are calculates as follows:
 
 \begin{equation}
     M = \frac{\text{Total insensity value of } r^{th} \text{channel of the image pixels}}{\text{Total intensity value of the image}}
@@ -604,7 +599,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 \label{equa3}
 \end{equation}
 
-where $h$ is the number of pixels of the image and r is the channel type which can be red, green, or blue 
+
 
 ## Scagnostic features
 
