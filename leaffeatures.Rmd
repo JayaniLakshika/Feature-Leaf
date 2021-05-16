@@ -13,7 +13,7 @@ authors:
     location: Nugegoda, Sri Lanka
     email: ttalagala@sjp.ac.lk
 abstract: |
-  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. The studies on medicinal plant identification are often performed  based on medinal plant leaf images. The is because plant leaves contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in identifying different medicinal plants. In recent, many researchers use deep learning methods to classify plants directly using plant images. While deep learning models have achieved a great sucess, the lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images.   Image processing is one of the most challenging, and crucial steps in feature-extaction. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps of our algorithm involves: i) Convert original image to RGB (Red-Green-Blue) image, ii) Gray scaling, iii) Gaussian smoothing, iv) Binary thresholding, v) Remove stalk, vi) Closing holes, and vii) Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. Length, width, area, texture correlation, monotonocity and scagnostics are to name few of them. We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings.  For that, supervised dimensionality reduction techique Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction techique as Principal Component Analysis (PCA) are used to convert and visualize the images from digital-image space to feature space. All the applications are performed on Flavia and Swedish open source benchmark leaf datasets. The results show that the features are sufficient to discriminate the classes of interest under both supervised and unsupervised learning settings. The results of this study are beneficial for the researchers working in the field of developing automated plant identification and classification systems.  
+  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. The studies on medicinal plant identification are often performed  based on medicinal plant leaf images. The is because plant leaves contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in identifying different medicinal plants. In recent, many researchers use deep learning methods to classify plants directly using plant images. While deep learning models have achieved a great success, the lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images.   Image processing is one of the most challenging, and crucial steps in feature-extraction. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps of our algorithm involves: i) Convert original image to RGB (Red-Green-Blue) image, ii) Gray scaling, iii) Gaussian smoothing, iv) Binary thresholding, v) Remove stalk, vi) Closing holes, and vii) Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. Length, width, area, texture correlation, monotonicity and scagnostics are to name few of them. We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings.  For that, supervised dimensionality reduction technique Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction technique as Principal Component Analysis (PCA) are used to convert and visualize the images from digital-image space to feature space. All the applications are performed on Flavia and Swedish open source benchmark leaf datasets. The results show that the features are sufficient to discriminate the classes of interest under both supervised and unsupervised learning settings. The results of this study are beneficial for the researchers working in the field of developing automated plant identification and classification systems.  
 keywords:
   - Identification
   - Medicinal
@@ -52,19 +52,19 @@ library(MASS)
 
 |       Leaf identification is becoming very popular in classifying plant species. Plant leaf contains significant number of features that can help people to identify and classify the plant species. In medical perspective, medicinal plants are usually identified by practitioners based on years of experience through sensory or olfactory senses. The other method of recognizing these plants involves laboratory-based testing, which requires trained skills, data interpretation which is costly and time-intensive. Automatic ways to identify medicinal plants are useful especially those that are lacking experience in medicinal plant recognition. Statistical machine learning techniques play a crucial role in the development of automatic system to identify medicinal plants. In developing such system image processing and feature extraction play crucial roles. 
 
-|       The main aim of image processing is to extract important features by removing undesired noise and distortion [@articlee]. Image processing steps include image segmentation [@DBLP], image orientation, cropping, grey scaling, binary thresholding, noise removal, contrast stretching, threshold inversion, image normalization, and edge recognition are some of image processing techniques applied in recent research. These steps can be applied parallely or individually, on several times until the quality of leaf image reaches a specific threshold. 
+|       The main aim of image processing is to extract important features by removing undesired noise and distortion [@articlee]. Image processing steps include image segmentation [@DBLP], image orientation, cropping, grey scaling, binary thresholding, noise removal, contrast stretching, threshold inversion, image normalization, and edge recognition are some of image processing techniques applied in recent research. These steps can be applied parallel or individually, on several times until the quality of leaf image reaches a specific threshold. 
 
-|       The second step is feature extraction, which identifies and encodes relevant features from leaf images [@articlee]. This is a challenging task due to the structural diversity of the leaf images. Therefore, in recent years,  many researchers use deep learning methods to classify plants directly using plant images [@4458016;@articlepl;@inproceedings]. While deep learning models have achieved a great sucess, the most models  remain complex black boxes.  The lack of interpretability limit their widespread application.
+|       The second step is feature extraction, which identifies and encodes relevant features from leaf images [@articlee]. This is a challenging task due to the structural diversity of the leaf images. Therefore, in recent years,  many researchers use deep learning methods to classify plants directly using plant images [@4458016;@articlepl;@inproceedings]. While deep learning models have achieved a great success, the most models  remain complex black boxes.  The lack of interpretability limit their widespread application.
 
 |       A digital image is a combination of  pixels from three different color planes red, green and blue. Images are stored in computers as three separate matrices corresponding to the red, green and blue color channels of the image. The three separate matrices corresponding to intensities of colors at different positions of the image [@book1].
 
-|       The main aim of feature extraction is to reduce dimensionality of this information by obtaining measurable patterns of leaf images. For example, shape, color, and texture are some of the patterns that may be observed. In this paper we introduce a collection of interpretable, measurable and computer-aided features that are useful in image leaf classification. This feature collection includes  several pre-established features identified through a thorough review of literature.  Other than existing features, we introduce a number of features computed based on the cartesian coordinate of the images.  Furthermore, we explore the ability of features to discriminate the class of interest under supervised learning setting and unsupervised learning setting.
+|       The main aim of feature extraction is to reduce dimensionality of this information by obtaining measurable patterns of leaf images. For example, shape, color, and texture are some of the patterns that may be observed. In this paper we introduce a collection of interpretable, measurable and computer-aided features that are useful in image leaf classification. This feature collection includes  several pre-established features identified through a thorough review of literature.  Other than existing features, we introduce a number of features computed based on the Cartesian coordinate of the images.  Furthermore, we explore the ability of features to discriminate the class of interest under supervised learning setting and unsupervised learning setting.
 
 |       The paper is organized as follows. In the first section, describes about the steps of image processing. Preprocessing is necessary before extracting features from the images. In section 2, discusses about feature extraction in in-detail because features are highly influenced by the plant species to be classified. Under this section, we discuss about mainly four types of features as shape, color, texture, and scagnostics and how to extract them. The next section 3, discuss about applications of leaf features. This section consists of details about the datasets that are used to explain the applications, and visualization of leaf images in the feature space using supervised, and unsupervised dimensionality reduction techniques. In section 4, consist of summary of the software and packages that use to extract the features. Some discussion about the outputs and concluding remarks are given in last section.
 
 # Image Processing
 
-|       Image processing is an essential step to reduce  noise and content enhancement while keeping its features intact. [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are: i) converting BGR (Blue-Green-Red) image to RGB (Red-Green-Blue), ii) gray scaling, iii) Gaussian filtering, iv) binary thresholding, v) remove stalk, vi) close holes, and vii) image resizing. Some of these steps are applicable only for sepecific images. For example,  apply remove stalk is applicable only to leaf images which has stalk.
+|       Image processing is an essential step to reduce  noise and content enhancement while keeping its features intact. [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are: i) converting BGR (Blue-Green-Red) image to RGB (Red-Green-Blue), ii) gray scaling, iii) Gaussian filtering, iv) binary thresholding, v) remove stalk, vi) close holes, and vii) image resizing. Some of these steps are applicable only for specific images. For example,  apply remove stalk is applicable only to leaf images which has stalk.
 
 
 
@@ -74,7 +74,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 
 
 
-|       In this study we focus on leaves with simple arrangement as shown in Figure \ref{simplearra}.  A single leaf that is never divided into smaller leaflet units is known as a leaf with simple arrangement. This type of leaf is attached to a twing by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed (see Figure \ref{alledge}). 
+|       In this study we focus on leaves with simple arrangement as shown in Figure \ref{simplearra}.  A single leaf that is never divided into smaller leaflet units is known as a leaf with simple arrangement. This type of leaf is attached to a twig by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed (see Figure \ref{alledge}). 
 
 ```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{simplearra} A leaf with simple arrangement."}
 knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
@@ -88,12 +88,12 @@ knitr::include_graphics(here::here("leaffeatures","Figures","alledge.png"))
 
 ## Step 1: Converting BGR (Blue-Green-Red) Image to RGB (Red-Green-Blue)
 
-|       BGR and RGB are conventions for the order of the different colour channels. They are not colour spaces. When converting BGR image to RGB, there is no any computations, just switches around the order. Several image processing libraries have different pixel ordering. Therefore to compatible with other libraries we convert the BGR image in to RGB format. For an example when we read an image using OpenCV libray in Python by default it interprets BGR format, but when we plot the image it takes the RGB format in matplotlib package in Python. 
+|       BGR and RGB are conventions for the order of the different colour channels. They are not colour spaces. When converting BGR image to RGB, there is no any computations, just switches around the order. Several image processing libraries have different pixel ordering. Therefore to compatible with other libraries we convert the BGR image in to RGB format. For an example when we read an image using OpenCV library in Python by default it interprets BGR format, but when we plot the image it takes the RGB format in matplotlib package in Python. 
 
 ## Step 2: Grayscaling
 
-|       Grayscaling is the process of converting an image to shades of gray from other colour spaces like RGB. This helps to increase the contrast and intensity of images [@8675114]. Grayscale images require only one single byte for each pixel where as colour (RGB) image requires 3 bytes for each pixel. Hence, grayscaling reduces the dimension of a image.
-In extracting Haralick [@articletx] texture features, grayscale images are used. Another advantage of using grayscaled image is to reduce model complexity. Consider an example of training neural article on RGB images of $20 \times 20 \times 3$ pixel. The input layer will have 1200 input nodes. Whereas for gray scaled images the same neural network will need only 400 ($20 \times 20$) input node.  
+|       Grayscaling is the process of converting an image to shades of gray from other colour spaces like RGB. This helps to increase the contrast and intensity of images [@8675114]. Gray scale images require only one single byte for each pixel where as colour (RGB) image requires 3 bytes for each pixel. Hence, grayscaling reduces the dimension of a image.
+In extracting Haralick [@articletx] texture features, gray-scale images are used. Another advantage of using gray-scaled image is to reduce model complexity. Consider an example of training neural article on RGB images of $20 \times 20 \times 3$ pixel. The input layer will have 1200 input nodes. Whereas for gray scaled images the same neural network will need only 400 ($20 \times 20$) input node.  
 
 
 ## Step 3: Gaussian Filtering (Gaussian Blurring/Gaussian Smoothing)
@@ -219,7 +219,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 
 <!--Morphological transformations-->
 
-|       Holes inside leaf areas occure due to plant disease, light reflection and noise. As shown in \ref{fig:chl} closing holes is used to remove small holes inside the foreground objects. This is achieved by pulling background pixels to foreground pixel. The closing holes is also known as dilation and while erosion does the opposite, which is open holes. This step is performed on a binary image.
+|       Holes inside leaf areas occur due to plant disease, light reflection and noise. As shown in \ref{fig:chl} closing holes is used to remove small holes inside the foreground objects. This is achieved by pulling background pixels to foreground pixel. The closing holes is also known as dilation and while erosion does the opposite, which is open holes. This step is performed on a binary image.
 
 <!--Why-->
 
@@ -240,7 +240,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 
 # Leaf Image Features
 
-|       In identification of plant species using leaf images, features of leaves play an important role, because each leaf posses unique feature that it make different from other. In previous studies [@articlepl; @article7; @sun2017deep], use deep learning neural networks to classify medicinal plants based on pixel-based images. Given the leaf images deep learning models automatically identify features based on pixel-space of the images.  While deep learning models have achieved a great sucess, the lack of interpretability of features limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images. We identified 52 features.
+|       In identification of plant species using leaf images, features of leaves play an important role, because each leaf posses unique feature that it make different from other. In previous studies [@articlepl; @article7; @sun2017deep], use deep learning neural networks to classify medicinal plants based on pixel-based images. Given the leaf images deep learning models automatically identify features based on pixel-space of the images.  While deep learning models have achieved a great success, the lack of interpretability of features limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images. We identified 52 features.
   The features are classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. 
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img33}Classification of features and their composition"}
@@ -252,7 +252,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 
 ## Shape Features
 
-|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. AInaddition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
+|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. In addition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
 
 <!--But some limitations are applied in translation and scaling.--> 
 	
@@ -427,7 +427,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 
 ### Roundness/ Circularity
 
-|       Roundness is named as aka form factor, circularity, or isoperimetric factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness. Figure \ref{shape3} shows what happens to the shape when the roundness measure is changed.
+|       Roundness is named as aka form factor, circularity, or isoperimetrical factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness. Figure \ref{shape3} shows what happens to the shape when the roundness measure is changed.
 
 \begin{equation}
     R = \frac{4 \pi F_4}{{F_5}^2}
@@ -464,7 +464,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c7.png"))
 
 
 
-The equations and sfotware packages used to compute shape features are shown in Table  \ref{tab:table1}. 
+The equations and software packages used to compute shape features are shown in Table  \ref{tab:table1}. 
 
 
 
@@ -585,7 +585,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 ```
 
 
-|       Color is an important characteristic of images [@articlee;@inproceedings1]. Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extracte features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color chaneel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
+|       Color is an important characteristic of images [@articlee;@inproceedings1]. Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extract features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color channel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
 
 |       We used mean($M$) and standard deviation($SD$) of intensity values of red, green and blue channels as color features. Let $h$ be the number of pixels of the image and $r$ is the channel type which can be red, green, or blue. The corresponding colour features are calculates as follows:
 
@@ -688,7 +688,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
 i) Binning
 
 
-|       As the first step of binning, the data are normalized to the unit interval. Then use a $40 \times 40$ hexagonal grid to aggregate the points in each scatterplot. We reduce the bin size by half and rebin until no more than 250 non-empty cells. If there are more than 250 non-empty cells. When selecting the bins two important points to consider are:i) efficiency (too many bins slow down calculations of the geometric graphs) and ii) sensitivity (fewer bins obscure features in the scatterplots).  To improve the performance, hexagon binning is used. To manage the problem of having to many points that start to overlap, hexagon binning is used. The plots of hexagonal binning are density rather than points. There are several reasons for using hexagon binning instead of square binning in a 2D surface. Hexagons are more similar to circle than square. To keep scagnostics orientation-independent this bias reduction is important. 
+|       As the first step of binning, the data are normalized to the unit interval. Then use a $40 \times 40$ hexagonal grid to aggregate the points in each scatterplot. We reduce the bin size by half and rebind until no more than 250 non-empty cells. If there are more than 250 non-empty cells. When selecting the bins two important points to consider are:i) efficiency (too many bins slow down calculations of the geometric graphs) and ii) sensitivity (fewer bins obscure features in the scatterplots).  To improve the performance, hexagon binning is used. To manage the problem of having to many points that start to overlap, hexagon binning is used. The plots of hexagonal binning are density rather than points. There are several reasons for using hexagon binning instead of square binning in a 2D surface. Hexagons are more similar to circle than square. To keep scagnostics orientation-independent this bias reduction is important. 
 
 <!--To attenuate the influence of binning, stabilizing transformation is used when computing scagnostics from binned data.-->
 
@@ -783,7 +783,7 @@ iii) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-
     F_{sc4} = max_j[1-\frac{max_k[length(e_k)]}{length(e_j)}]
 \end{equation} 
 
-|        Clustering points are not indicated by an extreme distribution of T edge lengths. Therefore RUNT statistic [@article37;@inproceedings44] which is another measure based on the T, is introduced. The smaller of the number of leaves of each of the two subtrees joined at that node isdefined as the runt size of a dendogram node. There is an association between runt size ($r_j$) each edge ($e_j$) in the T because there is an isomorphism between a single-linkage dendrogram and the T. The smaller of the two subsets of edges that are still connected to each of the two vertices in $e_j$ after deleting edges in the MST with lengths less than length($e_j$), is known as the RUNT graph ($R_j$) [@article37;@inproceedings44]. The RUNT-based measure responds to clusters with small maximum intracluster distance relative to the length of their nearest-neighbor inter-cluster distance [@article37,@inproceedings44]. In the formula j runs over all edges in T and k runs over all edges in RUNT graph.
+|        Clustering points are not indicated by an extreme distribution of T edge lengths. Therefore RUNT statistic [@article37;@inproceedings44] which is another measure based on the T, is introduced. The smaller of the number of leaves of each of the two subtrees joined at that node is defined as the runt size of a dendogram node. There is an association between runt size ($r_j$) each edge ($e_j$) in the T because there is an isomorphism between a single-linkage dendrogram and the T. The smaller of the two subsets of edges that are still connected to each of the two vertices in $e_j$ after deleting edges in the MST with lengths less than length($e_j$), is known as the RUNT graph ($R_j$) [@article37;@inproceedings44]. The RUNT-based measure responds to clusters with small maximum intra-cluster distance relative to the length of their nearest-neighbor inter-cluster distance [@article37,@inproceedings44]. In the formula $j$ runs over all edges in $T$ and $k$ runs over all edges in RUNT graph.
 
 iv) Striated: Striated define the coherence in a set of points as the presence of relatively smooth paths in the minimum spanning tree. This measure is based on the number of adjacent edges whose cosine is less than minus 0.75.
 
@@ -799,7 +799,7 @@ iv) Striated: Striated define the coherence in a set of points as the presence o
 
 |        Both topological and geometric aspects of shape of a set of scattered points is considered. As an example, a set of scattered points on the plane appeared to be connected, convex and so forth, want to know under the shape measures. By definition scattered points are not like this. Therefore to make inferences additional machinery (based on geometric graphs) is needed. By measuring the aspects of the convex hull, the alpha hull, and the minimum spanning tree is determined.  
 
-i) Convex: The ratio of the area of the alpha hall(Al) and the area of the convex hull(CH) is the base of measuring convexity. 
+i) Convex: The ratio of the area of the alpha hall (Al) and the area of the convex hull (CH) is the base of measuring convexity. 
 
 
 \begin{equation}
@@ -914,7 +914,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 
 ## Image processing and Feature Extraction
 
-We apply the aforementioned feature processing techiniques and computed features from each image. Example of image processing and feature extraction for a leaf in the Flavia data set is shown in \ref{fl15} and \ref{flex} respectively.
+We apply the aforementioned feature processing techniques and computed features from each image. Example of image processing and feature extraction for a leaf in the Flavia data set is shown in \ref{fl15} and \ref{flex} respectively.
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
@@ -951,7 +951,7 @@ ggplot(dd, aes(x=Shape_label, y=value, fill=Shape_label, )) + geom_violin() + fa
 )
 ```
 
-|      We explore the ability of features to classify images under supervised learning setting and unsupervised learning setting. For this purpose we use Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA). LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on flavia and swedish datasets. To visualize LDA projection shape label is taken as the response variable. There are mainly 5 shape categories as diamond, simple round, round, needle, and heart shape. 
+|      We explore the ability of features to classify images under supervised learning setting and unsupervised learning setting. For this purpose we use Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA). LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on Flavia and Swedish datasets. To visualize LDA projection shape label is taken as the response variable. There are mainly 5 shape categories as diamond, simple round, round, needle, and heart shape. 
 
 
 ```{r pcaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=8, fig.width=8, fig.cap="\\label{pcaswedish}Distribution of Swedish leaf images on the projection space created based on pincipal component analysis. All projected points are coloured according to their shape labels."}
@@ -1026,7 +1026,7 @@ p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
 
 ### Swedish Dataset
 
-|       The visualization of PCA projections of Swedish dataset is shown in Figure \ref{pcaswedish}.  The first three principal components (PCs) accounting for approximately 80\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the PCs against each other are used to visualize data. The LDA projections of swedish data are shown in Figure \ref{ldaswedish}.  According to the LDA results on swedish dataset, LDA1, LDA2, and LDA3 shows the separation of shapes of leaf images.
+|       The visualization of PCA projections of Swedish dataset is shown in Figure \ref{pcaswedish}.  The first three principal components (PCs) accounting for approximately 80\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the PCs against each other are used to visualize data. The LDA projections of Swedish data are shown in Figure \ref{ldaswedish}.  According to the LDA results on Swedish dataset, LDA1, LDA2, and LDA3 shows the separation of shapes of leaf images.
 
 
 ```{r ldaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaswedish}Distribution of Swedish leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=15, fig.height=5}
@@ -1073,7 +1073,7 @@ p1h + p2h + p3h + plot_annotation(
 
 ### Flavia Dataset
 
-The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the PCs against each other are used to visualize data. The LDA projections of swedish data are shown in Figure \ref{ldaflavia}.  According to the LDA results on swedish dataset, LDA1, LDA2, and LDA3 shows the separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
+The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the PCs against each other are used to visualize data. The LDA projections of Swedish data are shown in Figure \ref{ldaflavia}.  According to the LDA results on Swedish dataset, LDA1, LDA2, and LDA3 shows the separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
 
 
 
@@ -1178,7 +1178,7 @@ p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
 ) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
 ```
 
-According to the both PCA and LDA visualizations on Swedish and Flavia data sets we can clear separation of classes in their corresponding projection spaces. This reveals our features are capble of distinguishing classes under both supervised and unsupervised settings. 
+According to the both PCA and LDA visualizations on Swedish and Flavia data sets we can clear separation of classes in their corresponding projection spaces. This reveals our features are capable of distinguishing classes under both supervised and unsupervised settings. 
 
 <!--|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.-->
 
