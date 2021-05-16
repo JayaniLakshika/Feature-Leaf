@@ -13,7 +13,7 @@ authors:
     location: Nugegoda, Sri Lanka
     email: ttalagala@sjp.ac.lk
 abstract: |
-  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. The studies on medicinal plant identification are often performed  based on medicinal plant leaf images. The is because plant leaves contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in identifying different medicinal plants. In recent, many researchers use deep learning methods to classify plants directly using plant images. While deep learning models have achieved a great success, the lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images.   Image processing is one of the most challenging, and crucial steps in feature-extraction. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps of our algorithm involves: i) Convert original image to RGB (Red-Green-Blue) image, ii) Gray scaling, iii) Gaussian smoothing, iv) Binary thresholding, v) Remove stalk, vi) Closing holes, and vii) Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. Length, width, area, texture correlation, monotonicity and scagnostics are to name few of them. We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings.  For that, supervised dimensionality reduction technique Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction technique as Principal Component Analysis (PCA) are used to convert and visualize the images from digital-image space to feature space. All the applications are performed on Flavia and Swedish open source benchmark leaf datasets. The results show that the features are sufficient to discriminate the classes of interest under both supervised and unsupervised learning settings. The results of this study are beneficial for the researchers working in the field of developing automated plant identification and classification systems.  
+  Plant species identification is time consuming, costly, and requires lots of efforts, and expertise knowledge. The studies on medicinal plant identification are often performed  based on medicinal plant leaf images. The is because plant leaves contain a large number of diverse set of features such as shape, veins, edge features, apices etc. that are useful in identifying different medicinal plants. In recent, many researchers use deep learning methods to classify plants directly using plant images. While deep learning models have achieved a great success, the lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images.   Image processing is one of the most challenging, and crucial steps in feature-extraction. The purpose of image processing is to improve the leaf image by removing undesired distortion. The main image processing steps of our algorithm involves: i) Convert original image to RGB (Red-Green-Blue) image, ii) Gray scaling, iii) Gaussian smoothing, iv) Binary thresholding, v) Remove stalk, vi) Closing holes, and vii) Resize image. The next step after image processing is to extract features from plant leaf images. We introduced 52 computationally efficient features to classify plant species. These features are mainly classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. Length, width, area, texture correlation, monotonicity and scagnostics are to name few of them. We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings.  For that, supervised dimensionality reduction technique, Linear Discriminant Analysis (LDA), and unsupervised dimensionality reduction technique, Principal Component Analysis (PCA) are used to convert and visualize the images from digital-image space to feature space. All the applications are performed on Flavia and Swedish open source benchmark leaf datasets. The results show that the features are sufficient to discriminate the classes of interest under both supervised and unsupervised learning settings. The results of this study are beneficial for the researchers working in the field of developing automated plant identification and classification systems.  
 keywords:
   - Identification
   - Medicinal
@@ -50,7 +50,7 @@ library(MASS)
 
 # Introduction
 
-|       Leaf identification is becoming very popular in classifying plant species. Plant leaf contains significant number of features that can help people to identify and classify the plant species. In medical perspective, medicinal plants are usually identified by practitioners based on years of experience through sensory or olfactory senses. The other method of recognizing these plants involves laboratory-based testing, which requires trained skills, data interpretation which is costly and time-intensive. Automatic ways to identify medicinal plants are useful especially those that are lacking experience in medicinal plant recognition. Statistical machine learning techniques play a crucial role in the development of automatic system to identify medicinal plants. In developing such system image processing and feature extraction play crucial roles. 
+|       Leaf identification is becoming very popular in classifying plant species. Plant leaf contains significant number of features that can help people to identify and classify the plant species. In medical perspective, medicinal plants are usually identified by practitioners based on years of experience through sensory or olfactory senses. The other method of recognizing these plants involves laboratory-based testing, which requires trained skills, data interpretation which is costly and time-intensive. Automatic ways to identify medicinal plants are useful especially those that are lacking experience in medicinal plant recognition. Statistical machine learning techniques play a crucial role in the development of automatic system to identify medicinal plants. In developing such system input features play an important role. The main aim of this paper is to introduce interpretable features that can be computed based on plant leaf images.   Image processing and feature extraction play crucial roles in developing a workflow to achive the aim of this research. 
 
 |       The main aim of image processing is to extract important features by removing undesired noise and distortion [@articlee]. Image processing steps include image segmentation [@DBLP], image orientation, cropping, grey scaling, binary thresholding, noise removal, contrast stretching, threshold inversion, image normalization, and edge recognition are some of image processing techniques applied in recent research. These steps can be applied parallel or individually, on several times until the quality of leaf image reaches a specific threshold. 
 
@@ -60,7 +60,7 @@ library(MASS)
 
 |       The main aim of feature extraction is to reduce dimensionality of this information by obtaining measurable patterns of leaf images. For example, shape, color, and texture are some of the patterns that may be observed. In this paper we introduce a collection of interpretable, measurable and computer-aided features that are useful in image leaf classification. This feature collection includes  several pre-established features identified through a thorough review of literature.  Other than existing features, we introduce a number of features computed based on the Cartesian coordinate of the images.  Furthermore, we explore the ability of features to discriminate the class of interest under supervised learning setting and unsupervised learning setting.
 
-|       The paper is organized as follows. In the first section, describes about the steps of image processing. Preprocessing is necessary before extracting features from the images. In section 2, discusses about feature extraction in in-detail because features are highly influenced by the plant species to be classified. Under this section, we discuss about mainly four types of features as shape, color, texture, and scagnostics and how to extract them. The next section 3, discuss about applications of leaf features. This section consists of details about the datasets that are used to explain the applications, and visualization of leaf images in the feature space using supervised, and unsupervised dimensionality reduction techniques. In section 4, consist of summary of the software and packages that use to extract the features. Some discussion about the outputs and concluding remarks are given in last section.
+|       The paper is organized as follows. Section 2, describes about the steps of image processing. Preprocessing is necessary before extracting features from the images. Section 3, discusses about feature extraction in in-detail because features are highly influenced by the plant species to be classified. Under this section, we discuss about mainly four types of features as shape, color, texture, and scagnostics and how to extract them. Section 4, present empirical application. This section consists of details about the datasets that are used to explain the applications, and visualization of leaf images in the feature space using supervised, and unsupervised dimensionality reduction techniques. In Section 5, consist of summary of the software and packages that use to extract the features. Some discussion about the outputs and concluding remarks are given in last section.
 
 # Image Processing
 
@@ -100,6 +100,7 @@ In extracting Haralick [@articletx] texture features, gray-scale images are used
 
 
 |       Gaussian smoothing is an image smoothing technique. Image smoothing techniques use to remove the noise that can be occurred because of the source (camera sensor). Image smoothing techniques help in smoothing images and to remove low intensity edges.
+
 |       Gaussian function is used to blur the image. It is a linear filter which is done by using the functions in OpenCV package in Python. By specifying the width and height of the Gaussian kernel that must be positive and odd, and specifying the kernel standard deviation along x and y-axis, Gaussian smoothing is established in OpenCV. When the kernel standard deviation along x-axis is specified, kernel standard deviation along y-axis is taken as equal to the the kernel standard deviation along x-axis. But if both kernel standard deviation are given as zeros, they are calculated by using the kernel size. In our research the width and height of the kernel is defined as 55 and the kernel standard deviation along x-axis is assigned as zero. An example of applying Gaussian smoothing to an image is shown in Figure \ref{gau}.
 
 
@@ -609,7 +610,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","scag.png"))
 ```
 
-|        We separately measure the scagnostic features based on cartesian and polar coordinate of the contour (see figure \ref{pc}). As the first step, we have to extract the contour of the leaf image (see figure \ref{scp}). Then find the $x$ and $y$ coordinate values of the cartesian and polar separately. The $x$ and $y$ coordinate value is used to calculate the scagnostic features. The following definitions can be useful in understanding scagnostics features.
+|        We separately measure the scagnostic features based on cartesian and polar coordinate of the contour (see Figure \ref{pc}). As the first step, we have to extract the contour of the leaf image (see figure \ref{scp}). Then find the $x$ and $y$ coordinate values of the cartesian and polar separately. The $x$ and $y$ coordinate value is used to calculate the scagnostic features. The following definitions can be useful in understanding scagnostics features.
 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{pc}Polar coordinate"}
@@ -882,11 +883,11 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 
 where $(x_i,y_i)$ is the coordinate of cartesian contour and $m$ is the number of points in the cartesian contour 
 
-# Application of features to classify images
+# Empirical Application
 
 ## Data sets
 
-|       We use two publicly available datasets for demonstrate the applications of features. They are: i) Flavia leaf image dataset and iii) Swedish leaf image dataset
+|       We use two publicly available datasets to demonstrate the applications of features. They are: i) Flavia leaf image dataset and iii) Swedish leaf image dataset
 
 ### Flavia Leaf Image Dataset
     
@@ -914,7 +915,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 
 ## Image processing and Feature Extraction
 
-We apply the aforementioned feature processing techniques and computed features from each image. Example of image processing and feature extraction for a leaf in the Flavia data set is shown in \ref{fl15} and \ref{flex} respectively.
+We applied the aforementioned image processing techniques and computed features from each image. Example of image processing and feature extraction for a leaf in the Flavia data set is shown in Figure \ref{fl5} and Figure \ref{flexe} respectively.
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
@@ -935,7 +936,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
 ## Visualization of ability of features to distinguish classes of interest
 
 
-|      In order to identify ability of features to distinguish classes of interest, we first label features according to their shapes as:i) diamond, ii) hear shape, iii) needle shape, iv) simple round and v) round shape (see Figure \ref{shapeimg}). These morphological characteristics are identified by observing images of medicinal plant repository maintained by Barberyn Ayurveda resort and University of Ruhuna available at \url{http://www.instituteofayurveda.org/plants/}. Our observed results are converted into a open source R software package called MedLEA: **Med**icinal **LEAf** which is available on Comprehensive R Archive Network [@medlea]. 
+|      In order to identify ability of features to distinguish classes of interest, we first label features according to their shapes as: i) diamond, ii) heart shape, iii) needle shape, iv) simple round and v) round shape (see Figure \ref{shapeimg}). These morphological characteristics are identified by observing images in the medicinal plant repository maintained by Barberyn Ayurveda resort and University of Ruhuna available at \url{http://www.instituteofayurveda.org/plants/}. Our observed results are converted into a open source R software package called MedLEA: **Med**icinal **LEAf** which is available on Comprehensive R Archive Network [@medlea]. 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{shapeimg}Shape illustrations"}
 knitr::include_graphics(here::here("leaffeatures","Figures","imgshape.png"))
@@ -951,7 +952,7 @@ ggplot(dd, aes(x=Shape_label, y=value, fill=Shape_label, )) + geom_violin() + fa
 )
 ```
 
-|      We explore the ability of features to classify images under supervised learning setting and unsupervised learning setting. For this purpose we use Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA). LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on Flavia and Swedish datasets. To visualize LDA projection shape label is taken as the response variable. There are mainly 5 shape categories as diamond, simple round, round, needle, and heart shape. 
+|      We explore the ability of features to classify images under supervised learning setting and unsupervised learning setting. For this purpose we use Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA). LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on Flavia and Swedish datasets. To compute LDA projection shape label is taken as the response variable. There are 5 main shape categories as diamond, simple round, round, needle, and heart shape. 
 
 
 ```{r pcaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=8, fig.width=8, fig.cap="\\label{pcaswedish}Distribution of Swedish leaf images on the projection space created based on pincipal component analysis. All projected points are coloured according to their shape labels."}
@@ -1026,7 +1027,7 @@ p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
 
 ### Swedish Dataset
 
-|       The visualization of PCA projections of Swedish dataset is shown in Figure \ref{pcaswedish}.  The first three principal components (PCs) accounting for approximately 80\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the PCs against each other are used to visualize data. The LDA projections of Swedish data are shown in Figure \ref{ldaswedish}.  According to the LDA results on Swedish dataset, LDA1, LDA2, and LDA3 shows the separation of shapes of leaf images.
+|       The visualization of PCA projections of Swedish dataset is shown in Figure \ref{pcaswedish}.  The first three principal components (PCs) accounting for approximately 80\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA space. The LDA projections of Swedish data are shown in Figure \ref{ldaswedish}.  According to the LDA results on Swedish dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images.
 
 
 ```{r ldaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaswedish}Distribution of Swedish leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=15, fig.height=5}
@@ -1073,11 +1074,11 @@ p1h + p2h + p3h + plot_annotation(
 
 ### Flavia Dataset
 
-The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the PCs against each other are used to visualize data. The LDA projections of Swedish data are shown in Figure \ref{ldaflavia}.  According to the LDA results on Swedish dataset, LDA1, LDA2, and LDA3 shows the separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
+|      The LDA projections of Flavia data are shown in Figure \ref{ldaflavia}. The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA projection space.   According to the LDA results on Flavia dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
 
 
 
-```{r ldaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldasflavia}Distribution of Flavia leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=15, fig.height=5}
+```{r ldaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaflavia}Distribution of Flavia leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=15, fig.height=5}
 
 data_new1 <- read.csv("data/Flavia_dataset/data_all_with_label_flavia.csv", header = TRUE)
 features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
@@ -1178,15 +1179,15 @@ p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
 ) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
 ```
 
-According to the both PCA and LDA visualizations on Swedish and Flavia data sets we can clear separation of classes in their corresponding projection spaces. This reveals our features are capable of distinguishing classes under both supervised and unsupervised settings. 
+According to both PCA and LDA visualizations on Swedish and Flavia data sets we can see a clear separation of classes in their corresponding projection spaces. This reveals our features are capable of distinguishing classes under both supervised learning and unsupervised learning settings. 
 
 <!--|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.-->
 
-\newpage
+
 
 # Discussion and Conclusions
 
-|       In this paper we introduce computer-aided, interpretable features for image recognition. There are four main categories of features that are used to classify leaf images. Many research were based on shape, color, and texture features. In this research paper, we introduced new feature category called scagnostics for image classification. Other than that correlation of cartesian coordinate, number of convex points, number of minimum and maximum points are introduced as new shape features.  We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings using principal component analysis and linear discriminant analysis. Under both experimental settings clear separation of classes are visible in their projection spaces. In our next paper we introduce a meta-learning algorithm to classify feature species using the features introduced in this paper. A more detailed look at the most features and approach of classification plant species will be presented in our next paper. Reproducible research code to reproduce the results of this paper is available here: \url{https://github.com/JayaniLakshika/Feature-Leaf}
+|       In this paper we introduce computer-aided, interpretable features for image recognition. There are four main categories of features that are used to classify leaf images. Many research were based on shape, color, and texture features. In this research paper, we introduce new feature category called scagnostics for image classification. Other than that correlation of cartesian coordinate, number of convex points, number of minimum and maximum points are introduced as new shape features.  We explore the ability of features to discriminate the classes of interest under supervised learning and unsupervised learning settings using principal component analysis and linear discriminant analysis. Under both experimental settings clear separation of classes are visible in their projection spaces. In our next paper we introduce a meta-learning algorithm to classify plant species using the features introduced in this paper. A more detailed look at the most important features and approach of classification plant species will be presented in our next paper. We hope our analysis opens various research agendas in the filed of image recognition. Reproducible research code to reproduce the results of this paper is available here: \url{https://github.com/JayaniLakshika/Feature-Leaf}. 
 
 <!--To visualize the leaf images on feature space LDA, and PCA are used. The results are obtained based on flavia and swedish datasets. LDA is performed better than PCA when classifying leaf shapes. -->
 
