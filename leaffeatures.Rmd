@@ -557,7 +557,7 @@ Texture feature & Feature name                                                  
 \end{table}
 
 
-where h(a, b) = Probability density function of gray - level pairs $(a,b)$ and dimension of GLCM is $n * n$ ($\text{Number of columns} * \text{Number of rows}$)
+Let h(a, b) = Probability density function of gray - level pairs $(a,b)$ and dimension of GLCM is $n * n$ ($\text{Number of columns} * \text{Number of rows}$)
 	
 $$\mu_{x} = \sum_{a=1}^{columns}a\sum_{b=1}^{rows}h(a,b)$$ 
 	
@@ -603,113 +603,76 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 
 ## Scagnostic features
 
-|       Scagnostic features [@inproceedings44; @article37;@inproceedings33;@article101] describe the characteristics of 2D scatterplot. Various types of measures are calculated based on the appearance of scatterplot. All the scagnostics features are calculated by using the R package called binostics. Scagnostic features has the range of [0,1]. There are 9 measures which are classified in to three categories as shown in figure \ref{scagimg}. Based on binary images, scagnostic features are extracted. 
+|       Scagnostic features are used to quantify the characteristics of 2D scatterplot diagrams (@article37). Scagnostic measures are calculated based on the appearance of scatterplot. All the scagnostics features are calculated by using the R package called `binostics`. Scagnostic features has the range of [0,1]. There are 9 measures which are classified into three categories as shown in Figure \ref{scagimg}. Based on binary images, scagnostic features are extracted. To the best of our knowledge this is the first time, the scagnostic features are used for image recognition.
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{scagimg}Hierarchy of Scagnostics"}
 knitr::include_graphics(here::here("leaffeatures","Figures","scag.png"))
 ```
 
-|        We measure the scagnostic features for cartesian and polar coordinate (see figure \ref{pc}) separately.
+|        We separately measure the scagnostic features based on cartesian and polar coordinate of the contour (see figure \ref{pc}). As the first step, we have to extract the contour of the leaf image (see figure \ref{scp}). Then find the $x$ and $y$ coordinate values of the cartesian and polar separately. The $x$ and $y$ coordinate value is used to calculate the scagnostic features. The following definitions can be useful in understanding scagnostics features.
 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{pc}Polar coordinate"}
 knitr::include_graphics(here::here("leaffeatures","Figures","pc.png"))
 ```	
 
-|       As the first step, we have to extract the contour of the leaf image (see figure \ref{scp}). Then find the x and y coordinate values of the cartesian and polar separately. The x and y coordinate value is used to calculate the scagnostic features. 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scp}Preprocessing for Scagnostics"}
 knitr::include_graphics(here::here("leaffeatures","Figures","scp.png"))
 ```	
 
-|       The following definitions can be useful in understanding scagnostics features.
 	    
-### Geometric Graphs
-
-\begin{itemize}
-    \item Graph
-\end{itemize}
-
-|       A graph Gr = (Ve, Ed) is defined as a set Ve (called vertices) together with a relation on Ve induced by a set Ed (called edges). A pair of vertices is defined as an edge $e(\nu,\omega)$, with e $\in$ Ed and $\nu,\omega \in$ Ve.
-
-\begin{itemize}
-    \item Geometric Graph
-\end{itemize} 
+\textbf{Geometric Graphs}
 
 
-|       An embedding of a graph in a metric space S that maps vertices to points and edges to straight line segments connecting pairs of points is defined as a geometric graph G* = [f(Ve), g(Ed), S].
+i)  Graph: A graph Gr = (Ve, Ed) is defined as a set Ve (called vertices) together with a relation on Ve induced by a set Ed (called edges). A pair of vertices is defined as an edge $e(\nu,\omega)$, with e $\in$ Ed and $\nu,\omega \in$ Ve.
 
-|       From several features of 2D Euclidean geometric graphs, Scagnostic measures are derived.
+ii) Geometric Graph: An embedding of a graph in a metric space $S$ that maps vertices to points and edges to straight line segments connecting pairs of points is defined as a geometric graph G* = [f(Ve), g(Ed), S].
 
-|       The Euclidean distance between vertices that connected to edge is defined as the length of an edge, length(e).
+<!--|       From several features of 2D Euclidean geometric graphs, Scagnostic measures are derived.-->
 
-|       The sum of the lengths of edges in graph is known as the length of a graph, length(Gr).
+iii) Length of an edge: The Euclidean distance between vertices that connected to edge is defined as the length of an edge, $length(e)$.
 
-|       A list of successively adjacent, distinct edges are known as a path. If first and last vertex are the same of the path, then the path is closed.
+iv) Length of a graph: The sum of the lengths of edges in graph is known as the length of a graph, $length(Gr)$.
 
-|       A region bounded by a closed path is known as a polygon (P). A polygon bounded by exactly one closed path that has no intersecting edges is known as a simple polygon.
+v) Path:  A list of successively adjacent, distinct edges are known as a path. If first and last vertex are the same of the path, then the path is closed.
 
-|       The length of boundary of a simple polygon is known as the perimeter of a simple polygon. The area of interior of a simple polygon is known as the area of a simple polygon.
+vi) Polygon:  A region bounded by a closed path is known as a polygon ($P$). A polygon bounded by exactly one closed path with no intersecting edges is known as a simple polygon.
+
+vii) Perimeter of a simple polygon:  The length of boundary of a simple polygon is known as the perimeter of a simple polygon. The area of interior of a simple polygon is known as the area of a simple polygon.
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg5}Graph with 5 vertices and 5 edges"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c4.png"))
 ```
 
-### Minimum Spanning Tree (MST)
-
-\begin{itemize}
-    \item Tree
-\end{itemize} 
-
-|       A graph in which any two nodes are connected by exactly one path is known as a \textit{tree}.
-
-\begin{itemize}
-    \item Spanning Tree
-\end{itemize} 
-
-|       An undirected graph whose edges are structured as a tree is defines as a \textit{Spanning Tree}.
-
-|       \textbf{Spanning Tree of Graph Gr is:} G'(V',E')
+\textbf{Minimum Spanning Tree (MST)}
 
 
-$$V' = Ve$$
+i) Tree: A graph in which any two nodes are connected by exactly one path is known as a \textit{tree}.
 
-$$    E' \subset Ed $$
+ii) Spanning Tree: An undirected graph whose edges are structured as a tree is defines as a \textit{Spanning Tree}.
+
+\textbf{Spanning Tree:} 
+
+i) Spanning Tree of Graph: The spanning tree of the graph is defined as $G'(V',E')$, where
+
+$V' = Ve$, $E' \subset Ed$ and $E' = |Ve|-1$.
 
 
-$$    E' = |Ve|-1$$
+A graph can have more than one spanning tree. Spanning tree should not be disconnected and should not contain any cycles. By removing one edge from the Spanning tree will make it disconnected. By adding one edge to the Spanning tree will create a loop. A complete (Each vertices connected with each other) undirected graph can have $n^{n-2}$ number of spanning trees where n is the number of vertices. Every connected and undirected graph has at least one Spanning Tree. Disconnected graph doesn't have any spanning tree. From a complete graph by removing $max(edges-n+1)$ edges we can construct a spanning tree.
 
+iii) Minimum Spanning Tree:  A spanning tree whose total length is least of all spanning trees on a given set of points is known as a Minimum Spanning Tree (MST).  If each edge has distinct weights then there will be only one and unique MST.
 
-The graph can have more than one spanning tree.
+<!--iv) Remark: The geometric MST computed from Euclidean distances between points in a 2D Euclidean geometric graph is the restriction.-->
 
-|       Spanning tree should not be disconnected and not contain any cycle. By removing one edge from the Spanning tree will make it disconnected. By adding one edge to the Spanning tree will create a loop. A complete (Each vertices connected with each other) undirected graph can have $n^{n-2}$ number of spanning trees where n is the number of vertices. Every connected and undirected graph has at least one Spanning Tree. Disconnected graph doesn't have any spanning tree. From a complete graph by removing $max(edges-n+1)$ edges we can construct a spanning tree.
+\textbf{Convex hull and Alpha hull}
 
-\begin{itemize}
-    \item Minimum Spanning Tree
-\end{itemize} 
+i) Convex Hull (see Figure \ref{scagimg4}): A collection of the boundaries of one or more simple polygons that have a subset of the points for their vertices and that collectively contain all the points, is defined as a hull of a set of points embedded in 2D Euclidean space.  If a hull contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon. After deleting the points on the convex hull, a convex hull called peeled convex hull is computed. 
 
-|       A spanning tree whose total length is least of all spanning trees on a given set of points is known as a Minimum Spanning Tree (MST).
+ii) Alpha Hull (see Figure \ref{scagimg4}): Most of proximity graphs (neighborhood graph) represent the nonconvex shape of a set of points on the plane. A geometric graph whose edges are determined by an indicator function based on distances between a given set of points in a metric space, is known as a proximity graph. An open disk $D$ is used to define the indicator function.
 
-|       If each edge has distinct weights then there will be only one and unique MST.
-
-\begin{itemize}
-    \item Remark
-\end{itemize} 
-
-|       The geometric MST computed from Euclidean distances between points in a 2D Euclidean geometric graph is the restriction.
-
-### Convex Hull
-
-|       A collection of the boundaries of one or more simple polygons that have a subset of the points for their vertices and that collectively contain all the points, is defined as a hull of a set of points embedded in 2D Euclidean space. 
-
-|       If a hull contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon. After deleting the points on the convex hull, a convex hull called peeled convex hull is computed. 
-
-### Alpha Hull
-
-|       Most of proximity graphs (neighborhood graph) represent the nonconvex shape of a set of points on the plane. A geometric graph whose edges are determined by an indicator function based on distances between a given set of points in a metric space, is known as a proximity graph. An open disk $D$ is used to define the indicator function.
-
-|       If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is in $D$ then $D$ \textit{contains} a point. An open disk of radius r is defined as $D(r)$. 
+|       If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is in $D$ then $D$ \textit{contains} a point. An open disk of radius $r$ is defined as $D(r)$. 
 
 |       An alpha shape [@inproceedings33] is a collection of one or more simple polygons [@article37;@inproceedings44]. An edge exists between any pair of points that can be touched by an open disk $D(\alpha)$ containing no points, is defined as an alpha shape graph.
 
@@ -722,13 +685,12 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
 
 
 
-### Preprocessing
+\textbf{Preprocessing}
 
-|           To improve the performance of the algorithm and robustness of the measures, preprocessing techniques as binning and deleting outliers are used before computing geometric graphs.
+|           To improve the performance of the algorithm and robustness of the measures, preprocessing techniques such as binning and deleting outliers are used before computing geometric graphs related features.
 
-\begin{itemize}
-    \item Binning
-\end{itemize} 
+i) Binning
+
 
 |       As the first step of binning, the data are normalized to the unit interval. Then use a 40 by 40 hexagonal grid to aggregate the points in each scatterplot. Reduce the bin size by half and rebin until no more than 250 non emty cells, if there are more than 250 non empty cells. By efficiency (too many bins slow down calculations of the geometric graphs) and sensitivity (too few bins obscure features in the scatterplots), the choice of bin size is constrained. 
 
@@ -748,9 +710,8 @@ where $t=\frac{n}{500}$. ($n$ is the number of vertex)
 
 |        If $n>2000$ then this function is fairly constant. By using hex binning the shape and the parameters of the function is determined. In computing Sparse, Skewed and Convex scagnostics this weight function is used to adjust for bias.   
 
-\begin{itemize}
-    \item Deleting Outliers
-\end{itemize} 
+ii) Deleting Outliers
+
 
 |       To improve robustness of the scagnostics, deleting outliers can be used. A vertex whose adjacent edges in the MST all have a weight (length) greater than $\omega$ is defined as an outlier in this context. By considering nonparametric criterion for the simplicity and Tukey's idea choose the following weight calculation.
 
@@ -763,7 +724,7 @@ where $qu_{75}$ is the 75th percentile of the MST edge lengths and $(qu_{75} - q
 
 
 
-### Degree of a Vertex
+iii) Degree of a Vertex
 
 |        The degree of a vertex in an undirected graph is know as the number of edges associated with the vertex.
 
@@ -787,8 +748,9 @@ Minimum Spanning Tree                  & T        \\ \hline
 \label{tab:gg}
 \end{table}
 
-|       The definitions of scagnostic features are defined as follows.
 
+
+|       The definitions of scagnostic features are defined as follows.
 
 ### Density Measures
 
