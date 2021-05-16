@@ -670,13 +670,9 @@ iii) Minimum Spanning Tree:  A spanning tree whose total length is least of all 
 
 i) Convex Hull (see Figure \ref{scagimg4}): A collection of the boundaries of one or more simple polygons that have a subset of the points for their vertices and that collectively contain all the points, is defined as a hull of a set of points embedded in 2D Euclidean space.  If a hull contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon. After deleting the points on the convex hull, a convex hull called peeled convex hull is computed. 
 
-ii) Alpha Hull (see Figure \ref{scagimg4}): Most of proximity graphs (neighborhood graph) represent the nonconvex shape of a set of points on the plane. A geometric graph whose edges are determined by an indicator function based on distances between a given set of points in a metric space, is known as a proximity graph. An open disk $D$ is used to define the indicator function.
+ii) Alpha Hull (see Figure \ref{scagimg4}): Most of proximity graphs (neighborhood graph) represent the nonconvex shape of a set of points on the plane. A geometric graph whose edges are determined by an indicator function based on distances between a given set of points in a metric space, is known as a proximity graph. An open disk $D$ is used to define the indicator function. If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is inside $D$ then $D$ \textit{contains} a point. An open disk of radius $r$ is defined as $D(r)$. 
 
-|       If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is in $D$ then $D$ \textit{contains} a point. An open disk of radius $r$ is defined as $D(r)$. 
-
-|       An alpha shape [@inproceedings33] is a collection of one or more simple polygons [@article37;@inproceedings44]. An edge exists between any pair of points that can be touched by an open disk $D(\alpha)$ containing no points, is defined as an alpha shape graph.
-
-|       A value of $\alpha$ to be the average value of the edge lengths in the MST [@article37;@inproceedings44]. The large values like 90th percentile of the MST edge lengths are used, because to reduce noise. If the percentile exceeds a tenth, clamp the value at one-tenth the width of a frame, because it prevents in including sparse or striated point sets in a single alpha graph. 
+|       An alpha shape [@inproceedings33] is a collection of one or more simple polygons [@article37;@inproceedings44]. An edge exists between any pair of points that can be touched by an open disk $D(\alpha)$ containing no points, is defined as an alpha shape graph. A value of $\alpha$ to be the average value of the edge lengths in the MST [@article37;@inproceedings44]. The large values like 90th percentile of the MST edge lengths are used, because to reduce noise. If the percentile exceeds a tenth, clamp the value at one-tenth the width of a frame, because it prevents in including sparse or striated point sets in a single alpha graph. 
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg4}Convex hull and alpha hull"}
@@ -685,18 +681,16 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
 
 
 
-\textbf{Preprocessing}
+### Preprocessing steps related to scagnostic features
 
 |           To improve the performance of the algorithm and robustness of the measures, preprocessing techniques such as binning and deleting outliers are used before computing geometric graphs related features.
 
 i) Binning
 
 
-|       As the first step of binning, the data are normalized to the unit interval. Then use a 40 by 40 hexagonal grid to aggregate the points in each scatterplot. Reduce the bin size by half and rebin until no more than 250 non emty cells, if there are more than 250 non empty cells. By efficiency (too many bins slow down calculations of the geometric graphs) and sensitivity (too few bins obscure features in the scatterplots), the choice of bin size is constrained. 
+|       As the first step of binning, the data are normalized to the unit interval. Then use a $40 \times 40$ hexagonal grid to aggregate the points in each scatterplot. We reduce the bin size by half and rebin until no more than 250 non-empty cells. If there are more than 250 non-empty cells. When selecting the bins two important points to consider are:i) efficiency (too many bins slow down calculations of the geometric graphs) and ii) sensitivity (fewer bins obscure features in the scatterplots).  To improve the performance, hexagon binning is used. To manage the problem of having to many points that start to overlap, hexagon binning is used. The plots of hexagonal binning are density rather than points. There are several reasons for using hexagon binning instead of square binning in a 2D surface. Hexagons are more similar to circle than square. To keep scagnostics orientation-independent this bias reduction is important. 
 
-|        To improve the performance, hexagon binning is used. To manage the problem of having to many points that start to overlap, hexagon binning is used. The plots of hexagonal binning are density rather than points. To use hexagons instead of squares for binning a 2D surface as a plane, there are many reasons. Hexagons are more similar to circle than square. 
-
-|        To keep scagnostics orientation-independent this bias reduction is important. To attenuate the influence of binning, stabilizing transformation is used when computing scagnostics from binned data.
+<!--To attenuate the influence of binning, stabilizing transformation is used when computing scagnostics from binned data.-->
 
 
 The weight function is defined as;
@@ -726,49 +720,31 @@ where $qu_{75}$ is the 75th percentile of the MST edge lengths and $(qu_{75} - q
 
 iii) Degree of a Vertex
 
-|        The degree of a vertex in an undirected graph is know as the number of edges associated with the vertex.
-
-\textbf{Eg:- Vertices of degree 2} There are 2 edges associated with each vertex.
-
+|        The degree of a vertex in an undirected graph is the number of edges associated with the vertex. For example, vertices of degree 2  means there are 2 edges associated with each vertex (see Figure \ref{scagimg6}).
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{scagimg6}Vertices of degree 2"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c3.png"))
 ```
 
-\begin{table}[!ht]
-\centering
-\begin{tabular}{l c}
-\hline
-\multicolumn{1}{c}{Geometric Graphs} & Notation \\ \hline
-Convex Hull                            & CH        \\ %\hline
-Alpha Hull                             & Al        \\ %\hline
-Minimum Spanning Tree                  & T        \\ \hline
-\end{tabular}
-\caption{Notations of Geometric Graphs}
-\label{tab:gg}
-\end{table}
 
+### Definitions of Scagnostic Features
 
-
-|       The definitions of scagnostic features are defined as follows.
+|       The definitions of scagnostic features are defined as follows. Our notations are as follows: i) Convex hull ($CH$), ii) Alpha hull ($Al$) and iii) Minimum spanning tree ($T$).
 
 ### Density Measures
 
-|       Detect different distributions of scattered points in density measures.
 
-\begin{itemize}
-    \item Outlying
-\end{itemize}
+i) Outlying
+
 
 \begin{equation}
       F_{sc1} = \frac{\text{Total length of edges adjacent to outlying points}}{\text{Total edge length of T}}
 \end{equation}
 
-|        The outlying measure calculate before deleting the outliers for the other measures. 
+<!--   The outlying measure calculate before deleting the outliers for the other measures. -->
 
-\begin{itemize}
-    \item Skewed
-\end{itemize}
+
+ii) Skewed: The skewed measure is the first measure of relative density which is a relatively robust measure of skewness in the distribution of edge lengths. After adaptive binning skewed tends to decrease with $n$.
 
 \begin{equation}
     qu_{skew} = \frac{qu_{90}-qu_{50}}{qu_{90}-qu_{10}}
@@ -778,23 +754,18 @@ Minimum Spanning Tree                  & T        \\ \hline
     F_{sc2} = 1-\text{weight}*(1-qu_{skew})
 \end{equation}
 
-where the weight function is equation \ref{w2}.
+where the calculation of $weight$ is given in equation \ref{w2}.
 
-|        The skewed measure is the first measure of relative density which is a relatively robust measure of skewness in the distribution of edge lengths. After adaptive binning skewed tends to decrease with $n$.
+iii) Sparse: The second relative density measure is sparse measure that measures whether points in a 2D scatterplot are confined to a lattice or a small number of locations on the plane.
 
-\begin{itemize}
-    \item Sparse
-\end{itemize}
 
 \begin{equation}
    F_{sc3} = \text{weight} *qu_{90}
 \end{equation} 
 
-where the weight function is equation \ref{w2} and $qu_{90}$ is the 90th percentile of the distribution of edge lengths in the T.
+where the weight function is equation \ref{w2} and $qu_{90}$ is the 90th percentile of the distribution of edge lengths in the $T$.
 
-|        The second relative density measure is sparse measure that measures whether points in a 2D scatterplot are confined to a lattice or a small number of locations on the plane.
-
-|        If the number of points is extremely small or tuples are produced by the product of categorical variables, then sparse can be happen.
+<!--     If the number of points is extremely small or tuples are produced by the product of categorical variables, then sparse can be happen.-->
 
 \begin{equation}
     qu_{90} = \alpha statistic
@@ -804,72 +775,57 @@ where the weight function is equation \ref{w2} and $qu_{90}$ is the 90th percent
 of a square), clamp the value to 1 in the extremely rare event [@article37,@inproceedings44].
 
 
-\begin{itemize}
-    \item Clumpy
-\end{itemize}
+
+iii) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-scatter plot.
+
 
 \begin{equation}
     F_{sc4} = max_j[1-\frac{max_k[length(e_k)]}{length(e_j)}]
 \end{equation} 
 
-|        Clustering points are not indicated by an extreme distribution of T edge lengths. Therefore RUNT statistic [@article37;@inproceedings44] which is another measure based on the T, is introduced. The smaller of the number of leaves of each of the two subtrees joined at that node isdefined as the runt size of a dendogram node. There is an association between runt size ($r_j$) each edge ($e_j$) in the T because there is an isomorphism between a single-linkage dendrogram and the T.
+|        Clustering points are not indicated by an extreme distribution of T edge lengths. Therefore RUNT statistic [@article37;@inproceedings44] which is another measure based on the T, is introduced. The smaller of the number of leaves of each of the two subtrees joined at that node isdefined as the runt size of a dendogram node. There is an association between runt size ($r_j$) each edge ($e_j$) in the T because there is an isomorphism between a single-linkage dendrogram and the T. The smaller of the two subsets of edges that are still connected to each of the two vertices in $e_j$ after deleting edges in the MST with lengths less than length($e_j$), is known as the RUNT graph ($R_j$) [@article37;@inproceedings44]. The RUNT-based measure responds to clusters with small maximum intracluster distance relative to the length of their nearest-neighbor inter-cluster distance [@article37,@inproceedings44]. In the formula j runs over all edges in T and k runs over all edges in RUNT graph.
 
-|        The smaller of the two subsets of edges that are still connected to each of the two vertices in $e_j$ after deleting edges in the MST with lengths less than length($e_j$), is known as the RUNT graph ($R_j$) [@article37;@inproceedings44].
+iv) Striated: Striated define the coherence in a set of points as the presence of relatively smooth paths in the minimum spanning tree. This measure is based on the number of adjacent edges whose cosine is less than minus 0.75.
 
-|       The RUNT-based measure responds to clusters with small maximum intracluster distance relative to the length of their nearest-neighbor inter-cluster distance [@article37,@inproceedings44]. In the formula j runs over all edges in T and k runs over all edges in RUNT graph.
-
-\begin{itemize}
-    \item Striated
-\end{itemize}
 
 \begin{equation}
     F_{sc5} = \frac{1}{|Ve|}\sum_{\nu \in Ve^{(2)}}^{}I(\cos\theta_{e(\nu,a)e(\nu,b)}<-0.75)
 \end{equation} 
 
-where $Ve^{(2)} \subseteq Ve$ and $I()$ be an indicator function.
+|     where $Ve^{(2)} \subseteq Ve$ and $I()$ be an indicator function.
 
-|        Striated define the coherence in a set of points as the presence of relatively smooth paths in the minimum spanning tree. 
-The measure is based on the number of adjacent edges whose cosine is less than minus 0.75.
 
-### Shape Measures
+### Scagnostic-based Shape Measures
 
 |        Both topological and geometric aspects of shape of a set of scattered points is considered. As an example, a set of scattered points on the plane appeared to be connected, convex and so forth, want to know under the shape measures. By definition scattered points are not like this. Therefore to make inferences additional machinery (based on geometric graphs) is needed. By measuring the aspects of the convex hull, the alpha hull, and the minimum spanning tree is determined.  
 
-\begin{itemize}
-    \item Convex
-\end{itemize}
+i) Convex: The ratio of the area of the alpha hall(Al) and the area of the convex hull(CH) is the base of measuring convexity. 
+
 
 \begin{equation}
-    F_{sc6} = \text{weight}*\frac{\text{Area of alpha hull}}{\text{Area of convex hull}}
+    F_{sc6} = \text{weight} \times \frac{\text{Area of alpha hull}}{\text{Area of convex hull}}
 \end{equation}
 
-where the weight function is equation \ref{w2}.
-
-|       The ratio of the area of the alpha hall(Al) and the area of the convex hull(CH) is the base of measuring convexity. 
+|        where the weight function is equation \ref{w2}.
 
 
 $$Ratio = \frac{area(A)}{area(H)}\Bigg\{^{(=1); \text{ if the nonconvex hull and convex hull have identical areas}}_{(\neq1) ; \text{ otherwise}}$$
 
-`
 
+ii) Skinny: Skinny is measured by using the corrected and normalized ratio of perimeter to area of a polygon measures.
 
-\begin{itemize}
-    \item Skinny
-\end{itemize}
 
 \begin{equation}
-    F_{sc7} = 1- \frac{\sqrt{4*\pi*\text{Area of alpha hull}}}{\text{Perimeter of alpha hull}}
+    F_{sc7} = 1- \frac{\sqrt{4 \times \pi \times \text{Area of alpha hull}}}{\text{Perimeter of alpha hull}}
 \end{equation}
 
-
-|       Roughly, the skinny is measured by using the corrected and normalized ratio of perimeter to area of a polygon measures.
 
 $$F_{sc7} = \Bigg\{^{0; \text{ if circle}}_{\text{Near } 1 ; \text{ if skinny}}$$
 
 
-\begin{itemize}
-    \item Stringy
-\end{itemize}	    
+
+iii) Stringy: A skinny shape with no branches is known as a stringy shape. By counting the vertices of degree 2 in the minimum spanning tree and comparing them to the overall number of vertices minus the number of single-degree vertices, skinny measure is calculated. To adjust for negative skew in its conditional distribution of $n$, cube the stringy measure.
+    
 
 \begin{equation}
     F_{sc8} = \frac{|Ve^{(2)}|}{|Ve| - |Ve^{(1)}|}
@@ -877,33 +833,27 @@ $$F_{sc7} = \Bigg\{^{0; \text{ if circle}}_{\text{Near } 1 ; \text{ if skinny}}$
 
 where $Ve$ is the number of vertices.
 
-|       A skinny shape with no branches is known as a stringy shape. By counting the vertices of degree 2 in the minimum spanning tree and comparing them to the overall number of vertices minus the
-number of single-degree vertices, skinny measure is calculated.
-
-|       To adjust for negative skew in its conditional distribution of $n$, cube the stringy measure. 
 
 
 ### Association Measure
 
 |        Symmetric and relatively robust measure of association are interested.
 
-\begin{itemize}
-    \item Monotonic
-\end{itemize}
+
+i) Monotonic: To assess the monotonicity in a scatter plot, the squared Spearman correlation coefficient is used.  In calculating monotonicity, squared the coefficient because to consider the large values and to remove the distinction between positive and negative coefficients (Because assume that the investigators are more interested in strong relationships rather than negative or positive).
+
+<!--This is the only coefficient not based on a subset of the Delaunay graph [@article37].-->
+
 
 \begin{equation}
     F_{sc9} = r^2_{Spearman}
 \end{equation}
 
-|        To assess the monotonicity in a scatter plot, the squared Spearman correlation coefficient is used. This is the only coefficient not based on a subset of the Delaunay graph [@article37].
 
-|        In calculating monotonicity, squared the coefficient because to consider the large values and to remove the distinction between positive and negative coefficients (Because assume that the investigators are more interested in strong relationships rather than negative or positive).
-	
-
-|       We introduced number of minimum and maximum points, correlation of cartesian contour as new features under scagnostics. 
+<!--    We introduced number of minimum and maximum points, correlation of cartesian contour as new features under scagnostics. -->
 
 
-## Number of Minimum ($F_8$) and Maximum Points ($F_9$)
+### Number of Minimum ($F_8$) and Maximum Points ($F_9$)
 
 |       Number of minimum, and maximum points are new measures which are obtained from the polar coordinate of leaf contour. Number of global maximum points are defined as number of maximum points. Number of global minimum points are defined as number of minimum points. 
 
@@ -921,9 +871,9 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 \label{equa_F9}
 \end{equation}
 
-## Correlation of Cartesian Contour ($F_{10}$)
+### Correlation of Cartesian Contour ($F_{10}$)
 
-|       Correlation is another new feature which is obtained from the cartesian contour.
+|       Correlation is another new feature computed based on the cartesian contour.
 
 \begin{equation}
    F_{10} =  \frac{\sum_{i=0}^{m}(x_i - \overline{\rm x})(y_i - \overline{\rm y})}{\sqrt{\sum_{i=0}^{m} (x_i - \overline{\rm x})^2 (y_i - \overline{\rm y})^2}}
