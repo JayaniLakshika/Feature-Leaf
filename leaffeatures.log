@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.11)  16 MAY 2021 11:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.11)  16 MAY 2021 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1242,71 +1242,91 @@ Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
 -Leaf/leaffeatures/Figures/flavia_images.png  used on input line 1595.
 (pdftex.def)             Requested size: 234.87811pt x 105.82419pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/fl_example.png, id=582, 662.475pt x 185.19188pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/fl_example.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/fl_example.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/fl_example.png  used on input line 1604.
-(pdftex.def)             Requested size: 234.87196pt x 65.65738pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/swedish_data.png, id=584, 545.03625pt x 274.77657pt>
+es/swedish_data.png, id=582, 545.03625pt x 274.77657pt>
 File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
 Figures/swedish_data.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/swedish_data.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/swedish_data.png  used on input line 1624.
+-Leaf/leaffeatures/Figures/swedish_data.png  used on input line 1604.
 (pdftex.def)             Requested size: 234.87665pt x 118.41156pt.
+[26 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
+igures/flavia_images.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Featu
+re-Leaf/leaffeatures/Figures/swedish_data.png>]
+
+LaTeX Warning: Reference `fl15' on page 27 undefined on input line 1628.
+
+
+LaTeX Warning: Reference `flex' on page 27 undefined on input line 1629.
+
 File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
 Figures/fl5.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/fl5.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/fl5.png  used on input line 1637.
+-Leaf/leaffeatures/Figures/fl5.png  used on input line 1633.
 (pdftex.def)             Requested size: 234.87645pt x 116.08142pt.
-[26 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/flavia_images.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Featu
-re-Leaf/leaffeatures/Figures/fl_example.png>]
-<img/pcaswedish-1.pdf, id=599, 722.7pt x 722.7pt>
+</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
+es/fl_example.png, id=597, 662.475pt x 185.19188pt>
+File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
+Figures/fl_example.png Graphic file (type png)
+<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
+igures/fl_example.png>
+Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
+-Leaf/leaffeatures/Figures/fl_example.png  used on input line 1642.
+(pdftex.def)             Requested size: 234.87196pt x 65.65738pt.
+</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
+es/imgshape.png, id=600, 1187.43625pt x 282.55562pt>
+File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
+Figures/imgshape.png Graphic file (type png)
+<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
+igures/imgshape.png>
+Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
+-Leaf/leaffeatures/Figures/imgshape.png  used on input line 1667.
+(pdftex.def)             Requested size: 234.87393pt x 55.88927pt.
+[27 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
+igures/fl_example.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-
+Leaf/leaffeatures/Figures/imgshape.png>]
+<img/pcaswedish-1.pdf, id=613, 578.16pt x 578.16pt>
 File: img/pcaswedish-1.pdf Graphic file (type pdf)
 <use img/pcaswedish-1.pdf>
-Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1667.
-(pdftex.def)             Requested size: 469.76045pt x 469.76045pt.
-<img/ldaswedish-1.pdf, id=600, 1084.05pt x 361.35pt>
+Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1686.
+(pdftex.def)             Requested size: 469.75385pt x 469.75385pt.
+[28 <./img/pcaswedish-1.pdf>]
+<img/ldaswedish-1.pdf, id=632, 1084.05pt x 361.35pt>
 File: img/ldaswedish-1.pdf Graphic file (type pdf)
 <use img/ldaswedish-1.pdf>
-Package pdftex.def Info: img/ldaswedish-1.pdf  used on input line 1680.
+Package pdftex.def Info: img/ldaswedish-1.pdf  used on input line 1706.
 (pdftex.def)             Requested size: 469.75496pt x 156.58498pt.
-<img/pcaflavia-1.pdf, id=601, 722.7pt x 722.7pt>
-File: img/pcaflavia-1.pdf Graphic file (type pdf)
-<use img/pcaflavia-1.pdf>
-Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1693.
-(pdftex.def)             Requested size: 469.76045pt x 469.76045pt.
-<img/ldaflavia-1.pdf, id=602, 1084.05pt x 361.35pt>
+
+LaTeX Warning: Reference `ldaflavia' on page 29 undefined on input line 1721.
+
+<img/ldaflavia-1.pdf, id=634, 1084.05pt x 361.35pt>
 File: img/ldaflavia-1.pdf Graphic file (type pdf)
 <use img/ldaflavia-1.pdf>
-Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1703.
+Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1729.
 (pdftex.def)             Requested size: 469.75496pt x 156.58498pt.
-[27 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/swedish_data.png>] [28 <./img/pcaswedish-1.pdf>] [29 <./img/ldaswedish-1
-.pdf>] [30 <./img/pcaflavia-1.pdf>] [31 <./img/ldaflavia-1.pdf>] [32] (./leaffe
-atures.aux)
+<img/pcaflavia-1.pdf, id=635, 722.7pt x 722.7pt>
+File: img/pcaflavia-1.pdf Graphic file (type pdf)
+<use img/pcaflavia-1.pdf>
+Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1737.
+(pdftex.def)             Requested size: 469.76045pt x 469.76045pt.
+[29 <./img/ldaswedish-1.pdf> <./img/ldaflavia-1.pdf>] [30 <./img/pcaflavia-1.pd
+f>] [31] [32] (./leaffeatures.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `leaffeatures.out' has not changed.
-(rerunfilecheck)             Checksum: ABCFE4BE6B135AD138C09A7DFB05AE49;8018.
+(rerunfilecheck)             Checksum: 56E6DDF84B68CE5651EDAFF39CE2919E;8134.
  ) 
 Here is how much of TeX's memory you used:
- 13977 strings out of 480781
- 257674 string characters out of 5901503
- 550835 words of memory out of 5000000
- 30650 multiletter control sequences out of 15000+600000
- 476752 words of font info for 165 fonts, out of 8000000 for 9000
+ 13997 strings out of 480781
+ 258811 string characters out of 5901503
+ 550963 words of memory out of 5000000
+ 30665 multiletter control sequences out of 15000+600000
+ 476846 words of font info for 166 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 69i,14n,79p,490b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,14n,79p,492b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm
 /lm-ec.enc}{/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/enc
 /dvips/lm/lm-ts1.enc}{/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist
@@ -1334,10 +1354,10 @@ angashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 lm/lmsy10.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy7.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf
 -dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on leaffeatures.pdf (32 pages, 4489525 bytes).
+Output written on leaffeatures.pdf (32 pages, 4730241 bytes).
 PDF statistics:
- 823 PDF objects out of 1000 (max. 8388607)
- 641 compressed objects within 7 object streams
- 239 named destinations out of 1000 (max. 500000)
- 41596 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 836 PDF objects out of 1000 (max. 8388607)
+ 652 compressed objects within 7 object streams
+ 241 named destinations out of 1000 (max. 500000)
+ 41601 words of extra memory for PDF output out of 42996 (max. 10000000)
 
