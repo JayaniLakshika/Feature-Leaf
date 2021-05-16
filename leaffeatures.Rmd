@@ -240,10 +240,10 @@ knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 
 # Leaf Image Features
 
-|       In identification of plant species using leaf images, features of leaves play an important role, because each leaf posses unique feature that it make different from other. In previous studies [@articlepl; @article7; @sun2017deep], use deep learning neural networks to classify medicinal plants based on pixel-based images. Given the leaf images deep learning models automatically identify features based on pixel-space of the images. The lack of interpretability limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images. We introduced pre-calculate and computationally efficient features which can be easy to interpret and generalize.  The features are classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. We identified altogether 52 features.
+|       In identification of plant species using leaf images, features of leaves play an important role, because each leaf posses unique feature that it make different from other. In previous studies [@articlepl; @article7; @sun2017deep], use deep learning neural networks to classify medicinal plants based on pixel-based images. Given the leaf images deep learning models automatically identify features based on pixel-space of the images.  While deep learning models have achieved a great sucess, the lack of interpretability of features limit their widespread application. To overcome this, we explore the use of interpretable, measurable and computer-aided features extracted from plant leaf images. We identified 52 features.
+  The features are classified into four groups as: i) shape-based features, ii) color-based features, iii) texture-based features, and iv) scagnostic features. 
 
-
-```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img33}Example of geometric transformation"}
+```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img33}Classification of features and their composition"}
 knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 ```
 
@@ -252,73 +252,71 @@ knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 
 ## Shape Features
 
-|       When identifying real-world objects, the shape is known as an essential sign for humans. A shape measure is a quantity, which relates to a particular shape characteristic of an object in general [@articlee]. 
-	
-|       The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). In our research, the defined shape features are invariant to the rotation and reflection. 
+|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. AInaddition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
 
 <!--But some limitations are applied in translation and scaling.--> 
 	
 	
-```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img3}Example of geometric transformation"}
+```{r, echo=FALSE, out.width="70%", fig.align='center',fig.cap="\\label{img3} Illustration of geometric transformation"}
 knitr::include_graphics(here::here("leaffeatures","Figures","geomatric_transformation.png"))
 ```
 	
 	
-|       The finding contour function doesn’t work well when the center of the leaf image is not in the contour. Therefore if the translation is applied away from the contour \ref{trans}, then function can’t identify the contour. Inappropriate scaling (see figure \ref{scal}) also arises problems in the calculation. If the leaf image is really small, the function also hard to recognize the contour. Therefore taking the closest photo of the leaf images by keeping them in the center of the white paper is more suitable.
+|     Extraction of image contour plays an important role in measuring the shape of a image.  Simply contour (see figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same color or intensity. 
 
-```{r , echo=FALSE, fig.cap="", out.width='20%', fig.align = "center", fig.ncol = 2, fig.subcap=c('Inappropriate translation','Inappropriate scaling')}
-knitr::include_graphics(here::here("leaffeatures","Figures","trans.jpg"))
-knitr::include_graphics(here::here("leaffeatures","Figures","scaling.jpg"))
-``` 
-
-|       All the shape features are extracted from the binary images.
-
-\textbf{Contours}
-
-Simply contour (see figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same color or intensity.
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{cnt}Extract contour of the leaf image"}
 knitr::include_graphics(here::here("leaffeatures","Figures","cnt.png"))
 ```  
 
 
-|       Shape features can be classified into two main categories as contour-based and region-based features. Contour-based [@articlee] shape features are extracted solely from the contour of a shape. Whereas, region-based [@articlee] shape features are obtained from the whole region of a shape. In addition, there also exist some methods, which cannot be classified as either contour-based or region-based (see figure \ref{scalimg4}).
+Inorder to extract the contour of the leaf, the leaf should be placed properly in the center of a white paper. If the image is place as shown in Figure \ref{fig:trans}, as a result of inappropriate translation (a) and inappropriate scaling (b), problems arises in the calculations of the contour. Furthermore, it is difficult to recognize the contour, when the image is too small.
 
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{scalimg4}Categorization of shape features"}
+<!--The finding contour function doesn’t work well when the center of the leaf image is not in the contour. Therefore if the translation is applied away from the contour \ref{trans}, then function can’t identify the contour. Inappropriate scaling (see figure \ref{scal}) also arises problems in the calculation. If the leaf image is really small, the function also hard to recognize the contour. Therefore taking the closest photo of the leaf images by keeping them in the center of the white paper is more suitable.-->
+
+```{r trans, echo=FALSE, fig.cap="\\label{trans}Inappropriate translation (a),  Inappropriate scaling (b", out.width='20%', fig.align = "center", fig.ncol = 2, fig.subcap=c(' ','')}
+knitr::include_graphics(here::here("leaffeatures","Figures","trans.jpg"))
+knitr::include_graphics(here::here("leaffeatures","Figures","scaling.jpg"))
+``` 
+
+```{r, echo=FALSE, out.width="60%", fig.align='center',fig.cap="\\label{scalimg4}Categorization of shape features"}
 knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
+``` 
+
+
+
+|       Shape features can be classified into two main categories as contour-based and region-based features [@articlee]. As illustrated in @articlee, contour-based  shape features are computed based on the contour of a shape, whereas region-based shape features are extracted from the whole region of a shape  (see figure \ref{scalimg4}).
+
+
+ 
+
+|       In this study, we use 6 initial shape features that are used to derive 12 shape features.  The 6 initial features are: i) diameter, ii) physiological length, iii) physiological width, iv) area, v) perimeter, and vi) eccentricity. 
+
+### Diameter ($F_1$)
+
+|       Diameter is defined as the longest distance between any two points on the margin of the leaf [@articlee]. To calculate the diameter of the leaf image, first we need to find the contour of the leaf image. Then we need to select all pair of contour points and measure the Euclidean distance (equation \ref{equa_shape}) between the two points separately. Finally have to find the maximum distance among the calculated distances. (see figure \ref{shape1}) 
+
+
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{shape1}Logic behind calculation of diameter"}
+knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
 ```  
-
-|       Through this research, we use 6 initial shape features that are used to extract 12 shape features. Also as new shape features, we introduce number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of cartesian contour. The 6 initial features are diameter, physiological length, physiological width, area, perimeter, and eccentricity. 
-
-## Diameter ($F_1$)
-
-|       Diameter is defined as the longest distance between any two points on the margin of the leaf [@articlee].
-
-|       To calculate the diameter of the leaf image, firstly we have to find the contour of the leaf image. Then we have to select all pair of contour points and measure the Euclidean distance (equation \ref{equa_shape}) between the two points separately. Finally have to find the maximum distance among the calculated distances. (see figure \ref{shape1}) 
 
 \begin{equation}
     d\left( A,B\right)   = \sqrt {\sum _{i=1}^{2}  \left( q_{i}-p_{i}\right)^2}
 \label{equa_shape}
 \end{equation}
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape1}Logic behind calculation of diameter"}
-knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
-```  
-
 \begin{equation}
    F_1 = max(\sqrt{(x_i-x_j)^2 + (y_i-y_j)^2}); \forall i,j, i \neq j
 \label{equa_F1}
 \end{equation}
 
+### Physiological length ($F_2$) and Physiological width ($F_3$)
 
-## Physiological length ($F_2$) and Physiological width ($F_3$)
+|       According to the authors in @articlepl, the physiological length is "measured based on the main vein of leaf, as it stretches from the main vein to the end tip". We use the definition by @articlepl, the physiological width is "the span of leaf viewed from one side to the other, from the leftmost point to the rightmost point of leaf" . There are horizontal, vertical and angled leaf images in our datasets, Flavia and Swedish (see example \ref{fig:act3}). The straight bounding rectangle is enough to extract physiological length and physiological width of horizontal, and vertical leaf images.
 
-|       According to the authors in @articlepl, the physiological length is measured based on the main vein of leaf, as it stretches from the main vein to the end tip. The physiological width is the span of leaf viewed from one side to the other, from the leftmost point to the rightmost point of leaf [@articlepl].
-
-|       There are horizontal, vertical and angled leaf images in the datasets (Flavia, Swedish). The straight bounding rectangle is enough to extract physiological length and physiological width of horizontal, and vertical leaf images.
-
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight(Horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight (horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
 knitr::include_graphics(here::here("leaffeatures","Figures","act3.png"))
 ```  
 
@@ -357,7 +355,7 @@ This bounding rectangle is drawn with minimum area. Therefore the rotation of th
 
 
 
-## Area ($F_4$)
+### Area ($F_4$)
 
 |       Area is defined as the result of thresholding process. Pixel [@articlepl] which is represented by the number 0 defines the leaf area.
 
@@ -381,7 +379,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
 ```  
 
 
-## Perimeter ($F_5$)
+### Perimeter ($F_5$)
 
 |       Perimeter is defined as the summation of euclidean distance of all continuous points in the contour (see figure \ref{calperi}).
 
@@ -397,7 +395,7 @@ where $n$ is the number of distances around the contour
 knitr::include_graphics(here::here("leaffeatures","Figures","perical.png"))
 ```  
 
-## Eccentricity (($F_6$))
+### Eccentricity (($F_6$))
 
 |       Eccentricity is definitive characteristic of any conic section of a leaf [@articlepl]. Eccentricity is defined that how much the ellipse actually varying being circular. Eccentricity is calculated using equation \ref{eqecc}.
 
@@ -420,7 +418,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c9.png"))
 ```  
 
 
-## Number of Convex Points ($F_{21}$)
+### Number of Convex Points ($F_{21}$)
 
 |       If a hull [@inproceedings44] contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon.
 
@@ -435,7 +433,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 \label{equa_F21}
 \end{equation}
 
-## Roundness/ Circularity
+### Roundness/ Circularity
 
 |       Roundness is named as aka form factor, circularity, or isoperimetric factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness.
 
@@ -450,7 +448,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
 ```  
 
-## Compactness
+### Compactness
 
 |       Compactness is closely related to roundness. Compactness measures that how compatible the leaf fits to a circle area (see figure \ref{shape4}).      
 
@@ -465,7 +463,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c10.png"))
 
 
 
-## Convexity
+### Convexity
 
 |       Convexity measures the curvature of the convex hull.
 
