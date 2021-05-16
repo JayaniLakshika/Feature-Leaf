@@ -270,7 +270,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","cnt.png"))
 ```  
 
 
-Inorder to extract the contour of the leaf, the leaf should be placed properly in the center of a white paper. If the image is place as shown in Figure \ref{fig:trans}, as a result of inappropriate translation (a) and inappropriate scaling (b), problems arises in the calculations of the contour. Furthermore, it is difficult to recognize the contour, when the image is too small.
+In order to extract the contour of the leaf, the leaf should be placed properly in the center of a white paper. If the image is place as shown in Figure \ref{fig:trans}, as a result of inappropriate translation (a) and inappropriate scaling (b), problems arises in the calculations of the contour. Furthermore, it is difficult to recognize the contour, when the image is too small.
 
 
 <!--The finding contour function doesn’t work well when the center of the leaf image is not in the contour. Therefore if the translation is applied away from the contour \ref{trans}, then function can’t identify the contour. Inappropriate scaling (see figure \ref{scal}) also arises problems in the calculation. If the leaf image is really small, the function also hard to recognize the contour. Therefore taking the closest photo of the leaf images by keeping them in the center of the white paper is more suitable.-->
@@ -314,50 +314,53 @@ knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
 
 ### Physiological length ($F_2$) and Physiological width ($F_3$)
 
-|       According to the authors in @articlepl, the physiological length is "measured based on the main vein of leaf, as it stretches from the main vein to the end tip". We use the definition by @articlepl, the physiological width is "the span of leaf viewed from one side to the other, from the leftmost point to the rightmost point of leaf" . There are horizontal, vertical and angled leaf images in our datasets, Flavia and Swedish (see example \ref{fig:act3}). The straight bounding rectangle is enough to extract physiological length and physiological width of horizontal, and vertical leaf images.
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight (horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
+```{r act3, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight (horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
 knitr::include_graphics(here::here("leaffeatures","Figures","act3.png"))
 ```  
 
-|       But straight bounding rectangle of angled image doesn't give the correct values for physiological length and physiological width of leaf images.
 
-```{r , echo=FALSE, fig.cap="", out.width='30%', fig.align = "center", fig.ncol = 2, fig.subcap=c('Bounded rectangle of rotated leaf image in Actual leaf image dataset','Rotated rectangle of angled leaf image in Actual leaf image dataset')}
-knitr::include_graphics(here::here("leaffeatures","Figures","act1.png"))
-knitr::include_graphics(here::here("leaffeatures","Figures","act2.png"))
-``` 
+|       According to the authors in @articlepl, the physiological length is "measured based on the main vein of leaf, as it stretches from the main vein to the end tip". We use the definition by @articlepl, the physiological width is "the span of leaf viewed from one side to the other, from the leftmost point to the rightmost point of leaf" . There are straight (horizontal or vertical) and angled leaf images in our datasets, Flavia and Swedish (see example Figure \ref{fig:act3}). There are two types of bounding rectangles.
 
-|       To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. The physiological length of the leaf image is the length of the rectangle. The physiological width of the leaf image is the width of the rectangle.
+i) Straight bounding rectangle: This is a straight rectangle which does not consider the rotation of the object (see Figure \ref{fig:act3} (a)). 
 
-|       There are two types of bounding rectangles.
+<!--I added background-->
 
-\begin{itemize}
-    \item Straight Bounding Rectangle
-\end{itemize}
+ii) Rotated rectangle: This bounding rectangle is drawn with minimum background area. Therefore the rotation of the object is also considered ((see Figure \ref{fig:act3} (b)).
 
-This is a straight rectangle which doesn't consider the rotation of the object. Therefore area of the bounding rectangle doesn't minimize.
-
-\begin{itemize}
-    \item Rotated Rectangle 
-\end{itemize}
-
-This bounding rectangle is drawn with minimum area. Therefore the rotation of the object is also considered. 
+The straight bounding rectangle is enough to extract physiological length and physiological width of  straight (horizontal or vertical) leaf images. However, the straight bounding rectangle is not suitable to compute physiological length and physiological width of angled leaf images.  To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. As shown in Figure \ref{fig: bound}, physiological length and width are computed as follows:
 
 \begin{equation}
-   F_2 = \text{Length of the rectangle}
+   F_2 = \text{Length of the rotated rectangle}
 \label{equa_F2}
 \end{equation}
 
 \begin{equation}
-   F_3 = \text{Width of the rectangle}
+   F_3 = \text{Width of the rotated rectangle}
 \label{equa_F3}
 \end{equation}
+
+
+```{r bound, echo=FALSE, fig.cap="\\label{bound}Straight bounded rectangle of a rotated leaf image (a), Rotated rectangle of angled leaf image (b)", out.width='30%', fig.align = "center", fig.ncol = 2, fig.subcap=c('','')}
+knitr::include_graphics(here::here("leaffeatures","Figures","act1.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","act2.png"))
+``` 
+
+
+
+<!--The straight bounding rectangle is enough to extract physiological length and physiological width of horizontal, and vertical leaf images. However, the straight bounding rectangle of angled image does not give the correct values for physiological length and physiological width of leaf images. To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. The physiological length of the leaf image is the length of the rectangle. The physiological width of the leaf image is the width of the rectangle. There are two types of bounding rectangles.-->
+
+
+<!--Length of the rotated rectangle (I added rotated)-->
 
 
 
 ### Area ($F_4$)
 
-|       Area is defined as the result of thresholding process. Pixel [@articlepl] which is represented by the number 0 defines the leaf area.
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areacal}Measure the area"}
+knitr::include_graphics(here::here("leaffeatures","Figures","Areacal.png"))
+```  
+
 
 \begin{equation}
    F_4 = \text{Number of zero pixels covered by the contour}
@@ -365,14 +368,8 @@ This bounding rectangle is drawn with minimum area. Therefore the rotation of th
 \end{equation}
 
 
-|       Firstly, we have to extract the best contour and based on that contour area is measured. Number of 0 pixels covered by the contour is the measure of area of leaf image.
+|       Area is computed after applying the thresholding process. Next, we need to extract the best contour and based on that contour area is measured. Number of 0 pixels covered by the contour is the measure of area of leaf image [@articlepl].  As shown in Figure \ref{areshape1} the area measures increase as the area of the leaf increases.
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areacal}Measure the area"}
-knitr::include_graphics(here::here("leaffeatures","Figures","Areacal.png"))
-```  
-
-
-|       Figure \ref{areshape1} shows that the changes of the shape when the area is increasing.
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areshape1}Area"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
@@ -381,23 +378,23 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
 
 ### Perimeter ($F_5$)
 
-|       Perimeter is defined as the summation of euclidean distance of all continuous points in the contour (see figure \ref{calperi}).
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{calperi}Area"}
+knitr::include_graphics(here::here("leaffeatures","Figures","perical.png"))
+```  
+
+
+
+|      As shown in Figure \ref{calperi} perimeter is defined as the summation of euclidean distance of all continuous points in the contour. Let $n$ be the number of distances around the contour, then the perimeter is defined as
+
 
 \begin{equation}
    F_5 =  \sum_{i=0}^{n}d_i
 \label{equa_F5}
 \end{equation}
 
-where $n$ is the number of distances around the contour
+### Eccentricity ($F_6$)
 
-
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{calperi}Calculation of perimeter"}
-knitr::include_graphics(here::here("leaffeatures","Figures","perical.png"))
-```  
-
-### Eccentricity (($F_6$))
-
-|       Eccentricity is definitive characteristic of any conic section of a leaf [@articlepl]. Eccentricity is defined that how much the ellipse actually varying being circular. Eccentricity is calculated using equation \ref{eqecc}.
+|       Eccentricity is a characteristic of any conic section of a leaf [@articlepl]. Eccentricity is defined that how much the ellipse actually varying being circular. Eccentricity is calculated using equation \ref{eqecc}.
 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape6}Ellipse"}
@@ -409,40 +406,34 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
     \label{eqecc}
 \end{equation}
 
-where $a$ is semi major axis and $b$ is semi minor axis
+where $a$ is semi-major axis and $b$ is semi-minor axis (see Figure \ref{shape6})
 
-|       Eccentricity of an ellipse is varied between 0 and 1. If eccentricity is 0, then we obtain a circle whereas eccentricity is 1, then we obtain an ellipse. 
+|       Eccentricity of an ellipse is varied between 0 and 1. If eccentricity is 0, then we obtain a circle whereas eccentricity is 1, then we obtain an ellipse (see Figure \ref{shape5}). 
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape5}Eccentricity"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c9.png"))
 ```  
 
+\newpage
 
-### Number of Convex Points ($F_{21}$)
-
-|       If a hull [@inproceedings44] contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon.
+### Number of Convex Points ($F_{21}$) and Verticies
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shconvex}Convex hull"}
 knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 ```  
 
-|       Number of convex points is a new feature which calculate using the convex hull.
+|       @inproceedings44  defined a convex hull as a "hull that contains all the straight line segments connecting any pair of points in its interior". The convex hull bounds a single polygon (see Figure \ref{shconvex}).  We introduced two new features computed based on the convex hull: i) Number of convex points ($F_21$) and ii) Number of convex vertices ($F_7$).
 
-\begin{equation}
-   F_7 =  \text{Number of vetices of the convexHull}
-\label{equa_F21}
-\end{equation}
 
 ### Roundness/ Circularity
 
-|       Roundness is named as aka form factor, circularity, or isoperimetric factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness.
+|       Roundness is named as aka form factor, circularity, or isoperimetric factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness. Figure \ref{shape3} shows what happens to the shape when the roundness measure is changed.
 
 \begin{equation}
     R = \frac{4 \pi F_4}{{F_5}^2}
 \label{calround}
 \end{equation}
 
-|       Figure \ref{shape3} shows what happen to the shape when the roundness measure is changed.
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape3}Circularity"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
@@ -471,8 +462,9 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c10.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","c7.png"))
 ```  
 
-|       The definition of all shape features as follows (see figure \ref{tab:table1});
 
+
+The equations and sfotware packages used to compute shape features are shown in Table  \ref{tab:table1}. 
 
 
 
@@ -512,7 +504,7 @@ $F_{18}$  & Area convexity                                                      
 $F_{19}$  & Area ratio of convexity                                                                     &     \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/a_c2.png}                        & \multicolumn{1}{c}{$F_{19} = \frac{F_4}{\text{Area of convex hull}}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &               OpenCV                                                \\
 $F_{20}$  & Equivalent diameter                                                                         &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/eq_d.png}                        & \multicolumn{1}{c}{$F_{20} = \sqrt{\frac{4*F_4}{\pi}}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &      numpy                                                         \\
 \multicolumn{1}{c}{$F_{21}$} & \begin{tabular}[c]{@{}l@{}}Number of \\ convex points\end{tabular}                          &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/convex.png}                        & \multicolumn{1}{c}{eq:\ref{equa_F21}}        & \multicolumn{1}{c}{[0,$\infty$)}      & OpenCV                                                        \\ \hline
-\caption{Definitions of shape features}
+\caption{Summary of shape feature description.}
 \label{tab:table1}\\
 \end{longtable}
 
