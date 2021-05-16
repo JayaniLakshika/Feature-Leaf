@@ -884,29 +884,10 @@ where $(x_i,y_i)$ is the coordinate of cartesian contour and $m$ is the number o
 
 # Application of features to classify images
 
-|       There are two color image leaf datasets (Flavia ,Swedish) are used. After passing through the required image processing steps, binary image is extracted which has a white foreground and black background.
+## Data sets
 
+|       We use two publicly available datasets for demonstrate the applications of features. They are: i) Flavia leaf image dataset and iii) Swedish leaf image dataset
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
-```	
-
-
-|       The leaf images are taken as the closest ones. Therefore to find the best contour among several contours, can use the contour which contains the center of leaf image. Identify the best contour is really important when extracting shape features.
-
-
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{flexe}Example feature extraction of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
-```	
-
-
-
-
-
-
-##  Data sets
-
-|       We use two publicly available datasets for demonstrate the applications of features.
 
 ### Flavia Leaf Image Dataset
     
@@ -919,6 +900,9 @@ knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png")
 ```
 
 
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{flexe}Example feature extraction of Flavia dataset"}
+knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
+```	
 
 ### Swedish Leaf Image Dataset
     
@@ -929,6 +913,23 @@ knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png")
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{slp2}Sample of Swedish leaf dataset"}
 knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 ```
+
+
+## Image processing and Feature Extraction
+
+
+
+
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
+knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
+```	
+
+
+<!--|       The leaf images are taken as the closest ones. Therefore to find the best contour among several contours, can use the contour which contains the center of leaf image. Identify the best contour is really important when extracting shape features.-->
+
+
+
+
 
 
 ## Visualization of Leaf Images in the Feature Space
