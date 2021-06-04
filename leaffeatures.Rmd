@@ -120,21 +120,19 @@ grayscale image into binary image according the threshold value. If the pixel va
 
 \textbf{Otsu's Thresholding}
 
-|       Nobuyuki Otsu introduced Otsu's method which is defined for a histogram of grayscale values of a histogram ($ghist_I$) of an input image $Im$.  To segment an image $Im$ into two subsets of pixels Otsu's method calculates an optimal threshold $\tau$. The number of pixel locations of the gray scale image is defined as $|\Omega|$. 
+|       Nobuyuki Otsu introduced Otsu's method which is defined for a histogram of grayscale values of a histogram ($ghist_I$) of an input image $Im$.  To segment an image $Im$ into two subsets of pixels Otsu's method calculates an optimal threshold $\tau$. The number of pixel locations of the gray scale image is defined as $|\Omega|$. The algorithm maximizes the variance $\sigma^2$ between the two subsets (Within-class-variance) to find the threshold $\tau$. The variance $\sigma^2$ is defined as follows:
 
-|       The algorithm maximizes the variance $\sigma^2$ between the two subsets (Within-class-variance) to find the threshold $\tau$.
-
-\[\sigma^2 = P_1(\mu_1-\mu)^2 + P_2(\mu_2-\mu)^2 = P_1P_2(\mu_1-\mu_2)^2 \]
+\[\sigma^2 = P_1(\mu_1-\mu)^2 + P_2(\mu_2-\mu)^2 = P_1P_2(\mu_1-\mu_2)^2, \]
 
 where $\mu$ is the mean of the histogram,
-$\mu_1$ and $\mu_2$ are the mean values of first and second subset respectively,
-$P_1$ and $P_2$ are the corresponding probabilities of the two clusters, defined by
+$\mu_1$ and $\mu_2$ are the mean values of first and second subset respectively. The corresponding class probabilities,
+$P_1$ and $P_2$ are defined as follows,
 
 \[P_1 = \frac{\sum_{i=0}^{u}ghist_I(i)}{|\Omega|}\]
 
-\[P_2 = \frac{\sum_{i=u+1}^{255}ghist_I(i)}{|\Omega|}\]
+\[P_2 = \frac{\sum_{i=u+1}^{255}ghist_I(i)}{|\Omega|},\]
 
-Where $u$ is the candidate threshold and the maximum gray level ($G_{max}$) is assumed as 255. To find optimal threshold $\tau$ for segmenting image $Im$, all candidate thresholds are evaluated this way.
+where $u$ is the candidate threshold and the maximum gray level ($G_{max}$) is assumed as 255. To find optimal threshold $\tau$ for segmenting image $Im$, all candidate thresholds are evaluated this way.
 
 The algorithm of Otsu's method is defined as follows,
 
@@ -158,7 +156,7 @@ Set $u = u+1$                                             \\ \hline
 \end{table}
 
 
-|       For an example, assume that candidate threshold value $u$ is 2. Therefore the image is separated into two classes, which are class 1 ($\text{pixel value} <= 2$ ) and class 2 ($\text{pixel value} > 2$). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to figure \ref{fig:otsu}, there are 9 pixel locations. 
+|       For an example, assume that candidate threshold value $u$ is 2. Therefore, the image is separated into two classes, which are class 1 ($\text{pixel value} <= 2$ ) and class 2 ($\text{pixel value} > 2$). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to figure \ref{fig:otsu}, there are 9 pixel locations. 
 
 
 $$P_1 = \frac{5}{9}$$
@@ -626,9 +624,9 @@ knitr::include_graphics(here::here("leaffeatures","Figures","scp.png"))
 \textbf{Geometric Graphs}
 
 
-i)  Graph: A graph Gr = (Ve, Ed) is defined as a set Ve (called vertices) together with a relation on Ve induced by a set Ed (called edges). A pair of vertices is defined as an edge $e(\nu,\omega)$, with e $\in$ Ed and $\nu,\omega \in$ Ve.
+i)  Graph: A graph $Gr = (Ve, Ed)$ is defined as a set of vertices ($Ve$) together with a relation on $Ve$ induced by a set of edges ($Ed$). A pair of vertices is defined as an edge $e(\nu,\omega)$, with e $\in$ Ed and $\nu,\omega \in$ Ve.
 
-ii) Geometric Graph: An embedding of a graph in a metric space $S$ that maps vertices to points and edges to straight line segments connecting pairs of points is defined as a geometric graph G* = [f(Ve), g(Ed), S].
+ii) Geometric Graph: A geometric graph $G* = [f(Ve), g(Ed), S]$; is an mapping of vertices to points and edges to straight lines to connect points in a metric space $S$.
 
 <!--|       From several features of 2D Euclidean geometric graphs, Scagnostic measures are derived.-->
 
@@ -636,7 +634,7 @@ iii) Length of an edge: The Euclidean distance between vertices that connected t
 
 iv) Length of a graph: The sum of the lengths of edges in graph is known as the length of a graph, $length(Gr)$.
 
-v) Path:  A list of successively adjacent, distinct edges are known as a path. If first and last vertex are the same of the path, then the path is closed.
+v) Path:  A list of successively adjacent, distinct edges are known as a path. If first and last vertices coincide, then the path is closed.
 
 vi) Polygon:  A region bounded by a closed path is known as a polygon ($P$). A polygon bounded by exactly one closed path with no intersecting edges is known as a simple polygon.
 
@@ -644,36 +642,34 @@ vii) Perimeter of a simple polygon:  The length of boundary of a simple polygon 
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg5}Graph with 5 vertices and 5 edges"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c4.png"))
+knitr::include_graphics(here::here("leaffeatures","Figures","c4new.png"))
 ```
 
-\textbf{Minimum Spanning Tree (MST)}
+The calculation of scagnostic features require identification of the minimum spanning tree, convex hull and alpha hull.
+
+\textbf{Minimum Spanning Tree:} 
+
+The spanning tree of the graph is defined as $G'(V',E')$, where $V' = Ve$, $E' \subset Ed$ and $E' = |Ve|-1$.
+A graph can have more than one spanning tree. Spanning tree should not be disconnected and should not contain any cycles.  A spanning tree whose total length is least of all spanning trees on a given set of points is known as a Minimum Spanning Tree (MST).  
+
+<!--By removing one edge from the Spanning tree will make it disconnected. By adding one edge to the Spanning tree will create a loop. A complete (Each vertices connected with each other) undirected graph can have $n^{n-2}$ number of spanning trees where n is the number of vertices. Every connected and undirected graph has at least one Spanning Tree. Disconnected graph doesn't have any spanning tree. From a complete graph by removing $max(edges-n+1)$ edges we can construct a spanning tree.-->
 
 
-i) Tree: A graph in which any two nodes are connected by exactly one path is known as a \textit{tree}.
-
-ii) Spanning Tree: An undirected graph whose edges are structured as a tree is defines as a \textit{Spanning Tree}.
-
-\textbf{Spanning Tree:} 
-
-i) Spanning Tree of Graph: The spanning tree of the graph is defined as $G'(V',E')$, where
-
-$V' = Ve$, $E' \subset Ed$ and $E' = |Ve|-1$.
-
-
-A graph can have more than one spanning tree. Spanning tree should not be disconnected and should not contain any cycles. By removing one edge from the Spanning tree will make it disconnected. By adding one edge to the Spanning tree will create a loop. A complete (Each vertices connected with each other) undirected graph can have $n^{n-2}$ number of spanning trees where n is the number of vertices. Every connected and undirected graph has at least one Spanning Tree. Disconnected graph doesn't have any spanning tree. From a complete graph by removing $max(edges-n+1)$ edges we can construct a spanning tree.
-
-iii) Minimum Spanning Tree:  A spanning tree whose total length is least of all spanning trees on a given set of points is known as a Minimum Spanning Tree (MST).  If each edge has distinct weights then there will be only one and unique MST.
 
 <!--iv) Remark: The geometric MST computed from Euclidean distances between points in a 2D Euclidean geometric graph is the restriction.-->
 
 \textbf{Convex hull and Alpha hull}
 
-i) Convex Hull (see Figure \ref{scagimg4}): A collection of the boundaries of one or more simple polygons that have a subset of the points for their vertices and that collectively contain all the points, is defined as a hull of a set of points embedded in 2D Euclidean space.  If a hull contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon. After deleting the points on the convex hull, a convex hull called peeled convex hull is computed. 
+i) Convex Hull (see Figure \ref{scagimg4}): Given a set of points embedded in 2D Euclidean space, the convex hull of the set is the smallest convex polygon that contains all the points of it.
 
-ii) Alpha Hull (see Figure \ref{scagimg4}): Most of proximity graphs (neighborhood graph) represent the nonconvex shape of a set of points on the plane. A geometric graph whose edges are determined by an indicator function based on distances between a given set of points in a metric space, is known as a proximity graph. An open disk $D$ is used to define the indicator function. If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is inside $D$ then $D$ \textit{contains} a point. An open disk of radius $r$ is defined as $D(r)$. 
 
-|       An alpha shape [@inproceedings33] is a collection of one or more simple polygons [@article37;@inproceedings44]. An edge exists between any pair of points that can be touched by an open disk $D(\alpha)$ containing no points, is defined as an alpha shape graph. A value of $\alpha$ to be the average value of the edge lengths in the MST [@article37;@inproceedings44]. The large values like 90th percentile of the MST edge lengths are used, because to reduce noise. If the percentile exceeds a tenth, clamp the value at one-tenth the width of a frame, because it prevents in including sparse or striated point sets in a single alpha graph. 
+<!--A collection of the boundaries of one or more simple polygons that have a subset of the points for their vertices and that collectively contain all the points, is defined as a hull of a set of points embedded in 2D Euclidean space.  If a hull contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon. After deleting the points on the convex hull, a convex hull called peeled convex hull is computed. -->
+
+ii) Alpha Hull (see Figure \ref{scagimg4}): 
+
+<!--Most of proximity graphs (neighborhood graph) represent the nonconvex shape of a set of points on the plane. A geometric graph whose edges are determined by an indicator function based on distances between a given set of points in a metric space, is known as a proximity graph. An open disk $D$ is used to define the indicator function. If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is inside $D$ then $D$ \textit{contains} a point. An open disk of radius $r$ is defined as $D(r)$. -->
+
+<!--|       An alpha shape [@inproceedings33] is a collection of one or more simple polygons [@article37;@inproceedings44]. An edge exists between any pair of points that can be touched by an open disk $D(\alpha)$ containing no points, is defined as an alpha shape graph. A value of $\alpha$ to be the average value of the edge lengths in the MST [@article37;@inproceedings44]. The large values like 90th percentile of the MST edge lengths are used, because to reduce noise. If the percentile exceeds a tenth, clamp the value at one-tenth the width of a frame, because it prevents in including sparse or striated point sets in a single alpha graph.--> 
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg4}Convex hull and alpha hull"}
