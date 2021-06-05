@@ -1,0 +1,30 @@
+---
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Dear Editor
+
+
+We are pleased to submit the paper "Computer-aided Interpretable Features for Leaf Image Classification" for consideration for publication in the Journal of Environmental Management. 
+
+In this manuscript, we present a set of interpretable features that can be used for image leaves recognition. This manuscript has not been published and is not under consideration for publication elsewhere. We have no conflicts of interest to disclose.
+
+
+The Journal of Environmental Management submission system automatically set the corresponding author as the first author. Please be kind enough to consider the author ordership as follows
+
+In this paper the first author is: Jayani P. G. Lakshika
+
+The second author and the corresponding author is: Thiyanga S. Talagala
+
+Thank you for your consideration!
+
+
+Sincerely, 
+
+Jayani P. G. Lakshika
+
+Thiyanga S. Talagala^[Corresponding Author]
