@@ -50,7 +50,7 @@ library(MASS)
 
 # Introduction
 
-|       Leaf identification is becoming very popular in classifying plant species. Plant leaf contains significant number of features that can help people to identify and classify the plant species. In medical perspective, medicinal plants are usually identified by practitioners based on years of experience through sensory or olfactory senses. The other method of recognizing these plants involves laboratory-based testing, which requires trained skills, data interpretation which is costly and time-intensive. Automatic ways to identify medicinal plants are useful especially those that are lacking experience in medicinal plant recognition. Statistical machine learning techniques play a crucial role in the development of automatic system to identify medicinal plants. In developing such system input features play an important role. The main aim of this paper is to introduce interpretable features that can be computed based on plant leaf images.   Image processing and feature extraction play crucial roles in developing a workflow to achive the aim of this research. 
+|       Leaf identification is becoming very popular in classifying plant species. Plant leaf contains significant number of features that can help people to identify and classify the plant species. In medical perspective, medicinal plants are usually identified by practitioners based on years of experience through sensory or olfactory senses. The other method of recognizing these plants involves laboratory-based testing, which requires trained skills, data interpretation which is costly and time-intensive. Automatic ways to identify medicinal plants are useful especially those that are lacking experience in medicinal plant recognition. Statistical machine learning techniques play a crucial role in the development of automatic system to identify medicinal plants. In developing such system input features play an important role. The main aim of this paper is to introduce interpretable features that can be computed based on plant leaf images.   Image processing and feature extraction play crucial roles in developing a workflow to achieve the aim of this research. 
 
 |       The main aim of image processing is to extract important features by removing undesired noise and distortion [@articlee]. Image processing steps include image segmentation [@DBLP], image orientation, cropping, grey scaling, binary thresholding, noise removal, contrast stretching, threshold inversion, image normalization, and edge recognition are some of image processing techniques applied in recent research. These steps can be applied parallel or individually, on several times until the quality of leaf image reaches a specific threshold. 
 
@@ -113,7 +113,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","gau.png"))
 
 ## Step 4: Binary Thresholding
 
-|       Thresholding is a segmentation technique that is used to separate foreground from its background. Thresholding converts grayscale image into binary image according the threshold value. If the pixel value is smaller than the threshold value, the pixel value is set as 0, and if not the pixel value is set to a maximum value which is generally 255. Thersholding technique is done on grayscale images in computer vision. 
+|       Thresholding is a segmentation technique that is used to separate foreground from its background. Thresholding converts gray-scale image into binary image according the threshold value. If the pixel value is smaller than the threshold value, the pixel value is set as 0, and if not the pixel value is set to a maximum value which is generally 255. Thersholding technique is done on grayscale images in computer vision. 
 
 |       We used Otsu's binarization (@bangare2015reviewing) which is an adaptive thresholding after Gaussian filtering to convert color images to the binary images. The reason for using Otsu's binarization method is, it automatically determines the optimal threshold value. 
 
@@ -250,7 +250,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 
 ## Shape Features
 
-|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. In addition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
+|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. In addition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of Cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
 
 <!--But some limitations are applied in translation and scaling.--> 
 	
@@ -301,7 +301,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
 ```  
 
 \begin{equation}
-    d\left( A,B\right)   = \sqrt {\sum _{i=1}^{2}  \left( q_{i}-p_{i}\right)^2,}
+    d\left( A,B\right)   = \sqrt {\sum _{i=1}^{2}  \left( q_{i}-p_{i}\right)^2},
 \label{equa_shape}
 \end{equation}
 
@@ -329,12 +329,12 @@ ii) Rotated rectangle: This bounding rectangle is drawn with minimum background 
 The straight bounding rectangle is enough to extract physiological length and physiological width of  straight (horizontal or vertical) leaf images. However, the straight bounding rectangle is not suitable to compute physiological length and physiological width of angled leaf images.  To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. As shown in Figure \ref{fig: bound}, physiological length and width are computed as follows:
 
 \begin{equation}
-   F_2 = \text{Length of the rotated rectangle,}
+   F_2 = \text{Length of the rotated rectangle},
 \label{equa_F2}
 \end{equation}
 
 \begin{equation}
-   F_3 = \text{Width of the rotated rectangle.}
+   F_3 = \text{Width of the rotated rectangle}.
 \label{equa_F3}
 \end{equation}
 
@@ -362,7 +362,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","Areacal.png"))
 |       Area is computed after applying the thresholding process. Next, we need to extract the best contour and based on that contour area is measured. Number of 0 pixels covered by the contour is the measure of area of leaf image [@articlepl].  As shown in Figure \ref{areshape1} the area measures increase as the area of the leaf increases. The area is defined by
 
 \begin{equation}
-   F_4 = \text{Number of zero pixels covered by the contour.}
+   F_4 = \text{Number of zero pixels covered by the contour}.
 \label{equa_F4}
 \end{equation}
 
@@ -398,7 +398,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
 ```  
 
 \begin{equation}
-    F_6 = \sqrt{1-\frac{b^2}{a^2}.}
+    F_6 = \sqrt{1-\frac{b^2}{a^2}}.
     \label{eqecc}
 \end{equation}
 
@@ -423,10 +423,10 @@ knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 
 ### Roundness/ Circularity
 
-|       Roundness is named as aka form factor, circularity, or isoperimetrical factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness. Figure \ref{shape3} shows what happens to the shape when the roundness measure is changed.
+|       Roundness is named as aka form factor, circularity, or isoperimetrical factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness. Figure \ref{shape3} visual explanation for roundness measure. The roundness is measured by
 
 \begin{equation}
-    R = \frac{4 \pi F_4}{{F_5}^2}
+    R = \frac{4 \pi F_4}{{F_5}^2}.
 \label{calround}
 \end{equation}
 
@@ -437,10 +437,10 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
 
 ### Compactness
 
-|       Compactness is closely related to roundness. Compactness measures that how compatible the leaf fits to a circle area (see figure \ref{shape4}).      
+|       Compactness is closely related to roundness. Compactness measures that how compatible the leaf fits to a circle area (see figure \ref{shape4}). The compactness is measured using
 
 \begin{equation}
-    C = \frac{{F_5}^2}{F_4}
+    C = \frac{{F_5}^2}{F_4}.
 \label{calcompact}
 \end{equation}
 
@@ -524,7 +524,7 @@ h(n,1) & h(n,2) & \cdot &\cdot &\cdot & h(n,n)
     
 |       The GLCM is square with dimension $n$, where $n$ is the number of gray levels in the image. Let $h(a,b)$ is the probability that a pixel with value $a$ will be found adjacent to a pixel of value $b$. Then $h(a,b)$ is defined as
 
-$$h(a,b) = \frac{\text{Number of times a pixel with value a is adjacent to a pixel with value b}}{\text{Total number of such comparisons made}}$$
+$$h(a,b) = \frac{\text{Number of times a pixel with value a is adjacent to a pixel with value b}}{\text{Total number of such comparisons made}}.$$
 
 
 
@@ -553,15 +553,15 @@ Texture feature & Feature name                                                  
 \end{table}
 
 
-Let h(a, b) = Probability density function of gray - level pairs $(a,b)$ and dimension of GLCM is $n * n$ ($\text{Number of columns} * \text{Number of rows}$)
+Let $h(a, b)$ = Probability density function of gray - level pairs $(a,b)$ and dimension of GLCM is $n \times n$ ($\text{Number of columns} \times \text{Number of rows}$). The associated measures are given by
 	
-$$\mu_{x} = \sum_{a=1}^{columns}a\sum_{b=1}^{rows}h(a,b)$$ 
+$$\mu_{x} = \sum_{a=1}^{columns}a\sum_{b=1}^{rows}h(a,b),$$ 
 	
-$$\mu_{y} = \sum_{b=1}^{rows}b\sum_{a=1}^{columns}h(a,b)$$ 
+$$\mu_{y} = \sum_{b=1}^{rows}b\sum_{a=1}^{columns}h(a,b),$$ 
 	
-$$\sigma_{x} = \sum_{a=1}^{columns}(a-\mu_{x})^2\sum_{b=1}^{rows}h(a,b)$$
+$$\sigma_{x} = \sum_{a=1}^{columns}(a-\mu_{x})^2\sum_{b=1}^{rows}h(a,b),$$
 	
-$$\sigma_{y} = \sum_{b=1}^{rows}(b-\mu_{y})^2\sum_{a=1}^{columns}h(a,b)$$
+$$\sigma_{y} = \sum_{b=1}^{rows}(b-\mu_{y})^2\sum_{a=1}^{columns}h(a,b).$$
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{img1}Computing the Haralick texture features from a 4 × 4 example image step by step"}
@@ -581,17 +581,17 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 ```
 
 
-|       Color is an important characteristic of images [@articlee;@inproceedings1]. Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extract features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color channel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
+|       Color is an important characteristic of images [@articlee; @inproceedings1]. Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extract features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color channel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
 
 |       We used mean($M$) and standard deviation($SD$) of intensity values of red, green and blue channels as color features. Let $h$ be the number of pixels of the image and $r$ is the channel type which can be red, green, or blue. The corresponding colour features are calculates as follows:
 
 \begin{equation}
-    M = \frac{\text{Total insensity value of } r^{th} \text{channel of the image pixels}}{\text{Total intensity value of the image},}
+    M = \frac{\text{Total insensity value of } r^{th} \text{channel of the image pixels}}{\text{Total intensity value of the image}},
 \label{equa2}
 \end{equation}
     
 \begin{equation}
-    SD = \frac{\sqrt{\sum_{j=0}^{h}(r^{th} \text{channel intensity}_j - r^{th} \text{mean value})^2}}{\text{Total intensity value of the image}.}
+    SD = \frac{\sqrt{\sum_{j=0}^{h}(r^{th} \text{channel intensity}_j - r^{th} \text{mean value})^2}}{\text{Total intensity value of the image}}.
 \label{equa3}
 \end{equation}
 
@@ -687,10 +687,10 @@ i) Binning
 <!--To attenuate the influence of binning, stabilizing transformation is used when computing scagnostics from binned data.-->
 
 
-The weight function is defined as;
+The weight function is defined as
 
 \begin{equation}
-    \text{weight} = 0.7 + \frac{0.3}{1 + t^2}
+    \text{weight} = 0.7 + \frac{0.3}{1 + t^2},
     \label{w2}
 \end{equation}
  
@@ -701,10 +701,10 @@ where $t=\frac{n}{500}$. ($n$ is the number of vertex)
 ii) Deleting Outliers
 
 
-|       To improve robustness of the scagnostics, deleting outliers can be used. A vertex whose adjacent edges in the MST all have a weight (length) greater than $\omega$ is defined as an outlier in this context. By considering nonparametric criterion for the simplicity and Tukey's idea choose the following weight calculation.
+|       To improve robustness of the scagnostics, deleting outliers can be used. A vertex whose adjacent edges in the MST all have a weight (length) greater than $\omega$ is defined as an outlier in this context. By considering nonparametric criterion for the simplicity and Tukey's idea choose the following weight calculation is
 
 \begin{equation}
-    \text{weight} = qu_{75} + 1.5(qu_{75} - qu_{25})
+    \text{weight} = qu_{75} + 1.5(qu_{75} - qu_{25}),
     \label{w1}
 \end{equation}
 
@@ -765,14 +765,14 @@ iii) Sparse: The second relative density measure is sparse measure that measures
     qu_{90} = \alpha statistic
 \end{equation} -->
 
-|        The $\alpha$ statistic exceeds unity (e.g., when all points fall on either of the two diagonally opposing vertices of a square), clamp the value to 1 in the extremely rare event [@article37,@inproceedings44].
+|        The $\alpha$ statistic exceeds unity (e.g., when all points fall on either of the two diagonally opposing vertices of a square), clamp the value to 1 in the extremely rare event [@article37, @inproceedings44].
 
 
 
 iii) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-scatter plot [@article37]. In order to calculate this feature another measurement called $T$ is needed which is calculated based on RUNT graph [@hartigan1992runt]. The clumpy is measured by
 
 \begin{equation}
-    F_{sc4} = max_j[1-\frac{max_k[length(e_k)]}{length(e_j)}.]
+    F_{sc4} = max_j[1-\frac{max_k[length(e_k)]}{length(e_j)}].
 \end{equation} 
 
 |     In the formula below the $j$ value goes over the edges in $MST$ and $k$ runs over all edges in RUNT graph.
@@ -797,7 +797,7 @@ i) Convex: The ratio of the area of the alpha hall ($Al$) and the area of the co
 
 
 \begin{equation}
-    F_{sc6} = \text{weight} \times \frac{\text{Area of alpha hull}}{\text{Area of convex hull},}
+    F_{sc6} = \text{weight} \times \frac{\text{Area of alpha hull}}{\text{Area of convex hull}},
 \end{equation}
 
 |        where the weight function is equation \ref{w2}.
@@ -823,7 +823,7 @@ iii) Stringy: A skinny shape with no branches is known as a stringy shape. By co
     
 
 \begin{equation}
-    F_{sc8} = \frac{|Ve^{(2)}|}{|Ve| - |Ve^{(1)}|,}
+    F_{sc8} = \frac{|Ve^{(2)}|}{|Ve| - |Ve^{(1)}|},
 \end{equation} 
 
 |        where $Ve$ is the number of vertices.
@@ -850,19 +850,19 @@ i) Monotonic: To assess the monotonicity in a scatter plot, the squared Spearman
 
 ### Number of Minimum ($F_8$) and Maximum Points ($F_9$)
 
-|       Number of minimum, and maximum points are new measures which are obtained from the polar coordinate of leaf contour. Number of global maximum points are defined as number of maximum points. Number of global minimum points are defined as number of minimum points. 
+|       Number of minimum, and maximum points are new measures which are obtained from the polar coordinate of leaf contour. Number of global maximum points are defined as number of maximum points. Number of global minimum points are defined as number of minimum points. The associated features are
 
 ```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{mn}Minimum and Maximum Points"}
 knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 ```  
 
 \begin{equation}
-   F_8 =  \text{Number of global minimum points}
+   F_8 =  \text{Number of global minimum points},
 \label{equa_F8}
 \end{equation}
 
 \begin{equation}
-   F_9 =  \text{Number of global maximum points}
+   F_9 =  \text{Number of global maximum points}.
 \label{equa_F9}
 \end{equation}
 
@@ -871,7 +871,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 |       Correlation is another new feature computed based on the cartesian contour. The measure is calculated as 
 
 \begin{equation}
-   F_{10} =  \frac{\sum_{i=0}^{m}(x_i - \overline{\rm x})(y_i - \overline{\rm y})}{\sqrt{\sum_{i=0}^{m} (x_i - \overline{\rm x})^2 (y_i - \overline{\rm y})^2},}
+   F_{10} =  \frac{\sum_{i=0}^{m}(x_i - \overline{\rm x})(y_i - \overline{\rm y})}{\sqrt{\sum_{i=0}^{m} (x_i - \overline{\rm x})^2 (y_i - \overline{\rm y})^2}},
 \label{equa_F10}
 \end{equation}
 
