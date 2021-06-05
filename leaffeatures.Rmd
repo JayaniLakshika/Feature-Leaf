@@ -810,12 +810,12 @@ ii) Skinny: Skinny is measured by using the corrected and normalized ratio of pe
 
 
 \begin{equation}
-    F_{sc7} = 1- \frac{\sqrt{4 \times \pi \times \text{Area of alpha hull}}}{\text{Perimeter of alpha hull}.}
+    F_{sc7} = 1- \frac{\sqrt{4 \times \pi \times \text{Area of alpha hull}}}{\text{Perimeter of alpha hull}}.
 \end{equation}
 
-Furthermore
+|        Furthermore
 
-$$F_{sc7} = \Bigg\{^{0; \text{ if circle}}_{\text{Near } 1 ; \text{ if skinny}}.$$
+$$F_{sc7} = \Bigg\{^{0; \text{ if circle}}_{\text{Near } 1 ; \text{ if skinny}.}$$
 
 
 
