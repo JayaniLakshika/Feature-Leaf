@@ -769,7 +769,7 @@ iii) Sparse: The second relative density measure is sparse measure that measures
 
 
 
-iii) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-scatter plot [@article37]. In order to calculate this feature another measurement called $T$ is needed which is calculated based on RUNT graph [@hartigan1992runt]. The clumpy is measured by
+iv) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-scatter plot [@article37]. In order to calculate this feature another measurement called $T$ is needed which is calculated based on RUNT graph [@hartigan1992runt]. The clumpy is measured by
 
 \begin{equation}
     F_{sc4} = max_j[1-\frac{max_k[length(e_k)]}{length(e_j)}].
@@ -779,7 +779,7 @@ iii) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-
 
 <!--|        Clustering points are not indicated by an extreme distribution of T edge lengths. Therefore RUNT statistic [@article37;@inproceedings44] which is another measure based on the T, is introduced. The smaller of the number of leaves of each of the two subtrees joined at that node is defined as the runt size of a dendogram node. There is an association between runt size ($r_j$) each edge ($e_j$) in the T because there is an isomorphism between a single-linkage dendrogram and the T. The smaller of the two subsets of edges that are still connected to each of the two vertices in $e_j$ after deleting edges in the MST with lengths less than length($e_j$), is known as the RUNT graph ($R_j$) [@article37;@inproceedings44]. The RUNT-based measure responds to clusters with small maximum intra-cluster distance relative to the length of their nearest-neighbor inter-cluster distance [@article37,@inproceedings44]. In the formula $j$ runs over all edges in $T$ and $k$ runs over all edges in RUNT graph.-->
 
-iv) Striated: Striated define the coherence in a set of points as the presence of relatively smooth paths in the minimum spanning tree. This measure is based on the number of adjacent edges whose cosine is less than minus 0.75. The stratified is measured by
+v) Striated: Striated define the coherence in a set of points as the presence of relatively smooth paths in the minimum spanning tree. This measure is based on the number of adjacent edges whose cosine is less than minus 0.75. The stratified is measured by
 
 
 \begin{equation}
