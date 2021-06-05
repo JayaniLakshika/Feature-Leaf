@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.27)  5 JUN 2021 10:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.5.27)  5 JUN 2021 10:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -843,7 +843,7 @@ Figures/d_cal.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/d_cal.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/d_cal.png  used on input line 593.
+-Leaf/leaffeatures/Figures/d_cal.png  used on input line 594.
 (pdftex.def)             Requested size: 234.88011pt x 178.52533pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/act3.png, id=286, 353.06906pt x 267.24844pt>
@@ -852,10 +852,10 @@ Figures/act3.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/act3.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/act3.png  used on input line 617.
+-Leaf/leaffeatures/Figures/act3.png  used on input line 618.
 (pdftex.def)             Requested size: 140.9288pt x 106.67319pt.
 
-LaTeX Warning: Reference `fig: bound' on page 10 undefined on input line 658.
+LaTeX Warning: Reference `fig: bound' on page 10 undefined on input line 659.
 
 [10 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/d_cal.png>]
@@ -866,7 +866,7 @@ Figures/act1.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/act1.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/act1.png  used on input line 673.
+-Leaf/leaffeatures/Figures/act1.png  used on input line 674.
 (pdftex.def)             Requested size: 140.93419pt x 102.57596pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/act2.png, id=304, 367.3725pt x 234.8775pt>
@@ -875,7 +875,7 @@ Figures/act2.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/act2.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/act2.png  used on input line 673.
+-Leaf/leaffeatures/Figures/act2.png  used on input line 674.
 (pdftex.def)             Requested size: 140.93152pt x 90.10376pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/Areacal.png, id=305, 222.07968pt x 183.68625pt>
@@ -884,7 +884,7 @@ Figures/Areacal.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/Areacal.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/Areacal.png  used on input line 686.
+-Leaf/leaffeatures/Figures/Areacal.png  used on input line 687.
 (pdftex.def)             Requested size: 140.92752pt x 116.56378pt.
 [11 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/act3.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/l
@@ -892,40 +892,40 @@ eaffeatures/Figures/act1.png> </Users/thiyangashaminitalagala/Lecturer/Papers/F
 eature-Leaf/leaffeatures/Figures/act2.png> </Users/thiyangashaminitalagala/Lect
 urer/Papers/Feature-Leaf/leaffeatures/Figures/Areacal.png>]
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/c8.png, id=323, 304.13625pt x 161.85469pt>
+es/c8.png, id=322, 304.13625pt x 161.85469pt>
 File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
 Figures/c8.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c8.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c8.png  used on input line 707.
+-Leaf/leaffeatures/Figures/c8.png  used on input line 708.
 (pdftex.def)             Requested size: 140.92996pt x 74.99985pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/perical.png, id=324, 101.62968pt x 140.02313pt>
+es/perical.png, id=323, 101.62968pt x 140.02313pt>
 File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
 Figures/perical.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/perical.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/perical.png  used on input line 720.
+-Leaf/leaffeatures/Figures/perical.png  used on input line 721.
 (pdftex.def)             Requested size: 101.63406pt x 140.02919pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/c11.png, id=327, 318.43968pt x 243.91125pt>
+es/c11.png, id=326, 318.43968pt x 243.91125pt>
 File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
 Figures/c11.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c11.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c11.png  used on input line 748.
+-Leaf/leaffeatures/Figures/c11.png  used on input line 749.
 (pdftex.def)             Requested size: 140.92534pt x 107.94281pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/c9.png, id=330, 304.13625pt x 159.59625pt>
+es/c9.png, id=329, 304.13625pt x 159.59625pt>
 File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
 Figures/c9.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c9.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c9.png  used on input line 769.
+-Leaf/leaffeatures/Figures/c9.png  used on input line 770.
 (pdftex.def)             Requested size: 140.92996pt x 73.95334pt.
 [12 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c8.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/lea
@@ -937,7 +937,7 @@ Figures/concal.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/concal.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/concal.png  used on input line 784.
+-Leaf/leaffeatures/Figures/concal.png  used on input line 785.
 (pdftex.def)             Requested size: 140.9301pt x 94.2416pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/c6.png, id=350, 471.26062pt x 160.34906pt>
@@ -946,7 +946,7 @@ Figures/c6.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c6.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c6.png  used on input line 814.
+-Leaf/leaffeatures/Figures/c6.png  used on input line 815.
 (pdftex.def)             Requested size: 140.92625pt x 47.95094pt.
 [13 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c11.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/le
@@ -959,7 +959,7 @@ Figures/c10.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c10.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c10.png  used on input line 835.
+-Leaf/leaffeatures/Figures/c10.png  used on input line 836.
 (pdftex.def)             Requested size: 140.93019pt x 65.46756pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/c7.png, id=368, 257.46187pt x 163.3603pt>
@@ -968,125 +968,125 @@ Figures/c7.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c7.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c7.png  used on input line 849.
+-Leaf/leaffeatures/Figures/c7.png  used on input line 850.
 (pdftex.def)             Requested size: 140.92874pt x 89.4197pt.
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 859--862
+Overfull \hbox (38.90486pt too wide) in alignment at lines 860--863
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 862--868
+Overfull \hbox (38.90486pt too wide) in alignment at lines 863--869
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 868--871
+Overfull \hbox (38.90486pt too wide) in alignment at lines 869--872
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 871--873
+Overfull \hbox (38.90486pt too wide) in alignment at lines 872--874
  [] [] [] [] [] [] 
  []
 
 <./Figures/diameter.png, id=370, 50.43843pt x 126.4725pt>
 File: ./Figures/diameter.png Graphic file (type png)
 <use ./Figures/diameter.png>
-Package pdftex.def Info: ./Figures/diameter.png  used on input line 875.
+Package pdftex.def Info: ./Figures/diameter.png  used on input line 876.
 (pdftex.def)             Requested size: 17.02107pt x 42.67972pt.
 <./Figures/Length_new.png, id=372, 50.43843pt x 126.4725pt>
 File: ./Figures/Length_new.png Graphic file (type png)
 <use ./Figures/Length_new.png>
-Package pdftex.def Info: ./Figures/Length_new.png  used on input line 876.
+Package pdftex.def Info: ./Figures/Length_new.png  used on input line 877.
 (pdftex.def)             Requested size: 17.02107pt x 42.67972pt.
 <./Figures/width.png, id=374, 45.16875pt x 112.92188pt>
 File: ./Figures/width.png Graphic file (type png)
 <use ./Figures/width.png>
-Package pdftex.def Info: ./Figures/width.png  used on input line 877.
+Package pdftex.def Info: ./Figures/width.png  used on input line 878.
 (pdftex.def)             Requested size: 17.07193pt x 42.67986pt.
 <./Figures/area.png, id=376, 52.69687pt x 115.18031pt>
 File: ./Figures/area.png Graphic file (type png)
 <use ./Figures/area.png>
-Package pdftex.def Info: ./Figures/area.png  used on input line 878.
+Package pdftex.def Info: ./Figures/area.png  used on input line 879.
 (pdftex.def)             Requested size: 19.52567pt x 42.67755pt.
 <./Figures/perimeter.png, id=378, 49.68562pt x 115.18031pt>
 File: ./Figures/perimeter.png Graphic file (type png)
 <use ./Figures/perimeter.png>
-Package pdftex.def Info: ./Figures/perimeter.png  used on input line 879.
+Package pdftex.def Info: ./Figures/perimeter.png  used on input line 880.
 (pdftex.def)             Requested size: 18.40993pt x 42.67755pt.
 <./Figures/centroid.png, id=381, 59.47218pt x 115.93312pt>
 File: ./Figures/centroid.png Graphic file (type png)
 <use ./Figures/centroid.png>
-Package pdftex.def Info: ./Figures/centroid.png  used on input line 881.
+Package pdftex.def Info: ./Figures/centroid.png  used on input line 882.
 (pdftex.def)             Requested size: 21.89365pt x 42.67876pt.
 <./Figures/AR.png, id=382, 55.70813pt x 118.94438pt>
 File: ./Figures/AR.png Graphic file (type png)
 <use ./Figures/AR.png>
-Package pdftex.def Info: ./Figures/AR.png  used on input line 882.
+Package pdftex.def Info: ./Figures/AR.png  used on input line 883.
 (pdftex.def)             Requested size: 19.9886pt x 42.67836pt.
 <./Figures/roudness.png, id=383, 115.18031pt x 140.77594pt>
 File: ./Figures/roudness.png Graphic file (type png)
 <use ./Figures/roudness.png>
-Package pdftex.def Info: ./Figures/roudness.png  used on input line 883.
+Package pdftex.def Info: ./Figures/roudness.png  used on input line 884.
 (pdftex.def)             Requested size: 34.91815pt x 42.67775pt.
 <./Figures/rect.png, id=385, 54.2025pt x 117.43875pt>
 File: ./Figures/rect.png Graphic file (type png)
 <use ./Figures/rect.png>
-Package pdftex.def Info: ./Figures/rect.png  used on input line 884.
+Package pdftex.def Info: ./Figures/rect.png  used on input line 885.
 (pdftex.def)             Requested size: 19.69814pt x 42.6793pt.
 <./Figures/nf.png, id=387, 48.93282pt x 117.43875pt>
 File: ./Figures/nf.png Graphic file (type png)
 <use ./Figures/nf.png>
-Package pdftex.def Info: ./Figures/nf.png  used on input line 886.
+Package pdftex.def Info: ./Figures/nf.png  used on input line 887.
 (pdftex.def)             Requested size: 17.78304pt x 42.6793pt.
 <./Figures/pd.png, id=388, 53.44969pt x 127.22531pt>
 File: ./Figures/pd.png Graphic file (type png)
 <use ./Figures/pd.png>
-Package pdftex.def Info: ./Figures/pd.png  used on input line 887.
+Package pdftex.def Info: ./Figures/pd.png  used on input line 888.
 (pdftex.def)             Requested size: 17.93042pt x 42.67946pt.
 <./Figures/pl.png, id=389, 53.44969pt x 127.22531pt>
 File: ./Figures/pl.png Graphic file (type png)
 <use ./Figures/pl.png>
-Package pdftex.def Info: ./Figures/pl.png  used on input line 888.
+Package pdftex.def Info: ./Figures/pl.png  used on input line 889.
 (pdftex.def)             Requested size: 17.93042pt x 42.67946pt.
 <./Figures/plw.png, id=390, 55.70813pt x 127.22531pt>
 File: ./Figures/plw.png Graphic file (type png)
 <use ./Figures/plw.png>
-Package pdftex.def Info: ./Figures/plw.png  used on input line 889.
+Package pdftex.def Info: ./Figures/plw.png  used on input line 890.
 (pdftex.def)             Requested size: 18.68803pt x 42.67946pt.
 <./Figures/p_con.png, id=391, 99.37125pt x 133.24782pt>
 File: ./Figures/p_con.png Graphic file (type png)
 <use ./Figures/p_con.png>
-Package pdftex.def Info: ./Figures/p_con.png  used on input line 890.
+Package pdftex.def Info: ./Figures/p_con.png  used on input line 891.
 (pdftex.def)             Requested size: 31.82825pt x 42.67879pt.
 <./Figures/a_c1.png, id=392, 70.01157pt x 131.74219pt>
 File: ./Figures/a_c1.png Graphic file (type png)
 <use ./Figures/a_c1.png>
-Package pdftex.def Info: ./Figures/a_c1.png  used on input line 891.
+Package pdftex.def Info: ./Figures/a_c1.png  used on input line 892.
 (pdftex.def)             Requested size: 22.68083pt x 42.679pt.
 <./Figures/a_c2.png, id=393, 96.36pt x 130.23656pt>
 File: ./Figures/a_c2.png Graphic file (type png)
 <use ./Figures/a_c2.png>
-Package pdftex.def Info: ./Figures/a_c2.png  used on input line 892.
+Package pdftex.def Info: ./Figures/a_c2.png  used on input line 893.
 (pdftex.def)             Requested size: 31.57686pt x 42.67812pt.
 <./Figures/eq_d.png, id=394, 112.16907pt x 136.25906pt>
 File: ./Figures/eq_d.png Graphic file (type png)
 <use ./Figures/eq_d.png>
-Package pdftex.def Info: ./Figures/eq_d.png  used on input line 893.
+Package pdftex.def Info: ./Figures/eq_d.png  used on input line 894.
 (pdftex.def)             Requested size: 35.13318pt x 42.67856pt.
 <./Figures/convex.png, id=395, 56.46094pt x 126.4725pt>
 File: ./Figures/convex.png Graphic file (type png)
 <use ./Figures/convex.png>
-Package pdftex.def Info: ./Figures/convex.png  used on input line 894.
+Package pdftex.def Info: ./Figures/convex.png  used on input line 895.
 (pdftex.def)             Requested size: 19.05344pt x 42.67972pt.
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 873--894
+Overfull \hbox (38.90486pt too wide) in alignment at lines 874--895
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 894--897
+Overfull \hbox (38.90486pt too wide) in alignment at lines 895--898
  [] [] [] [] [] [] 
  []
 
@@ -1105,7 +1105,7 @@ Figures/GLMC_direction.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/GLMC_direction.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/GLMC_direction.png  used on input line 939.
+-Leaf/leaffeatures/Figures/GLMC_direction.png  used on input line 940.
 (pdftex.def)             Requested size: 140.93248pt x 120.09897pt.
 [16 <./Figures/eq_d.png> <./Figures/convex.png>]
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
@@ -1115,10 +1115,10 @@ Figures/GLMC1.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/GLMC1.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/GLMC1.png  used on input line 987.
+-Leaf/leaffeatures/Figures/GLMC1.png  used on input line 988.
 (pdftex.def)             Requested size: 234.88033pt x 314.61034pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-91.
+92.
 
 (/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.
 fd
@@ -1131,7 +1131,7 @@ Figures/GLMC2.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/GLMC2.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/GLMC2.png  used on input line 996.
+-Leaf/leaffeatures/Figures/GLMC2.png  used on input line 997.
 (pdftex.def)             Requested size: 234.87111pt x 92.70317pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/leaf_img.png, id=449, 291.33844pt x 219.06844pt>
@@ -1140,7 +1140,7 @@ Figures/leaf_img.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/leaf_img.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/leaf_img.png  used on input line 1008.
+-Leaf/leaffeatures/Figures/leaf_img.png  used on input line 1009.
 (pdftex.def)             Requested size: 140.93pt x 105.97061pt.
 [17 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/GLMC_direction.png>] [18 </Users/thiyangashaminitalagala/Lecturer/Papers
@@ -1148,7 +1148,7 @@ igures/GLMC_direction.png>] [18 </Users/thiyangashaminitalagala/Lecturer/Papers
 ecturer/Papers/Feature-Leaf/leaffeatures/Figures/GLMC2.png> </Users/thiyangasha
 minitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/leaf_img.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-054.
+055.
 
 (/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.
 fd
@@ -1161,7 +1161,7 @@ Figures/scag.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/scag.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/scag.png  used on input line 1062.
+-Leaf/leaffeatures/Figures/scag.png  used on input line 1063.
 (pdftex.def)             Requested size: 328.84004pt x 166.47527pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/pc.png, id=472, 210.03468pt x 199.49532pt>
@@ -1170,7 +1170,7 @@ Figures/pc.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/pc.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/pc.png  used on input line 1079.
+-Leaf/leaffeatures/Figures/pc.png  used on input line 1080.
 (pdftex.def)             Requested size: 187.90135pt x 178.4726pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/scp.png, id=473, 582.67688pt x 463.7325pt>
@@ -1179,7 +1179,7 @@ Figures/scp.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/scp.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/scp.png  used on input line 1088.
+-Leaf/leaffeatures/Figures/scp.png  used on input line 1089.
 (pdftex.def)             Requested size: 234.87148pt x 186.92613pt.
 [19 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/scag.png>]
@@ -1190,7 +1190,7 @@ Figures/c4new.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c4new.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c4new.png  used on input line 1134.
+-Leaf/leaffeatures/Figures/c4new.png  used on input line 1135.
 (pdftex.def)             Requested size: 234.88493pt x 141.50383pt.
 [20 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/pc.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/lea
@@ -1202,7 +1202,7 @@ Figures/c5.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c5.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c5.png  used on input line 1182.
+-Leaf/leaffeatures/Figures/c5.png  used on input line 1183.
 (pdftex.def)             Requested size: 234.87534pt x 125.9036pt.
 [21 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c4new.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/
@@ -1214,7 +1214,7 @@ Figures/c3.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c3.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/c3.png  used on input line 1270.
+-Leaf/leaffeatures/Figures/c3.png  used on input line 1271.
 (pdftex.def)             Requested size: 187.90215pt x 98.0151pt.
 [22 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c3.png>] [23] [24]
@@ -1225,7 +1225,7 @@ Figures/mn.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/mn.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/mn.png  used on input line 1483.
+-Leaf/leaffeatures/Figures/mn.png  used on input line 1484.
 (pdftex.def)             Requested size: 140.92937pt x 67.25671pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/flavia_images.png, id=567, 548.0475pt x 246.9225pt>
@@ -1234,7 +1234,7 @@ Figures/flavia_images.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/flavia_images.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/flavia_images.png  used on input line 1541.
+-Leaf/leaffeatures/Figures/flavia_images.png  used on input line 1542.
 (pdftex.def)             Requested size: 234.87811pt x 105.82419pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/swedish_data.png, id=568, 545.03625pt x 274.77657pt>
@@ -1243,7 +1243,7 @@ Figures/swedish_data.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/swedish_data.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/swedish_data.png  used on input line 1550.
+-Leaf/leaffeatures/Figures/swedish_data.png  used on input line 1551.
 (pdftex.def)             Requested size: 234.87665pt x 118.41156pt.
 [25 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/mn.png>]
@@ -1252,7 +1252,7 @@ Figures/fl5.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/fl5.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/fl5.png  used on input line 1579.
+-Leaf/leaffeatures/Figures/fl5.png  used on input line 1580.
 (pdftex.def)             Requested size: 234.87645pt x 116.08142pt.
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
 es/fl_example.png, id=587, 662.475pt x 185.19188pt>
@@ -1261,7 +1261,7 @@ Figures/fl_example.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/fl_example.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/fl_example.png  used on input line 1588.
+-Leaf/leaffeatures/Figures/fl_example.png  used on input line 1589.
 (pdftex.def)             Requested size: 234.87196pt x 65.65738pt.
 [26 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/flavia_images.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Featu
@@ -1273,27 +1273,27 @@ Figures/imgshape.png Graphic file (type png)
 <use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/imgshape.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/imgshape.png  used on input line 1613.
+-Leaf/leaffeatures/Figures/imgshape.png  used on input line 1614.
 (pdftex.def)             Requested size: 234.87393pt x 55.88927pt.
 <img/pcaswedish-1.pdf, id=603, 578.16pt x 578.16pt>
 File: img/pcaswedish-1.pdf Graphic file (type pdf)
 <use img/pcaswedish-1.pdf>
-Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1632.
+Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1633.
 (pdftex.def)             Requested size: 469.75385pt x 469.75385pt.
 <img/ldaswedish-1.pdf, id=606, 1084.05pt x 361.35pt>
 File: img/ldaswedish-1.pdf Graphic file (type pdf)
 <use img/ldaswedish-1.pdf>
-Package pdftex.def Info: img/ldaswedish-1.pdf  used on input line 1653.
+Package pdftex.def Info: img/ldaswedish-1.pdf  used on input line 1654.
 (pdftex.def)             Requested size: 469.75496pt x 156.58498pt.
 <img/ldaflavia-1.pdf, id=609, 1084.05pt x 361.35pt>
 File: img/ldaflavia-1.pdf Graphic file (type pdf)
 <use img/ldaflavia-1.pdf>
-Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1677.
+Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1678.
 (pdftex.def)             Requested size: 469.75496pt x 156.58498pt.
 <img/pcaflavia-1.pdf, id=610, 722.7pt x 722.7pt>
 File: img/pcaflavia-1.pdf Graphic file (type pdf)
 <use img/pcaflavia-1.pdf>
-Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1685.
+Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1686.
 (pdftex.def)             Requested size: 469.76045pt x 469.76045pt.
 [27 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/fl_example.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-
@@ -1341,7 +1341,7 @@ angashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 lm/lmsy10.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy7.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf
 -dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on leaffeatures.pdf (32 pages, 4728396 bytes).
+Output written on leaffeatures.pdf (32 pages, 4728561 bytes).
 PDF statistics:
  826 PDF objects out of 1000 (max. 8388607)
  642 compressed objects within 7 object streams
