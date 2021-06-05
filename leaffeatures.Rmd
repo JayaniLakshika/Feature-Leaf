@@ -684,7 +684,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
 i) Binning
 
 
-|       As the first step of binning, the data are normalized to the unit interval. Then use a $40 \times 40$ hexagonal grid to aggregate the points in each scatterplot. We reduce the bin size by half and rebind until no more than 250 non-empty cells. If there are more than 250 non-empty cells. When selecting the bins two important points to consider are:i) efficiency (too many bins slow down calculations of the geometric graphs) and ii) sensitivity (fewer bins obscure features in the scatterplots).  To improve the performance, hexagon binning is used. To manage the problem of having to many points that start to overlap, hexagon binning is used. The plots of hexagonal binning are density rather than points. There are several reasons for using hexagon binning instead of square binning in a 2D surface. Hexagons are more similar to circle than square. To keep scagnostics orientation-independent this bias reduction is important. 
+|       As the first step of binning, the data are normalized to the unit interval. Then use a $40 \times 40$ hexagonal grid to aggregate the points in each scatterplot. We reduce the bin size by half and rebind until no more than 250 non-empty cells. If there are more than 250 non-empty cells. When selecting the bins two important points to consider are: i) efficiency (too many bins slow down calculations of the geometric graphs) and ii) sensitivity (fewer bins obscure features in the scatterplots).  To improve the performance, hexagon binning is used. To manage the problem of having to many points that start to overlap, hexagon binning is used. The plots of hexagonal binning are density rather than points. There are several reasons for using hexagon binning instead of square binning in a 2D surface. Hexagons are more similar to circle than square. To keep scagnostics orientation-independent this bias reduction is important. 
 
 <!--To attenuate the influence of binning, stabilizing transformation is used when computing scagnostics from binned data.-->
 
@@ -698,7 +698,7 @@ The weight function is defined as;
  
 where $t=\frac{n}{500}$. ($n$ is the number of vertex)
 
-|        If $n>2000$ then this function is fairly constant. By using hex binning the shape and the parameters of the function is determined. In computing Sparse, Skewed and Convex scagnostics this weight function is used to adjust for bias.   
+|        If $n > 2000$ then this function is fairly constant. By using hex binning the shape and the parameters of the function is determined. In computing sparse, skewed and convex scagnostics this weight function is used to adjust for bias.   
 
 ii) Deleting Outliers
 
@@ -725,67 +725,67 @@ knitr::include_graphics(here::here("leaffeatures","Figures","c3.png"))
 
 ### Definitions of Scagnostic Features
 
-|       The definitions of scagnostic features are defined as follows. Our notations are as follows: i) Convex hull ($CH$), ii) Alpha hull ($Al$) and iii) Minimum spanning tree ($T$).
+|       The definitions of scagnostic features are defined as follows. Our notations are as follows: i) Convex hull ($CH$), ii) Alpha hull ($Al$) and iii) Minimum spanning tree ($MST$). In the following section we give a brief description of the calculation of scagnostic measures. For more details on rotation techniques, see @article37. 
 
 ### Density Measures
 
 
-i) Outlying
+i) Outlying: The outlying measure is calculated before deleting the outliers for the other measures. The outlying measure is 
 
 
 \begin{equation}
-      F_{sc1} = \frac{\text{Total length of edges adjacent to outlying points}}{\text{Total edge length of T}}
+      F_{sc1} = \frac{\text{Total length of edges adjacent to outlying points}}{\text{Total edge length of the MST}}.
 \end{equation}
 
-<!--   The outlying measure calculate before deleting the outliers for the other measures. -->
 
+ii) Skewed: The skewed measure is the first measure of relative density which is a relatively robust measure of skewness in the distribution of edge lengths. After adaptive binning skewed tends to decrease with $n$. The skewed measure is calculated using the equations
 
-ii) Skewed: The skewed measure is the first measure of relative density which is a relatively robust measure of skewness in the distribution of edge lengths. After adaptive binning skewed tends to decrease with $n$.
 
 \begin{equation}
-    qu_{skew} = \frac{qu_{90}-qu_{50}}{qu_{90}-qu_{10}}
-\end{equation} 
-
-\begin{equation}
-    F_{sc2} = 1-\text{weight}*(1-qu_{skew})
+    F_{sc2} = 1-\text{weight}*(1-qu_{skew}), 
 \end{equation}
 
-where the calculation of $weight$ is given in equation \ref{w2}.
-
-iii) Sparse: The second relative density measure is sparse measure that measures whether points in a 2D scatterplot are confined to a lattice or a small number of locations on the plane.
-
+|       where,
 
 \begin{equation}
-   F_{sc3} = \text{weight} *qu_{90}
+    qu_{skew} = \frac{qu_{90}-qu_{50}}{qu_{90}-qu_{10}}, 
 \end{equation} 
 
-where the weight function is equation \ref{w2} and $qu_{90}$ is the 90th percentile of the distribution of edge lengths in the $T$.
+|        and the calculation of $weight$ is given in equation \ref{w2}.
+
+iii) Sparse: The second relative density measure is sparse measure that measures whether points in a 2D scatterplot are confined to a lattice or a small number of locations on the plane. The sparse is measured by
+
+\begin{equation}
+   F_{sc3} = \text{weight} *qu_{90},
+\end{equation} 
+
+|        where the weight function is equation \ref{w2} and $qu_{90}$ is the 90th percentile of the distribution of edge lengths in the $MST$.
 
 <!--     If the number of points is extremely small or tuples are produced by the product of categorical variables, then sparse can be happen.-->
 
-\begin{equation}
+<!--\begin{equation}
     qu_{90} = \alpha statistic
+\end{equation} -->
+
+|        The $\alpha$ statistic exceeds unity (e.g., when all points fall on either of the two diagonally opposing vertices of a square), clamp the value to 1 in the extremely rare event [@article37,@inproceedings44].
+
+
+
+iii) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-scatter plot [@article37]. In order to calculate this feature another measurement called $T$ is needed which is calculated based on RUNT graph [@hartigan1992runt]. The clumpy is measured by
+
+\begin{equation}
+    F_{sc4} = max_j[1-\frac{max_k[length(e_k)]}{length(e_j)}.]
 \end{equation} 
 
-|        The $\alpha$ statistic exceeds unity (e.g., when all points fall on either of the two diagonally opposing vertices
-of a square), clamp the value to 1 in the extremely rare event [@article37,@inproceedings44].
+|     In the formula below the $j$ value goes over the edges in $MST$ and $k$ runs over all edges in RUNT graph.
 
+<!--|        Clustering points are not indicated by an extreme distribution of T edge lengths. Therefore RUNT statistic [@article37;@inproceedings44] which is another measure based on the T, is introduced. The smaller of the number of leaves of each of the two subtrees joined at that node is defined as the runt size of a dendogram node. There is an association between runt size ($r_j$) each edge ($e_j$) in the T because there is an isomorphism between a single-linkage dendrogram and the T. The smaller of the two subsets of edges that are still connected to each of the two vertices in $e_j$ after deleting edges in the MST with lengths less than length($e_j$), is known as the RUNT graph ($R_j$) [@article37;@inproceedings44]. The RUNT-based measure responds to clusters with small maximum intra-cluster distance relative to the length of their nearest-neighbor inter-cluster distance [@article37,@inproceedings44]. In the formula $j$ runs over all edges in $T$ and $k$ runs over all edges in RUNT graph.-->
 
-
-iii) Clumpy: Clumpiness measures the amount of small-scale structures in the 2D-scatter plot.
+iv) Striated: Striated define the coherence in a set of points as the presence of relatively smooth paths in the minimum spanning tree. This measure is based on the number of adjacent edges whose cosine is less than minus 0.75. The stratified is measured by
 
 
 \begin{equation}
-    F_{sc4} = max_j[1-\frac{max_k[length(e_k)]}{length(e_j)}]
-\end{equation} 
-
-|        Clustering points are not indicated by an extreme distribution of T edge lengths. Therefore RUNT statistic [@article37;@inproceedings44] which is another measure based on the T, is introduced. The smaller of the number of leaves of each of the two subtrees joined at that node is defined as the runt size of a dendogram node. There is an association between runt size ($r_j$) each edge ($e_j$) in the T because there is an isomorphism between a single-linkage dendrogram and the T. The smaller of the two subsets of edges that are still connected to each of the two vertices in $e_j$ after deleting edges in the MST with lengths less than length($e_j$), is known as the RUNT graph ($R_j$) [@article37;@inproceedings44]. The RUNT-based measure responds to clusters with small maximum intra-cluster distance relative to the length of their nearest-neighbor inter-cluster distance [@article37,@inproceedings44]. In the formula $j$ runs over all edges in $T$ and $k$ runs over all edges in RUNT graph.
-
-iv) Striated: Striated define the coherence in a set of points as the presence of relatively smooth paths in the minimum spanning tree. This measure is based on the number of adjacent edges whose cosine is less than minus 0.75.
-
-
-\begin{equation}
-    F_{sc5} = \frac{1}{|Ve|}\sum_{\nu \in Ve^{(2)}}^{}I(\cos\theta_{e(\nu,a)e(\nu,b)}<-0.75)
+    F_{sc5} = \frac{1}{|Ve|}\sum_{\nu \in Ve^{(2)}}^{}I(\cos\theta_{e(\nu,a)e(\nu,b)}<-0.75),
 \end{equation} 
 
 |     where $Ve^{(2)} \subseteq Ve$ and $I()$ be an indicator function.
@@ -795,39 +795,40 @@ iv) Striated: Striated define the coherence in a set of points as the presence o
 
 |        Both topological and geometric aspects of shape of a set of scattered points is considered. As an example, a set of scattered points on the plane appeared to be connected, convex and so forth, want to know under the shape measures. By definition scattered points are not like this. Therefore to make inferences additional machinery (based on geometric graphs) is needed. By measuring the aspects of the convex hull, the alpha hull, and the minimum spanning tree is determined.  
 
-i) Convex: The ratio of the area of the alpha hall (Al) and the area of the convex hull (CH) is the base of measuring convexity. 
+i) Convex: The ratio of the area of the alpha hall ($Al$) and the area of the convex hull ($CH$) is the base of measuring convexity.  The convex is measured by
 
 
 \begin{equation}
-    F_{sc6} = \text{weight} \times \frac{\text{Area of alpha hull}}{\text{Area of convex hull}}
+    F_{sc6} = \text{weight} \times \frac{\text{Area of alpha hull}}{\text{Area of convex hull},}
 \end{equation}
 
 |        where the weight function is equation \ref{w2}.
 
 
-$$Ratio = \frac{area(A)}{area(H)}\Bigg\{^{(=1); \text{ if the nonconvex hull and convex hull have identical areas}}_{(\neq1) ; \text{ otherwise}}$$
+<!--$$Ratio = \frac{area(A)}{area(H)}=\Bigg\{^{1; \text{ if the nonconvex hull and convex hull have identical areas}}_{0 ; \text{ otherwise}}$$-->
 
 
-ii) Skinny: Skinny is measured by using the corrected and normalized ratio of perimeter to area of a polygon measures.
+ii) Skinny: Skinny is measured by using the corrected and normalized ratio of perimeter to area of a polygon measures. The skinny is measured by
 
 
 \begin{equation}
-    F_{sc7} = 1- \frac{\sqrt{4 \times \pi \times \text{Area of alpha hull}}}{\text{Perimeter of alpha hull}}
+    F_{sc7} = 1- \frac{\sqrt{4 \times \pi \times \text{Area of alpha hull}}}{\text{Perimeter of alpha hull}.}
 \end{equation}
 
+Furthermore
 
-$$F_{sc7} = \Bigg\{^{0; \text{ if circle}}_{\text{Near } 1 ; \text{ if skinny}}$$
+$$F_{sc7} = \Bigg\{^{0; \text{ if circle}}_{\text{Near } 1 ; \text{ if skinny}}.$$
 
 
 
-iii) Stringy: A skinny shape with no branches is known as a stringy shape. By counting the vertices of degree 2 in the minimum spanning tree and comparing them to the overall number of vertices minus the number of single-degree vertices, skinny measure is calculated. To adjust for negative skew in its conditional distribution of $n$, cube the stringy measure.
+iii) Stringy: A skinny shape with no branches is known as a stringy shape. By counting the vertices of degree 2 in the minimum spanning tree and comparing them to the overall number of vertices minus the number of single-degree vertices, skinny measure is calculated. To adjust for negative skew in its conditional distribution of $n$, cube the stringy measure. The stringy is measured by
     
 
 \begin{equation}
-    F_{sc8} = \frac{|Ve^{(2)}|}{|Ve| - |Ve^{(1)}|}
+    F_{sc8} = \frac{|Ve^{(2)}|}{|Ve| - |Ve^{(1)}|,}
 \end{equation} 
 
-where $Ve$ is the number of vertices.
+|        where $Ve$ is the number of vertices.
 
 
 
@@ -836,13 +837,13 @@ where $Ve$ is the number of vertices.
 |        Symmetric and relatively robust measure of association are interested.
 
 
-i) Monotonic: To assess the monotonicity in a scatter plot, the squared Spearman correlation coefficient is used.  In calculating monotonicity, squared the coefficient because to consider the large values and to remove the distinction between positive and negative coefficients (Because assume that the investigators are more interested in strong relationships rather than negative or positive).
+i) Monotonic: To assess the monotonicity in a scatter plot, the squared Spearman correlation coefficient is used.  In calculating monotonicity, the squared value of the coefficient is considered to remove the distinction between positive and negative coefficients. The reason is, the researchers are more interested in how strong the relationship is rather than their direction (negative or positive). The measurement is calculated as
 
 <!--This is the only coefficient not based on a subset of the Delaunay graph [@article37].-->
 
 
 \begin{equation}
-    F_{sc9} = r^2_{Spearman}
+    F_{sc9} = r^2_{Spearman}.
 \end{equation}
 
 
@@ -876,7 +877,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 \label{equa_F10}
 \end{equation}
 
-where $(x_i,y_i)$ is the coordinate of cartesian contour and $m$ is the number of points in the cartesian contour 
+|        where $(x_i,y_i)$ is the coordinate of cartesian contour and $m$ is the number of points in the cartesian contour 
 
 # Empirical Application
 
