@@ -1,0 +1,32 @@
+---
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Computer-aided Interpretable Features for Leaf Image Classification
+
+## Authors
+
+**Jayani P.G. Lakshika**
+
+Department of Statistics
+University of Sri Jayewardenepura
+Nugegoda, Sri Lanka
+
+email: jayanilakshika76@gmail.com
+
+\vspace{1cm}
+
+**Thiyanga S. Talagala**
+
+Corresponding Author
+
+Department of Statistics
+University of Sri Jayewardenepura
+Nugegoda, Sri Lanka
+
+email: ttalagala@sjp.ac.lk
+
