@@ -846,7 +846,6 @@ The equations and software packages used to compute shape features are
 shown in Table \ref{tab:table1}.
 
 \begin{longtable}{llllll}
-\tiny
 \hline
 Shape feature        & \multicolumn{1}{c}{Feature name}                                                            & \multicolumn{1}{c}{Figure} & \multicolumn{1}{c}{Formula} & \multicolumn{1}{c}{Range} & \begin{tabular}[c]{@{}l@{}}Software \\ package\end{tabular}   \\ \hline
 \endfirsthead
@@ -862,26 +861,26 @@ Shape feature        & \multicolumn{1}{c}{Feature name}                         
 %
 \endlastfoot
 %
-$F_1$  & Diameter                                                                                    &  \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/diameter.png}                          & \multicolumn{1}{l}{eq:\ref{equa_F1}}        & \multicolumn{1}{l}{[0,$\infty$]}      & \begin{tabular}[c]{@{}l@{}}combinations,\\ numpy\end{tabular} \\
-$F_2$                     & Physiological length                                                                        &     \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/Length_new.png}                       &            eq:\ref{equa_F2}                 &         [0,$\infty$)                 & OpenCV                                                        \\
-$F_3$                     & Physiological width                                                                         &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/width.png}                        &      eq:\ref{equa_F3}                        &           [0,$\infty$)                & OpenCV                                                        \\
-$F_4$                     & Area                                                                                        &     \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/area.png}                        &       eq:\ref{equa_F4}                      &                           & OpenCV                                                        \\
-$F_5$                     & Perimeter                                                                                   &      \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/perimeter.png}                      &        eq:\ref{equa_F5}                     &          [0,$\infty$)                 & OpenCV                                                        \\
+$F_1$  & Diameter                                                                                    &  \centering\includegraphics[width=10mm, height=15mm]{./Figures/diameter.png}                          & \multicolumn{1}{l}{eq:\ref{equa_F1}}        & \multicolumn{1}{l}{[0,$\infty$]}      & \begin{tabular}[c]{@{}l@{}}combinations,\\ numpy\end{tabular} \\
+$F_2$                     & Physiological length                                                                        &     \centering\includegraphics[width=10mm, height=15mm]{./Figures/Length_new.png}                       &            eq:\ref{equa_F2}                 &         [0,$\infty$)                 & OpenCV                                                        \\
+$F_3$                     & Physiological width                                                                         &    \centering\includegraphics[width=10mm, height=15mm]{./Figures/width.png}                        &      eq:\ref{equa_F3}                        &           [0,$\infty$)                & OpenCV                                                        \\
+$F_4$                     & Area                                                                                        &     \centering\includegraphics[width=10mm, height=15mm]{./Figures/area.png}                        &       eq:\ref{equa_F4}                      &                           & OpenCV                                                        \\
+$F_5$                     & Perimeter                                                                                   &      \centering\includegraphics[width=10mm, height=15mm]{./Figures/perimeter.png}                      &        eq:\ref{equa_F5}                     &          [0,$\infty$)                 & OpenCV                                                        \\
 $F_6$                     & Eccentricity                                                                                &                            &      eq:\ref{eqecc}                       & [0,1]                     & OpenCV                                                        \\
-$F_7$, $F_8$                     & \begin{tabular}[c]{@{}l@{}}x and y coordinate \\ of center\end{tabular}                     &      \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/centroid.png}                      &                             &                           &            scipy.ndimage                                                   \\
-$F_{9}$                     & Aspect ratio                                                                                &     \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/AR.png}                       &       $F_9 = \frac{F_2}{F_3}$                      &       [0,$\infty$)                    &                                -                               \\
-$F_{10}$                     & Roundness/ Circularity                                                                      &       \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/roudness.png}                       &           eq:\ref{calround}                  &          [0,$\infty$)                &     numpy                                                          \\
-$F_{11}$                     & Compactness                                                                                 &     \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/rect.png}                       &        eg:\ref{calcompact}                     &     (0,$\infty$)                      &                   -                                            \\
+$F_7$, $F_8$                     & \begin{tabular}[c]{@{}l@{}}x and y coordinate \\ of center\end{tabular}                     &      \centering\includegraphics[width=10mm, height=15mm]{./Figures/centroid.png}                      &                             &                           &            scipy.ndimage                                                   \\
+$F_{9}$                     & Aspect ratio                                                                                &     \centering\includegraphics[width=10mm, height=15mm]{./Figures/AR.png}                       &       $F_9 = \frac{F_2}{F_3}$                      &       [0,$\infty$)                    &                                -                               \\
+$F_{10}$                     & Roundness/ Circularity                                                                      &       \centering\includegraphics[width=10mm, height=15mm]{./Figures/roudness.png}                       &           eq:\ref{calround}                  &          [0,$\infty$)                &     numpy                                                          \\
+$F_{11}$                     & Compactness                                                                                 &     \centering\includegraphics[width=10mm, height=15mm]{./Figures/rect.png}                       &        eg:\ref{calcompact}                     &     (0,$\infty$)                      &                   -                                            \\
 $F_{12}$                     & Rectangularity                                                                              &                            &       $F_{12} = \frac{{F_5}^2}{F_4}$                      &      (0,$\infty$)                     &               -                                                \\
-$F_{13}$                     & Narrow factor                                                                               &       \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/nf.png}                     &         $F_{13} = \frac{F_1}{F_2}$                    &     [0,$\infty$)                      &                     -                                          \\
-$F_{14}$                     & Perimeter ratio of diameter                                                                 &       \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/pd.png}                     &         $F_{14} = \frac{F_5}{F_1}$                     &       [0,$\infty$)                    &                      -                                         \\
-$F_{15}$  & \begin{tabular}[c]{@{}l@{}}Perimeter ratio \\ of physiological length\end{tabular}          &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/pl.png}                        & $F_{15} = \frac{F_5}{F_2}$        & \multicolumn{1}{c}{[0,$\infty$)}      &         -                                                      \\
-$F_{16}$  & \begin{tabular}[c]{@{}l@{}}Perimeter ratio of\\ physiological length and width\end{tabular} &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/plw.png}                        & $F_{16} = \frac{F_5}{F_2 * F_3}$        & \multicolumn{1}{c}{[0,$\infty$)}      &           -                                                    \\
-$F_{17}$ & Perimeter convexity                                                                         &        \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/p_con.png}                    & \multicolumn{1}{c}{$F_{17} = \frac{\text{Perimeter of convex hull}}{F_5}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &           OpenCV                                                    \\
-$F_{18}$  & Area convexity                                                                              &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/a_c1.png}                         & \multicolumn{1}{c}{$F_{18} = \frac{(\text{Area of convex hull}-F_4)}{F_4}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &               OpenCV                                                \\
-$F_{19}$  & Area ratio of convexity                                                                     &     \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/a_c2.png}                        & $F_{19} = \frac{F_4}{\text{Area of convex hull}}$        & \multicolumn{1}{c}{[0,$\infty$)}      &               OpenCV                                                \\
-$F_{20}$  & Equivalent diameter                                                                         &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/eq_d.png}                        & \multicolumn{1}{c}{$F_{20} = \sqrt{\frac{4*F_4}{\pi}}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &      numpy                                                         \\
-\multicolumn{1}{l}{$F_{21}$} & \begin{tabular}[c]{@{}l@{}}Number of \\ convex points\end{tabular}                          &    \centering\includegraphics[width=\linewidth, height=15mm]{./Figures/convex.png}                        & number of convex points        & \multicolumn{1}{c}{[0,$\infty$)}      & OpenCV                                                        \\ \hline
+$F_{13}$                     & Narrow factor                                                                               &       \centering\includegraphics[width=10mm, height=15mm]{./Figures/nf.png}                     &         $F_{13} = \frac{F_1}{F_2}$                    &     [0,$\infty$)                      &                     -                                          \\
+$F_{14}$                     & Perimeter ratio of diameter                                                                 &       \centering\includegraphics[width=10mm, height=15mm]{./Figures/pd.png}                     &         $F_{14} = \frac{F_5}{F_1}$                     &       [0,$\infty$)                    &                      -                                         \\
+$F_{15}$  & \begin{tabular}[c]{@{}l@{}}Perimeter ratio \\ of physiological length\end{tabular}          &    \centering\includegraphics[width=10mm, height=15mm]{./Figures/pl.png}                        & $F_{15} = \frac{F_5}{F_2}$        & \multicolumn{1}{c}{[0,$\infty$)}      &         -                                                      \\
+$F_{16}$  & \begin{tabular}[c]{@{}l@{}}Perimeter ratio of\\ physiological length and width\end{tabular} &    \centering\includegraphics[width=10mm, height=15mm]{./Figures/plw.png}                        & $F_{16} = \frac{F_5}{F_2 * F_3}$        & \multicolumn{1}{c}{[0,$\infty$)}      &           -                                                    \\
+$F_{17}$ & Perimeter convexity                                                                         &        \centering\includegraphics[width=10mm, height=15mm]{./Figures/p_con.png}                    & \multicolumn{1}{c}{$F_{17} = \frac{\text{Perimeter of convex hull}}{F_5}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &           OpenCV                                                    \\
+$F_{18}$  & Area convexity                                                                              &    \centering\includegraphics[width=10mm, height=15mm]{./Figures/a_c1.png}                         & \multicolumn{1}{c}{$F_{18} = \frac{(\text{Area of convex hull}-F_4)}{F_4}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &               OpenCV                                                \\
+$F_{19}$  & Area ratio of convexity                                                                     &     \centering\includegraphics[width=10mm, height=15mm]{./Figures/a_c2.png}                        & $F_{19} = \frac{F_4}{\text{Area of convex hull}}$        & \multicolumn{1}{c}{[0,$\infty$)}      &               OpenCV                                                \\
+$F_{20}$  & Equivalent diameter                                                                         &    \centering\includegraphics[width=10mm, height=15mm]{./Figures/eq_d.png}                        & \multicolumn{1}{c}{$F_{20} = \sqrt{\frac{4*F_4}{\pi}}$}        & \multicolumn{1}{c}{[0,$\infty$)}      &      numpy                                                         \\
+\multicolumn{1}{l}{$F_{21}$} & \begin{tabular}[c]{@{}l@{}}Number of \\ convex points\end{tabular}                          &    \centering\includegraphics[width=10mm, height=15mm]{./Figures/convex.png}                        & number of convex points        & \multicolumn{1}{c}{[0,$\infty$)}      & OpenCV                                                        \\ \hline
 \caption{Summary of shape features.}
 \label{tab:table1}\\
 \end{longtable}
@@ -1648,22 +1647,6 @@ projection space created based on linear discriminant analysis. All
 projected points are coloured according to their shape labels.}
 \end{figure}
 
-\hypertarget{flavia-dataset}{%
-\subsubsection{Flavia Dataset}\label{flavia-dataset}}
-
-~~~~~The LDA projections of Flavia data are shown in Figure
-\ref{ldaflavia}. The visualization of PCA projections of Flavia dataset
-is shown in Figure \ref{pcaflavia}. The first three principal components
-(PCs) accounting for approximately 83\% of the total variance in the
-original data, while the first 5 PCs accounts for 90\% of the total
-variance in the original data. Hence, the first five PCs are plotted
-against each other to visualize data in the PCA projection space.
-According to the LDA results on Flavia dataset, LDA1, LDA2, and LDA3
-shows a clear separation of shapes of leaf images. Under both
-experimental settings class separation is more clearly on the LDA space
-than the PCA space. The reason could be LDA is a supervised learning
-algorithm while PCA space is an unsupervised learning algorithm.
-
 \begin{figure}
 \centering
 \includegraphics{img/ldaflavia-1.pdf}
@@ -1679,6 +1662,22 @@ projected points are coloured according to their shape labels.}
 projection space created based on pincipal component analysis. All
 projected points are coloured according to their shape labels.}
 \end{figure}
+
+\hypertarget{flavia-dataset}{%
+\subsubsection{Flavia Dataset}\label{flavia-dataset}}
+
+~~~~~The LDA projections of Flavia data are shown in Figure
+\ref{ldaflavia}. The visualization of PCA projections of Flavia dataset
+is shown in Figure \ref{pcaflavia}. The first three principal components
+(PCs) accounting for approximately 83\% of the total variance in the
+original data, while the first 5 PCs accounts for 90\% of the total
+variance in the original data. Hence, the first five PCs are plotted
+against each other to visualize data in the PCA projection space.
+According to the LDA results on Flavia dataset, LDA1, LDA2, and LDA3
+shows a clear separation of shapes of leaf images. Under both
+experimental settings class separation is more clearly on the LDA space
+than the PCA space. The reason could be LDA is a supervised learning
+algorithm while PCA space is an unsupervised learning algorithm.
 
 According to both PCA and LDA visualizations on Swedish and Flavia data
 sets we can see a clear separation of classes in their corresponding
@@ -1708,6 +1707,8 @@ in our next paper. We hope our analysis opens various research agendas
 in the filed of image recognition. Reproducible research code to
 reproduce the results of this paper and codes to compute features are
 available here: \url{https://github.com/JayaniLakshika/Feature-Leaf}.
+
+\newpage
 
 \hypertarget{references}{%
 \section*{References}\label{references}}

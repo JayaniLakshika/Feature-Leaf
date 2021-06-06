@@ -1,0 +1,18 @@
+---
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Author Bio
+
+Jayani P. G Lakshika
+
+Jayani is BSc (Hons) Statistics undergraduate in the University of Sri Jayewardenepura. Her research interests includes machine learning and statistical computing.
+
+
+Thiyanga S. Talagala
+
+Thiyanga S. Talagala is a Senior Lecturer in the University of Sri Jayewardenepura, Sri Lanka. Thiyanga obtained her Ph.D degree in Statistics at Monash University in 2019. Her research focuses on the problem of forecasting large collections of time series. Her research interests include Time Series Analysis, Applied Statistics, and Statistical Computing.
