@@ -1,7 +1,7 @@
 ---
 title: Computer-aided Interpretable Features for Leaf Image Classification
 authors:
-  - name: Jayani P.G. Lakshika
+  - name: Jayani P. G. Lakshika
     department: Department of Statistics
     affiliation: University of Sri Jayewardenepura
     location: Nugegoda, Sri Lanka
