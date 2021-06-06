@@ -411,7 +411,6 @@ where $a$ is semi-major axis and $b$ is semi-minor axis (see Figure \ref{shape6}
 knitr::include_graphics(here::here("leaffeatures","Figures","c9.png"))
 ```  
 
-\newpage
 
 ### Number of Convex Points ($F_{21}$) and Verticies
 
