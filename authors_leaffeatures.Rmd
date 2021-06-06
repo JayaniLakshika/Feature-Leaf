@@ -63,17 +63,17 @@ library(MASS)
 
 # Image Processing
 
-|       Image processing is an essential step to reduce  noise and content enhancement while keeping its features intact. [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{fig:test2}. This includes seven main steps. They are: i) converting BGR (Blue-Green-Red) image to RGB (Red-Green-Blue), ii) gray scaling, iii) Gaussian filtering, iv) binary thresholding, v) remove stalk, vi) close holes, and vii) image resizing. Some of these steps are applicable only for specific images. For example,  apply remove stalk is applicable only to leaf images which has stalk.
+|       Image processing is an essential step to reduce  noise and content enhancement while keeping its features intact. [@8675114]. The workflow we use to process images in this paper is shown in Figure \ref{figtest2}. This includes seven main steps. They are: i) converting BGR (Blue-Green-Red) image to RGB (Red-Green-Blue), ii) gray scaling, iii) Gaussian filtering, iv) binary thresholding, v) remove stalk, vi) close holes, and vii) image resizing. Some of these steps are applicable only for specific images. For example,  apply remove stalk is applicable only to leaf images which has stalk.
 
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:test2}Image processing workflow."}
+```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{figtest2}Image processing workflow."}
 knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 ``` 
 
 
 
-|       In this study we focus on leaves with simple arrangement as shown in Figure \ref{simplearra}.  A single leaf that is never divided into smaller leaflet units is known as a leaf with simple arrangement. This type of leaf is attached to a twig by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed (see Figure \ref{alledge}). 
+|       In this study we focus on leaves with simple arrangement as shown in Figure \ref{simplearra}. A single leaf that is never divided into smaller leaflet units is known as a leaf with simple arrangement. This type of leaf is attached to a twig by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed (see Figure \ref{alledge}). 
 
 ```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{simplearra} A leaf with simple arrangement."}
 knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
@@ -95,16 +95,16 @@ knitr::include_graphics(here::here("leaffeatures","Figures","alledge.png"))
 In extracting Haralick [@articletx] texture features, gray-scale images are used. Another advantage of using gray-scaled image is to reduce model complexity. Consider an example of training neural article on RGB images of $20 \times 20 \times 3$ pixel. The input layer will have 1200 input nodes. Whereas for gray scaled images the same neural network will need only 400 ($20 \times 20$) input node.  
 
 
-## Step 3: Gaussian Filtering (Gaussian Blurring/Gaussian Smoothing)
+## Step 3: Gaussian Filtering (Gaussian Blurring/ Gaussian Smoothing)
 
 
 |       Gaussian smoothing is an image smoothing technique. Image smoothing techniques use to remove the noise that can be occurred because of the source (camera sensor). Image smoothing techniques help in smoothing images and to remove low intensity edges.
 
-|       Gaussian function is used to blur the image. It is a linear filter which is done by using the functions in OpenCV package in Python. By specifying the width and height of the Gaussian kernel that must be positive and odd, and specifying the kernel standard deviation along x and y-axis, Gaussian smoothing is established in OpenCV. When the kernel standard deviation along x-axis is specified, kernel standard deviation along y-axis is taken as equal to the the kernel standard deviation along x-axis. But if both kernel standard deviation are given as zeros, they are calculated by using the kernel size. In our research the width and height of the kernel is defined as 55 and the kernel standard deviation along x-axis is assigned as zero. An example of applying Gaussian smoothing to an image is shown in Figure \ref{fig:gau}.
+|       Gaussian function is used to blur the image. It is a linear filter which is done by using the functions in OpenCV package in Python. By specifying the width and height of the Gaussian kernel that must be positive and odd, and specifying the kernel standard deviation along x and y-axis, Gaussian smoothing is established in OpenCV. When the kernel standard deviation along x-axis is specified, kernel standard deviation along y-axis is taken as equal to the the kernel standard deviation along x-axis. But if both kernel standard deviation are given as zeros, they are calculated by using the kernel size. In our research the width and height of the kernel is defined as 55 and the kernel standard deviation along x-axis is assigned as zero. An example of applying Gaussian smoothing to an image is shown in Figure \ref{figgau}.
 
 
 
-```{r, echo=FALSE, out.width="60%", fig.align='center',fig.cap="\\label{fig:gau}Example of gaussian smoothing"}
+```{r, echo=FALSE, out.width="60%", fig.align='center',fig.cap="\\label{figgau}Example of gaussian smoothing"}
 knitr::include_graphics(here::here("leaffeatures","Figures","gau.png"))
 ```  
 
@@ -154,7 +154,7 @@ Set $u = u+1$                                             \\ \hline
 \end{table}
 
 
-|       For an example, assume that candidate threshold value $u$ is 2. Therefore, the image is separated into two classes, which are class 1 ($\text{pixel value} <= 2$ ) and class 2 ($\text{pixel value} > 2$). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to figure \ref{fig:otsu}, there are 9 pixel locations. The associated measurements are
+|       For an example, assume that candidate threshold value $u$ is 2. Therefore, the image is separated into two classes, which are class 1 ($\text{pixel value} <= 2$ ) and class 2 ($\text{pixel value} > 2$). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to Figure \ref{fig:otsu}, there are 9 pixel locations. The associated measurements are
 
 
 $$P_1 = \frac{5}{9},$$
@@ -216,7 +216,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
 
 <!--Morphological transformations-->
 
-|       Holes inside leaf areas occur due to plant disease, light reflection and noise. As shown in \ref{fig:chl} closing holes is used to remove small holes inside the foreground objects. This is achieved by pulling background pixels to foreground pixel. The closing holes is also known as dilation and while erosion does the opposite, which is open holes. This step is performed on a binary image.
+|       Holes inside leaf areas occur due to plant disease, light reflection and noise. As shown in Figure \ref{fig:chl} closing holes is used to remove small holes inside the foreground objects. This is achieved by pulling background pixels to foreground pixel. The closing holes is also known as dilation and while erosion does the opposite, which is open holes. This step is performed on a binary image.
 
 <!--Why-->
 
@@ -249,7 +249,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 
 ## Shape Features
 
-|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. In addition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of Cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
+|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. In addition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of Cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see Figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
 
 <!--But some limitations are applied in translation and scaling.--> 
 	
@@ -259,7 +259,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","geomatric_transform
 ```
 	
 	
-|     Extraction of image contour plays an important role in measuring the shape of a image.  Simply contour (see figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same color or intensity. 
+|     Extraction of image contour plays an important role in measuring the shape of a image.  Simply contour (see Figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same color or intensity. 
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{cnt}Extract contour of the leaf image"}
@@ -283,7 +283,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
 
 
 
-|       Shape features can be classified into two main categories as contour-based and region-based features [@articlee]. As illustrated in @articlee, contour-based  shape features are computed based on the contour of a shape, whereas region-based shape features are extracted from the whole region of a shape  (see figure \ref{scalimg4}).
+|       Shape features can be classified into two main categories as contour-based and region-based features [@articlee]. As illustrated in @articlee, contour-based  shape features are computed based on the contour of a shape, whereas region-based shape features are extracted from the whole region of a shape  (see Figure \ref{scalimg4}).
 
 
  
@@ -762,7 +762,7 @@ iii) Sparse: The second relative density measure is sparse measure that measures
     qu_{90} = \alpha statistic
 \end{equation} -->
 
-|        The $\alpha$ statistic exceeds unity (e.g., when all points fall on either of the two diagonally opposing vertices of a square), clamp the value to 1 in the extremely rare event [@article37, @inproceedings44].
+|        The $\alpha$ statistic exceeds unity (e.g., when all points fall on either of the two diagonally opposing vertices of a square), clamp the value to 1 in the extremely rare event [@article37;@inproceedings44].
 
 
 
