@@ -36,7 +36,6 @@ header-includes:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, fig.pos = "!ht", fig.path = "img/")
-
 ```
 
 ```{r,echo=FALSE, comment=NA, message=FALSE, warning=FALSE}
@@ -603,7 +602,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","scag.png"))
 ```
 
-|        We separately measure the scagnostic features based on cartesian and polar coordinate of the contour (see Figure \ref{pc}). As the first step, we have to extract the contour of the leaf image (see figure \ref{scp}). Then find the $x$ and $y$ coordinate values of the cartesian and polar separately. The $x$ and $y$ coordinate value is used to calculate the scagnostic features. The following definitions can be useful in understanding scagnostics features.
+|        We separately measure the scagnostic features based on cartesian and polar coordinate of the contour (see Figure \ref{pc}). As the first step, we have to extract the contour of the leaf image (see Figure \ref{scp}). Then find the $x$ and $y$ coordinate values of the cartesian and polar separately. The $x$ and $y$ coordinate value is used to calculate the scagnostic features. The following definitions can be useful in understanding scagnostics features.
 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{pc}Polar coordinate"}
@@ -660,7 +659,7 @@ i) Convex Hull (see Figure \ref{scagimg4}): Given a set of points embedded in 2D
 
 <!--A collection of the boundaries of one or more simple polygons that have a subset of the points for their vertices and that collectively contain all the points, is defined as a hull of a set of points embedded in 2D Euclidean space.  If a hull contains all the straight line segments connecting any pair of points in its interior, is known as a convex hull. The convex hull bounds a single polygon. After deleting the points on the convex hull, a convex hull called peeled convex hull is computed. -->
 
-ii) Alpha Hull (see Figure \ref{scagimg4}): The alpha hull is a generalization of the convex hull. It is defined as the union of all convex hulls of the input within balls of radius alpha. In otherwords, it is a set of piecewise linear simple curves in the Euclidean plane associated a given set of points in the 2D Euclidean space. An open disk ($D(r)$) with radius $r$  is used to define the indicator function to identify the associated points. If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is inside $D$ then $D$ \textit{contains} a point.
+ii) Alpha Hull (see Figure \ref{scagimg4}): The alpha hull is a generalization of the convex hull. It is defined as the union of all convex hulls of the input within balls of radius alpha. In otherwords, it is a set of piecewise linear simple curves in the Euclidean plane associated a given set of points in the 2D Euclidean space. An open disk ($D(r)$) with radius $r$ is used to define the indicator function to identify the associated points. If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is inside $D$ then $D$ \textit{contains} a point.
 
 <!--Most of proximity graphs (neighborhood graph) represent the nonconvex shape of a set of points on the plane. A geometric graph whose edges are determined by an indicator function based on distances between a given set of points in a metric space, is known as a proximity graph. An open disk $D$ is used to define the indicator function. If a point is on the boundary of $D$ then $D$ \textit{touches} a point and if a point is inside $D$ then $D$ \textit{contains} a point. An open disk of radius $r$ is defined as $D(r)$. -->
 
@@ -846,7 +845,7 @@ i) Monotonic: To assess the monotonicity in a scatter plot, the squared Spearman
 <!--    We introduced number of minimum and maximum points, correlation of cartesian contour as new features under scagnostics. -->
 
 
-### Number of Minimum ($F_8$) and Maximum Points ($F_9$)
+### Number of Minimum ($F_{32}$) and Maximum Points ($F_{33}$)
 
 |       Number of minimum, and maximum points are new measures which are obtained from the polar coordinate of leaf contour. Number of global maximum points are defined as number of maximum points. Number of global minimum points are defined as number of minimum points. The associated features are
 
@@ -855,21 +854,21 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 ```  
 
 \begin{equation}
-   F_{50} =  \text{Number of global minimum points},
+   F_{32} =  \text{Number of global minimum points},
 \label{equa_F8}
 \end{equation}
 
 \begin{equation}
-   F_{51} =  \text{Number of global maximum points}.
+   F_{33} =  \text{Number of global maximum points}.
 \label{equa_F9}
 \end{equation}
 
-### Correlation of Cartesian Contour ($F_{52}$)
+### Correlation of Cartesian Contour ($F_{34}$)
 
 |       Correlation is another new feature computed based on the cartesian contour. The measure is calculated as 
 
 \begin{equation}
-   F_{52} =  \frac{\sum_{i=0}^{m}(x_i - \overline{\rm x})(y_i - \overline{\rm y})}{\sqrt{\sum_{i=0}^{m} (x_i - \overline{\rm x})^2 (y_i - \overline{\rm y})^2}},
+   F_{34} =  \frac{\sum_{i=0}^{m}(x_i - \overline{\rm x})(y_i - \overline{\rm y})}{\sqrt{\sum_{i=0}^{m} (x_i - \overline{\rm x})^2 (y_i - \overline{\rm y})^2}},
 \label{equa_F10}
 \end{equation}
 
@@ -974,87 +973,49 @@ data_new$PC2 <- pca_ref_calc$pca_components$PC2
 data_new$PC3 <- pca_ref_calc$pca_components$PC3
 data_new$PC4 <- pca_ref_calc$pca_components$PC4
 data_new$PC5 <- pca_ref_calc$pca_components$PC5
-
-
 p11 <- ggplot(data_new, aes(x=PC1, y=PC2, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA2 by Actual Shape Label") + xlab("PCA1") + ylab("PCA2") + theme(aspect.ratio = 1) 
-
 p12 <- ggplot(data_new, aes(x=PC1, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA3 by Actual Shape Label") + xlab("PCA1") + ylab("PCA3") + theme(aspect.ratio = 1) 
-
 p13 <- ggplot(data_new, aes(x=PC1, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA4 by Actual Shape Label") + xlab("PCA1") + ylab("PCA4") + theme(aspect.ratio = 1) 
-
 p14 <- ggplot(data_new, aes(x=PC1, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA5 by Actual Shape Label") + xlab("PCA1") + ylab("PCA5") + theme(aspect.ratio = 1) 
-
 p15 <- ggplot(data_new, aes(x=PC2, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA3 by Actual Shape Label") + xlab("PCA2") + ylab("PCA3") + theme(aspect.ratio = 1) 
-
 p16 <- ggplot(data_new, aes(x=PC2, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA4 by Actual Shape Label") + xlab("PCA2") + ylab("PCA4") + theme(aspect.ratio = 1) 
-
 p17 <- ggplot(data_new, aes(x=PC2, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA5 by Actual Shape Label") + xlab("PCA2") + ylab("PCA5") + theme(aspect.ratio = 1) 
-
 p18 <- ggplot(data_new, aes(x=PC3, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA4 by Actual Shape Label") + xlab("PCA3") + ylab("PCA4") + theme(aspect.ratio = 1) 
-
 p19 <- ggplot(data_new, aes(x=PC3, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA5 by Actual Shape Label") + xlab("PCA3") + ylab("PCA5") + theme(aspect.ratio = 1) 
-
 p1h1 <- p11 + theme(legend.position = "none") + theme(plot.title = element_blank())
-
 p2h1 <- p12 + theme(legend.position = "none") + theme(plot.title = element_blank())
-
 p3h1 <- p13 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p4h1 <- p14 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p5h1 <- p15 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p6h1 <- p16 + theme(legend.position = "none") + theme(plot.title = element_blank())
-
 p7h1 <- p17 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p8h1 <- p18 + theme(plot.title = element_blank()) + theme(legend.position = "bottom")
-
 p9h1 <- p19 + theme(plot.title = element_blank()) +   theme(legend.position = "none")
-
 p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
   tag_levels = 'A'
 ) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
-
 ```
 
 
 ```{r ldaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaswedish}Distribution of Swedish leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=6, fig.height=3}
 LDA <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new)
-
-
 LDA.values <- predict(LDA)
-
 lda_data_new <- data.frame(LDA1 = LDA.values$x[,1], LDA2 = LDA.values$x[,2], LDA3 = LDA.values$x[,3], Shape_label = data_new$Shape_label)
-
-
-
 lda_data <- data.frame(x = LDA.values$x[,1], y = LDA.values$x[,2], col = data_new$Shape_label)
 scagnostic_lda <- bind_cols(data_new, lda_data)
-
 p1 <- ggplot(scagnostic_lda, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA2 by Actual Shape Label") + xlab("LDA1") + ylab("LDA2") + theme(aspect.ratio = 1) 
-
 p1b <- p1 + theme(legend.position = "none")
-
 lda_data_1 <- data.frame(x = LDA.values$x[,1], y = LDA.values$x[,3], col = data_new$Shape_label)
 scagnostic_lda_1 <- bind_cols(data_new, lda_data_1)
-
 p1_1 <- ggplot(scagnostic_lda_1, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA3 by Actual shape label") + xlab("LDA1") + ylab("LDA3") + theme(aspect.ratio = 1) 
 p2b <- p1_1 + theme(legend.position = "none")
-
 lda_data_2 <- data.frame(x = LDA.values$x[,2], y = LDA.values$x[,3], col = data_new$Shape_label)
 scagnostic_lda_2 <- bind_cols(data_new, lda_data_2)
-
 p1_2 <- ggplot(scagnostic_lda_2, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA2 Vs LDA3 by Actual shape label") + xlab("LDA2") + ylab("LDA3") + theme(aspect.ratio = 1) 
-
 p3b <- p1_2 + theme(legend.position = "none")
-
 p1h <- p1b + theme(plot.title = element_blank())
-
 p2h <- p2b + theme(plot.title = element_blank())
-
 p3h <- p1_2 + theme(plot.title = element_blank())
-
 p1h + p2h + p3h + plot_annotation(
   tag_levels = 'A'
 )  + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
@@ -1069,58 +1030,29 @@ p1h + p2h + p3h + plot_annotation(
 
 
 
-### Flavia Dataset
-
-|      The LDA projections of Flavia data are shown in Figure \ref{ldaflavia}. The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA projection space.   According to the LDA results on Flavia dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
-
-According to both PCA and LDA visualizations on Swedish and Flavia data sets we can see a clear separation of classes in their corresponding projection spaces. This reveals our features are capable of distinguishing classes under both supervised learning and unsupervised learning settings. 
-
-<!--|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.-->
-
-
-
 
 
 ```{r ldaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaflavia}Distribution of Flavia leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=6, fig.height=3}
-
 data_new1 <- read.csv("data/Flavia_dataset/data_all_with_label_flavia.csv", header = TRUE)
 features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
-
 LDA1 <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new1)
-
-
 LDA.values1 <- predict(LDA1)
-
 lda_data_new1 <- data.frame(LDA1 = LDA.values1$x[,1], LDA2 = LDA.values1$x[,2], LDA3 = LDA.values1$x[,3], Shape_label = data_new1$Shape_label)
-
-
-
 lda_data1 <- data.frame(x = LDA.values1$x[,1], y = LDA.values1$x[,2], col = data_new1$Shape_label)
 scagnostic_lda1 <- bind_cols(data_new1, lda_data1)
-
 p1 <- ggplot(scagnostic_lda1, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA2 by Actual Shape Label") + xlab("LDA1") + ylab("LDA2") + theme(aspect.ratio = 1) 
-
 p1b <- p1 + theme(legend.position = "none")
-
 lda_data_11 <- data.frame(x = LDA.values1$x[,1], y = LDA.values1$x[,3], col = data_new1$Shape_label)
 scagnostic_lda_11 <- bind_cols(data_new1, lda_data_11)
-
 p1_11 <- ggplot(scagnostic_lda_11, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA1 Vs LDA3 by Actual shape label") + xlab("LDA1") + ylab("LDA3") + theme(aspect.ratio = 1) 
-
 p2b1 <- p1_11 + theme(legend.position = "none")
-
 lda_data_21 <- data.frame(x = LDA.values1$x[,2], y = LDA.values1$x[,3], col = data_new1$Shape_label)
 scagnostic_lda_21 <- bind_cols(data_new1, lda_data_21)
-
 p1_21 <- ggplot(scagnostic_lda_21, aes(x=x, y=y, color=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("LDA2 Vs LDA3 by Actual shape label") + xlab("LDA2") + ylab("LDA3") + theme(aspect.ratio = 1) 
 p3b1 <- p1_21 + theme(legend.position = "none")
-
 p1h <- p1b + theme(plot.title = element_blank())
-
 p2h <- p2b + theme(plot.title = element_blank())
-
 p3h <- p1_2 + theme(plot.title = element_blank())
-
 p1h + p2h + p3h + plot_annotation(
   tag_levels = 'A'
 ) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
@@ -1130,7 +1062,6 @@ p1h + p2h + p3h + plot_annotation(
 
 
 ```{r pcaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=7, fig.width=7, fig.cap="\\label{pcaflavia}Distribution of Flavia leaf images on the projection space created based on pincipal component analysis. All projected points are coloured according to their shape labels."}
-
 data_new1 <- read.csv("data/Flavia_dataset/data_all_with_label_flavia.csv", header = TRUE)
 features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
 pca_ref_calc1 <- calculate_pca(features1)
@@ -1140,49 +1071,38 @@ data_new1$PC2 <- pca_ref_calc1$pca_components$PC2
 data_new1$PC3 <- pca_ref_calc1$pca_components$PC3
 data_new1$PC4 <- pca_ref_calc1$pca_components$PC4
 data_new1$PC5 <- pca_ref_calc1$pca_components$PC5
-
 p111 <- ggplot(data_new1, aes(x=PC1, y=PC2, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA2 by Actual Shape Label") + xlab("PCA1") + ylab("PCA2") + theme(aspect.ratio = 1) 
-
 p121 <- ggplot(data_new1, aes(x=PC1, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA3 by Actual Shape Label") + xlab("PCA1") + ylab("PCA3") + theme(aspect.ratio = 1) 
-
 p131 <- ggplot(data_new1, aes(x=PC1, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA4 by Actual Shape Label") + xlab("PCA1") + ylab("PCA4") + theme(aspect.ratio = 1) 
-
 p141 <- ggplot(data_new1, aes(x=PC1, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA1 Vs PCA5 by Actual Shape Label") + xlab("PCA1") + ylab("PCA5") + theme(aspect.ratio = 1) 
-
 p151 <- ggplot(data_new1, aes(x=PC2, y=PC3, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA3 by Actual Shape Label") + xlab("PCA2") + ylab("PCA3") + theme(aspect.ratio = 1) 
-
 p161 <- ggplot(data_new1, aes(x=PC2, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA4 by Actual Shape Label") + xlab("PCA2") + ylab("PCA4") + theme(aspect.ratio = 1) 
-
 p171 <- ggplot(data_new1, aes(x=PC2, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA2 Vs PCA5 by Actual Shape Label") + xlab("PCA2") + ylab("PCA5") + theme(aspect.ratio = 1) 
-
 p181 <- ggplot(data_new1, aes(x=PC3, y=PC4, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA4 by Actual Shape Label") + xlab("PCA3") + ylab("PCA4") + theme(aspect.ratio = 1) 
-
 p191 <- ggplot(data_new1, aes(x=PC3, y=PC5, col=Shape_label)) + geom_point(alpha = 0.5) +coord_equal()+ scale_colour_manual(values = c("#a6611a","#d7191c","#e66101","#7b3294","#1b9e77")) + ggtitle("PCA3 Vs PCA5 by Actual Shape Label") + xlab("PCA3") + ylab("PCA5") + theme(aspect.ratio = 1) 
-
 p1h2 <- p111 + theme(legend.position = "none") + theme(plot.title = element_blank())
-
 p2h2 <- p121 + theme(legend.position = "none") + theme(plot.title = element_blank())
-
 p3h2 <- p131 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p4h2 <- p141 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p5h2 <- p151 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p6h2 <- p161 +   theme(plot.title = element_blank())
-
 p7h2 <- p171 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p8h2 <- p181 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p9h2 <- p191 + theme(plot.title = element_blank()) + theme(legend.position = "none")
-
 p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
   tag_levels = 'A'
 ) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
 ```
 
-\newpage
+
+### Flavia Dataset
+
+|      The LDA projections of Flavia data are shown in Figure \ref{ldaflavia}. The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA projection space.   According to the LDA results on Flavia dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
+
+According to both PCA and LDA visualizations on Swedish and Flavia data sets we can see a clear separation of classes in their corresponding projection spaces. This reveals our features are capable of distinguishing classes under both supervised learning and unsupervised learning settings. 
+
+<!--|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.-->
+
 
 # Discussion and Conclusions
 
@@ -1195,4 +1115,3 @@ p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
 
 
 # References
-
