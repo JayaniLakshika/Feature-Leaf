@@ -293,7 +293,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
 
 ### Diameter ($F_1$)
 
-|       Diameter is defined as the longest distance between any two points on the margin of the leaf [@articlee]. To calculate the diameter of the leaf image, first we need to find the contour of the leaf image. Then we need to select all pair of contour points and measure the Euclidean distance (equation \ref{equa_shape}) between the two points separately. Finally, we have to find the maximum distance among the calculated distances (see figure \ref{shape1}). The distance measurement is
+|       Diameter is defined as the longest distance between any two points on the margin of the leaf [@articlee]. To calculate the diameter of the leaf image, first we need to find the contour of the leaf image. Then we need to select all pair of contour points and measure the Euclidean distance (equation \ref{equa_shape}) between the two points separately. Finally, we have to find the maximum distance among the calculated distances (see Figure \ref{shape1}). The distance measurement is
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{shape1}Logic behind calculation of diameter"}
@@ -324,9 +324,9 @@ i) Straight bounding rectangle: This is a straight rectangle which does not cons
 
 <!--I added background-->
 
-ii) Rotated rectangle: This bounding rectangle is drawn with minimum background area. Therefore the rotation of the object is also considered ((see Figure \ref{fig:act3} (b)).
+ii) Rotated rectangle: This bounding rectangle is drawn with minimum background area. Therefore the rotation of the object is also considered (see Figure \ref{fig:act3} (b)).
 
-The straight bounding rectangle is enough to extract physiological length and physiological width of  straight (horizontal or vertical) leaf images. However, the straight bounding rectangle is not suitable to compute physiological length and physiological width of angled leaf images.  To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. As shown in Figure \ref{fig: bound}, physiological length and width are computed as follows:
+The straight bounding rectangle is enough to extract physiological length and physiological width of  straight (horizontal or vertical) leaf images. However, the straight bounding rectangle is not suitable to compute physiological length and physiological width of angled leaf images.  To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. As shown in Figure \ref{bound}, physiological length and width are computed as follows:
 
 \begin{equation}
    F_2 = \text{Length of the rotated rectangle},
@@ -421,12 +421,12 @@ knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 |       @inproceedings44  defined a convex hull as a "hull that contains all the straight line segments connecting any pair of points in its interior". The convex hull bounds a single polygon (see Figure \ref{shconvex}).  We introduced two new features computed based on the convex hull: i) Number of convex points ($F_{21}$) and ii) Number of convex vertices ($F_7$).
 
 
-### Roundness/ Circularity
+### Roundness/ Circularity ($F_{10}$)
 
 |       Roundness is named as aka form factor, circularity, or isoperimetrical factor. Roundness illustrates the difference between the leaf and a circle. Equation \ref{calround} is used to calculate roundness. Figure \ref{shape3} visual explanation for roundness measure. The roundness is measured by
 
 \begin{equation}
-    R = \frac{4 \pi F_4}{{F_5}^2}.
+    F_{10} = \frac{4 \pi F_4}{{F_5}^2}.
 \label{calround}
 \end{equation}
 
@@ -435,12 +435,12 @@ knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
 ```  
 
-### Compactness
+### Compactness ($F_{11}$)
 
-|       Compactness is closely related to roundness. Compactness measures that how compatible the leaf fits to a circle area (see figure \ref{shape4}). The compactness is measured using
+|       Compactness is closely related to roundness. Compactness measures that how compatible the leaf fits to a circle area (see Figure \ref{shape4}). The compactness is measured using
 
 \begin{equation}
-    C = \frac{{F_5}^2}{F_4}.
+    F_{11} = \frac{{F_5}^2}{F_4}.
 \label{calcompact}
 \end{equation}
 
@@ -532,7 +532,7 @@ $$h(a,b) = \frac{\text{Number of times a pixel with value a is adjacent to a pix
 knitr::include_graphics(here::here("leaffeatures","Figures","GLMC_direction.png"))
 ```    
     
-|       The Haralick statistics [@article31] are calculated based on the matrices generated using each of these directions (see figure \ref{img1}) of adjacency. Haralick introduced 14 statistics to describe the texture of the image based on the four co-occurrences matrices generated. In this research, we only used the following 4 statistics among 14 of them, because most of the researchers used these 4 statistics as texture features (see figure \ref{tabmytable}) of leaf images. All the texture features are extracted from the gray scale image. Texture features are calculated from the mahotas package in Python. Table \ref{tabmytable} shows the definitions of texture features.
+|       The Haralick statistics [@article31] are calculated based on the matrices generated using each of these directions (see Figure \ref{img1}) of adjacency. Haralick introduced 14 statistics to describe the texture of the image based on the four co-occurrences matrices generated. In this research, we only used the following 4 statistics among 14 of them, because most of the researchers used these 4 statistics as texture features (see figure \ref{tabmytable}) of leaf images. All the texture features are extracted from the gray scale image. Texture features are calculated from the mahotas package in Python. Table \ref{tabmytable} shows the definitions of texture features.
 
 
 \begin{table}[!ht]
@@ -579,7 +579,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 ```
 
 
-|       Color is an important characteristic of images [@articlee; @inproceedings1]. Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extract features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color channel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
+|       Color is an important characteristic of images [@articlee; @inproceedings1]. Some of leaf images have very similar shape like Hathawariya (Figure \ref{leafimg}) and Iramusu (Figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extract features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color channel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
 
 |       We used mean($M$) and standard deviation($SD$) of intensity values of red, green and blue channels as color features. Let $h$ be the number of pixels of the image and $r$ is the channel type which can be red, green, or blue. The corresponding colour features are calculates as follows:
 
@@ -855,21 +855,21 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 ```  
 
 \begin{equation}
-   F_8 =  \text{Number of global minimum points},
+   F_{50} =  \text{Number of global minimum points},
 \label{equa_F8}
 \end{equation}
 
 \begin{equation}
-   F_9 =  \text{Number of global maximum points}.
+   F_{51} =  \text{Number of global maximum points}.
 \label{equa_F9}
 \end{equation}
 
-### Correlation of Cartesian Contour ($F_{10}$)
+### Correlation of Cartesian Contour ($F_{52}$)
 
 |       Correlation is another new feature computed based on the cartesian contour. The measure is calculated as 
 
 \begin{equation}
-   F_{10} =  \frac{\sum_{i=0}^{m}(x_i - \overline{\rm x})(y_i - \overline{\rm y})}{\sqrt{\sum_{i=0}^{m} (x_i - \overline{\rm x})^2 (y_i - \overline{\rm y})^2}},
+   F_{52} =  \frac{\sum_{i=0}^{m}(x_i - \overline{\rm x})(y_i - \overline{\rm y})}{\sqrt{\sum_{i=0}^{m} (x_i - \overline{\rm x})^2 (y_i - \overline{\rm y})^2}},
 \label{equa_F10}
 \end{equation}
 
