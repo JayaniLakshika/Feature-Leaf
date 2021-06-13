@@ -14,7 +14,8 @@
 \usepackage{lipsum}
 \usepackage{graphicx}
 
-\title{Computer-aided Interpretable Features for Leaf Image Classification}
+\title{Computer-aided Interpretable Features for Leaf Image
+Classification}
 
 \author{
     Jayani P. G. Lakshika
@@ -35,6 +36,31 @@
 
 
 % Pandoc citation processing
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+% for Pandoc 2.8 to 2.10.1
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+% For Pandoc 2.11+
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc} % for calculating minipage widths
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{longtable}
 \usepackage{amsmath, xparse}
@@ -187,7 +213,7 @@ applicable only to leaf images which has stalk.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/fl5} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/fl5} 
 
 }
 
@@ -203,7 +229,7 @@ Figure \ref{alledge}).
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/simple_leaf_parts} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/simple_leaf_parts} 
 
 }
 
@@ -212,7 +238,7 @@ Figure \ref{alledge}).
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.8\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/alledge} 
+{\centering \includegraphics[width=0.8\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/alledge} 
 
 }
 
@@ -274,7 +300,7 @@ Gaussian smoothing to an image is shown in Figure \ref{figgau}.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.6\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/gau} 
+{\centering \includegraphics[width=0.6\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/gau} 
 
 }
 
@@ -364,7 +390,7 @@ pixel locations. The associated measurements are
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.6\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/otsu} 
+{\centering \includegraphics[width=0.6\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/otsu} 
 
 }
 
@@ -390,7 +416,7 @@ after image thresholding.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/remove_stalk} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/remove_stalk} 
 
 }
 
@@ -414,7 +440,7 @@ thresholding technique. The Euclidean distance is defined as
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/rst} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/rst} 
 
 }
 
@@ -431,7 +457,7 @@ thresholding technique. The Euclidean distance is defined as
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/close_holes} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/close_holes} 
 
 }
 
@@ -482,7 +508,7 @@ features, and iv) scagnostic features.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.7\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/feature_hie} 
+{\centering \includegraphics[width=0.7\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/feature_hie} 
 
 }
 
@@ -506,7 +532,7 @@ features are extracted from the binary images.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.7\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/geomatric_transformation} 
+{\centering \includegraphics[width=0.7\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/geomatric_transformation} 
 
 }
 
@@ -520,7 +546,7 @@ color or intensity.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/cnt} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/cnt} 
 
 }
 
@@ -536,7 +562,7 @@ the image is too small.
 
 \begin{figure}[!ht]
 
-{\centering \subfloat[ \label{fig:trans-1}]{\includegraphics[width=0.2\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/trans} }\subfloat[\label{fig:trans-2}]{\includegraphics[width=0.2\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/scaling} }
+{\centering \subfloat[ \label{fig:trans-1}]{\includegraphics[width=0.2\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/trans} }\subfloat[\label{fig:trans-2}]{\includegraphics[width=0.2\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/scaling} }
 
 }
 
@@ -545,7 +571,7 @@ the image is too small.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.6\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/shape_chart} 
+{\centering \includegraphics[width=0.6\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/shape_chart} 
 
 }
 
@@ -579,7 +605,7 @@ measurement is
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/d_cal} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/d_cal} 
 
 }
 
@@ -603,7 +629,7 @@ Physiological width
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/act3} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/act3} 
 
 }
 
@@ -612,7 +638,7 @@ Physiological width
 
 ~~~~~~According to the authors in Azlah et al. (2019), the physiological
 length is ``measured based on the main vein of leaf, as it stretches
-from the main vein to the end tip''. We use the definition by Azlah et
+from the main vein to the end tip.'' We use the definition by Azlah et
 al. (2019), the physiological width is ``the span of leaf viewed from
 one side to the other, from the leftmost point to the rightmost point of
 leaf'' . There are straight (horizontal or vertical) and angled leaf
@@ -659,7 +685,7 @@ as follows:
 
 \begin{figure}[!ht]
 
-{\centering \subfloat[\label{fig:bound-1}]{\includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/act1} }\subfloat[\label{fig:bound-2}]{\includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/act2} }
+{\centering \subfloat[\label{fig:bound-1}]{\includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/act1} }\subfloat[\label{fig:bound-2}]{\includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/act2} }
 
 }
 
@@ -672,7 +698,7 @@ as follows:
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/Areacal} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/Areacal} 
 
 }
 
@@ -693,7 +719,7 @@ increases. The area is defined by
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c8} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c8} 
 
 }
 
@@ -706,7 +732,7 @@ increases. The area is defined by
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/perical} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/perical} 
 
 }
 
@@ -734,7 +760,7 @@ equation \ref{eqecc} as
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c11} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c11} 
 
 }
 
@@ -755,7 +781,7 @@ then we obtain an ellipse (see Figure \ref{shape5}).
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c9} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c9} 
 
 }
 
@@ -770,7 +796,7 @@ Verticies}{Number of Convex Points (F\_\{21\}) and Verticies}}\label{number-of-c
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/concal} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/concal} 
 
 }
 
@@ -779,7 +805,7 @@ Verticies}{Number of Convex Points (F\_\{21\}) and Verticies}}\label{number-of-c
 
 ~~~~~~Wilkinson, Anand, and Grossman (2005) defined a convex hull as a
 ``hull that contains all the straight line segments connecting any pair
-of points in its interior''. The convex hull bounds a single polygon
+of points in its interior.'' The convex hull bounds a single polygon
 (see Figure \ref{shconvex}). We introduced two new features computed
 based on the convex hull: i) Number of convex points (\(F_{21}\)) and
 ii) Number of convex vertices (\(F_7\)).
@@ -801,7 +827,7 @@ The roundness is measured by
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c6} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c6} 
 
 }
 
@@ -823,7 +849,7 @@ that how compatible the leaf fits to a circle area (see Figure
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c10} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c10} 
 
 }
 
@@ -837,7 +863,7 @@ that how compatible the leaf fits to a circle area (see Figure
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c7} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c7} 
 
 }
 
@@ -927,7 +953,7 @@ equation \ref{direction}).
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/GLMC_direction} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/GLMC_direction} 
 
 }
 
@@ -976,7 +1002,7 @@ associated measures are given by
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/GLMC1} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/GLMC1} 
 
 }
 
@@ -985,7 +1011,7 @@ associated measures are given by
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/GLMC2} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/GLMC2} 
 
 }
 
@@ -997,7 +1023,7 @@ associated measures are given by
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/leaf_img} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/leaf_img} 
 
 }
 
@@ -1051,7 +1077,7 @@ scagnostic features are used for image recognition.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.7\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/scag} 
+{\centering \includegraphics[width=0.7\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/scag} 
 
 }
 
@@ -1068,7 +1094,7 @@ be useful in understanding scagnostics features.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.4\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/pc} 
+{\centering \includegraphics[width=0.4\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/pc} 
 
 }
 
@@ -1077,7 +1103,7 @@ be useful in understanding scagnostics features.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/scp} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/scp} 
 
 }
 
@@ -1123,7 +1149,7 @@ be useful in understanding scagnostics features.
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c4new} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c4new} 
 
 }
 
@@ -1171,7 +1197,7 @@ Minimum Spanning Tree (MST).
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c5} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c5} 
 
 }
 
@@ -1259,7 +1285,7 @@ means there are 2 edges associated with each vertex (see Figure
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.4\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/c3} 
+{\centering \includegraphics[width=0.4\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/c3} 
 
 }
 
@@ -1473,7 +1499,7 @@ features are
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.3\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/mn} 
+{\centering \includegraphics[width=0.3\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/mn} 
 
 }
 
@@ -1531,7 +1557,7 @@ of the Nanjing University and the Sun Yat-Sen arboretum, Nanking, China
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/flavia_images} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/flavia_images} 
 
 }
 
@@ -1540,7 +1566,7 @@ of the Nanjing University and the Sun Yat-Sen arboretum, Nanking, China
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/swedish_data} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/swedish_data} 
 
 }
 
@@ -1569,7 +1595,7 @@ extraction for a leaf in the Flavia data set is shown in Figure
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/fl5} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/fl5} 
 
 }
 
@@ -1578,7 +1604,7 @@ extraction for a leaf in the Flavia data set is shown in Figure
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/fl_example} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/fl_example} 
 
 }
 
@@ -1603,7 +1629,7 @@ Comprehensive R Archive Network (Lakshika and Talagala 2021).
 
 \begin{figure}[!ht]
 
-{\centering \includegraphics[width=0.5\linewidth]{C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/imgshape} 
+{\centering \includegraphics[width=0.5\linewidth]{/Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/imgshape} 
 
 }
 
@@ -1715,32 +1741,34 @@ available here: \url{https://github.com/JayaniLakshika/Feature-Leaf}.
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
 \leavevmode\hypertarget{ref-DBLP}{}%
 Anantrasirichai, Nantheera, Sion Hannuna, and Nishan Canagarajah. 2017.
-``Automatic Leaf Extraction from Outdoor Images.'' \emph{arXiv Preprint
-arXiv:1709.06437}.
+{``Automatic Leaf Extraction from Outdoor Images.''} \emph{arXiv
+Preprint arXiv:1709.06437}.
 
 \leavevmode\hypertarget{ref-articlepl}{}%
 Azlah, Muhammad Azfar Firdaus, Lee Suan Chua, Fakhrul Razan Rahmad,
-Farah Izana Abdullah, and Sharifah Rafidah Wan Alwi. 2019. ``Review on
-Techniques for Plant Leaf Classification and Recognition.''
+Farah Izana Abdullah, and Sharifah Rafidah Wan Alwi. 2019. {``Review on
+Techniques for Plant Leaf Classification and Recognition.''}
 \emph{Computers} 8 (4): 77.
 
 \leavevmode\hypertarget{ref-bangare2015reviewing}{}%
 Bangare, Sunil L, Amruta Dubal, Pallavi S Bangare, and ST Patil. 2015.
-``Reviewing Otsu's Method for Image Thresholding.'' \emph{International
-Journal of Applied Engineering Research} 10 (9): 21777--83.
+{``Reviewing Otsu's Method for Image Thresholding.''}
+\emph{International Journal of Applied Engineering Research} 10 (9):
+21777--83.
 
 \leavevmode\hypertarget{ref-inproceedings1}{}%
-Caglayan, Ali, Oguzhan Guclu, and Ahmet Burak Can. 2013. ``A Plant
-Recognition Approach Using Shape and Color Features in Leaf Images.'' In
-\emph{International Conference on Image Analysis and Processing},
+Caglayan, Ali, Oguzhan Guclu, and Ahmet Burak Can. 2013. {``A Plant
+Recognition Approach Using Shape and Color Features in Leaf Images.''}
+In \emph{International Conference on Image Analysis and Processing},
 161--70. Springer.
 
 \leavevmode\hypertarget{ref-article31}{}%
-Dean, C. 1999. ``Quantitative Description and Automated Classification
+Dean, C. 1999. {``Quantitative Description and Automated Classification
 of Cellular Protein Localization Patterns in Fluorescence Microscope
-Images of Mammalian Cells.'' PhD thesis, PhD thesis, Carnegie Mellon
+Images of Mammalian Cells.''} PhD thesis, PhD thesis, Carnegie Mellon
 University.
 
 \leavevmode\hypertarget{ref-book1}{}%
@@ -1748,78 +1776,81 @@ Gonzalez, Rafael C., and Richard E. Woods. 2006. \emph{Digital Image
 Processing}. Prentice-Hall, Inc.
 
 \leavevmode\hypertarget{ref-8675114}{}%
-Goyal, N., Kapil, and N. Kumar. 2018. ``Plant Species Identification
-Using Leaf Image Retrieval: A Study.'' In \emph{2018 International
-Conference on Computing, Power and Communication Technologies (Gucon)},
+Goyal, N., Kapil, and N. Kumar. 2018. {``Plant Species Identification
+Using Leaf Image Retrieval: A Study.''} In \emph{2018 International
+Conference on Computing, Power and Communication Technologies (GUCON)},
 405--11.
 
 \leavevmode\hypertarget{ref-articletx}{}%
 Haralick, Robert M, Karthikeyan Shanmugam, and Its' Hak Dinstein. 1973.
-``Textural Features for Image Classification.'' \emph{IEEE Transactions
-on Systems, Man, and Cybernetics}, no. 6: 610--21.
+{``Textural Features for Image Classification.''} \emph{IEEE
+Transactions on Systems, Man, and Cybernetics}, no. 6: 610--21.
 
 \leavevmode\hypertarget{ref-hartigan1992runt}{}%
-Hartigan, John A, and Surya Mohanty. 1992. ``The Runt Test for
-Multimodality.'' \emph{Journal of Classification} 9 (1): 63--70.
+Hartigan, John A, and Surya Mohanty. 1992. {``The Runt Test for
+Multimodality.''} \emph{Journal of Classification} 9 (1): 63--70.
 
 \leavevmode\hypertarget{ref-inproceedings}{}%
-Herdiyeni, Yeni, and Ni Kadek Sri Wahyuni. 2012. ``Mobile Application
+Herdiyeni, Yeni, and Ni Kadek Sri Wahyuni. 2012. {``Mobile Application
 for Indonesian Medicinal Plants Identification Using Fuzzy Local Binary
-Pattern and Fuzzy Color Histogram.'' In \emph{2012 International
+Pattern and Fuzzy Color Histogram.''} In \emph{2012 International
 Conference on Advanced Computer Science and Information Systems
-(Icacsis)}, 301--6. IEEE.
+(ICACSIS)}, 301--6. IEEE.
 
 \leavevmode\hypertarget{ref-colarticle1}{}%
-Kodituwakku, Saluka Ranasinghe, and S Selvarajah. 2004. ``Comparison of
-Color Features for Image Retrieval.'' \emph{Indian Journal of Computer
+Kodituwakku, Saluka Ranasinghe, and S Selvarajah. 2004. {``Comparison of
+Color Features for Image Retrieval.''} \emph{Indian Journal of Computer
 Science and Engineering} 1 (3): 207--11.
 
 \leavevmode\hypertarget{ref-medlea}{}%
-Lakshika, Jayani P. G., and Thiyanga S. Talagala. 2021. ``MedLEA:
-Morphological and Structural Features of Medicinal Leaves.''
+Lakshika, Jayani P. G., and Thiyanga S. Talagala. 2021. {``MedLEA:
+Morphological and Structural Features of Medicinal Leaves.''}
 \url{https://CRAN.R-project.org/package=MedLEA}.
 
 \leavevmode\hypertarget{ref-article7}{}%
-Mingqiang, Yang, Kpalma Kidiyo, and Ronsin Joseph. 2008. ``A Survey of
-Shape Feature Extraction Techniques.'' \emph{Pattern Recognition} 15
+Mingqiang, Yang, Kpalma Kidiyo, and Ronsin Joseph. 2008. {``A Survey of
+Shape Feature Extraction Techniques.''} \emph{Pattern Recognition} 15
 (7): 43--90.
 
 \leavevmode\hypertarget{ref-soderkvist2001computer}{}%
-Söderkvist, Oskar. 2001. ``Computer Vision Classification of Leaves from
-Swedish Trees.''
+Söderkvist, Oskar. 2001. {``Computer Vision Classification of Leaves
+from Swedish Trees.''}
 
 \leavevmode\hypertarget{ref-sun2017deep}{}%
-Sun, Yu, Yuan Liu, Guan Wang, and Haiyan Zhang. 2017. ``Deep Learning
-for Plant Identification in Natural Environment.'' \emph{Computational
+Sun, Yu, Yuan Liu, Guan Wang, and Haiyan Zhang. 2017. {``Deep Learning
+for Plant Identification in Natural Environment.''} \emph{Computational
 Intelligence and Neuroscience} 2017.
 
 \leavevmode\hypertarget{ref-articlee}{}%
-Wäldchen, Jana, and Patrick Mäder. 2018. ``Plant Species Identification
-Using Computer Vision Techniques: A Systematic Literature Review.''
+Wäldchen, Jana, and Patrick Mäder. 2018. {``Plant Species Identification
+Using Computer Vision Techniques: A Systematic Literature Review.''}
 \emph{Archives of Computational Methods in Engineering} 25 (2): 507--43.
 
 \leavevmode\hypertarget{ref-inproceedings44}{}%
 Wilkinson, Leland, Anushka Anand, and Robert Grossman. 2005.
-``Graph-Theoretic Scagnostics.'' In \emph{IEEE Symposium on Information
-Visualization (Infovis 05)}, 157--58. IEEE Computer Society.
+{``Graph-Theoretic Scagnostics.''} In \emph{IEEE Symposium on
+Information Visualization (InfoVis 05)}, 157--58. IEEE Computer Society.
 
 \leavevmode\hypertarget{ref-article37}{}%
-Wilkinson, Leland, and Graham Wills. 2008. ``Scagnostics Distribution.''
-\emph{Journal of Computational and Graphical Statistics} 17 (June):
-473--91. \url{https://doi.org/10.1198/106186008X320465}.
+Wilkinson, Leland, and Graham Wills. 2008. {``Scagnostics
+Distribution.''} \emph{Journal of Computational and Graphical
+Statistics} 17 (June): 473--91.
+\url{https://doi.org/10.1198/106186008X320465}.
 
 \leavevmode\hypertarget{ref-4458016}{}%
 Wu, Stephen Gang, Forrest Sheng Bao, Eric You Xu, Yu-Xuan Wang, Yi-Fan
-Chang, and Qiao-Liang Xiang. 2007a. ``A Leaf Recognition Algorithm for
-Plant Classification Using Probabilistic Neural Network.'' In \emph{2007
-Ieee International Symposium on Signal Processing and Information
-Technology}, 11--16. IEEE.
+Chang, and Qiao-Liang Xiang. 2007a. {``A Leaf Recognition Algorithm for
+Plant Classification Using Probabilistic Neural Network.''} In
+\emph{2007 IEEE International Symposium on Signal Processing and
+Information Technology}, 11--16. IEEE.
 
 \leavevmode\hypertarget{ref-wu2007leaf}{}%
----------. 2007b. ``A Leaf Recognition Algorithm for Plant
-Classification Using Probabilistic Neural Network.'' In \emph{2007 IEEE
-International Symposium on Signal Processing and Information
+---------. 2007b. {``A Leaf Recognition Algorithm for Plant
+Classification Using Probabilistic Neural Network.''} In \emph{2007
+{IEEE} International Symposium on Signal Processing and Information
 Technology}, 11--16. IEEE.
+
+\end{CSLReferences}
 
 \bibliographystyle{unsrt}
 \bibliography{references.bib}
