@@ -946,7 +946,7 @@ ggplot(dd, aes(x=Shape_label, y=value, fill=Shape_label, )) + geom_violin() + fa
 |      We explore the ability of features to classify images under supervised learning setting and unsupervised learning setting. For this purpose we use Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA). LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on Flavia and Swedish datasets. To compute LDA projection shape label is taken as the response variable. There are 5 main shape categories as diamond, simple round, round, needle, and heart shape. 
 
 
-```{r pcaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=7, fig.width=7, fig.cap="\\label{pcaswedish}Distribution of Swedish leaf images on the projection space created based on pincipal component analysis. All projected points are coloured according to their shape labels.", fig.pos="H"}
+```{r pcaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=7, fig.width=7, fig.cap="\\label{pcaswedish}Distribution of Swedish leaf images on the projection space created based on principal component analysis. All projected points are coloured according to their shape labels.", fig.pos="H"}
 library(tidyverse)
 calculate_pca <- function(feature_dataset){
   pcaY_cal <- prcomp(feature_dataset, center = TRUE, scale = TRUE)
@@ -1061,7 +1061,7 @@ p1h + p2h + p3h + plot_annotation(
 
 
 
-```{r pcaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=7, fig.width=7, fig.cap="\\label{pcaflavia}Distribution of Flavia leaf images on the projection space created based on pincipal component analysis. All projected points are coloured according to their shape labels."}
+```{r pcaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=7, fig.width=7, fig.cap="\\label{pcaflavia}Distribution of Flavia leaf images on the projection space created based on principal component analysis. All projected points are coloured according to their shape labels."}
 data_new1 <- read.csv("data/Flavia_dataset/data_all_with_label_flavia.csv", header = TRUE)
 features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
 pca_ref_calc1 <- calculate_pca(features1)
