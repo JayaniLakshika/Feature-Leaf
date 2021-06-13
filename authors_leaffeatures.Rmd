@@ -1103,6 +1103,7 @@ According to both PCA and LDA visualizations on Swedish and Flavia data sets we 
 
 <!--|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.-->
 
+\newpage
 
 # Discussion and Conclusions
 
