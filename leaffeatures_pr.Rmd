@@ -670,7 +670,7 @@ ii) Alpha Hull (see Figure \ref{scagimg4}): The alpha hull is a generalization o
 <!--|       An alpha shape [@inproceedings33] is a collection of one or more simple polygons [@article37;@inproceedings44]. An edge exists between any pair of points that can be touched by an open disk $D(\alpha)$ containing no points, is defined as an alpha shape graph. A value of $\alpha$ to be the average value of the edge lengths in the MST [@article37;@inproceedings44]. The large values like 90th percentile of the MST edge lengths are used, because to reduce noise. If the percentile exceeds a tenth, clamp the value at one-tenth the width of a frame, because it prevents in including sparse or striated point sets in a single alpha graph.--> 
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg4}Convex hull and alpha hull"}
+```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{scagimg4}Convex hull and alpha hull"}
 knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
 ```
 
@@ -949,8 +949,12 @@ ggplot(dd, aes(x=Shape_label, y=value, fill=Shape_label, )) + geom_violin() + fa
 
 |      We explore the ability of features to classify images under supervised learning setting and unsupervised learning setting. For this purpose we use Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA). LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on Flavia and Swedish datasets. To compute LDA projection shape label is taken as the response variable. There are 5 main shape categories as diamond, simple round, round, needle, and heart shape. 
 
+### Swedish Dataset
 
-```{r pcaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=8, fig.width=8, fig.cap="\\label{pcaswedish}Distribution of Swedish leaf images on the projection space created based on principal component analysis. All projected points are coloured according to their shape labels."}
+|       The visualization of PCA projections of Swedish dataset is shown in Figure \ref{pcaswedish}.  The first three principal components (PCs) accounting for approximately 80\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA space. The LDA projections of Swedish data are shown in Figure \ref{ldaswedish}.  According to the LDA results on Swedish dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images.
+
+
+```{r pcaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=6, fig.width=6, fig.cap="\\label{pcaswedish}Distribution of Swedish leaf images on the projection space created based on principal component analysis. All projected points are coloured according to their shape labels."}
 calculate_pca <- function(feature_dataset){
   pcaY_cal <- prcomp(feature_dataset, center = TRUE, scale = TRUE)
   PCAresults <- data.frame(PC1 = pcaY_cal$x[, 1], 
@@ -1020,12 +1024,10 @@ p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
 
 ```
 
-### Swedish Dataset
-
-|       The visualization of PCA projections of Swedish dataset is shown in Figure \ref{pcaswedish}.  The first three principal components (PCs) accounting for approximately 80\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA space. The LDA projections of Swedish data are shown in Figure \ref{ldaswedish}.  According to the LDA results on Swedish dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images.
 
 
-```{r ldaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaswedish}Distribution of Swedish leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=15, fig.height=5}
+
+```{r ldaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaswedish}Distribution of Swedish leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=6, fig.height=2}
 LDA <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new)
 
 
@@ -1067,13 +1069,15 @@ p1h + p2h + p3h + plot_annotation(
 ```
 
 
+\newpage
+
 ### Flavia Dataset
 
 |      The LDA projections of Flavia data are shown in Figure \ref{ldaflavia}. The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA projection space.   According to the LDA results on Flavia dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
 
 
 
-```{r ldaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaflavia}Distribution of Flavia leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=15, fig.height=5}
+```{r ldaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaflavia}Distribution of Flavia leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=6, fig.height=2}
 
 data_new1 <- read.csv("data/Flavia_dataset/data_all_with_label_flavia.csv", header = TRUE)
 features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
@@ -1121,7 +1125,7 @@ p1h + p2h + p3h + plot_annotation(
 
 
 
-```{r pcaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=10, fig.width=10, fig.cap="\\label{pcaflavia}Distribution of Flavia leaf images on the projection space created based on principal component analysis. All projected points are coloured according to their shape labels."}
+```{r pcaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=6, fig.width=6, fig.cap="\\label{pcaflavia}Distribution of Flavia leaf images on the projection space created based on principal component analysis. All projected points are coloured according to their shape labels."}
 
 data_new1 <- read.csv("data/Flavia_dataset/data_all_with_label_flavia.csv", header = TRUE)
 features1 <- data_new1[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour

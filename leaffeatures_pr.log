@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.6)  13 JUN 2021 15:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.14)  14 JUN 2021 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1218,7 +1218,7 @@ Figures/c5.png Graphic file (type png)
 igures/c5.png>
 Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
 -Leaf/leaffeatures/Figures/c5.png  used on input line 1207.
-(pdftex.def)             Requested size: 234.87534pt x 125.9036pt.
+(pdftex.def)             Requested size: 187.90027pt x 100.72287pt.
 [26 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/c5.png>]
 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
@@ -1291,30 +1291,30 @@ Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
 (pdftex.def)             Requested size: 234.87393pt x 55.88927pt.
 [33 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
 igures/fl_example.png>]
-<img/pcaswedish-1.pdf, id=636, 578.16pt x 578.16pt>
+<img/pcaswedish-1.pdf, id=638, 433.62pt x 433.62pt>
 File: img/pcaswedish-1.pdf Graphic file (type pdf)
 <use img/pcaswedish-1.pdf>
-Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1658.
-(pdftex.def)             Requested size: 469.75385pt x 469.75385pt.
-<img/ldaswedish-1.pdf, id=639, 1084.05pt x 361.35pt>
+Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1671.
+(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
+<img/ldaswedish-1.pdf, id=639, 433.62pt x 144.54pt>
 File: img/ldaswedish-1.pdf Graphic file (type pdf)
 <use img/ldaswedish-1.pdf>
 Package pdftex.def Info: img/ldaswedish-1.pdf  used on input line 1679.
-(pdftex.def)             Requested size: 469.75496pt x 156.58498pt.
-<img/ldaflavia-1.pdf, id=642, 1084.05pt x 361.35pt>
+(pdftex.def)             Requested size: 433.63878pt x 144.54623pt.
+[34 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
+igures/imgshape.png>] [35 <./img/pcaswedish-1.pdf>]
+<img/ldaflavia-1.pdf, id=663, 433.62pt x 144.54pt>
 File: img/ldaflavia-1.pdf Graphic file (type pdf)
 <use img/ldaflavia-1.pdf>
-Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1703.
-(pdftex.def)             Requested size: 469.75496pt x 156.58498pt.
-<img/pcaflavia-1.pdf, id=643, 722.7pt x 722.7pt>
+Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1705.
+(pdftex.def)             Requested size: 433.63878pt x 144.54623pt.
+<img/pcaflavia-1.pdf, id=664, 433.62pt x 433.62pt>
 File: img/pcaflavia-1.pdf Graphic file (type pdf)
 <use img/pcaflavia-1.pdf>
-Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1711.
-(pdftex.def)             Requested size: 469.76045pt x 469.76045pt.
-[34 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/imgshape.png>] [35 <./img/pcaswedish-1.pdf>] [36 <./img/ldaswedish-1.pdf
-> <./img/ldaflavia-1.pdf>] [37 <./img/pcaflavia-1.pdf>] [38] [39] [40] (./leaff
-eatures_pr.aux)
+Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1713.
+(pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
+[36 <./img/ldaswedish-1.pdf> <./img/ldaflavia-1.pdf>] [37 <./img/pcaflavia-1.pd
+f>] [38] [39] [40] (./leaffeatures_pr.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1323,7 +1323,7 @@ Package rerunfilecheck Info: File `leaffeatures_pr.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  14603 strings out of 480471
- 266214 string characters out of 5896001
+ 266214 string characters out of 5896000
  570355 words of memory out of 5000000
  31573 multiletter control sequences out of 15000+600000
  476748 words of font info for 167 fonts, out of 8000000 for 9000
@@ -1356,7 +1356,7 @@ angashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 lm/lmsy10.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/
 type1/public/lm/lmsy7.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf
 -dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on leaffeatures_pr.pdf (40 pages, 4749649 bytes).
+Output written on leaffeatures_pr.pdf (40 pages, 4710782 bytes).
 PDF statistics:
  881 PDF objects out of 1000 (max. 8388607)
  669 compressed objects within 7 object streams
