@@ -87,21 +87,21 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 \begin{figure}[!ht]
 \begin{subfigure}{.5\textwidth}
 \centering
-\includegraphics[width=60mm, height=50mm]{./Figures/alledge.png}
+\includegraphics[width=60mm, height=50mm]{leaffeatures/Figures/alledge.png}
 		\caption{\label{alledge} Edge types of leaves focus in the study.}
 \centering
-		\includegraphics[width=60mm, height=50mm]{./Figures/imgshape.png}
+		\includegraphics[width=60mm, height=50mm]{leaffeatures/Figures/imgshape.png}
 		\caption{\label{shapeimg}Shape illustrations}		
 		
 \end{subfigure}	
 \begin{subfigure}{.5\textwidth}
 \centering
-		\includegraphics[width=40mm, height=30mm]{./Figures/simple_leaf_parts.png}
+		\includegraphics[width=40mm, height=30mm]{leaffeatures/Figures/simple_leaf_parts.png}
 		\caption{\label{simplearra} A leaf with simple arrangement.}
 		
 \end{subfigure}	
 
-\caption{}
+\caption{Illustration of edge type, shape illustration and components of a leaf}
 	    \end{figure}
 
 
@@ -226,7 +226,7 @@ $$P_1 = \frac{5}{9}, P_2 = \frac{4}{9}, \mu_1 = \frac{(0*2) +(1*1) + (2*2)}{(2+1
 		
 \end{subfigure}	
 
-\caption{}
+\caption{(a) Remove stalk and (b) closing holes}
 	    \end{figure}
 
 ### Remove Stalk
@@ -417,7 +417,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","act2.png"))
 		
 \end{subfigure}	
 
-\caption{}
+\caption{Features related to area}
 	    \end{figure}
 
 
@@ -520,7 +520,7 @@ where $a$ is semi-major axis and $b$ is semi-minor axis (see Figure \ref{shape6}
 		
 \end{subfigure}	
 
-\caption{}
+\caption{Features related to convexity}
 	    \end{figure}
 
 
@@ -687,7 +687,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","scag.png"))
 		
 \end{subfigure}	
 
-\caption{}
+\caption{Preprocessing steps to compute scagnostics}
 	    \end{figure}
 
 
@@ -732,7 +732,7 @@ vii) Perimeter of a simple polygon:  The length of boundary of a simple polygon 
 		
 \end{subfigure}	
 
-\caption{}
+\caption{Illustration of vertices, edge and convex hull}
 	    \end{figure}
 
 
@@ -999,7 +999,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 		
 \end{subfigure}	
 
-\caption{}
+\caption{Illustration of image processing steps of Flavia dataset}
 	    \end{figure}
 
 
