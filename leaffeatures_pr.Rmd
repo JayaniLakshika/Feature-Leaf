@@ -22,17 +22,22 @@ keywords:
   - LDA
   - PCA
 bibliography: references.bib
-biblio-style: unsrt
-output: 
+output:
   pdf_document:
     number_sections: true
-    extra_dependencies: "subfig"
   rticles::arxiv_article:
     keep_tex: true
 longtable: true
 header-includes:
   - \usepackage{longtable}
   - \usepackage{amsmath, xparse}
+  - \usepackage{multirow}
+  - \usepackage{multicol}
+  - \usepackage{booktabs}
+  - \usepackage{subcaption}
+  - \usepackage{caption}
+  - \usepackage{enumitem}
+  - \usepackage{tabularx}
   - \usepackage{setspace}\doublespacing
 ---
 ```{r setup, include=FALSE}
@@ -78,13 +83,26 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
 
 |       In this study we focus on leaves with simple arrangement as shown in Figure \ref{simplearra}.  A single leaf that is never divided into smaller leaflet units is known as a leaf with simple arrangement. This type of leaf is attached to a twig by its stem or the petiole. The margins, or edges, of the leaf can be smooth, lobed, or toothed (see Figure \ref{alledge}). 
 
-```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{simplearra} A leaf with simple arrangement."}
-knitr::include_graphics(here::here("leaffeatures","Figures","simple_leaf_parts.png"))
-``` 
 
-```{r, echo=FALSE, out.width="80%",fig.align='center',fig.cap="\\label{alledge} Edge types of leaves focus in the study."}
-knitr::include_graphics(here::here("leaffeatures","Figures","alledge.png"))
-``` 
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+\centering
+\includegraphics[width=60mm, height=50mm]{./Figures/alledge.png}
+		\caption{\label{alledge} Edge types of leaves focus in the study.}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/imgshape.png}
+		\caption{\label{shapeimg}Shape illustrations}		
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=40mm, height=30mm]{./Figures/simple_leaf_parts.png}
+		\caption{\label{simplearra} A leaf with simple arrangement.}
+		
+\end{subfigure}	
+
+\caption{}
+	    \end{figure}
 
 
 
@@ -129,9 +147,7 @@ where $\mu$ is the mean of the histogram,
 $\mu_1$ and $\mu_2$ are the mean values of first and second subset respectively. The corresponding class probabilities,
 $P_1$ and $P_2$ are defined as follows,
 
-\[P_1 = \frac{\sum_{i=0}^{u}ghist_I(i)}{|\Omega|},\]
-
-\[P_2 = \frac{\sum_{i=u+1}^{255}ghist_I(i)}{|\Omega|},\]
+\[P_1 = \frac{\sum_{i=0}^{u}ghist_I(i)}{|\Omega|} \text{ ,and } P_2 = \frac{\sum_{i=u+1}^{255}ghist_I(i)}{|\Omega|},\]
 
 where $u$ is the candidate threshold and the maximum gray level ($G_{max}$) is assumed as 255. To find optimal threshold $\tau$ for segmenting image $Im$, all candidate thresholds are evaluated this way.
 
@@ -157,24 +173,33 @@ Set $u = u+1$                                             \\ \hline
 \end{table}
 
 
-|       For an example, assume that candidate threshold value $u$ is 2. Therefore, the image is separated into two classes, which are class 1 ($\text{pixel value} <= 2$ ) and class 2 ($\text{pixel value} > 2$). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to figure \ref{fig:otsu}, there are 9 pixel locations. The associated measurements are
+|       For an example, assume that candidate threshold value $u$ is 2. Therefore, the image is separated into two classes, which are class 1 ($\text{pixel value} <= 2$ ) and class 2 ($\text{pixel value} > 2$). Class 1 represents the background and class 2 represents the foreground of the grayscale image. According to Figure \ref{fig:otsu}, there are 9 pixel locations. The associated measurements are
 
 
-$$P_1 = \frac{5}{9},$$
+$$P_1 = \frac{5}{9}, P_2 = \frac{4}{9}, \mu_1 = \frac{(0*2) +(1*1) + (2*2)}{(2+1+2)} = 1, \mu_2 = \frac{(3*3) +(4*1)}{(3+1)} = \frac{13}{4},$$
 
-$$P_1 = \frac{4}{9},$$
 
-$$\mu_1 = \frac{(0*2) +(1*1) + (2*2)}{(2+1+2)} = 1,$$
-
-$$\mu_1 = \frac{(3*3) +(4*1)}{(3+1)} = \frac{13}{4},$$
 
 
 \[\sigma^2 = \frac{5}{9} * \frac{4}{9} * (1-\frac{13}{4})^2 = 1.25.\]
 
 
-```{r, echo=FALSE, out.width="60%", fig.align='center',fig.cap="\\label{fig:otsu}Example of Otsu's binary thresholding"}
-knitr::include_graphics(here::here("leaffeatures","Figures","otsu.png"))
-```
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/otsu.png}
+		\caption{\label{fig:otsu}Example of Otsu's binary thresholding}
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=70mm, height=60mm]{./Figures/rst.png}
+		\caption{\label{fig:rstex}Example of distance transformation}
+		
+\end{subfigure}	
+
+\caption{}
+	    \end{figure}
 
 
 
@@ -185,11 +210,24 @@ knitr::include_graphics(here::here("leaffeatures","Figures","otsu.png"))
 
 |       Other than the main image processing techniques discussed above, the following techniques are applied to some images where necessary after image thresholding.
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:rst}Remove stalk"}
-knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
-```
+`
 
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=50mm, height=40mm]{./Figures/remove_stalk.png}
+		\caption{\label{fig:rst}Remove stalk}
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=50mm, height=40mm]{./Figures/close_holes.png}
+		\caption{\label{fig:chl}Closing holes}
+		
+\end{subfigure}	
 
+\caption{}
+	    \end{figure}
 
 ### Remove Stalk
 
@@ -198,9 +236,6 @@ knitr::include_graphics(here::here("leaffeatures","Figures","remove_stalk.png"))
 
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:rstex}Example of distance transformation"}
-knitr::include_graphics(here::here("leaffeatures","Figures","rst.png"))
-```
 
 <!--Why?-->
 
@@ -212,10 +247,6 @@ knitr::include_graphics(here::here("leaffeatures","Figures","rst.png"))
 
 ### Closing Holes
 
-
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fig:chl}Closing holes"}
-knitr::include_graphics(here::here("leaffeatures","Figures","close_holes.png"))
-```
 
 <!--Morphological transformations-->
 
@@ -252,7 +283,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","feature_hie.png"))
 
 ## Shape Features
 
-|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. In addition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of Cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
+|       When identifying real-world objects, the shape is known as an essential sign for humans. We use the shape descriptors introduced by @articlee. In addition to that we introduce a number of new shape features such as: number of convex points, x and y coordinates of center, number of maximum and minimum points, correlation of Cartesian contour points, etc.  The shape features should be invariant to certain class of geometric transformation of the object. The main geometric transformation are rotation reflection, scaling and translation (see Figure \ref{img3}). The shape features we considered in this study are invariant to the rotation and reflection. All the shape features are extracted from the binary images.
 
 <!--But some limitations are applied in translation and scaling.--> 
 	
@@ -262,10 +293,10 @@ knitr::include_graphics(here::here("leaffeatures","Figures","geomatric_transform
 ```
 	
 	
-|     Extraction of image contour plays an important role in measuring the shape of a image.  Simply contour (see figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same color or intensity. 
+|     Extraction of image contour plays an important role in measuring the shape of a image.  Simply contour (see Figure \ref{cnt}) is a curve joining all the continuous points (along the boundary), having the same color or intensity. 
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{cnt}Extract contour of the leaf image"}
+```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{cnt}Extract contour of the leaf image"}
 knitr::include_graphics(here::here("leaffeatures","Figures","cnt.png"))
 ```  
 
@@ -275,7 +306,7 @@ In order to extract the contour of the leaf, the leaf should be placed properly 
 
 <!--The finding contour function doesn’t work well when the center of the leaf image is not in the contour. Therefore if the translation is applied away from the contour \ref{trans}, then function can’t identify the contour. Inappropriate scaling (see figure \ref{scal}) also arises problems in the calculation. If the leaf image is really small, the function also hard to recognize the contour. Therefore taking the closest photo of the leaf images by keeping them in the center of the white paper is more suitable.-->
 
-```{r trans, echo=FALSE, fig.cap="\\label{trans}Inappropriate translation (a),  Inappropriate scaling (b", out.width='20%', fig.align = "center", fig.ncol = 2, fig.subcap=c(' ','')}
+```{r trans, echo=FALSE, fig.cap="\\label{trans}Inappropriate translation (a),  Inappropriate scaling (b", out.width='10%', fig.align = "center", fig.ncol = 2, fig.subcap=c(' ','')}
 knitr::include_graphics(here::here("leaffeatures","Figures","trans.jpg"))
 knitr::include_graphics(here::here("leaffeatures","Figures","scaling.jpg"))
 ``` 
@@ -286,7 +317,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
 
 
 
-|       Shape features can be classified into two main categories as contour-based and region-based features [@articlee]. As illustrated in @articlee, contour-based  shape features are computed based on the contour of a shape, whereas region-based shape features are extracted from the whole region of a shape  (see figure \ref{scalimg4}).
+|       Shape features can be classified into two main categories as contour-based and region-based features [@articlee]. As illustrated in @articlee, contour-based  shape features are computed based on the contour of a shape, whereas region-based shape features are extracted from the whole region of a shape  (see Figure \ref{scalimg4}).
 
 
  
@@ -295,7 +326,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","shape_chart.png"))
 
 ### Diameter ($F_1$)
 
-|       Diameter is defined as the longest distance between any two points on the margin of the leaf [@articlee]. To calculate the diameter of the leaf image, first we need to find the contour of the leaf image. Then we need to select all pair of contour points and measure the Euclidean distance (equation \ref{equa_shape}) between the two points separately. Finally, we have to find the maximum distance among the calculated distances (see figure \ref{shape1}). The distance measurement is
+|       Diameter is defined as the longest distance between any two points on the margin of the leaf [@articlee]. To calculate the diameter of the leaf image, first we need to find the contour of the leaf image. Then we need to select all pair of contour points and measure the Euclidean distance (equation \ref{equa_shape}) between the two points separately. Finally, we have to find the maximum distance among the calculated distances (see Figure \ref{shape1}). The distance measurement is
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{shape1}Logic behind calculation of diameter"}
@@ -315,7 +346,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","d_cal.png"))
 ### Physiological length ($F_2$) and Physiological width ($F_3$)
 
 
-```{r act3, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{act3}Straight (horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
+```{r act3, echo=FALSE, out.width="20%", fig.align='center',fig.cap="\\label{act3}Straight (horizontal or vertical) and rotated leaf image in Actual leaf image dataset"}
 knitr::include_graphics(here::here("leaffeatures","Figures","act3.png"))
 ```  
 
@@ -326,19 +357,25 @@ i) Straight bounding rectangle: This is a straight rectangle which does not cons
 
 <!--I added background-->
 
-ii) Rotated rectangle: This bounding rectangle is drawn with minimum background area. Therefore the rotation of the object is also considered ((see Figure \ref{fig:act3} (b)).
+ii) Rotated rectangle: This bounding rectangle is drawn with minimum background area. Therefore the rotation of the object is also considered (see Figure \ref{fig:act3} (b)).
 
-The straight bounding rectangle is enough to extract physiological length and physiological width of  straight (horizontal or vertical) leaf images. However, the straight bounding rectangle is not suitable to compute physiological length and physiological width of angled leaf images.  To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. As shown in Figure \ref{fig: bound}, physiological length and width are computed as follows:
+The straight bounding rectangle is enough to extract physiological length and physiological width of  straight (horizontal or vertical) leaf images. However, the straight bounding rectangle is not suitable to compute physiological length and physiological width of angled leaf images.  To solve this problem, we considered rotated rectangle rather than bounded rectangle in computing shape features of angled images. As shown in Figure \ref{bound}, physiological length and width are computed as follows:
 
+\begin{subequations}
+\begin{tabularx}{\textwidth}{Xp{3cm}X}
 \begin{equation}
    F_2 = \text{Length of the rotated rectangle},
 \label{equa_F2}
 \end{equation}
-
+& &
 \begin{equation}
    F_3 = \text{Width of the rotated rectangle}.
 \label{equa_F3}
 \end{equation}
+
+\end{tabularx}
+\end{subequations}
+
 
 
 ```{r bound, echo=FALSE, fig.cap="\\label{bound}Straight bounded rectangle of a rotated leaf image (a), Rotated rectangle of angled leaf image (b)", out.width='30%', fig.align = "center", fig.ncol = 2, fig.subcap=c('','')}
@@ -354,12 +391,37 @@ knitr::include_graphics(here::here("leaffeatures","Figures","act2.png"))
 <!--Length of the rotated rectangle (I added rotated)-->
 
 
-
 ### Area ($F_4$)
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areacal}Measure the area"}
-knitr::include_graphics(here::here("leaffeatures","Figures","Areacal.png"))
-```  
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+
+\centering
+		\includegraphics[width=50mm, height=40mm]{./Figures/Areacal.png}
+		\caption{\label{areacal}Measure the area}
+		
+\centering
+		\includegraphics[width=50mm, height=40mm]{./Figures/perical.png}
+		\caption{\label{calperi}Perimeter}
+		
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/c11.png}
+		\caption{\label{shape6}Ellipse}
+		
+\centering
+		\includegraphics[width=50mm, height=40mm]{./Figures/concal.png}
+		\caption{\label{shconvex}Convex hull}		
+		
+\end{subfigure}	
+
+\caption{}
+	    \end{figure}
+
+
+
 
 |       Area is computed after applying the thresholding process. Next, we need to extract the best contour and based on that contour area is measured. Number of 0 pixels covered by the contour is the measure of area of leaf image [@articlepl].  As shown in Figure \ref{areshape1} the area measures increase as the area of the leaf increases. The area is defined by
 
@@ -369,18 +431,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","Areacal.png"))
 \end{equation}
 
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{areshape1}Area"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c8.png"))
-```  
-
-
 ### Perimeter ($F_5$)
-
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{calperi}Area"}
-knitr::include_graphics(here::here("leaffeatures","Figures","perical.png"))
-```  
-
-
 
 |      As shown in Figure \ref{calperi} perimeter is defined as the summation of euclidean distance of all continuous points in the contour. Let $n$ be the number of distances around the contour, then the perimeter is defined as
 
@@ -395,9 +446,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","perical.png"))
 |       Eccentricity is a characteristic of any conic section of a leaf [@articlepl]. Eccentricity is defined that how much the ellipse actually varying being circular. Eccentricity is calculated using equation \ref{eqecc} as
 
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape6}Ellipse"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c11.png"))
-```  
+
 
 \begin{equation}
     F_6 = \sqrt{1-\frac{b^2}{a^2}}.
@@ -408,16 +457,9 @@ where $a$ is semi-major axis and $b$ is semi-minor axis (see Figure \ref{shape6}
 
 |       Eccentricity of an ellipse is varied between 0 and 1. If eccentricity is 0, then we obtain a circle whereas eccentricity is 1, then we obtain an ellipse (see Figure \ref{shape5}). 
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape5}Eccentricity"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c9.png"))
-```  
 
 
 ### Number of Convex Points ($F_{21}$) and Verticies
-
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shconvex}Convex hull"}
-knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
-```  
 
 |       @inproceedings44  defined a convex hull as a "hull that contains all the straight line segments connecting any pair of points in its interior". The convex hull bounds a single polygon (see Figure \ref{shconvex}).  We introduced two new features computed based on the convex hull: i) Number of convex points ($F_{21}$) and ii) Number of convex vertices ($F_7$).
 
@@ -432,33 +474,54 @@ knitr::include_graphics(here::here("leaffeatures","Figures","concal.png"))
 \end{equation}
 
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape3}Circularity"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c6.png"))
-```  
-
 ### Compactness
 
-|       Compactness is closely related to roundness. Compactness measures that how compatible the leaf fits to a circle area (see figure \ref{shape4}). The compactness is measured using
+|       Compactness is closely related to roundness. Compactness measures that how compatible the leaf fits to a circle area (see Figure \ref{shape4}). The compactness is measured using
 
 \begin{equation}
     C = \frac{{F_5}^2}{F_4}.
 \label{calcompact}
 \end{equation}
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape4}Compactness"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c10.png"))
-```  
-
-
+  
 
 ### Convexity
 
 |       Convexity measures the curvature of the convex hull.
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{shape7}Convexity"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c7.png"))
-```  
 
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+
+\centering
+		\includegraphics[width=40mm, height=30mm]{./Figures/c8.png}
+		\caption{\label{areshape1}Area}
+
+\centering
+		\includegraphics[width=40mm, height=30mm]{./Figures/c9.png}
+		\caption{\label{shape5}Eccentricity}
+
+\centering
+		\includegraphics[width=40mm, height=30mm]{./Figures/c6.png}
+		\caption{\label{shape3}Circularity}
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+
+\centering
+		\includegraphics[width=40mm, height=30mm]{./Figures/c10.png}
+		\caption{\label{shape4}Compactness}
+
+
+\centering
+		\includegraphics[width=40mm, height=30mm]{./Figures/c7.png}
+		\caption{\label{shape7}Convexity}
+		
+\end{subfigure}	
+
+\caption{}
+	    \end{figure}
 
 
 The equations and software packages used to compute shape features are shown in Table  \ref{tab:table1}. 
@@ -529,13 +592,13 @@ $$h(a,b) = \frac{\text{Number of times a pixel with value a is adjacent to a pix
 
 
 
-|       In order to calculate $h(a,b)$, adjacency can be defined to occur in each of four directions in a 2D (see figure \ref{img2}), square pixel image (horizontal, vertical, left and right diagonals - see equation \ref{direction}).
+|       In order to calculate $h(a,b)$, adjacency can be defined to occur in each of four directions in a 2D (see Figure \ref{img2}), square pixel image (horizontal, vertical, left and right diagonals - see equation \ref{direction}).
 
-```{r, echo=FALSE, out.width="30%", fig.align='center',fig.cap="\\label{direction}Four directions of adjacency as defined for calculation of the Haralick texture features"}
+```{r, echo=FALSE, out.width="20%", fig.align='center',fig.cap="\\label{direction}Four directions of adjacency as defined for calculation of the Haralick texture features"}
 knitr::include_graphics(here::here("leaffeatures","Figures","GLMC_direction.png"))
 ```    
     
-|       The Haralick statistics [@article31] are calculated based on the matrices generated using each of these directions (see figure \ref{img1}) of adjacency. Haralick introduced 14 statistics to describe the texture of the image based on the four co-occurrences matrices generated. In this research, we only used the following 4 statistics among 14 of them, because most of the researchers used these 4 statistics as texture features (see figure \ref{tabmytable}) of leaf images. All the texture features are extracted from the gray scale image. Texture features are calculated from the mahotas package in Python. Table \ref{tabmytable} shows the definitions of texture features.
+|       The Haralick statistics [@article31] are calculated based on the matrices generated using each of these directions (see Figure \ref{img1}) of adjacency. Haralick introduced 14 statistics to describe the texture of the image based on the four co-occurrences matrices generated. In this research, we only used the following 4 statistics among 14 of them, because most of the researchers used these 4 statistics as texture features (see Figure \ref{tabmytable}) of leaf images. All the texture features are extracted from the gray scale image. Texture features are calculated from the mahotas package in Python. Table \ref{tabmytable} shows the definitions of texture features.
 
 
 \begin{table}[!ht]
@@ -556,13 +619,13 @@ Texture feature & Feature name                                                  
 
 Let $h(a, b)$ = Probability density function of gray - level pairs $(a,b)$ and dimension of GLCM is $n \times n$ ($\text{Number of columns} \times \text{Number of rows}$). The associated measures are given by
 	
-$$\mu_{x} = \sum_{a=1}^{columns}a\sum_{b=1}^{rows}h(a,b),$$ 
+$$\mu_{x} = \sum_{a=1}^{columns}a\sum_{b=1}^{rows}h(a,b), \mu_{y} = \sum_{b=1}^{rows}b\sum_{a=1}^{columns}h(a,b),$$ 
 	
-$$\mu_{y} = \sum_{b=1}^{rows}b\sum_{a=1}^{columns}h(a,b),$$ 
+ 
 	
-$$\sigma_{x} = \sum_{a=1}^{columns}(a-\mu_{x})^2\sum_{b=1}^{rows}h(a,b),$$
+$$\sigma_{x} = \sum_{a=1}^{columns}(a-\mu_{x})^2\sum_{b=1}^{rows}h(a,b), \sigma_{y} = \sum_{b=1}^{rows}(b-\mu_{y})^2\sum_{a=1}^{columns}h(a,b).$$
 	
-$$\sigma_{y} = \sum_{b=1}^{rows}(b-\mu_{y})^2\sum_{a=1}^{columns}h(a,b).$$
+
 
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{img1}Computing the Haralick texture features from a 4 × 4 example image step by step"}
@@ -582,7 +645,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 ```
 
 
-|       Color is an important characteristic of images [@articlee; @inproceedings1]. Some of leaf images have very similar shape like Hathawariya (figure \ref{leafimg}) and Iramusu (figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extract features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color channel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
+|       Color is an important characteristic of images [@articlee; @inproceedings1]. Some of leaf images have very similar shape like Hathawariya (Figure \ref{leafimg}) and Iramusu (Figure \ref{leafimg}). Even though shapes are similar in some leaves, there are some differences in colors of leaf images. Therefore in addition to the shape features, we extract features related to the color. Colors of an image are formed based on Red-Green-Blue (RGB) colour channels of an image. Color properties are defined within a particular color channel [@colarticle1; @articlee]. In the field of image recognition, a number of general color descriptors have been introduced. Color moments [@colarticle1;@articlee] are the simple descriptor among them. Mean, standard deviation skewness and kurtosis are the common moments. Color moments are convenient for real-time applications due its low dimension and low computational complexity. 
 
 |       We used mean($M$) and standard deviation($SD$) of intensity values of red, green and blue channels as color features. Let $h$ be the number of pixels of the image and $r$ is the channel type which can be red, green, or blue. The corresponding colour features are calculates as follows:
 
@@ -606,17 +669,29 @@ knitr::include_graphics(here::here("leaffeatures","Figures","leaf_img.png"))
 knitr::include_graphics(here::here("leaffeatures","Figures","scag.png"))
 ```
 
-|        We separately measure the scagnostic features based on cartesian and polar coordinate of the contour (see Figure \ref{pc}). As the first step, we have to extract the contour of the leaf image (see figure \ref{scp}). Then find the $x$ and $y$ coordinate values of the cartesian and polar separately. The $x$ and $y$ coordinate value is used to calculate the scagnostic features. The following definitions can be useful in understanding scagnostics features.
+|        We separately measure the scagnostic features based on cartesian and polar coordinate of the contour (see Figure \ref{pc}). As the first step, we have to extract the contour of the leaf image (see Figure \ref{scp}). Then find the $x$ and $y$ coordinate values of the cartesian and polar separately. The $x$ and $y$ coordinate value is used to calculate the scagnostic features. The following definitions can be useful in understanding scagnostics features.
 
 
-```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{pc}Polar coordinate"}
-knitr::include_graphics(here::here("leaffeatures","Figures","pc.png"))
-```	
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/pc.png}
+		\caption{\label{pc}Polar coordinate}
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/scp.png}
+		\caption{\label{scp}Preprocessing for Scagnostics}
+		
+\end{subfigure}	
+
+\caption{}
+	    \end{figure}
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scp}Preprocessing for Scagnostics"}
-knitr::include_graphics(here::here("leaffeatures","Figures","scp.png"))
-```	
+
 
 	    
 \textbf{Geometric Graphs}
@@ -639,9 +714,28 @@ vi) Polygon:  A region bounded by a closed path is known as a polygon ($P$). A p
 vii) Perimeter of a simple polygon:  The length of boundary of a simple polygon is known as the perimeter of a simple polygon. The area of interior of a simple polygon is known as the area of a simple polygon.
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{scagimg5}Graph with 5 vertices and 5 edges"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c4new.png"))
-```
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/c4new.png}
+		\caption{\label{scagimg5}Graph with 5 vertices and 5 edges}
+
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/c5.png}
+		\caption{\label{scagimg4}Convex hull and alpha hull}
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/c3.png}
+		\caption{\label{scagimg6}Vertices of degree 2}
+		
+\end{subfigure}	
+
+\caption{}
+	    \end{figure}
+
+
 
 The calculation of scagnostic features require identification of the minimum spanning tree, convex hull and alpha hull.
 
@@ -670,9 +764,6 @@ ii) Alpha Hull (see Figure \ref{scagimg4}): The alpha hull is a generalization o
 <!--|       An alpha shape [@inproceedings33] is a collection of one or more simple polygons [@article37;@inproceedings44]. An edge exists between any pair of points that can be touched by an open disk $D(\alpha)$ containing no points, is defined as an alpha shape graph. A value of $\alpha$ to be the average value of the edge lengths in the MST [@article37;@inproceedings44]. The large values like 90th percentile of the MST edge lengths are used, because to reduce noise. If the percentile exceeds a tenth, clamp the value at one-tenth the width of a frame, because it prevents in including sparse or striated point sets in a single alpha graph.--> 
 
 
-```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{scagimg4}Convex hull and alpha hull"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c5.png"))
-```
 
 
 
@@ -717,9 +808,6 @@ iii) Degree of a Vertex
 
 |        The degree of a vertex in an undirected graph is the number of edges associated with the vertex. For example, vertices of degree 2  means there are 2 edges associated with each vertex (see Figure \ref{scagimg6}).
 
-```{r, echo=FALSE, out.width="40%", fig.align='center',fig.cap="\\label{scagimg6}Vertices of degree 2"}
-knitr::include_graphics(here::here("leaffeatures","Figures","c3.png"))
-```
 
 
 ### Definitions of Scagnostic Features
@@ -857,15 +945,22 @@ i) Monotonic: To assess the monotonicity in a scatter plot, the squared Spearman
 knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 ```  
 
+\begin{subequations}
+\begin{tabularx}{\textwidth}{Xp{2cm}X}
 \begin{equation}
    F_8 =  \text{Number of global minimum points},
 \label{equa_F8}
 \end{equation}
-
+& &
 \begin{equation}
    F_9 =  \text{Number of global maximum points}.
 \label{equa_F9}
 \end{equation}
+
+\end{tabularx}
+\end{subequations}
+
+
 
 ### Correlation of Cartesian Contour ($F_{10}$)
 
@@ -882,7 +977,7 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 
 ## Data sets
 
-|       We use two publicly available datasets to demonstrate the applications of features. They are: i) Flavia leaf image dataset and iii) Swedish leaf image dataset
+|       We use two publicly available datasets to demonstrate the applications of features. They are: i) Flavia leaf image dataset and ii) Swedish leaf image dataset
 
 ### Flavia Leaf Image Dataset
     
@@ -890,14 +985,22 @@ knitr::include_graphics(here::here("leaffeatures","Figures","mn.png"))
 
 
 
-```{r, echo=FALSE, out.width="50%",fig.align='center',fig.cap="\\label{slp1}Sample of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","flavia_images.png"))
-```
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/flavia_images.png}
+		\caption{\label{slp1}Sample of Flavia dataset}
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=60mm, height=50mm]{./Figures/swedish_data.png}
+		\caption{\label{slp2}Sample of Swedish leaf dataset}
+		
+\end{subfigure}	
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{slp2}Sample of Swedish leaf dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
-```
-
+\caption{}
+	    \end{figure}
 
 
 ### Swedish Leaf Image Dataset
@@ -913,14 +1016,24 @@ knitr::include_graphics(here::here("leaffeatures","Figures","swedish_data.png"))
 We applied the aforementioned image processing techniques and computed features from each image. Example of image processing and feature extraction for a leaf in the Flavia data set is shown in Figure \ref{fl5} and Figure \ref{flexe} respectively.
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{fl5}Image processing steps of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","fl5.png"))
-```	
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=80mm, height=70mm]{./Figures/fl5.png}
+		\caption{\label{fl5}Image processing steps of Flavia dataset}
+		
+\end{subfigure}	
+\begin{subfigure}{.5\textwidth}
+\centering
+		\includegraphics[width=80mm, height=70mm]{./Figures/fl_example.png}
+		\caption{\label{flexe}Example feature extraction of Flavia dataset}
+		
+\end{subfigure}	
+
+\caption{}
+	    \end{figure}
 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{flexe}Example feature extraction of Flavia dataset"}
-knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
-```	
 
 <!--|       The leaf images are taken as the closest ones. Therefore to find the best contour among several contours, can use the contour which contains the center of leaf image. Identify the best contour is really important when extracting shape features.-->
 
@@ -933,9 +1046,6 @@ knitr::include_graphics(here::here("leaffeatures","Figures","fl_example.png"))
 
 |      In order to identify ability of features to distinguish classes of interest, we first label features according to their shapes as: i) diamond, ii) heart shape, iii) needle shape, iv) simple round and v) round shape (see Figure \ref{shapeimg}). These morphological characteristics are identified by observing images in the medicinal plant repository maintained by Barberyn Ayurveda resort and University of Ruhuna available at \url{http://www.instituteofayurveda.org/plants/}. Our observed results are converted into a open source R software package called MedLEA: **Med**icinal **LEAf** which is available on Comprehensive R Archive Network [@medlea]. 
 
-```{r, echo=FALSE, out.width="50%", fig.align='center',fig.cap="\\label{shapeimg}Shape illustrations"}
-knitr::include_graphics(here::here("leaffeatures","Figures","imgshape.png"))
-```	
 
 ```{r feadist, eval=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 data_new <- read.csv("data/Swedish_dataset/data_all_with_label.csv", header = TRUE)
@@ -948,6 +1058,8 @@ ggplot(dd, aes(x=Shape_label, y=value, fill=Shape_label, )) + geom_violin() + fa
 ```
 
 |      We explore the ability of features to classify images under supervised learning setting and unsupervised learning setting. For this purpose we use Linear Discriminant Analysis (LDA) and Principal Component Analysis (PCA). LDA is a supervised dimensionality reduction technique, and PCA is unsupervised dimensionality reduction technique. In this section, we visualize, and compare the results obtained using LDA, and PCA on Flavia and Swedish datasets. To compute LDA projection shape label is taken as the response variable. There are 5 main shape categories as diamond, simple round, round, needle, and heart shape. 
+
+
 
 ### Swedish Dataset
 
@@ -971,8 +1083,11 @@ pca_projection <- function(prcomp_out, data_to_project){
   return(pca_projected)
   
 }
+
 data_new <- read.csv("data/Swedish_dataset/data_all_with_label.csv", header = TRUE)
-features <- data_new[, c(3:10,12:53)] # remove Outlying_polar and Outlying_contour
+features <- data_new[, c(3:10,12:53)]
+
+
 pca_ref_calc <- calculate_pca(features)
 # combine features and PCs' into a one dataframe
 data_new$PC1 <- pca_ref_calc$pca_components$PC1
@@ -1025,9 +1140,8 @@ p1h1 + p2h1 + p3h1 + p4h1 + p5h1 + p6h1 + p7h1 + p8h1 + p9h1 + plot_annotation(
 ```
 
 
-
-
 ```{r ldaswedish, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.cap="\\label{ldaswedish}Distribution of Swedish leaf images on the projection space created based on linear discriminant analysis. All projected points are coloured according to their shape labels.", fig.width=6, fig.height=2}
+
 LDA <- lda(Shape_label~ diameter + area + perimeter + physiological_length + physiological_width + aspect_ratio + rectangularity + circularity + compactness + NF + Perimeter_ratio_diameter + Perimeter_ratio_length + Perimeter_ratio_lw + No_of_Convex_points + perimeter_convexity + area_convexity + area_ratio_convexity + equivalent_diameter + contrast + correlation_texture + inverse_difference_moments + entropy + cx + cy + eccentriciry + Mean_R_val + Mean_G_val + Mean_B_val + Std_R_val + Std_G_val + Std_B_val + correlation  + Skewed_polar + Clumpy_polar + Sparse_polar + Striated_polar + Convex_polar + Skinny_polar + Stringy_polar + Monotonic_polar +  Skewed_contour + Clumpy_contour + Sparse_contour + Striated_contour + Convex_contour + Skinny_contour + Stringy_contour + Monotonic_contour + No_of_max_ponits + No_of_min_points, data= data_new)
 
 
@@ -1069,11 +1183,15 @@ p1h + p2h + p3h + plot_annotation(
 ```
 
 
-\newpage
+
 
 ### Flavia Dataset
 
 |      The LDA projections of Flavia data are shown in Figure \ref{ldaflavia}. The visualization of PCA projections of Flavia dataset is shown in Figure \ref{pcaflavia}.  The first three principal components (PCs) accounting for approximately 83\% of the total variance in the original data, while the first 5 PCs accounts for 90\% of the total variance in the original data. Hence, the first five PCs are plotted against each other to visualize data in the PCA projection space.   According to the LDA results on Flavia dataset, LDA1, LDA2, and LDA3 shows a clear separation of shapes of leaf images. Under both experimental settings class separation is more clearly on the LDA space than the PCA space. The reason could be LDA is a supervised learning algorithm while PCA space is an unsupervised learning algorithm.
+
+According to both PCA and LDA visualizations on Swedish and Flavia data sets we can see a clear separation of classes in their corresponding projection spaces. This reveals our features are capable of distinguishing classes under both supervised learning and unsupervised learning settings. 
+
+<!--|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.-->
 
 
 
@@ -1121,9 +1239,6 @@ p1h + p2h + p3h + plot_annotation(
   tag_levels = 'A'
 ) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
 ```
-
-
-
 
 ```{r pcaflavia, comment=NA, message=FALSE, warning=FALSE, echo= FALSE, fig.height=6, fig.width=6, fig.cap="\\label{pcaflavia}Distribution of Flavia leaf images on the projection space created based on principal component analysis. All projected points are coloured according to their shape labels."}
 
@@ -1177,12 +1292,6 @@ p1h2 + p2h2 + p3h2 + p4h2 + p5h2 + p6h2 + p7h2 + p8h2 + p9h2 + plot_annotation(
   tag_levels = 'A'
 ) + plot_layout(guides = 'collect') & theme(plot.tag = element_text(size = 3))  & theme(legend.position = 'bottom', legend.title=element_blank())
 ```
-
-According to both PCA and LDA visualizations on Swedish and Flavia data sets we can see a clear separation of classes in their corresponding projection spaces. This reveals our features are capable of distinguishing classes under both supervised learning and unsupervised learning settings. 
-
-<!--|       The projected results of LDA1 and LDA2 on flavia dataset shows clear classification of leaf shapes than PCAs.-->
-
-
 
 # Discussion and Conclusions
 
