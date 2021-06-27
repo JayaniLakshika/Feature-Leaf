@@ -1,17 +1,14 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.14)  15 JUN 2021 17:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.6.27)  27 JUN 2021 22:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **leaffeatures_pr.tex
 (./leaffeatures_pr.tex
-LaTeX2e <2021-06-01>
-L3 programming layer <2021-06-01>
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/base/artic
-le.cls
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-06-18> (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dis
+t/tex/latex/base/article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/base/size1
-0.clo
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count182
@@ -25,85 +22,7 @@ File: size10.clo 2021/02/12 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsmath/am
-smath.sty
-Package: amsmath 2021/04/20 v2.17j AMS math features
-\@mathmargin=\skip49
-For additional information on amsmath, use the `?' option.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsmath/am
-stext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsmath/am
-sgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen139
-))
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsmath/am
-sbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen140
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsmath/am
-sopn.sty
-Package: amsopn 2016/03/08 v2.02 operator names
-)
-\inf@bad=\count190
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count191
-\leftroot@=\count192
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count193
-\DOTSCASE@=\count194
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen141
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count195
-\c@MaxMatrixCols=\count196
-\dotsspace@=\muskip16
-\c@parentequation=\count197
-\dspbrk@lvl=\count198
-\tag@help=\toks17
-\row@=\count199
-\column@=\count266
-\maxfields@=\count267
-\andhelp@=\toks18
-\eqnshift@=\dimen142
-\alignsep@=\dimen143
-\tagshift@=\dimen144
-\tagwidth@=\dimen145
-\totwidth@=\dimen146
-\lineht@=\dimen147
-\@envbody=\toks19
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2923.
-LaTeX Info: Redefining \] on input line 2924.
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/a
-mssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/a
-msfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern
-.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -137,62 +56,105 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/04/20 v2.17j AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen139
+)) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/iftex/if
-xetex.sty
+\inf@bad=\count190
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count191
+\leftroot@=\count192
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count193
+\DOTSCASE@=\count194
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count195
+\c@MaxMatrixCols=\count196
+\dotsspace@=\muskip16
+\c@parentequation=\count197
+\dspbrk@lvl=\count198
+\tag@help=\toks18
+\row@=\count199
+\column@=\count266
+\maxfields@=\count267
+\andhelp@=\toks19
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks20
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/iftex/if
-tex.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
-))
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/iftex/if
-luatex.sty
+)) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.st
+y
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/base/fonte
-nc.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
 2.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.f
-d
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/base/input
-enc.sty
+)) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks21
-\inpenc@posthook=\toks22
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/base/textc
-omp.sty
+\inpenc@prehook=\toks22
+\inpenc@posthook=\toks23
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/upquote/up
-quote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/microtype/
-microtype.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.st
+y
 Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/graphics/k
-eyval.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks23
+\KV@toks@=\toks24
 )
-\MT@toks=\toks24
+\MT@toks=\toks25
 \MT@count=\count268
 LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen148
 LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
 \MT@listname@count=\count269
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/microtype/
-microtype-pdftex.def
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pd
+ftex.def
 File: microtype-pdftex.def 2021/03/14 v2.8c Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 915.
@@ -201,22 +163,19 @@ LaTeX Info: Redefining \lslig on input line 915.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/microtype/
-microtype.cfg
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cf
+g
 File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
-))
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xco
-lor.sty
+)) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/graphics-c
-fg/color.cfg
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/graphics-d
-ef/pdftex.def
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.de
+f
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
@@ -228,83 +187,71 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/hyperref/h
-yperref.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.st
+y
 Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/
-ltxcmds.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/pdftexcm
-ds/pdftexcmds.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmd
+s.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/infwarer
-r/infwarerr.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.
+sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/kvsetkey
-s/kvsetkeys.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.
+sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/kvdefine
-keys/kvdefinekeys.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefin
+ekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/pdfescap
-e/pdfescape.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.
+sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hy
-color.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/letltxmacr
-o/letltxmacro.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacr
+o.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/auxhook/au
-xhook.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/
-kvoptions.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.st
+y
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen149
 \Hy@linkcounter=\count270
 \Hy@pagecounter=\count271
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/hyperref/p
-d1enc.def
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/hyperref/h
-yperref-langpatches.def
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref-lang
+patches.def
 File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
 nguages
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/intcalc/
-intcalc.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.st
+y
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/etexcmds
-/etexcmds.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.st
+y
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count272
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/hyperref/p
-uenc.def
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -318,21 +265,17 @@ Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
 \c@Hy@tempcnt=\count273
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/url/url.st
-y
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
 \XeTeXLinkMargin=\dimen150
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/bitset/b
-itset.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/bigintca
-lc/bigintcalc.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcal
+c.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -348,9 +291,7 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6101.
 Package hyperref Info: PDF/A mode OFF on input line 6106.
 LaTeX Info: Redefining \ref on input line 6146.
 LaTeX Info: Redefining \pageref on input line 6150.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/base/atbeg
-shi-ltx.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -359,13 +300,10 @@ package with kernel methods
 \c@Hfootnote=\count277
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/hyperref/h
-pdftex.def
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2021-06-07 v7.00m Hyperref driver for pdfTeX
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/base/atver
-yend-ltx.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
@@ -373,25 +311,22 @@ with kernel methods
 \Fld@listcount=\count278
 \c@bookmark@seq@number=\count279
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/rerunfilec
-heck/rerunfilecheck.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfi
+lecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/uniqueco
-unter/uniquecounter.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/unique
+counter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip53
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/geometry/g
-eometry.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.st
+y
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/iftex/if
-vtex.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count280
@@ -405,31 +340,29 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen158
 \Gm@layouthoffset=\dimen159
 \Gm@layoutvoffset=\dimen160
-\Gm@dimlist=\toks25
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/graphics/g
-raphicx.sty
+\Gm@dimlist=\toks26
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.st
+y
 Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/graphics/g
-raphics.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/graphics/t
-rig.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/graphics-c
-fg/graphics.cfg
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.
+cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/tools/long
-table.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grffile.sty
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
 \LTleft=\skip54
 \LTright=\skip55
@@ -446,32 +379,28 @@ Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
 \LT@rows=\count285
 \c@LT@tables=\count286
 \c@LT@chunks=\count287
-\LT@p@ftn=\toks26
+\LT@p@ftn=\toks27
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/l3packages
-/xparse/xparse.sty
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/e
-xpl3.sty
-Package: expl3 2021-06-01 L3 programming layer (loader) 
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xpar
+se.sty (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.
+sty
+Package: expl3 2021-06-18 L3 programming layer (loader) 
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/l3backend/
-l3backend-pdftex.def
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pd
+ftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count288
 \l__pdf_internal_box=\box57
 ))
-Package: xparse 2021-06-01 L3 Experimental document command parser
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/multirow/m
-ultirow.sty
+Package: xparse 2021-06-18 L3 Experimental document command parser
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.st
+y
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip58
 \multirow@cntb=\count289
 \multirow@dima=\skip59
 \bigstrutjot=\dimen164
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/tools/mult
-icol.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \c@tracingmulticols=\count290
 \mult@box=\box58
@@ -540,9 +469,8 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \mult@nat@firstbox=\box102
 \colbreak@box=\box103
 \mc@col@check@num=\count299
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/booktabs/b
-ooktabs.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.st
+y
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen174
 \lightrulewidth=\dimen175
@@ -562,16 +490,11 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count303
 \@thisrulewidth=\dimen186
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/caption/su
-bcaption.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/caption/ca
-ption.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/caption/ca
-ption3.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \captionmargin=\dimen187
 \captionmargin@=\dimen188
@@ -586,35 +509,28 @@ Package caption Info: Standard document class detected.
 \c@continuedfloat=\count305
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/caption/lt
-caption.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 ))
 \c@subfigure=\count306
 \c@subtable=\count307
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/enumitem/e
-numitem.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.st
+y
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \labelindent=\skip62
 \enit@outerparindent=\dimen194
-\enit@toks=\toks27
+\enit@toks=\toks28
 \enit@inbox=\box104
 \enit@count@id=\count308
 \enitdp@description=\count309
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/tools/tabu
-larx.sty
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/tools/arra
-y.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
 \col@sep=\dimen195
 \ar@mcellbox=\box105
 \extrarowheight=\dimen196
-\NC@list=\toks28
+\NC@list=\toks29
 \extratabsurround=\skip63
 \backup@length=\skip64
 \ar@cellbox=\box106
@@ -625,96 +541,72 @@ Package: array 2021/04/20 v2.5e Tabular extension package (FMi)
 \TX@target=\dimen256
 \TX@delta=\dimen257
 \TX@cols=\count310
-\TX@ftn=\toks29
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/setspace/s
-etspace.sty
+\TX@ftn=\toks30
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/setspace/setspace.st
+y
 Package: setspace 2011/12/19 v6.7a set line spacing
-)
-\cslhangindent=\skip65
-\csllabelwidth=\skip66
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/tools/calc
-.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count311
-\calc@Bcount=\count312
-\calc@Adimen=\dimen258
-\calc@Bdimen=\dimen259
-\calc@Askip=\skip67
-\calc@Bskip=\skip68
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count313
-\calc@Cskip=\skip69
 ) (./leaffeatures_pr.aux)
 \openout1 = `leaffeatures_pr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Info: Redefining \microtypecontext on input line 102.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Info: Redefining \microtypecontext on input line 78.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 102.
+LaTeX Info: Redefining \showhyphens on input line 78.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/microtype/
-mt-cmr.cfg
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-p
-kg/epstopdf-base.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-
+base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/latexconfi
-g/epstopdf-sys.cfg
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-s
+ys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 102.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/hyperref/n
-ameref.sty
+Package hyperref Info: Link coloring OFF on input line 78.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/refcount/r
-efcount.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/generic/gettitle
-string/gettitlestring.sty
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/getti
+tlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count314
+\c@section@level=\count311
 )
-LaTeX Info: Redefining \ref on input line 102.
-LaTeX Info: Redefining \pageref on input line 102.
-LaTeX Info: Redefining \nameref on input line 102.
+LaTeX Info: Redefining \ref on input line 78.
+LaTeX Info: Redefining \pageref on input line 78.
+LaTeX Info: Redefining \nameref on input line 78.
 (./leaffeatures_pr.out) (./leaffeatures_pr.out)
 \@outlinefile=\write3
 \openout3 = `leaffeatures_pr.out'.
@@ -755,129 +647,111 @@ LaTeX Info: Redefining \nameref on input line 102.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-04.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.
-fd
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
+0.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-04.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.
-fd
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
+0.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-104.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy
-.fd
+80.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-104.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex
-.fd
+80.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 104.
+(Font)              <12> on input line 80.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 104.
+(Font)              <8> on input line 80.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 104.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 104
-.
+(Font)              <6> on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/u
-msa.fd
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/microtype/
-mt-msa.cfg
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 104
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
 
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/u
-msb.fd
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/microtype/
-mt-msb.cfg
+) (c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-var/fonts/map/pdftex/updm
-ap/pdftex.map}] [2]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/fl5.png, id=180, 586.44093pt x 289.83281pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/fl5.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/fl5.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/fl5.png  used on input line 233.
-(pdftex.def)             Requested size: 234.87645pt x 116.08142pt.
-<leaffeatures/Figures/alledge.png, id=184, 1096.095pt x 245.91875pt>
-File: leaffeatures/Figures/alledge.png Graphic file (type png)
-<use leaffeatures/Figures/alledge.png>
-Package pdftex.def Info: leaffeatures/Figures/alledge.png  used on input line 2
-50.
+{c:/Users/j/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
+p}] [2]
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/fl5.png, id=180, 484.05844pt x 243.15843pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/fl5.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/fl5.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/fl5.png  used on input line 209.
+(pdftex.def)             Requested size: 234.87885pt x 117.98735pt.
+<./Figures/alledge.png, id=184, 1096.095pt x 245.91875pt>
+File: ./Figures/alledge.png Graphic file (type png)
+<use ./Figures/alledge.png>
+Package pdftex.def Info: ./Figures/alledge.png  used on input line 226.
 (pdftex.def)             Requested size: 170.7125pt x 38.30087pt.
-<leaffeatures/Figures/imgshape.png, id=185, 1187.43625pt x 282.55562pt>
-File: leaffeatures/Figures/imgshape.png Graphic file (type png)
-<use leaffeatures/Figures/imgshape.png>
-Package pdftex.def Info: leaffeatures/Figures/imgshape.png  used on input line 
-253.
+<./Figures/imgshape.png, id=185, 1187.43625pt x 282.55562pt>
+File: ./Figures/imgshape.png Graphic file (type png)
+<use ./Figures/imgshape.png>
+Package pdftex.def Info: ./Figures/imgshape.png  used on input line 229.
 (pdftex.def)             Requested size: 170.71529pt x 40.62244pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 256.
+(Font)              <10> on input line 232.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 256.
+(Font)              <7> on input line 232.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 256.
-<leaffeatures/Figures/simple_leaf_parts.png, id=186, 349.305pt x 285.31593pt>
-File: leaffeatures/Figures/simple_leaf_parts.png Graphic file (type png)
-<use leaffeatures/Figures/simple_leaf_parts.png>
-Package pdftex.def Info: leaffeatures/Figures/simple_leaf_parts.png  used on in
-put line 259.
+(Font)              <5> on input line 232.
+<./Figures/simple_leaf_parts.png, id=186, 349.305pt x 285.31593pt>
+File: ./Figures/simple_leaf_parts.png Graphic file (type png)
+<use ./Figures/simple_leaf_parts.png>
+Package pdftex.def Info: ./Figures/simple_leaf_parts.png  used on input line 23
+5.
 (pdftex.def)             Requested size: 104.49915pt x 85.35599pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 248--263
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 224--239
 []$[]$ $[]$ 
  []
 
-[3 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Fi
-gures/fl5.png>] [4 <./leaffeatures/Figures/alledge.png> <./leaffeatures/Figures
-/imgshape.png> <./leaffeatures/Figures/simple_leaf_parts.png>]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/gau.png, id=209, 456.20438pt x 453.19313pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/gau.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/gau.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/gau.png  used on input line 322.
+[3 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatu
+res/Figures/fl5.png>] [4 <./Figures/alledge.png> <./Figures/imgshape.png> <./Fi
+gures/simple_leaf_parts.png>]
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/gau.png, id=209, 456.20438pt x 453.19313pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/gau.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/gau.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/gau.png  used on input line 298.
 (pdftex.def)             Requested size: 281.86226pt x 280.00179pt.
-[5 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Fi
-gures/gau.png>] [6]
+[5 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatu
+res/Figures/gau.png>] [6]
 <./Figures/otsu.png, id=228, 612.03656pt x 447.17062pt>
 File: ./Figures/otsu.png Graphic file (type png)
 <use ./Figures/otsu.png>
-Package pdftex.def Info: ./Figures/otsu.png  used on input line 405.
+Package pdftex.def Info: ./Figures/otsu.png  used on input line 381.
 (pdftex.def)             Requested size: 170.71533pt x 124.72928pt.
 <./Figures/rst.png, id=229, 530.73282pt x 305.64188pt>
 File: ./Figures/rst.png Graphic file (type png)
 <use ./Figures/rst.png>
-Package pdftex.def Info: ./Figures/rst.png  used on input line 411.
+Package pdftex.def Info: ./Figures/rst.png  used on input line 387.
 (pdftex.def)             Requested size: 199.17009pt x 114.69936pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 403--415
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 379--391
 []$[]$ $[]$ 
  []
 
@@ -885,292 +759,294 @@ Overfull \hbox (2.2222pt too wide) in paragraph at lines 403--415
 <./Figures/remove_stalk.png, id=239, 442.65375pt x 274.02374pt>
 File: ./Figures/remove_stalk.png Graphic file (type png)
 <use ./Figures/remove_stalk.png>
-Package pdftex.def Info: ./Figures/remove_stalk.png  used on input line 441.
+Package pdftex.def Info: ./Figures/remove_stalk.png  used on input line 417.
 (pdftex.def)             Requested size: 142.26672pt x 88.06987pt.
 <./Figures/close_holes.png, id=240, 453.94594pt x 263.48438pt>
 File: ./Figures/close_holes.png Graphic file (type png)
 <use ./Figures/close_holes.png>
-Package pdftex.def Info: ./Figures/close_holes.png  used on input line 447.
+Package pdftex.def Info: ./Figures/close_holes.png  used on input line 423.
 (pdftex.def)             Requested size: 142.25949pt x 82.57184pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 439--451
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 415--427
 []$[]$ $[]$ 
  []
 
 [8 <./Figures/remove_stalk.png> <./Figures/close_holes.png>]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/feature_hie.png, id=254, 532.99126pt x 200.24812pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/feature_hie.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/feature_hie.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/feature_hie.png  used on input line 522.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/feature_hie.png, id=254, 532.99126pt x 200.24812pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/feature_hie.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/feature_hie.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/feature_hie.png  used on input line 498.
 (pdftex.def)             Requested size: 328.83275pt x 123.5445pt.
-[9 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Fi
-gures/feature_hie.png>]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/geomatric_transformation.png, id=264, 664.73344pt x 339.51843pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/geomatric_transformation.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/geomatric_transformation.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/geomatric_transformation.png  used on input line 546
-.
-(pdftex.def)             Requested size: 328.826pt x 167.95074pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/cnt.png, id=266, 268.00125pt x 143.78719pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/cnt.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/cnt.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/cnt.png  used on input line 560.
+[9 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatu
+res/Figures/feature_hie.png>]
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/geomatric_transformation.png, id=264, 606.76688pt x 177.66376pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/geomatric_transformation.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/geomatric_transformation.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/geomatric_transformation.png  used on input li
+ne 522.
+(pdftex.def)             Requested size: 328.83432pt x 96.28398pt.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/cnt.png, id=266, 268.00125pt x 143.78719pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/cnt.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/cnt.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/cnt.png  used on input line 536.
 (pdftex.def)             Requested size: 140.92766pt x 75.61006pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/trans.jpg, id=268, 867.24pt x 1156.32pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/trans.jpg Graphic file (type jpg)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/trans.jpg>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/trans.jpg  used on input line 576.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/trans.jpg, id=268, 867.24pt x 1156.32pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/trans.jpg Graphic file (type jpg)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/trans.jpg>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/trans.jpg  used on input line 552.
 (pdftex.def)             Requested size: 46.97714pt x 62.6362pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/scaling.jpg, id=269, 867.24pt x 1156.32pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/scaling.jpg Graphic file (type jpg)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/scaling.jpg>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/scaling.jpg  used on input line 576.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/scaling.jpg, id=269, 867.24pt x 1156.32pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/scaling.jpg Graphic file (type jpg)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/scaling.jpg>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/scaling.jpg  used on input line 552.
 (pdftex.def)             Requested size: 46.97714pt x 62.6362pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/shape_chart.png, id=270, 529.22719pt x 271.76532pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/shape_chart.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/shape_chart.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/shape_chart.png  used on input line 585.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/shape_chart.png, id=270, 529.22719pt x 271.76532pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/shape_chart.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/shape_chart.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/shape_chart.png  used on input line 561.
 (pdftex.def)             Requested size: 281.8538pt x 144.73573pt.
-[10 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/geomatric_transformation.png> </Users/thiyangashaminitalagala/Lecturer/P
-apers/Feature-Leaf/leaffeatures/Figures/cnt.png> </Users/thiyangashaminitalagal
-a/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/trans.jpg> </Users/thiyanga
-shaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figures/scaling.jpg>]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/d_cal.png, id=283, 429.85594pt x 326.72063pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/d_cal.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/d_cal.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/d_cal.png  used on input line 619.
+[10 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/geomatric_transformation.png> <c:/Users/j/Desktop/Final Research/F
+eature_paper/Feature-Leaf-main/leaffeatures/Figures/cnt.png> <c:/Users/j/Deskto
+p/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures/Figures/trans.jpg
+> <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatur
+es/Figures/scaling.jpg>]
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/d_cal.png, id=284, 429.85594pt x 326.72063pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/d_cal.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/d_cal.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/d_cal.png  used on input line 595.
 (pdftex.def)             Requested size: 234.88011pt x 178.52533pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/act3.png, id=284, 353.06906pt x 267.24844pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/act3.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/act3.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/act3.png  used on input line 643.
+[11 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/shape_chart.png> <c:/Users/j/Desktop/Final Research/Feature_paper/
+Feature-Leaf-main/leaffeatures/Figures/d_cal.png>]
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/act3.png, id=294, 353.06906pt x 267.24844pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/act3.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/act3.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/act3.png  used on input line 619.
 (pdftex.def)             Requested size: 93.95074pt x 71.1141pt.
-[11 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/shape_chart.png>] [12 </Users/thiyangashaminitalagala/Lecturer/Papers/Fe
-ature-Leaf/leaffeatures/Figures/d_cal.png> </Users/thiyangashaminitalagala/Lect
-urer/Papers/Feature-Leaf/leaffeatures/Figures/act3.png>]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/act1.png, id=309, 246.1697pt x 179.16937pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/act1.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/act1.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/act1.png  used on input line 704.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/act1.png, id=299, 246.1697pt x 179.16937pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/act1.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/act1.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/act1.png  used on input line 680.
 (pdftex.def)             Requested size: 140.93419pt x 102.57596pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/act2.png, id=310, 367.3725pt x 234.8775pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/act2.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/act2.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/act2.png  used on input line 704.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/act2.png, id=300, 367.3725pt x 234.8775pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/act2.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/act2.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/act2.png  used on input line 680.
 (pdftex.def)             Requested size: 140.93152pt x 90.10376pt.
-<./Figures/Areacal.png, id=311, 222.07968pt x 183.68625pt>
+[12 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/act3.png>]
+<./Figures/Areacal.png, id=313, 222.07968pt x 183.68625pt>
 File: ./Figures/Areacal.png Graphic file (type png)
 <use ./Figures/Areacal.png>
-Package pdftex.def Info: ./Figures/Areacal.png  used on input line 719.
+Package pdftex.def Info: ./Figures/Areacal.png  used on input line 695.
 (pdftex.def)             Requested size: 137.60326pt x 113.81421pt.
-<./Figures/perical.png, id=312, 101.62968pt x 140.02313pt>
+<./Figures/perical.png, id=314, 101.62968pt x 140.02313pt>
 File: ./Figures/perical.png Graphic file (type png)
 <use ./Figures/perical.png>
-Package pdftex.def Info: ./Figures/perical.png  used on input line 723.
+Package pdftex.def Info: ./Figures/perical.png  used on input line 699.
 (pdftex.def)             Requested size: 82.60802pt x 113.8155pt.
-<./Figures/c11.png, id=313, 318.43968pt x 243.91125pt>
+<./Figures/c11.png, id=315, 318.43968pt x 243.91125pt>
 File: ./Figures/c11.png Graphic file (type png)
 <use ./Figures/c11.png>
-Package pdftex.def Info: ./Figures/c11.png  used on input line 730.
+Package pdftex.def Info: ./Figures/c11.png  used on input line 706.
 (pdftex.def)             Requested size: 170.71582pt x 130.76105pt.
-<./Figures/concal.png, id=314, 245.41687pt x 164.11313pt>
+<./Figures/concal.png, id=316, 245.41687pt x 164.11313pt>
 File: ./Figures/concal.png Graphic file (type png)
 <use ./Figures/concal.png>
-Package pdftex.def Info: ./Figures/concal.png  used on input line 734.
+Package pdftex.def Info: ./Figures/concal.png  used on input line 710.
 (pdftex.def)             Requested size: 142.26698pt x 95.13559pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 716--738
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 692--714
 []$[]$ $[]$ 
  []
 
-[13 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/act1.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/l
-eaffeatures/Figures/act2.png> <./Figures/Areacal.png> <./Figures/perical.png> <
-./Figures/c11.png> <./Figures/concal.png>] [14]
-<./Figures/c8.png, id=354, 304.13625pt x 161.85469pt>
+[13 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/act1.png> <c:/Users/j/Desktop/Final Research/Feature_paper/Feature
+-Leaf-main/leaffeatures/Figures/act2.png> <./Figures/Areacal.png> <./Figures/pe
+rical.png> <./Figures/c11.png> <./Figures/concal.png>] [14]
+<./Figures/c8.png, id=355, 304.13625pt x 161.85469pt>
 File: ./Figures/c8.png Graphic file (type png)
 <use ./Figures/c8.png>
-Package pdftex.def Info: ./Figures/c8.png  used on input line 835.
+Package pdftex.def Info: ./Figures/c8.png  used on input line 811.
 (pdftex.def)             Requested size: 113.80948pt x 60.56693pt.
-<./Figures/c9.png, id=355, 304.13625pt x 159.59625pt>
+<./Figures/c9.png, id=356, 304.13625pt x 159.59625pt>
 File: ./Figures/c9.png Graphic file (type png)
 <use ./Figures/c9.png>
-Package pdftex.def Info: ./Figures/c9.png  used on input line 839.
+Package pdftex.def Info: ./Figures/c9.png  used on input line 815.
 (pdftex.def)             Requested size: 113.80948pt x 59.7218pt.
-<./Figures/c6.png, id=356, 471.26062pt x 160.34906pt>
+<./Figures/c6.png, id=357, 471.26062pt x 160.34906pt>
 File: ./Figures/c6.png Graphic file (type png)
 <use ./Figures/c6.png>
-Package pdftex.def Info: ./Figures/c6.png  used on input line 843.
+Package pdftex.def Info: ./Figures/c6.png  used on input line 819.
 (pdftex.def)             Requested size: 113.80956pt x 38.72433pt.
-<./Figures/c10.png, id=357, 424.58624pt x 197.23688pt>
+<./Figures/c10.png, id=358, 424.58624pt x 197.23688pt>
 File: ./Figures/c10.png Graphic file (type png)
 <use ./Figures/c10.png>
-Package pdftex.def Info: ./Figures/c10.png  used on input line 850.
+Package pdftex.def Info: ./Figures/c10.png  used on input line 826.
 (pdftex.def)             Requested size: 113.81055pt x 52.86943pt.
-<./Figures/c7.png, id=358, 257.46187pt x 163.3603pt>
+<./Figures/c7.png, id=359, 257.46187pt x 163.3603pt>
 File: ./Figures/c7.png Graphic file (type png)
 <use ./Figures/c7.png>
-Package pdftex.def Info: ./Figures/c7.png  used on input line 855.
+Package pdftex.def Info: ./Figures/c7.png  used on input line 831.
 (pdftex.def)             Requested size: 113.80998pt x 72.21277pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 832--859
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 808--835
 []$[]$ $[]$ 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 866--869
+Overfull \hbox (38.90486pt too wide) in alignment at lines 842--845
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 869--875
+Overfull \hbox (38.90486pt too wide) in alignment at lines 845--851
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 875--878
+Overfull \hbox (38.90486pt too wide) in alignment at lines 851--854
  [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 878--880
+Overfull \hbox (38.90486pt too wide) in alignment at lines 854--856
  [] [] [] [] [] [] 
  []
 
-<./Figures/diameter.png, id=360, 50.43843pt x 126.4725pt>
+<./Figures/diameter.png, id=361, 50.43843pt x 126.4725pt>
 File: ./Figures/diameter.png Graphic file (type png)
 <use ./Figures/diameter.png>
-Package pdftex.def Info: ./Figures/diameter.png  used on input line 882.
+Package pdftex.def Info: ./Figures/diameter.png  used on input line 858.
 (pdftex.def)             Requested size: 17.02107pt x 42.67972pt.
-<./Figures/Length_new.png, id=362, 50.43843pt x 126.4725pt>
+<./Figures/Length_new.png, id=363, 50.43843pt x 126.4725pt>
 File: ./Figures/Length_new.png Graphic file (type png)
 <use ./Figures/Length_new.png>
-Package pdftex.def Info: ./Figures/Length_new.png  used on input line 883.
+Package pdftex.def Info: ./Figures/Length_new.png  used on input line 859.
 (pdftex.def)             Requested size: 17.02107pt x 42.67972pt.
-<./Figures/width.png, id=364, 45.16875pt x 112.92188pt>
+<./Figures/width.png, id=365, 45.16875pt x 112.92188pt>
 File: ./Figures/width.png Graphic file (type png)
 <use ./Figures/width.png>
-Package pdftex.def Info: ./Figures/width.png  used on input line 884.
+Package pdftex.def Info: ./Figures/width.png  used on input line 860.
 (pdftex.def)             Requested size: 17.07193pt x 42.67986pt.
-<./Figures/area.png, id=366, 52.69687pt x 115.18031pt>
+<./Figures/area.png, id=367, 52.69687pt x 115.18031pt>
 File: ./Figures/area.png Graphic file (type png)
 <use ./Figures/area.png>
-Package pdftex.def Info: ./Figures/area.png  used on input line 885.
+Package pdftex.def Info: ./Figures/area.png  used on input line 861.
 (pdftex.def)             Requested size: 19.52567pt x 42.67755pt.
-<./Figures/perimeter.png, id=368, 49.68562pt x 115.18031pt>
+<./Figures/perimeter.png, id=369, 49.68562pt x 115.18031pt>
 File: ./Figures/perimeter.png Graphic file (type png)
 <use ./Figures/perimeter.png>
-Package pdftex.def Info: ./Figures/perimeter.png  used on input line 886.
+Package pdftex.def Info: ./Figures/perimeter.png  used on input line 862.
 (pdftex.def)             Requested size: 18.40993pt x 42.67755pt.
-<./Figures/centroid.png, id=371, 59.47218pt x 115.93312pt>
+<./Figures/centroid.png, id=372, 59.47218pt x 115.93312pt>
 File: ./Figures/centroid.png Graphic file (type png)
 <use ./Figures/centroid.png>
-Package pdftex.def Info: ./Figures/centroid.png  used on input line 888.
+Package pdftex.def Info: ./Figures/centroid.png  used on input line 864.
 (pdftex.def)             Requested size: 21.89365pt x 42.67876pt.
-<./Figures/AR.png, id=372, 55.70813pt x 118.94438pt>
+<./Figures/AR.png, id=373, 55.70813pt x 118.94438pt>
 File: ./Figures/AR.png Graphic file (type png)
 <use ./Figures/AR.png>
-Package pdftex.def Info: ./Figures/AR.png  used on input line 889.
+Package pdftex.def Info: ./Figures/AR.png  used on input line 865.
 (pdftex.def)             Requested size: 19.9886pt x 42.67836pt.
-<./Figures/roudness.png, id=373, 115.18031pt x 140.77594pt>
+<./Figures/roudness.png, id=374, 115.18031pt x 140.77594pt>
 File: ./Figures/roudness.png Graphic file (type png)
 <use ./Figures/roudness.png>
-Package pdftex.def Info: ./Figures/roudness.png  used on input line 890.
+Package pdftex.def Info: ./Figures/roudness.png  used on input line 866.
 (pdftex.def)             Requested size: 34.91815pt x 42.67775pt.
-<./Figures/rect.png, id=375, 54.2025pt x 117.43875pt>
+<./Figures/rect.png, id=376, 54.2025pt x 117.43875pt>
 File: ./Figures/rect.png Graphic file (type png)
 <use ./Figures/rect.png>
-Package pdftex.def Info: ./Figures/rect.png  used on input line 891.
+Package pdftex.def Info: ./Figures/rect.png  used on input line 867.
 (pdftex.def)             Requested size: 19.69814pt x 42.6793pt.
-<./Figures/nf.png, id=377, 48.93282pt x 117.43875pt>
+<./Figures/nf.png, id=378, 48.93282pt x 117.43875pt>
 File: ./Figures/nf.png Graphic file (type png)
 <use ./Figures/nf.png>
-Package pdftex.def Info: ./Figures/nf.png  used on input line 893.
+Package pdftex.def Info: ./Figures/nf.png  used on input line 869.
 (pdftex.def)             Requested size: 17.78304pt x 42.6793pt.
-<./Figures/pd.png, id=378, 53.44969pt x 127.22531pt>
+<./Figures/pd.png, id=379, 53.44969pt x 127.22531pt>
 File: ./Figures/pd.png Graphic file (type png)
 <use ./Figures/pd.png>
-Package pdftex.def Info: ./Figures/pd.png  used on input line 894.
+Package pdftex.def Info: ./Figures/pd.png  used on input line 870.
 (pdftex.def)             Requested size: 17.93042pt x 42.67946pt.
-<./Figures/pl.png, id=379, 53.44969pt x 127.22531pt>
+<./Figures/pl.png, id=380, 53.44969pt x 127.22531pt>
 File: ./Figures/pl.png Graphic file (type png)
 <use ./Figures/pl.png>
-Package pdftex.def Info: ./Figures/pl.png  used on input line 895.
+Package pdftex.def Info: ./Figures/pl.png  used on input line 871.
 (pdftex.def)             Requested size: 17.93042pt x 42.67946pt.
-<./Figures/plw.png, id=380, 55.70813pt x 127.22531pt>
+<./Figures/plw.png, id=381, 55.70813pt x 127.22531pt>
 File: ./Figures/plw.png Graphic file (type png)
 <use ./Figures/plw.png>
-Package pdftex.def Info: ./Figures/plw.png  used on input line 896.
+Package pdftex.def Info: ./Figures/plw.png  used on input line 872.
 (pdftex.def)             Requested size: 18.68803pt x 42.67946pt.
-<./Figures/p_con.png, id=381, 99.37125pt x 133.24782pt>
+<./Figures/p_con.png, id=382, 99.37125pt x 133.24782pt>
 File: ./Figures/p_con.png Graphic file (type png)
 <use ./Figures/p_con.png>
-Package pdftex.def Info: ./Figures/p_con.png  used on input line 897.
+Package pdftex.def Info: ./Figures/p_con.png  used on input line 873.
 (pdftex.def)             Requested size: 31.82825pt x 42.67879pt.
-<./Figures/a_c1.png, id=382, 70.01157pt x 131.74219pt>
+<./Figures/a_c1.png, id=383, 70.01157pt x 131.74219pt>
 File: ./Figures/a_c1.png Graphic file (type png)
 <use ./Figures/a_c1.png>
-Package pdftex.def Info: ./Figures/a_c1.png  used on input line 898.
+Package pdftex.def Info: ./Figures/a_c1.png  used on input line 874.
 (pdftex.def)             Requested size: 22.68083pt x 42.679pt.
-<./Figures/a_c2.png, id=383, 96.36pt x 130.23656pt>
+<./Figures/a_c2.png, id=384, 96.36pt x 130.23656pt>
 File: ./Figures/a_c2.png Graphic file (type png)
 <use ./Figures/a_c2.png>
-Package pdftex.def Info: ./Figures/a_c2.png  used on input line 899.
+Package pdftex.def Info: ./Figures/a_c2.png  used on input line 875.
 (pdftex.def)             Requested size: 31.57686pt x 42.67812pt.
-<./Figures/eq_d.png, id=384, 112.16907pt x 136.25906pt>
+<./Figures/eq_d.png, id=385, 112.16907pt x 136.25906pt>
 File: ./Figures/eq_d.png Graphic file (type png)
 <use ./Figures/eq_d.png>
-Package pdftex.def Info: ./Figures/eq_d.png  used on input line 900.
+Package pdftex.def Info: ./Figures/eq_d.png  used on input line 876.
 (pdftex.def)             Requested size: 35.13318pt x 42.67856pt.
-<./Figures/convex.png, id=385, 56.46094pt x 126.4725pt>
+<./Figures/convex.png, id=386, 56.46094pt x 126.4725pt>
 File: ./Figures/convex.png Graphic file (type png)
 <use ./Figures/convex.png>
-Package pdftex.def Info: ./Figures/convex.png  used on input line 901.
+Package pdftex.def Info: ./Figures/convex.png  used on input line 877.
 (pdftex.def)             Requested size: 19.05344pt x 42.67972pt.
 
-Overfull \hbox (38.90486pt too wide) in alignment at lines 880--904
+Overfull \hbox (38.90486pt too wide) in alignment at lines 856--880
  [] [] [] [] [] [] 
  []
 
@@ -1181,152 +1057,148 @@ centroid.png> <./Figures/AR.png> <./Figures/roudness.png> <./Figures/rect.png>
 <./Figures/nf.png> <./Figures/pd.png>] [17 <./Figures/pl.png> <./Figures/plw.pn
 g> <./Figures/p_con.png> <./Figures/a_c1.png> <./Figures/a_c2.png> <./Figures/e
 q_d.png> <./Figures/convex.png>]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/GLMC_direction.png, id=432, 173.14688pt x 147.55125pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/GLMC_direction.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/GLMC_direction.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/GLMC_direction.png  used on input line 946.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/GLMC_direction.png, id=432, 173.14688pt x 147.55125pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/GLMC_direction.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/GLMC_direction.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/GLMC_direction.png  used on input line 922.
 (pdftex.def)             Requested size: 93.95235pt x 80.06372pt.
-[18 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/GLMC_direction.png>]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/GLMC1.png, id=445, 328.22626pt x 439.6425pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/GLMC1.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/GLMC1.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/GLMC1.png  used on input line 991.
+[18 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/GLMC_direction.png>]
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/GLMC1.png, id=445, 328.22626pt x 439.6425pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/GLMC1.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/GLMC1.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/GLMC1.png  used on input line 967.
 (pdftex.def)             Requested size: 234.88033pt x 314.61034pt.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-95.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.
-fd
+71.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/GLMC2.png, id=446, 511.15968pt x 201.75375pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/GLMC2.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/GLMC2.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/GLMC2.png  used on input line 1000.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/GLMC2.png, id=446, 511.15968pt x 201.75375pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/GLMC2.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/GLMC2.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/GLMC2.png  used on input line 976.
 (pdftex.def)             Requested size: 234.87111pt x 92.70317pt.
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/leaf_img.png, id=447, 291.33844pt x 219.06844pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/leaf_img.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/leaf_img.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/leaf_img.png  used on input line 1012.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/leaf_img.png, id=447, 291.33844pt x 219.06844pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/leaf_img.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/leaf_img.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/leaf_img.png  used on input line 988.
 (pdftex.def)             Requested size: 140.93pt x 105.97061pt.
 [19]
 
 LaTeX Warning: Text page 20 contains only floats.
 
-[20 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/GLMC1.png> </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/
-leaffeatures/Figures/GLMC2.png> </Users/thiyangashaminitalagala/Lecturer/Papers
-/Feature-Leaf/leaffeatures/Figures/leaf_img.png>]
+[20 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/GLMC1.png> <c:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/GLMC2.png> <c:/Users/j/Desktop/Final Research/
+Feature_paper/Feature-Leaf-main/leaffeatures/Figures/leaf_img.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-058.
-
-(/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.
-fd
+034.
+(c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/scag.png, id=467, 602.25pt x 304.88907pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/scag.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/scag.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/scag.png  used on input line 1066.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/scag.png, id=467, 602.25pt x 304.88907pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/scag.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/scag.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/scag.png  used on input line 1042.
 (pdftex.def)             Requested size: 328.84004pt x 166.47527pt.
 <./Figures/pc.png, id=470, 210.03468pt x 199.49532pt>
 File: ./Figures/pc.png Graphic file (type png)
 <use ./Figures/pc.png>
-Package pdftex.def Info: ./Figures/pc.png  used on input line 1084.
+Package pdftex.def Info: ./Figures/pc.png  used on input line 1060.
 (pdftex.def)             Requested size: 149.78586pt x 142.26973pt.
 <./Figures/scp.png, id=471, 582.67688pt x 463.7325pt>
 File: ./Figures/scp.png Graphic file (type png)
 <use ./Figures/scp.png>
-Package pdftex.def Info: ./Figures/scp.png  used on input line 1090.
+Package pdftex.def Info: ./Figures/scp.png  used on input line 1066.
 (pdftex.def)             Requested size: 170.71458pt x 135.86586pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 1082--1094
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 1058--1070
 []$[]$ $[]$ 
  []
 
-[21 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/scag.png>]
+[21 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/scag.png>]
 <./Figures/c4new.png, id=484, 308.65312pt x 185.94469pt>
 File: ./Figures/c4new.png Graphic file (type png)
 <use ./Figures/c4new.png>
-Package pdftex.def Info: ./Figures/c4new.png  used on input line 1138.
+Package pdftex.def Info: ./Figures/c4new.png  used on input line 1114.
 (pdftex.def)             Requested size: 170.7205pt x 102.84868pt.
 <./Figures/c5.png, id=485, 407.27156pt x 218.31563pt>
 File: ./Figures/c5.png Graphic file (type png)
 <use ./Figures/c5.png>
-Package pdftex.def Info: ./Figures/c5.png  used on input line 1142.
+Package pdftex.def Info: ./Figures/c5.png  used on input line 1118.
 (pdftex.def)             Requested size: 170.7173pt x 91.51204pt.
 <./Figures/c3.png, id=486, 295.85532pt x 154.32657pt>
 File: ./Figures/c3.png Graphic file (type png)
 <use ./Figures/c3.png>
-Package pdftex.def Info: ./Figures/c3.png  used on input line 1148.
+Package pdftex.def Info: ./Figures/c3.png  used on input line 1124.
 (pdftex.def)             Requested size: 170.7204pt x 89.05261pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 1136--1152
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 1112--1128
 []$[]$ $[]$ 
  []
 
 [22 <./Figures/pc.png> <./Figures/scp.png>] [23 <./Figures/c4new.png> <./Figure
 s/c5.png> <./Figures/c3.png>] [24] [25] [26] [27]
-</Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/Figur
-es/mn.png, id=562, 479.54156pt x 228.855pt>
-File: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/
-Figures/mn.png Graphic file (type png)
-<use /Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/mn.png>
-Package pdftex.def Info: /Users/thiyangashaminitalagala/Lecturer/Papers/Feature
--Leaf/leaffeatures/Figures/mn.png  used on input line 1481.
+<C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeatures
+/Figures/mn.png, id=562, 479.54156pt x 228.855pt>
+File: C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffea
+tures/Figures/mn.png Graphic file (type png)
+<use C:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/mn.png>
+Package pdftex.def Info: C:/Users/j/Desktop/Final Research/Feature_paper/Featur
+e-Leaf-main/leaffeatures/Figures/mn.png  used on input line 1457.
 (pdftex.def)             Requested size: 140.92937pt x 67.25671pt.
-[28 </Users/thiyangashaminitalagala/Lecturer/Papers/Feature-Leaf/leaffeatures/F
-igures/mn.png>]
+[28 <c:/Users/j/Desktop/Final Research/Feature_paper/Feature-Leaf-main/leaffeat
+ures/Figures/mn.png>]
 <./Figures/flavia_images.png, id=578, 548.0475pt x 246.9225pt>
 File: ./Figures/flavia_images.png Graphic file (type png)
 <use ./Figures/flavia_images.png>
-Package pdftex.def Info: ./Figures/flavia_images.png  used on input line 1545.
+Package pdftex.def Info: ./Figures/flavia_images.png  used on input line 1521.
 (pdftex.def)             Requested size: 170.72086pt x 76.91818pt.
 <./Figures/swedish_data.png, id=579, 545.03625pt x 274.77657pt>
 File: ./Figures/swedish_data.png Graphic file (type png)
 <use ./Figures/swedish_data.png>
-Package pdftex.def Info: ./Figures/swedish_data.png  used on input line 1551.
+Package pdftex.def Info: ./Figures/swedish_data.png  used on input line 1527.
 (pdftex.def)             Requested size: 170.71428pt x 86.06451pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 1543--1555
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 1519--1531
 []$[]$ $[]$ 
  []
 
 <./Figures/fl5.png, id=583, 484.05844pt x 243.15843pt>
 File: ./Figures/fl5.png Graphic file (type png)
 <use ./Figures/fl5.png>
-Package pdftex.def Info: ./Figures/fl5.png  used on input line 1582.
+Package pdftex.def Info: ./Figures/fl5.png  used on input line 1558.
 (pdftex.def)             Requested size: 227.62567pt x 114.34384pt.
 <./Figures/fl_example.png, id=584, 662.475pt x 185.19188pt>
 File: ./Figures/fl_example.png Graphic file (type png)
 <use ./Figures/fl_example.png>
-Package pdftex.def Info: ./Figures/fl_example.png  used on input line 1588.
+Package pdftex.def Info: ./Figures/fl_example.png  used on input line 1564.
 (pdftex.def)             Requested size: 227.61403pt x 63.62845pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 1580--1592
+Overfull \hbox (2.2222pt too wide) in paragraph at lines 1556--1568
 []$[]$ $[]$ 
  []
 
@@ -1334,68 +1206,65 @@ Overfull \hbox (2.2222pt too wide) in paragraph at lines 1580--1592
 <img/pcaswedish-1.pdf, id=601, 433.62pt x 433.62pt>
 File: img/pcaswedish-1.pdf Graphic file (type pdf)
 <use img/pcaswedish-1.pdf>
-Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1637.
+Package pdftex.def Info: img/pcaswedish-1.pdf  used on input line 1613.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 [30 <./Figures/fl5.png> <./Figures/fl_example.png>]
 <img/ldaswedish-1.pdf, id=612, 433.62pt x 144.54pt>
 File: img/ldaswedish-1.pdf Graphic file (type pdf)
 <use img/ldaswedish-1.pdf>
-Package pdftex.def Info: img/ldaswedish-1.pdf  used on input line 1645.
+Package pdftex.def Info: img/ldaswedish-1.pdf  used on input line 1621.
 (pdftex.def)             Requested size: 433.63878pt x 144.54623pt.
 [31 <./img/pcaswedish-1.pdf>]
 <img/ldaflavia-1.pdf, id=634, 433.62pt x 144.54pt>
 File: img/ldaflavia-1.pdf Graphic file (type pdf)
 <use img/ldaflavia-1.pdf>
-Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1675.
+Package pdftex.def Info: img/ldaflavia-1.pdf  used on input line 1651.
 (pdftex.def)             Requested size: 433.63878pt x 144.54623pt.
 <img/pcaflavia-1.pdf, id=635, 433.62pt x 433.62pt>
 File: img/pcaflavia-1.pdf Graphic file (type pdf)
 <use img/pcaflavia-1.pdf>
-Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1683.
+Package pdftex.def Info: img/pcaflavia-1.pdf  used on input line 1659.
 (pdftex.def)             Requested size: 433.63878pt x 433.63878pt.
 [32 <./img/ldaswedish-1.pdf> <./img/ldaflavia-1.pdf>] [33 <./img/pcaflavia-1.pd
-f>] [34] [35] (./leaffeatures_pr.aux)
+f>] [34] [35] [36] (./leaffeatures_pr.aux)
 Package rerunfilecheck Info: File `leaffeatures_pr.out' has not changed.
-(rerunfilecheck)             Checksum: 389EE6BEC1E32AAC9A3C2E8CA9D0006F;8022.
+(rerunfilecheck)             Checksum: BC4BD6D88E2203AC86894C30EF46856F;8022.
  ) 
 Here is how much of TeX's memory you used:
- 15064 strings out of 480471
- 256096 string characters out of 5896000
- 586647 words of memory out of 5000000
- 32042 multiletter control sequences out of 15000+600000
- 473588 words of font info for 164 fonts, out of 8000000 for 9000
+ 14985 strings out of 480479
+ 253260 string characters out of 5897967
+ 680619 words of memory out of 5000000
+ 31965 multiletter control sequences out of 15000+600000
+ 473718 words of font info for 165 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 67i,15n,77p,495b,548s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm
-/lm-ec.enc}{/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/enc
-/dvips/lm/lm-ts1.enc}{/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist
-/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/thiyangashaminitalagala/Library/TinyT
-eX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/thiyangashaminitalagala/
-Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/thiyangashamini
-talagala/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</Users/th
-iyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.p
-fb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/publi
-c/lm/lmbx12.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/font
-s/type1/public/lm/lmbx9.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/tex
-mf-dist/fonts/type1/public/lm/lmex10.pfb></Users/thiyangashaminitalagala/Librar
-y/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/thiyangashaminita
-lagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></Users/thiya
-ngashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><
-/Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm
-/lmr10.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/typ
-e1/public/lm/lmr17.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-di
-st/fonts/type1/public/lm/lmr5.pfb></Users/thiyangashaminitalagala/Library/TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/thiyangashaminitalagala/Li
-brary/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/thiyangashamini
-talagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/th
-iyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.p
-fb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts/type1/publi
-c/lm/lmsy7.pfb></Users/thiyangashaminitalagala/Library/TinyTeX/texmf-dist/fonts
-/type1/public/lm/lmtt10.pfb>
-Output written on leaffeatures_pr.pdf (35 pages, 4750804 bytes).
+ 67i,17n,77p,535b,537s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{
+c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:
+/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c
+:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{
+c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/
+Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<c:
+/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c
+:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><
+c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><
+c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb>
+<c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
+><c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
+><c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
+><c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb
+><c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb
+><c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr5.pfb>
+<c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><
+c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c
+:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
+c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+<c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+<c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
+>
+Output written on leaffeatures_pr.pdf (36 pages, 4730030 bytes).
 PDF statistics:
- 834 PDF objects out of 1000 (max. 8388607)
- 627 compressed objects within 7 object streams
- 221 named destinations out of 1000 (max. 500000)
+ 841 PDF objects out of 1000 (max. 8388607)
+ 633 compressed objects within 7 object streams
+ 224 named destinations out of 1000 (max. 500000)
  39558 words of extra memory for PDF output out of 42996 (max. 10000000)
 
