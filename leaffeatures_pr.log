@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.6.27)  27 JUN 2021 22:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.6.27)  30 JUN 2021 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1233,7 +1233,7 @@ Package rerunfilecheck Info: File `leaffeatures_pr.out' has not changed.
 Here is how much of TeX's memory you used:
  14985 strings out of 480479
  253260 string characters out of 5897967
- 680619 words of memory out of 5000000
+ 673805 words of memory out of 5000000
  31965 multiletter control sequences out of 15000+600000
  473718 words of font info for 165 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1261,7 +1261,7 @@ c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
 <c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
 <c:/Users/j/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 >
-Output written on leaffeatures_pr.pdf (36 pages, 4730030 bytes).
+Output written on leaffeatures_pr.pdf (36 pages, 4726253 bytes).
 PDF statistics:
  841 PDF objects out of 1000 (max. 8388607)
  633 compressed objects within 7 object streams
