@@ -1108,9 +1108,10 @@ p3b1 <- p1_21 + theme(legend.position = "none")
 
 p1h <- p1b + theme(plot.title = element_blank())
 
-p2h <- p2b + theme(plot.title = element_blank())
+p2h <- p2b1 + theme(plot.title = element_blank())
 
-p3h <- p1_2 + theme(plot.title = element_blank())
+p3h <- p1_21 + theme(plot.title = element_blank())
+
 
 p1h + p2h + p3h + plot_annotation(
   tag_levels = 'A'
