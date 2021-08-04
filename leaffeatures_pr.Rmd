@@ -22,11 +22,11 @@ keywords:
   - LDA
   - PCA
 bibliography: references.bib
-output:
-  pdf_document:
-    number_sections: true
+output: 
   rticles::arxiv_article:
     keep_tex: true
+    number_sections: true
+    extra_dependencies: subfig
 longtable: true
 header-includes:
   - \usepackage{longtable}
